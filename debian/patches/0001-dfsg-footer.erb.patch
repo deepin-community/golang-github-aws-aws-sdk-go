@@ -1,0 +1,31 @@
+From: Shengjing Zhu <i@zhsj.me>
+Date: Sat, 16 Sep 2017 01:21:19 +0800
+Subject: dfsg footer.erb
+
+Last-Update: 2015-09-29
+Forwarded: not-needed
+Author: Dmitry Smirnov <onlyjob@member.fsf.org>
+Bug-Upstream: https://github.com/aws/aws-sdk-go/issues/379
+Description: re-create free portion of a non-DFSG file removed from
+source tarball
+ Taken from v0.9.9
+---
+ doc-src/plugin/templates/default/layout/html/footer.erb | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+ create mode 100644 doc-src/plugin/templates/default/layout/html/footer.erb
+
+diff --git a/doc-src/plugin/templates/default/layout/html/footer.erb b/doc-src/plugin/templates/default/layout/html/footer.erb
+new file mode 100644
+index 0000000..8ed97fa
+--- /dev/null
++++ b/doc-src/plugin/templates/default/layout/html/footer.erb
+@@ -0,0 +1,9 @@
++<div id="footer">
++  Generated on <%= Time.now.strftime("%c") %> by
++  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
++  <%= YARD::VERSION %> (ruby-<%= RUBY_VERSION %>).
++</div>
++
++<!-- BEGIN-SECTION -->
++<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
++<!-- END-SECTION -->

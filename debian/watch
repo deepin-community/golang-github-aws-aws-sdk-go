@@ -1,0 +1,15 @@
+version=4
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)%@PACKAGE@-$1.tar.gz%, \
+      pagemangle=s%\"tarball_url\":\s*(\".*?\")%<a href=$1>%g, \
+      downloadurlmangle=s%api.github.com/repos/(.+?/.+?)/tarball/(.*/v?@ANY_VERSION@)$%github.com/$1/archive/$2.tar.gz%" \
+    https://api.github.com/repos/aws/aws-sdk-go/tags?per_page=100 \
+    (?:.*?/)?v?@ANY_VERSION@
+
+#opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%@PACKAGE@-$1.tar.gz%" \
+#    https://github.com/aws/aws-sdk-go/tags?after=v1.37.20 \
+#    (?:.*?/)?v?(\d[\d.]*)\.tar\.gz debian
+
+#opts="mode=git, pgpmode=none" \
+# https://github.com/aws/aws-sdk-go \
+#  refs/tags/v?@ANY_VERSION@ debian
+
