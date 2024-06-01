@@ -29,14 +29,13 @@ const opBatchDetectDominantLanguage = "BatchDetectDominantLanguage"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the BatchDetectDominantLanguageRequest method.
+//	req, resp := client.BatchDetectDominantLanguageRequest(params)
 //
-//    // Example sending a request using the BatchDetectDominantLanguageRequest method.
-//    req, resp := client.BatchDetectDominantLanguageRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguage
 func (c *Comprehend) BatchDetectDominantLanguageRequest(input *BatchDetectDominantLanguageInput) (req *request.Request, output *BatchDetectDominantLanguageOutput) {
@@ -69,18 +68,19 @@ func (c *Comprehend) BatchDetectDominantLanguageRequest(input *BatchDetectDomina
 // API operation BatchDetectDominantLanguage for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * BatchSizeLimitExceededException
-//   The number of documents in the request exceeds the limit of 25. Try your
-//   request again with fewer documents.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - BatchSizeLimitExceededException
+//     The number of documents in the request exceeds the limit of 25. Try your
+//     request again with fewer documents.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguage
 func (c *Comprehend) BatchDetectDominantLanguage(input *BatchDetectDominantLanguageInput) (*BatchDetectDominantLanguageOutput, error) {
@@ -120,14 +120,13 @@ const opBatchDetectEntities = "BatchDetectEntities"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the BatchDetectEntitiesRequest method.
+//	req, resp := client.BatchDetectEntitiesRequest(params)
 //
-//    // Example sending a request using the BatchDetectEntitiesRequest method.
-//    req, resp := client.BatchDetectEntitiesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities
 func (c *Comprehend) BatchDetectEntitiesRequest(input *BatchDetectEntitiesInput) (req *request.Request, output *BatchDetectEntitiesOutput) {
@@ -149,7 +148,9 @@ func (c *Comprehend) BatchDetectEntitiesRequest(input *BatchDetectEntitiesInput)
 // BatchDetectEntities API operation for Amazon Comprehend.
 //
 // Inspects the text of a batch of documents for named entities and returns
-// information about them. For more information about named entities, see how-entities
+// information about them. For more information about named entities, see Entities
+// (https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html) in the
+// Comprehend Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -159,23 +160,24 @@ func (c *Comprehend) BatchDetectEntitiesRequest(input *BatchDetectEntitiesInput)
 // API operation BatchDetectEntities for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * BatchSizeLimitExceededException
-//   The number of documents in the request exceeds the limit of 25. Try your
-//   request again with fewer documents.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - BatchSizeLimitExceededException
+//     The number of documents in the request exceeds the limit of 25. Try your
+//     request again with fewer documents.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities
 func (c *Comprehend) BatchDetectEntities(input *BatchDetectEntitiesInput) (*BatchDetectEntitiesOutput, error) {
@@ -215,14 +217,13 @@ const opBatchDetectKeyPhrases = "BatchDetectKeyPhrases"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the BatchDetectKeyPhrasesRequest method.
+//	req, resp := client.BatchDetectKeyPhrasesRequest(params)
 //
-//    // Example sending a request using the BatchDetectKeyPhrasesRequest method.
-//    req, resp := client.BatchDetectKeyPhrasesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases
 func (c *Comprehend) BatchDetectKeyPhrasesRequest(input *BatchDetectKeyPhrasesInput) (req *request.Request, output *BatchDetectKeyPhrasesOutput) {
@@ -253,23 +254,24 @@ func (c *Comprehend) BatchDetectKeyPhrasesRequest(input *BatchDetectKeyPhrasesIn
 // API operation BatchDetectKeyPhrases for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * BatchSizeLimitExceededException
-//   The number of documents in the request exceeds the limit of 25. Try your
-//   request again with fewer documents.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - BatchSizeLimitExceededException
+//     The number of documents in the request exceeds the limit of 25. Try your
+//     request again with fewer documents.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases
 func (c *Comprehend) BatchDetectKeyPhrases(input *BatchDetectKeyPhrasesInput) (*BatchDetectKeyPhrasesOutput, error) {
@@ -309,14 +311,13 @@ const opBatchDetectSentiment = "BatchDetectSentiment"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the BatchDetectSentimentRequest method.
+//	req, resp := client.BatchDetectSentimentRequest(params)
 //
-//    // Example sending a request using the BatchDetectSentimentRequest method.
-//    req, resp := client.BatchDetectSentimentRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment
 func (c *Comprehend) BatchDetectSentimentRequest(input *BatchDetectSentimentInput) (req *request.Request, output *BatchDetectSentimentOutput) {
@@ -348,23 +349,24 @@ func (c *Comprehend) BatchDetectSentimentRequest(input *BatchDetectSentimentInpu
 // API operation BatchDetectSentiment for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * BatchSizeLimitExceededException
-//   The number of documents in the request exceeds the limit of 25. Try your
-//   request again with fewer documents.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - BatchSizeLimitExceededException
+//     The number of documents in the request exceeds the limit of 25. Try your
+//     request again with fewer documents.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment
 func (c *Comprehend) BatchDetectSentiment(input *BatchDetectSentimentInput) (*BatchDetectSentimentOutput, error) {
@@ -404,14 +406,13 @@ const opBatchDetectSyntax = "BatchDetectSyntax"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the BatchDetectSyntaxRequest method.
+//	req, resp := client.BatchDetectSyntaxRequest(params)
 //
-//    // Example sending a request using the BatchDetectSyntaxRequest method.
-//    req, resp := client.BatchDetectSyntaxRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax
 func (c *Comprehend) BatchDetectSyntaxRequest(input *BatchDetectSyntaxInput) (req *request.Request, output *BatchDetectSyntaxOutput) {
@@ -434,7 +435,8 @@ func (c *Comprehend) BatchDetectSyntaxRequest(input *BatchDetectSyntaxInput) (re
 //
 // Inspects the text of a batch of documents for the syntax and part of speech
 // of the words in the document and returns information about them. For more
-// information, see how-syntax.
+// information, see Syntax (https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html)
+// in the Comprehend Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -444,23 +446,24 @@ func (c *Comprehend) BatchDetectSyntaxRequest(input *BatchDetectSyntaxInput) (re
 // API operation BatchDetectSyntax for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * BatchSizeLimitExceededException
-//   The number of documents in the request exceeds the limit of 25. Try your
-//   request again with fewer documents.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - BatchSizeLimitExceededException
+//     The number of documents in the request exceeds the limit of 25. Try your
+//     request again with fewer documents.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax
 func (c *Comprehend) BatchDetectSyntax(input *BatchDetectSyntaxInput) (*BatchDetectSyntaxOutput, error) {
@@ -484,6 +487,104 @@ func (c *Comprehend) BatchDetectSyntaxWithContext(ctx aws.Context, input *BatchD
 	return out, req.Send()
 }
 
+const opBatchDetectTargetedSentiment = "BatchDetectTargetedSentiment"
+
+// BatchDetectTargetedSentimentRequest generates a "aws/request.Request" representing the
+// client's request for the BatchDetectTargetedSentiment operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See BatchDetectTargetedSentiment for more information on using the BatchDetectTargetedSentiment
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the BatchDetectTargetedSentimentRequest method.
+//	req, resp := client.BatchDetectTargetedSentimentRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment
+func (c *Comprehend) BatchDetectTargetedSentimentRequest(input *BatchDetectTargetedSentimentInput) (req *request.Request, output *BatchDetectTargetedSentimentOutput) {
+	op := &request.Operation{
+		Name:       opBatchDetectTargetedSentiment,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &BatchDetectTargetedSentimentInput{}
+	}
+
+	output = &BatchDetectTargetedSentimentOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// BatchDetectTargetedSentiment API operation for Amazon Comprehend.
+//
+// Inspects a batch of documents and returns a sentiment analysis for each entity
+// identified in the documents.
+//
+// For more information about targeted sentiment, see Targeted sentiment (https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation BatchDetectTargetedSentiment for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
+//
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - BatchSizeLimitExceededException
+//     The number of documents in the request exceeds the limit of 25. Try your
+//     request again with fewer documents.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment
+func (c *Comprehend) BatchDetectTargetedSentiment(input *BatchDetectTargetedSentimentInput) (*BatchDetectTargetedSentimentOutput, error) {
+	req, out := c.BatchDetectTargetedSentimentRequest(input)
+	return out, req.Send()
+}
+
+// BatchDetectTargetedSentimentWithContext is the same as BatchDetectTargetedSentiment with the addition of
+// the ability to pass a context and additional request options.
+//
+// See BatchDetectTargetedSentiment for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) BatchDetectTargetedSentimentWithContext(ctx aws.Context, input *BatchDetectTargetedSentimentInput, opts ...request.Option) (*BatchDetectTargetedSentimentOutput, error) {
+	req, out := c.BatchDetectTargetedSentimentRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opClassifyDocument = "ClassifyDocument"
 
 // ClassifyDocumentRequest generates a "aws/request.Request" representing the
@@ -500,14 +601,13 @@ const opClassifyDocument = "ClassifyDocument"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ClassifyDocumentRequest method.
+//	req, resp := client.ClassifyDocumentRequest(params)
 //
-//    // Example sending a request using the ClassifyDocumentRequest method.
-//    req, resp := client.ClassifyDocumentRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument
 func (c *Comprehend) ClassifyDocumentRequest(input *ClassifyDocumentInput) (req *request.Request, output *ClassifyDocumentOutput) {
@@ -528,9 +628,29 @@ func (c *Comprehend) ClassifyDocumentRequest(input *ClassifyDocumentInput) (req 
 
 // ClassifyDocument API operation for Amazon Comprehend.
 //
-// Creates a new document classification request to analyze a single document
-// in real-time, using a previously created and trained custom model and an
-// endpoint.
+// Creates a classification request to analyze a single document in real-time.
+// ClassifyDocument supports the following model types:
+//
+//   - Custom classifier - a custom model that you have created and trained.
+//     For input, you can provide plain text, a single-page document (PDF, Word,
+//     or image), or Amazon Textract API output. For more information, see Custom
+//     classification (https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html)
+//     in the Amazon Comprehend Developer Guide.
+//
+//   - Prompt safety classifier - Amazon Comprehend provides a pre-trained
+//     model for classifying input prompts for generative AI applications. For
+//     input, you provide English plain text input. For prompt safety classification,
+//     the response includes only the Classes field. For more information about
+//     prompt safety classifiers, see Prompt safety classification (https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification)
+//     in the Amazon Comprehend Developer Guide.
+//
+// If the system detects errors while processing a page in the input document,
+// the API response includes an Errors field that describes the errors.
+//
+// If the system detects a document-level error in your input document, the
+// API returns an InvalidRequestException error response. For details about
+// this exception, see Errors in semi-structured documents (https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html)
+// in the Comprehend Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -540,18 +660,19 @@ func (c *Comprehend) ClassifyDocumentRequest(input *ClassifyDocumentInput) (req 
 // API operation ClassifyDocument for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifyDocument
 func (c *Comprehend) ClassifyDocument(input *ClassifyDocumentInput) (*ClassifyDocumentOutput, error) {
@@ -591,14 +712,13 @@ const opContainsPiiEntities = "ContainsPiiEntities"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ContainsPiiEntitiesRequest method.
+//	req, resp := client.ContainsPiiEntitiesRequest(params)
 //
-//    // Example sending a request using the ContainsPiiEntitiesRequest method.
-//    req, resp := client.ContainsPiiEntitiesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities
 func (c *Comprehend) ContainsPiiEntitiesRequest(input *ContainsPiiEntitiesInput) (req *request.Request, output *ContainsPiiEntitiesOutput) {
@@ -631,19 +751,20 @@ func (c *Comprehend) ContainsPiiEntitiesRequest(input *ContainsPiiEntitiesInput)
 // API operation ContainsPiiEntities for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities
 func (c *Comprehend) ContainsPiiEntities(input *ContainsPiiEntitiesInput) (*ContainsPiiEntitiesOutput, error) {
@@ -667,6 +788,111 @@ func (c *Comprehend) ContainsPiiEntitiesWithContext(ctx aws.Context, input *Cont
 	return out, req.Send()
 }
 
+const opCreateDataset = "CreateDataset"
+
+// CreateDatasetRequest generates a "aws/request.Request" representing the
+// client's request for the CreateDataset operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDataset for more information on using the CreateDataset
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateDatasetRequest method.
+//	req, resp := client.CreateDatasetRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset
+func (c *Comprehend) CreateDatasetRequest(input *CreateDatasetInput) (req *request.Request, output *CreateDatasetOutput) {
+	op := &request.Operation{
+		Name:       opCreateDataset,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &CreateDatasetInput{}
+	}
+
+	output = &CreateDatasetOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// CreateDataset API operation for Amazon Comprehend.
+//
+// Creates a dataset to upload training or test data for a model associated
+// with a flywheel. For more information about datasets, see Flywheel overview
+// (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html) in
+// the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation CreateDataset for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceLimitExceededException
+//     The maximum number of resources per account has been exceeded. Review the
+//     resources, and then try your request again.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset
+func (c *Comprehend) CreateDataset(input *CreateDatasetInput) (*CreateDatasetOutput, error) {
+	req, out := c.CreateDatasetRequest(input)
+	return out, req.Send()
+}
+
+// CreateDatasetWithContext is the same as CreateDataset with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDataset for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) CreateDatasetWithContext(ctx aws.Context, input *CreateDatasetInput, opts ...request.Option) (*CreateDatasetOutput, error) {
+	req, out := c.CreateDatasetRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateDocumentClassifier = "CreateDocumentClassifier"
 
 // CreateDocumentClassifierRequest generates a "aws/request.Request" representing the
@@ -683,14 +909,13 @@ const opCreateDocumentClassifier = "CreateDocumentClassifier"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateDocumentClassifierRequest method.
+//	req, resp := client.CreateDocumentClassifierRequest(params)
 //
-//    // Example sending a request using the CreateDocumentClassifierRequest method.
-//    req, resp := client.CreateDocumentClassifierRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier
 func (c *Comprehend) CreateDocumentClassifierRequest(input *CreateDocumentClassifierInput) (req *request.Request, output *CreateDocumentClassifierOutput) {
@@ -712,10 +937,10 @@ func (c *Comprehend) CreateDocumentClassifierRequest(input *CreateDocumentClassi
 // CreateDocumentClassifier API operation for Amazon Comprehend.
 //
 // Creates a new document classifier that you can use to categorize documents.
-// To create a classifier, you provide a set of training documents that labeled
-// with the categories that you want to use. After the classifier is trained
-// you can use it to categorize a set of labeled documents into the categories.
-// For more information, see how-document-classification.
+// To create a classifier, you provide a set of training documents that are
+// labeled with the categories that you want to use. For more information, see
+// Training classifier models (https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html)
+// in the Comprehend Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -725,36 +950,37 @@ func (c *Comprehend) CreateDocumentClassifierRequest(input *CreateDocumentClassi
 // API operation CreateDocumentClassifier for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ResourceInUseException
-//   The specified resource name is already in use. Use a different name and try
-//   your request again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
 //
-//   * ResourceLimitExceededException
-//   The maximum number of resources per account has been exceeded. Review the
-//   resources, and then try your request again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - ResourceLimitExceededException
+//     The maximum number of resources per account has been exceeded. Review the
+//     resources, and then try your request again.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier
 func (c *Comprehend) CreateDocumentClassifier(input *CreateDocumentClassifierInput) (*CreateDocumentClassifierOutput, error) {
@@ -794,14 +1020,13 @@ const opCreateEndpoint = "CreateEndpoint"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateEndpointRequest method.
+//	req, resp := client.CreateEndpointRequest(params)
 //
-//    // Example sending a request using the CreateEndpointRequest method.
-//    req, resp := client.CreateEndpointRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint
 func (c *Comprehend) CreateEndpointRequest(input *CreateEndpointInput) (req *request.Request, output *CreateEndpointOutput) {
@@ -823,7 +1048,8 @@ func (c *Comprehend) CreateEndpointRequest(input *CreateEndpointInput) (req *req
 // CreateEndpoint API operation for Amazon Comprehend.
 //
 // Creates a model-specific endpoint for synchronous inference for a previously
-// trained custom model
+// trained custom model For information about endpoints, see Managing endpoints
+// (https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html).
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -833,35 +1059,36 @@ func (c *Comprehend) CreateEndpointRequest(input *CreateEndpointInput) (req *req
 // API operation CreateEndpoint for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ResourceInUseException
-//   The specified resource name is already in use. Use a different name and try
-//   your request again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceLimitExceededException
-//   The maximum number of resources per account has been exceeded. Review the
-//   resources, and then try your request again.
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - ResourceLimitExceededException
+//     The maximum number of resources per account has been exceeded. Review the
+//     resources, and then try your request again.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint
 func (c *Comprehend) CreateEndpoint(input *CreateEndpointInput) (*CreateEndpointOutput, error) {
@@ -901,14 +1128,13 @@ const opCreateEntityRecognizer = "CreateEntityRecognizer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateEntityRecognizerRequest method.
+//	req, resp := client.CreateEntityRecognizerRequest(params)
 //
-//    // Example sending a request using the CreateEntityRecognizerRequest method.
-//    req, resp := client.CreateEntityRecognizerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer
 func (c *Comprehend) CreateEntityRecognizerRequest(input *CreateEntityRecognizerInput) (req *request.Request, output *CreateEntityRecognizerOutput) {
@@ -930,7 +1156,8 @@ func (c *Comprehend) CreateEntityRecognizerRequest(input *CreateEntityRecognizer
 // CreateEntityRecognizer API operation for Amazon Comprehend.
 //
 // Creates an entity recognizer using submitted files. After your CreateEntityRecognizer
-// request is submitted, you can check job status using the API.
+// request is submitted, you can check job status using the DescribeEntityRecognizer
+// API.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -940,36 +1167,37 @@ func (c *Comprehend) CreateEntityRecognizerRequest(input *CreateEntityRecognizer
 // API operation CreateEntityRecognizer for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ResourceInUseException
-//   The specified resource name is already in use. Use a different name and try
-//   your request again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
 //
-//   * ResourceLimitExceededException
-//   The maximum number of resources per account has been exceeded. Review the
-//   resources, and then try your request again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - ResourceLimitExceededException
+//     The maximum number of resources per account has been exceeded. Review the
+//     resources, and then try your request again.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer
 func (c *Comprehend) CreateEntityRecognizer(input *CreateEntityRecognizerInput) (*CreateEntityRecognizerOutput, error) {
@@ -993,6 +1221,138 @@ func (c *Comprehend) CreateEntityRecognizerWithContext(ctx aws.Context, input *C
 	return out, req.Send()
 }
 
+const opCreateFlywheel = "CreateFlywheel"
+
+// CreateFlywheelRequest generates a "aws/request.Request" representing the
+// client's request for the CreateFlywheel operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateFlywheel for more information on using the CreateFlywheel
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateFlywheelRequest method.
+//	req, resp := client.CreateFlywheelRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel
+func (c *Comprehend) CreateFlywheelRequest(input *CreateFlywheelInput) (req *request.Request, output *CreateFlywheelOutput) {
+	op := &request.Operation{
+		Name:       opCreateFlywheel,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &CreateFlywheelInput{}
+	}
+
+	output = &CreateFlywheelOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// CreateFlywheel API operation for Amazon Comprehend.
+//
+// A flywheel is an Amazon Web Services resource that orchestrates the ongoing
+// training of a model for custom classification or custom entity recognition.
+// You can create a flywheel to start with an existing trained model, or Comprehend
+// can create and train a new model.
+//
+// When you create the flywheel, Comprehend creates a data lake in your account.
+// The data lake holds the training data and test data for all versions of the
+// model.
+//
+// To use a flywheel with an existing trained model, you specify the active
+// model version. Comprehend copies the model's training data and test data
+// into the flywheel's data lake.
+//
+// To use the flywheel with a new model, you need to provide a dataset for training
+// data (and optional test data) when you create the flywheel.
+//
+// For more information about flywheels, see Flywheel overview (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation CreateFlywheel for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceLimitExceededException
+//     The maximum number of resources per account has been exceeded. Review the
+//     resources, and then try your request again.
+//
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel
+func (c *Comprehend) CreateFlywheel(input *CreateFlywheelInput) (*CreateFlywheelOutput, error) {
+	req, out := c.CreateFlywheelRequest(input)
+	return out, req.Send()
+}
+
+// CreateFlywheelWithContext is the same as CreateFlywheel with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateFlywheel for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) CreateFlywheelWithContext(ctx aws.Context, input *CreateFlywheelInput, opts ...request.Option) (*CreateFlywheelOutput, error) {
+	req, out := c.CreateFlywheelRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteDocumentClassifier = "DeleteDocumentClassifier"
 
 // DeleteDocumentClassifierRequest generates a "aws/request.Request" representing the
@@ -1009,14 +1369,13 @@ const opDeleteDocumentClassifier = "DeleteDocumentClassifier"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteDocumentClassifierRequest method.
+//	req, resp := client.DeleteDocumentClassifierRequest(params)
 //
-//    // Example sending a request using the DeleteDocumentClassifierRequest method.
-//    req, resp := client.DeleteDocumentClassifierRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier
 func (c *Comprehend) DeleteDocumentClassifierRequest(input *DeleteDocumentClassifierInput) (req *request.Request, output *DeleteDocumentClassifierOutput) {
@@ -1038,7 +1397,7 @@ func (c *Comprehend) DeleteDocumentClassifierRequest(input *DeleteDocumentClassi
 
 // DeleteDocumentClassifier API operation for Amazon Comprehend.
 //
-// Deletes a previously created document classifier
+// # Deletes a previously created document classifier
 //
 // Only those classifiers that are in terminated states (IN_ERROR, TRAINED)
 // will be deleted. If an active inference job is using the model, a ResourceInUseException
@@ -1056,26 +1415,27 @@ func (c *Comprehend) DeleteDocumentClassifierRequest(input *DeleteDocumentClassi
 // API operation DeleteDocumentClassifier for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * ResourceInUseException
-//   The specified resource name is already in use. Use a different name and try
-//   your request again.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier
 func (c *Comprehend) DeleteDocumentClassifier(input *DeleteDocumentClassifierInput) (*DeleteDocumentClassifierOutput, error) {
@@ -1115,14 +1475,13 @@ const opDeleteEndpoint = "DeleteEndpoint"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteEndpointRequest method.
+//	req, resp := client.DeleteEndpointRequest(params)
 //
-//    // Example sending a request using the DeleteEndpointRequest method.
-//    req, resp := client.DeleteEndpointRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint
 func (c *Comprehend) DeleteEndpointRequest(input *DeleteEndpointInput) (req *request.Request, output *DeleteEndpointOutput) {
@@ -1145,7 +1504,8 @@ func (c *Comprehend) DeleteEndpointRequest(input *DeleteEndpointInput) (req *req
 // DeleteEndpoint API operation for Amazon Comprehend.
 //
 // Deletes a model-specific endpoint for a previously-trained custom model.
-// All endpoints must be deleted in order for the model to be deleted.
+// All endpoints must be deleted in order for the model to be deleted. For information
+// about endpoints, see Managing endpoints (https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html).
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -1155,22 +1515,23 @@ func (c *Comprehend) DeleteEndpointRequest(input *DeleteEndpointInput) (req *req
 // API operation DeleteEndpoint for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ResourceInUseException
-//   The specified resource name is already in use. Use a different name and try
-//   your request again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEndpoint
 func (c *Comprehend) DeleteEndpoint(input *DeleteEndpointInput) (*DeleteEndpointOutput, error) {
@@ -1210,14 +1571,13 @@ const opDeleteEntityRecognizer = "DeleteEntityRecognizer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteEntityRecognizerRequest method.
+//	req, resp := client.DeleteEntityRecognizerRequest(params)
 //
-//    // Example sending a request using the DeleteEntityRecognizerRequest method.
-//    req, resp := client.DeleteEntityRecognizerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer
 func (c *Comprehend) DeleteEntityRecognizerRequest(input *DeleteEntityRecognizerInput) (req *request.Request, output *DeleteEntityRecognizerOutput) {
@@ -1257,26 +1617,27 @@ func (c *Comprehend) DeleteEntityRecognizerRequest(input *DeleteEntityRecognizer
 // API operation DeleteEntityRecognizer for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * ResourceInUseException
-//   The specified resource name is already in use. Use a different name and try
-//   your request again.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer
 func (c *Comprehend) DeleteEntityRecognizer(input *DeleteEntityRecognizerInput) (*DeleteEntityRecognizerOutput, error) {
@@ -1300,6 +1661,286 @@ func (c *Comprehend) DeleteEntityRecognizerWithContext(ctx aws.Context, input *D
 	return out, req.Send()
 }
 
+const opDeleteFlywheel = "DeleteFlywheel"
+
+// DeleteFlywheelRequest generates a "aws/request.Request" representing the
+// client's request for the DeleteFlywheel operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteFlywheel for more information on using the DeleteFlywheel
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteFlywheelRequest method.
+//	req, resp := client.DeleteFlywheelRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel
+func (c *Comprehend) DeleteFlywheelRequest(input *DeleteFlywheelInput) (req *request.Request, output *DeleteFlywheelOutput) {
+	op := &request.Operation{
+		Name:       opDeleteFlywheel,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DeleteFlywheelInput{}
+	}
+
+	output = &DeleteFlywheelOutput{}
+	req = c.newRequest(op, input, output)
+	req.Handlers.Unmarshal.Swap(jsonrpc.UnmarshalHandler.Name, protocol.UnmarshalDiscardBodyHandler)
+	return
+}
+
+// DeleteFlywheel API operation for Amazon Comprehend.
+//
+// Deletes a flywheel. When you delete the flywheel, Amazon Comprehend does
+// not delete the data lake or the model associated with the flywheel.
+//
+// For more information about flywheels, see Flywheel overview (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DeleteFlywheel for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel
+func (c *Comprehend) DeleteFlywheel(input *DeleteFlywheelInput) (*DeleteFlywheelOutput, error) {
+	req, out := c.DeleteFlywheelRequest(input)
+	return out, req.Send()
+}
+
+// DeleteFlywheelWithContext is the same as DeleteFlywheel with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteFlywheel for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DeleteFlywheelWithContext(ctx aws.Context, input *DeleteFlywheelInput, opts ...request.Option) (*DeleteFlywheelOutput, error) {
+	req, out := c.DeleteFlywheelRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteResourcePolicy = "DeleteResourcePolicy"
+
+// DeleteResourcePolicyRequest generates a "aws/request.Request" representing the
+// client's request for the DeleteResourcePolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteResourcePolicy for more information on using the DeleteResourcePolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteResourcePolicyRequest method.
+//	req, resp := client.DeleteResourcePolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteResourcePolicy
+func (c *Comprehend) DeleteResourcePolicyRequest(input *DeleteResourcePolicyInput) (req *request.Request, output *DeleteResourcePolicyOutput) {
+	op := &request.Operation{
+		Name:       opDeleteResourcePolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DeleteResourcePolicyInput{}
+	}
+
+	output = &DeleteResourcePolicyOutput{}
+	req = c.newRequest(op, input, output)
+	req.Handlers.Unmarshal.Swap(jsonrpc.UnmarshalHandler.Name, protocol.UnmarshalDiscardBodyHandler)
+	return
+}
+
+// DeleteResourcePolicy API operation for Amazon Comprehend.
+//
+// Deletes a resource-based policy that is attached to a custom model.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DeleteResourcePolicy for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteResourcePolicy
+func (c *Comprehend) DeleteResourcePolicy(input *DeleteResourcePolicyInput) (*DeleteResourcePolicyOutput, error) {
+	req, out := c.DeleteResourcePolicyRequest(input)
+	return out, req.Send()
+}
+
+// DeleteResourcePolicyWithContext is the same as DeleteResourcePolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteResourcePolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DeleteResourcePolicyWithContext(ctx aws.Context, input *DeleteResourcePolicyInput, opts ...request.Option) (*DeleteResourcePolicyOutput, error) {
+	req, out := c.DeleteResourcePolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDataset = "DescribeDataset"
+
+// DescribeDatasetRequest generates a "aws/request.Request" representing the
+// client's request for the DescribeDataset operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDataset for more information on using the DescribeDataset
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeDatasetRequest method.
+//	req, resp := client.DescribeDatasetRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset
+func (c *Comprehend) DescribeDatasetRequest(input *DescribeDatasetInput) (req *request.Request, output *DescribeDatasetOutput) {
+	op := &request.Operation{
+		Name:       opDescribeDataset,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DescribeDatasetInput{}
+	}
+
+	output = &DescribeDatasetOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DescribeDataset API operation for Amazon Comprehend.
+//
+// Returns information about the dataset that you specify. For more information
+// about datasets, see Flywheel overview (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DescribeDataset for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset
+func (c *Comprehend) DescribeDataset(input *DescribeDatasetInput) (*DescribeDatasetOutput, error) {
+	req, out := c.DescribeDatasetRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDatasetWithContext is the same as DescribeDataset with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDataset for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DescribeDatasetWithContext(ctx aws.Context, input *DescribeDatasetInput, opts ...request.Option) (*DescribeDatasetOutput, error) {
+	req, out := c.DescribeDatasetRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeDocumentClassificationJob = "DescribeDocumentClassificationJob"
 
 // DescribeDocumentClassificationJobRequest generates a "aws/request.Request" representing the
@@ -1316,14 +1957,13 @@ const opDescribeDocumentClassificationJob = "DescribeDocumentClassificationJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeDocumentClassificationJobRequest method.
+//	req, resp := client.DescribeDocumentClassificationJobRequest(params)
 //
-//    // Example sending a request using the DescribeDocumentClassificationJobRequest method.
-//    req, resp := client.DescribeDocumentClassificationJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob
 func (c *Comprehend) DescribeDocumentClassificationJobRequest(input *DescribeDocumentClassificationJobInput) (req *request.Request, output *DescribeDocumentClassificationJobOutput) {
@@ -1355,17 +1995,18 @@ func (c *Comprehend) DescribeDocumentClassificationJobRequest(input *DescribeDoc
 // API operation DescribeDocumentClassificationJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob
 func (c *Comprehend) DescribeDocumentClassificationJob(input *DescribeDocumentClassificationJobInput) (*DescribeDocumentClassificationJobOutput, error) {
@@ -1405,14 +2046,13 @@ const opDescribeDocumentClassifier = "DescribeDocumentClassifier"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeDocumentClassifierRequest method.
+//	req, resp := client.DescribeDocumentClassifierRequest(params)
 //
-//    // Example sending a request using the DescribeDocumentClassifierRequest method.
-//    req, resp := client.DescribeDocumentClassifierRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier
 func (c *Comprehend) DescribeDocumentClassifierRequest(input *DescribeDocumentClassifierInput) (req *request.Request, output *DescribeDocumentClassifierOutput) {
@@ -1443,18 +2083,19 @@ func (c *Comprehend) DescribeDocumentClassifierRequest(input *DescribeDocumentCl
 // API operation DescribeDocumentClassifier for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier
 func (c *Comprehend) DescribeDocumentClassifier(input *DescribeDocumentClassifierInput) (*DescribeDocumentClassifierOutput, error) {
@@ -1494,14 +2135,13 @@ const opDescribeDominantLanguageDetectionJob = "DescribeDominantLanguageDetectio
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeDominantLanguageDetectionJobRequest method.
+//	req, resp := client.DescribeDominantLanguageDetectionJobRequest(params)
 //
-//    // Example sending a request using the DescribeDominantLanguageDetectionJobRequest method.
-//    req, resp := client.DescribeDominantLanguageDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob
 func (c *Comprehend) DescribeDominantLanguageDetectionJobRequest(input *DescribeDominantLanguageDetectionJobInput) (req *request.Request, output *DescribeDominantLanguageDetectionJobOutput) {
@@ -1533,17 +2173,18 @@ func (c *Comprehend) DescribeDominantLanguageDetectionJobRequest(input *Describe
 // API operation DescribeDominantLanguageDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob
 func (c *Comprehend) DescribeDominantLanguageDetectionJob(input *DescribeDominantLanguageDetectionJobInput) (*DescribeDominantLanguageDetectionJobOutput, error) {
@@ -1583,14 +2224,13 @@ const opDescribeEndpoint = "DescribeEndpoint"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEndpointRequest method.
+//	req, resp := client.DescribeEndpointRequest(params)
 //
-//    // Example sending a request using the DescribeEndpointRequest method.
-//    req, resp := client.DescribeEndpointRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint
 func (c *Comprehend) DescribeEndpointRequest(input *DescribeEndpointInput) (req *request.Request, output *DescribeEndpointOutput) {
@@ -1612,7 +2252,8 @@ func (c *Comprehend) DescribeEndpointRequest(input *DescribeEndpointInput) (req 
 // DescribeEndpoint API operation for Amazon Comprehend.
 //
 // Gets the properties associated with a specific endpoint. Use this operation
-// to get the status of an endpoint.
+// to get the status of an endpoint. For information about endpoints, see Managing
+// endpoints (https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html).
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -1622,18 +2263,19 @@ func (c *Comprehend) DescribeEndpointRequest(input *DescribeEndpointInput) (req 
 // API operation DescribeEndpoint for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEndpoint
 func (c *Comprehend) DescribeEndpoint(input *DescribeEndpointInput) (*DescribeEndpointOutput, error) {
@@ -1673,14 +2315,13 @@ const opDescribeEntitiesDetectionJob = "DescribeEntitiesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEntitiesDetectionJobRequest method.
+//	req, resp := client.DescribeEntitiesDetectionJobRequest(params)
 //
-//    // Example sending a request using the DescribeEntitiesDetectionJobRequest method.
-//    req, resp := client.DescribeEntitiesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob
 func (c *Comprehend) DescribeEntitiesDetectionJobRequest(input *DescribeEntitiesDetectionJobInput) (req *request.Request, output *DescribeEntitiesDetectionJobOutput) {
@@ -1712,17 +2353,18 @@ func (c *Comprehend) DescribeEntitiesDetectionJobRequest(input *DescribeEntities
 // API operation DescribeEntitiesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob
 func (c *Comprehend) DescribeEntitiesDetectionJob(input *DescribeEntitiesDetectionJobInput) (*DescribeEntitiesDetectionJobOutput, error) {
@@ -1762,14 +2404,13 @@ const opDescribeEntityRecognizer = "DescribeEntityRecognizer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEntityRecognizerRequest method.
+//	req, resp := client.DescribeEntityRecognizerRequest(params)
 //
-//    // Example sending a request using the DescribeEntityRecognizerRequest method.
-//    req, resp := client.DescribeEntityRecognizerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer
 func (c *Comprehend) DescribeEntityRecognizerRequest(input *DescribeEntityRecognizerInput) (req *request.Request, output *DescribeEntityRecognizerOutput) {
@@ -1801,18 +2442,19 @@ func (c *Comprehend) DescribeEntityRecognizerRequest(input *DescribeEntityRecogn
 // API operation DescribeEntityRecognizer for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer
 func (c *Comprehend) DescribeEntityRecognizer(input *DescribeEntityRecognizerInput) (*DescribeEntityRecognizerOutput, error) {
@@ -1852,14 +2494,13 @@ const opDescribeEventsDetectionJob = "DescribeEventsDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEventsDetectionJobRequest method.
+//	req, resp := client.DescribeEventsDetectionJobRequest(params)
 //
-//    // Example sending a request using the DescribeEventsDetectionJobRequest method.
-//    req, resp := client.DescribeEventsDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob
 func (c *Comprehend) DescribeEventsDetectionJobRequest(input *DescribeEventsDetectionJobInput) (req *request.Request, output *DescribeEventsDetectionJobOutput) {
@@ -1890,17 +2531,18 @@ func (c *Comprehend) DescribeEventsDetectionJobRequest(input *DescribeEventsDete
 // API operation DescribeEventsDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob
 func (c *Comprehend) DescribeEventsDetectionJob(input *DescribeEventsDetectionJobInput) (*DescribeEventsDetectionJobOutput, error) {
@@ -1924,6 +2566,188 @@ func (c *Comprehend) DescribeEventsDetectionJobWithContext(ctx aws.Context, inpu
 	return out, req.Send()
 }
 
+const opDescribeFlywheel = "DescribeFlywheel"
+
+// DescribeFlywheelRequest generates a "aws/request.Request" representing the
+// client's request for the DescribeFlywheel operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeFlywheel for more information on using the DescribeFlywheel
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeFlywheelRequest method.
+//	req, resp := client.DescribeFlywheelRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel
+func (c *Comprehend) DescribeFlywheelRequest(input *DescribeFlywheelInput) (req *request.Request, output *DescribeFlywheelOutput) {
+	op := &request.Operation{
+		Name:       opDescribeFlywheel,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DescribeFlywheelInput{}
+	}
+
+	output = &DescribeFlywheelOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DescribeFlywheel API operation for Amazon Comprehend.
+//
+// Provides configuration information about the flywheel. For more information
+// about flywheels, see Flywheel overview (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DescribeFlywheel for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel
+func (c *Comprehend) DescribeFlywheel(input *DescribeFlywheelInput) (*DescribeFlywheelOutput, error) {
+	req, out := c.DescribeFlywheelRequest(input)
+	return out, req.Send()
+}
+
+// DescribeFlywheelWithContext is the same as DescribeFlywheel with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeFlywheel for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DescribeFlywheelWithContext(ctx aws.Context, input *DescribeFlywheelInput, opts ...request.Option) (*DescribeFlywheelOutput, error) {
+	req, out := c.DescribeFlywheelRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeFlywheelIteration = "DescribeFlywheelIteration"
+
+// DescribeFlywheelIterationRequest generates a "aws/request.Request" representing the
+// client's request for the DescribeFlywheelIteration operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeFlywheelIteration for more information on using the DescribeFlywheelIteration
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeFlywheelIterationRequest method.
+//	req, resp := client.DescribeFlywheelIterationRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration
+func (c *Comprehend) DescribeFlywheelIterationRequest(input *DescribeFlywheelIterationInput) (req *request.Request, output *DescribeFlywheelIterationOutput) {
+	op := &request.Operation{
+		Name:       opDescribeFlywheelIteration,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DescribeFlywheelIterationInput{}
+	}
+
+	output = &DescribeFlywheelIterationOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DescribeFlywheelIteration API operation for Amazon Comprehend.
+//
+// Retrieve the configuration properties of a flywheel iteration. For more information
+// about flywheels, see Flywheel overview (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DescribeFlywheelIteration for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration
+func (c *Comprehend) DescribeFlywheelIteration(input *DescribeFlywheelIterationInput) (*DescribeFlywheelIterationOutput, error) {
+	req, out := c.DescribeFlywheelIterationRequest(input)
+	return out, req.Send()
+}
+
+// DescribeFlywheelIterationWithContext is the same as DescribeFlywheelIteration with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeFlywheelIteration for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DescribeFlywheelIterationWithContext(ctx aws.Context, input *DescribeFlywheelIterationInput, opts ...request.Option) (*DescribeFlywheelIterationOutput, error) {
+	req, out := c.DescribeFlywheelIterationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeKeyPhrasesDetectionJob = "DescribeKeyPhrasesDetectionJob"
 
 // DescribeKeyPhrasesDetectionJobRequest generates a "aws/request.Request" representing the
@@ -1940,14 +2764,13 @@ const opDescribeKeyPhrasesDetectionJob = "DescribeKeyPhrasesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeKeyPhrasesDetectionJobRequest method.
+//	req, resp := client.DescribeKeyPhrasesDetectionJobRequest(params)
 //
-//    // Example sending a request using the DescribeKeyPhrasesDetectionJobRequest method.
-//    req, resp := client.DescribeKeyPhrasesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob
 func (c *Comprehend) DescribeKeyPhrasesDetectionJobRequest(input *DescribeKeyPhrasesDetectionJobInput) (req *request.Request, output *DescribeKeyPhrasesDetectionJobOutput) {
@@ -1979,17 +2802,18 @@ func (c *Comprehend) DescribeKeyPhrasesDetectionJobRequest(input *DescribeKeyPhr
 // API operation DescribeKeyPhrasesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob
 func (c *Comprehend) DescribeKeyPhrasesDetectionJob(input *DescribeKeyPhrasesDetectionJobInput) (*DescribeKeyPhrasesDetectionJobOutput, error) {
@@ -2029,14 +2853,13 @@ const opDescribePiiEntitiesDetectionJob = "DescribePiiEntitiesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribePiiEntitiesDetectionJobRequest method.
+//	req, resp := client.DescribePiiEntitiesDetectionJobRequest(params)
 //
-//    // Example sending a request using the DescribePiiEntitiesDetectionJobRequest method.
-//    req, resp := client.DescribePiiEntitiesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob
 func (c *Comprehend) DescribePiiEntitiesDetectionJobRequest(input *DescribePiiEntitiesDetectionJobInput) (req *request.Request, output *DescribePiiEntitiesDetectionJobOutput) {
@@ -2068,17 +2891,18 @@ func (c *Comprehend) DescribePiiEntitiesDetectionJobRequest(input *DescribePiiEn
 // API operation DescribePiiEntitiesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob
 func (c *Comprehend) DescribePiiEntitiesDetectionJob(input *DescribePiiEntitiesDetectionJobInput) (*DescribePiiEntitiesDetectionJobOutput, error) {
@@ -2102,6 +2926,93 @@ func (c *Comprehend) DescribePiiEntitiesDetectionJobWithContext(ctx aws.Context,
 	return out, req.Send()
 }
 
+const opDescribeResourcePolicy = "DescribeResourcePolicy"
+
+// DescribeResourcePolicyRequest generates a "aws/request.Request" representing the
+// client's request for the DescribeResourcePolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeResourcePolicy for more information on using the DescribeResourcePolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeResourcePolicyRequest method.
+//	req, resp := client.DescribeResourcePolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeResourcePolicy
+func (c *Comprehend) DescribeResourcePolicyRequest(input *DescribeResourcePolicyInput) (req *request.Request, output *DescribeResourcePolicyOutput) {
+	op := &request.Operation{
+		Name:       opDescribeResourcePolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DescribeResourcePolicyInput{}
+	}
+
+	output = &DescribeResourcePolicyOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DescribeResourcePolicy API operation for Amazon Comprehend.
+//
+// Gets the details of a resource-based policy that is attached to a custom
+// model, including the JSON body of the policy.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DescribeResourcePolicy for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeResourcePolicy
+func (c *Comprehend) DescribeResourcePolicy(input *DescribeResourcePolicyInput) (*DescribeResourcePolicyOutput, error) {
+	req, out := c.DescribeResourcePolicyRequest(input)
+	return out, req.Send()
+}
+
+// DescribeResourcePolicyWithContext is the same as DescribeResourcePolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeResourcePolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DescribeResourcePolicyWithContext(ctx aws.Context, input *DescribeResourcePolicyInput, opts ...request.Option) (*DescribeResourcePolicyOutput, error) {
+	req, out := c.DescribeResourcePolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeSentimentDetectionJob = "DescribeSentimentDetectionJob"
 
 // DescribeSentimentDetectionJobRequest generates a "aws/request.Request" representing the
@@ -2118,14 +3029,13 @@ const opDescribeSentimentDetectionJob = "DescribeSentimentDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeSentimentDetectionJobRequest method.
+//	req, resp := client.DescribeSentimentDetectionJobRequest(params)
 //
-//    // Example sending a request using the DescribeSentimentDetectionJobRequest method.
-//    req, resp := client.DescribeSentimentDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob
 func (c *Comprehend) DescribeSentimentDetectionJobRequest(input *DescribeSentimentDetectionJobInput) (req *request.Request, output *DescribeSentimentDetectionJobOutput) {
@@ -2157,17 +3067,18 @@ func (c *Comprehend) DescribeSentimentDetectionJobRequest(input *DescribeSentime
 // API operation DescribeSentimentDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob
 func (c *Comprehend) DescribeSentimentDetectionJob(input *DescribeSentimentDetectionJobInput) (*DescribeSentimentDetectionJobOutput, error) {
@@ -2191,6 +3102,95 @@ func (c *Comprehend) DescribeSentimentDetectionJobWithContext(ctx aws.Context, i
 	return out, req.Send()
 }
 
+const opDescribeTargetedSentimentDetectionJob = "DescribeTargetedSentimentDetectionJob"
+
+// DescribeTargetedSentimentDetectionJobRequest generates a "aws/request.Request" representing the
+// client's request for the DescribeTargetedSentimentDetectionJob operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeTargetedSentimentDetectionJob for more information on using the DescribeTargetedSentimentDetectionJob
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeTargetedSentimentDetectionJobRequest method.
+//	req, resp := client.DescribeTargetedSentimentDetectionJobRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTargetedSentimentDetectionJob
+func (c *Comprehend) DescribeTargetedSentimentDetectionJobRequest(input *DescribeTargetedSentimentDetectionJobInput) (req *request.Request, output *DescribeTargetedSentimentDetectionJobOutput) {
+	op := &request.Operation{
+		Name:       opDescribeTargetedSentimentDetectionJob,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DescribeTargetedSentimentDetectionJobInput{}
+	}
+
+	output = &DescribeTargetedSentimentDetectionJobOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DescribeTargetedSentimentDetectionJob API operation for Amazon Comprehend.
+//
+// Gets the properties associated with a targeted sentiment detection job. Use
+// this operation to get the status of the job.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DescribeTargetedSentimentDetectionJob for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTargetedSentimentDetectionJob
+func (c *Comprehend) DescribeTargetedSentimentDetectionJob(input *DescribeTargetedSentimentDetectionJobInput) (*DescribeTargetedSentimentDetectionJobOutput, error) {
+	req, out := c.DescribeTargetedSentimentDetectionJobRequest(input)
+	return out, req.Send()
+}
+
+// DescribeTargetedSentimentDetectionJobWithContext is the same as DescribeTargetedSentimentDetectionJob with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeTargetedSentimentDetectionJob for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DescribeTargetedSentimentDetectionJobWithContext(ctx aws.Context, input *DescribeTargetedSentimentDetectionJobInput, opts ...request.Option) (*DescribeTargetedSentimentDetectionJobOutput, error) {
+	req, out := c.DescribeTargetedSentimentDetectionJobRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeTopicsDetectionJob = "DescribeTopicsDetectionJob"
 
 // DescribeTopicsDetectionJobRequest generates a "aws/request.Request" representing the
@@ -2207,14 +3207,13 @@ const opDescribeTopicsDetectionJob = "DescribeTopicsDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeTopicsDetectionJobRequest method.
+//	req, resp := client.DescribeTopicsDetectionJobRequest(params)
 //
-//    // Example sending a request using the DescribeTopicsDetectionJobRequest method.
-//    req, resp := client.DescribeTopicsDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTopicsDetectionJob
 func (c *Comprehend) DescribeTopicsDetectionJobRequest(input *DescribeTopicsDetectionJobInput) (req *request.Request, output *DescribeTopicsDetectionJobOutput) {
@@ -2246,17 +3245,18 @@ func (c *Comprehend) DescribeTopicsDetectionJobRequest(input *DescribeTopicsDete
 // API operation DescribeTopicsDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeTopicsDetectionJob
 func (c *Comprehend) DescribeTopicsDetectionJob(input *DescribeTopicsDetectionJobInput) (*DescribeTopicsDetectionJobOutput, error) {
@@ -2296,14 +3296,13 @@ const opDetectDominantLanguage = "DetectDominantLanguage"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetectDominantLanguageRequest method.
+//	req, resp := client.DetectDominantLanguageRequest(params)
 //
-//    // Example sending a request using the DetectDominantLanguageRequest method.
-//    req, resp := client.DetectDominantLanguageRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectDominantLanguage
 func (c *Comprehend) DetectDominantLanguageRequest(input *DetectDominantLanguageInput) (req *request.Request, output *DetectDominantLanguageOutput) {
@@ -2336,14 +3335,15 @@ func (c *Comprehend) DetectDominantLanguageRequest(input *DetectDominantLanguage
 // API operation DetectDominantLanguage for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectDominantLanguage
 func (c *Comprehend) DetectDominantLanguage(input *DetectDominantLanguageInput) (*DetectDominantLanguageOutput, error) {
@@ -2383,14 +3383,13 @@ const opDetectEntities = "DetectEntities"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetectEntitiesRequest method.
+//	req, resp := client.DetectEntitiesRequest(params)
 //
-//    // Example sending a request using the DetectEntitiesRequest method.
-//    req, resp := client.DetectEntitiesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities
 func (c *Comprehend) DetectEntitiesRequest(input *DetectEntitiesInput) (req *request.Request, output *DetectEntitiesOutput) {
@@ -2411,8 +3410,23 @@ func (c *Comprehend) DetectEntitiesRequest(input *DetectEntitiesInput) (req *req
 
 // DetectEntities API operation for Amazon Comprehend.
 //
-// Inspects text for named entities, and returns information about them. For
-// more information, about named entities, see how-entities.
+// Detects named entities in input text when you use the pre-trained model.
+// Detects custom entities if you have a custom entity recognition model.
+//
+// When detecting named entities using the pre-trained model, use plain text
+// as the input. For more information about named entities, see Entities (https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html)
+// in the Comprehend Developer Guide.
+//
+// When you use a custom entity recognition model, you can input plain text
+// or you can upload a single-page input document (text, PDF, Word, or image).
+//
+// If the system detects errors while processing a page in the input document,
+// the API response includes an entry in Errors for each error.
+//
+// If the system detects a document-level error in your input document, the
+// API returns an InvalidRequestException error response. For details about
+// this exception, see Errors in semi-structured documents (https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html)
+// in the Comprehend Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -2422,23 +3436,24 @@ func (c *Comprehend) DetectEntitiesRequest(input *DetectEntitiesInput) (req *req
 // API operation DetectEntities for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities
 func (c *Comprehend) DetectEntities(input *DetectEntitiesInput) (*DetectEntitiesOutput, error) {
@@ -2478,14 +3493,13 @@ const opDetectKeyPhrases = "DetectKeyPhrases"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetectKeyPhrasesRequest method.
+//	req, resp := client.DetectKeyPhrasesRequest(params)
 //
-//    // Example sending a request using the DetectKeyPhrasesRequest method.
-//    req, resp := client.DetectKeyPhrasesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases
 func (c *Comprehend) DetectKeyPhrasesRequest(input *DetectKeyPhrasesInput) (req *request.Request, output *DetectKeyPhrasesOutput) {
@@ -2516,19 +3530,20 @@ func (c *Comprehend) DetectKeyPhrasesRequest(input *DetectKeyPhrasesInput) (req 
 // API operation DetectKeyPhrases for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases
 func (c *Comprehend) DetectKeyPhrases(input *DetectKeyPhrasesInput) (*DetectKeyPhrasesOutput, error) {
@@ -2568,14 +3583,13 @@ const opDetectPiiEntities = "DetectPiiEntities"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetectPiiEntitiesRequest method.
+//	req, resp := client.DetectPiiEntitiesRequest(params)
 //
-//    // Example sending a request using the DetectPiiEntitiesRequest method.
-//    req, resp := client.DetectPiiEntitiesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities
 func (c *Comprehend) DetectPiiEntitiesRequest(input *DetectPiiEntitiesInput) (req *request.Request, output *DetectPiiEntitiesOutput) {
@@ -2607,19 +3621,20 @@ func (c *Comprehend) DetectPiiEntitiesRequest(input *DetectPiiEntitiesInput) (re
 // API operation DetectPiiEntities for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities
 func (c *Comprehend) DetectPiiEntities(input *DetectPiiEntitiesInput) (*DetectPiiEntitiesOutput, error) {
@@ -2659,14 +3674,13 @@ const opDetectSentiment = "DetectSentiment"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetectSentimentRequest method.
+//	req, resp := client.DetectSentimentRequest(params)
 //
-//    // Example sending a request using the DetectSentimentRequest method.
-//    req, resp := client.DetectSentimentRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment
 func (c *Comprehend) DetectSentimentRequest(input *DetectSentimentInput) (req *request.Request, output *DetectSentimentOutput) {
@@ -2698,19 +3712,20 @@ func (c *Comprehend) DetectSentimentRequest(input *DetectSentimentInput) (req *r
 // API operation DetectSentiment for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment
 func (c *Comprehend) DetectSentiment(input *DetectSentimentInput) (*DetectSentimentOutput, error) {
@@ -2750,14 +3765,13 @@ const opDetectSyntax = "DetectSyntax"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetectSyntaxRequest method.
+//	req, resp := client.DetectSyntaxRequest(params)
 //
-//    // Example sending a request using the DetectSyntaxRequest method.
-//    req, resp := client.DetectSyntaxRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax
 func (c *Comprehend) DetectSyntaxRequest(input *DetectSyntaxInput) (req *request.Request, output *DetectSyntaxOutput) {
@@ -2779,7 +3793,8 @@ func (c *Comprehend) DetectSyntaxRequest(input *DetectSyntaxInput) (req *request
 // DetectSyntax API operation for Amazon Comprehend.
 //
 // Inspects text for syntax and the part of speech of words in the document.
-// For more information, how-syntax.
+// For more information, see Syntax (https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html)
+// in the Comprehend Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -2789,19 +3804,20 @@ func (c *Comprehend) DetectSyntaxRequest(input *DetectSyntaxInput) (req *request
 // API operation DetectSyntax for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TextSizeLimitExceededException
-//   The size of the input text exceeds the limit. Use a smaller document.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * UnsupportedLanguageException
-//   Amazon Comprehend can't process the language of the input text. For custom
-//   entity recognition APIs, only English, Spanish, French, Italian, German,
-//   or Portuguese are accepted. For a list of supported languages, see supported-languages.
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax
 func (c *Comprehend) DetectSyntax(input *DetectSyntaxInput) (*DetectSyntaxOutput, error) {
@@ -2825,6 +3841,463 @@ func (c *Comprehend) DetectSyntaxWithContext(ctx aws.Context, input *DetectSynta
 	return out, req.Send()
 }
 
+const opDetectTargetedSentiment = "DetectTargetedSentiment"
+
+// DetectTargetedSentimentRequest generates a "aws/request.Request" representing the
+// client's request for the DetectTargetedSentiment operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DetectTargetedSentiment for more information on using the DetectTargetedSentiment
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DetectTargetedSentimentRequest method.
+//	req, resp := client.DetectTargetedSentimentRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment
+func (c *Comprehend) DetectTargetedSentimentRequest(input *DetectTargetedSentimentInput) (req *request.Request, output *DetectTargetedSentimentOutput) {
+	op := &request.Operation{
+		Name:       opDetectTargetedSentiment,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DetectTargetedSentimentInput{}
+	}
+
+	output = &DetectTargetedSentimentOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DetectTargetedSentiment API operation for Amazon Comprehend.
+//
+// Inspects the input text and returns a sentiment analysis for each entity
+// identified in the text.
+//
+// For more information about targeted sentiment, see Targeted sentiment (https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DetectTargetedSentiment for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
+//
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment
+func (c *Comprehend) DetectTargetedSentiment(input *DetectTargetedSentimentInput) (*DetectTargetedSentimentOutput, error) {
+	req, out := c.DetectTargetedSentimentRequest(input)
+	return out, req.Send()
+}
+
+// DetectTargetedSentimentWithContext is the same as DetectTargetedSentiment with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DetectTargetedSentiment for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DetectTargetedSentimentWithContext(ctx aws.Context, input *DetectTargetedSentimentInput, opts ...request.Option) (*DetectTargetedSentimentOutput, error) {
+	req, out := c.DetectTargetedSentimentRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDetectToxicContent = "DetectToxicContent"
+
+// DetectToxicContentRequest generates a "aws/request.Request" representing the
+// client's request for the DetectToxicContent operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DetectToxicContent for more information on using the DetectToxicContent
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DetectToxicContentRequest method.
+//	req, resp := client.DetectToxicContentRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectToxicContent
+func (c *Comprehend) DetectToxicContentRequest(input *DetectToxicContentInput) (req *request.Request, output *DetectToxicContentOutput) {
+	op := &request.Operation{
+		Name:       opDetectToxicContent,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &DetectToxicContentInput{}
+	}
+
+	output = &DetectToxicContentOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DetectToxicContent API operation for Amazon Comprehend.
+//
+// Performs toxicity analysis on the list of text strings that you provide as
+// input. The API response contains a results list that matches the size of
+// the input list. For more information about toxicity detection, see Toxicity
+// detection (https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation DetectToxicContent for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TextSizeLimitExceededException
+//     The size of the input text exceeds the limit. Use a smaller document.
+//
+//   - UnsupportedLanguageException
+//     Amazon Comprehend can't process the language of the input text. For a list
+//     of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+//     in the Comprehend Developer Guide.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectToxicContent
+func (c *Comprehend) DetectToxicContent(input *DetectToxicContentInput) (*DetectToxicContentOutput, error) {
+	req, out := c.DetectToxicContentRequest(input)
+	return out, req.Send()
+}
+
+// DetectToxicContentWithContext is the same as DetectToxicContent with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DetectToxicContent for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) DetectToxicContentWithContext(ctx aws.Context, input *DetectToxicContentInput, opts ...request.Option) (*DetectToxicContentOutput, error) {
+	req, out := c.DetectToxicContentRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opImportModel = "ImportModel"
+
+// ImportModelRequest generates a "aws/request.Request" representing the
+// client's request for the ImportModel operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ImportModel for more information on using the ImportModel
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ImportModelRequest method.
+//	req, resp := client.ImportModelRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ImportModel
+func (c *Comprehend) ImportModelRequest(input *ImportModelInput) (req *request.Request, output *ImportModelOutput) {
+	op := &request.Operation{
+		Name:       opImportModel,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &ImportModelInput{}
+	}
+
+	output = &ImportModelOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ImportModel API operation for Amazon Comprehend.
+//
+// Creates a new custom model that replicates a source custom model that you
+// import. The source model can be in your Amazon Web Services account or another
+// one.
+//
+// If the source model is in another Amazon Web Services account, then it must
+// have a resource-based policy that authorizes you to import it.
+//
+// The source model must be in the same Amazon Web Services Region that you're
+// using when you import. You can't import a model that's in a different Region.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation ImportModel for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
+//
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceLimitExceededException
+//     The maximum number of resources per account has been exceeded. Review the
+//     resources, and then try your request again.
+//
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ImportModel
+func (c *Comprehend) ImportModel(input *ImportModelInput) (*ImportModelOutput, error) {
+	req, out := c.ImportModelRequest(input)
+	return out, req.Send()
+}
+
+// ImportModelWithContext is the same as ImportModel with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ImportModel for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ImportModelWithContext(ctx aws.Context, input *ImportModelInput, opts ...request.Option) (*ImportModelOutput, error) {
+	req, out := c.ImportModelRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opListDatasets = "ListDatasets"
+
+// ListDatasetsRequest generates a "aws/request.Request" representing the
+// client's request for the ListDatasets operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListDatasets for more information on using the ListDatasets
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListDatasetsRequest method.
+//	req, resp := client.ListDatasetsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets
+func (c *Comprehend) ListDatasetsRequest(input *ListDatasetsInput) (req *request.Request, output *ListDatasetsOutput) {
+	op := &request.Operation{
+		Name:       opListDatasets,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+		Paginator: &request.Paginator{
+			InputTokens:     []string{"NextToken"},
+			OutputTokens:    []string{"NextToken"},
+			LimitToken:      "MaxResults",
+			TruncationToken: "",
+		},
+	}
+
+	if input == nil {
+		input = &ListDatasetsInput{}
+	}
+
+	output = &ListDatasetsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListDatasets API operation for Amazon Comprehend.
+//
+// List the datasets that you have configured in this Region. For more information
+// about datasets, see Flywheel overview (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation ListDatasets for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets
+func (c *Comprehend) ListDatasets(input *ListDatasetsInput) (*ListDatasetsOutput, error) {
+	req, out := c.ListDatasetsRequest(input)
+	return out, req.Send()
+}
+
+// ListDatasetsWithContext is the same as ListDatasets with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListDatasets for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListDatasetsWithContext(ctx aws.Context, input *ListDatasetsInput, opts ...request.Option) (*ListDatasetsOutput, error) {
+	req, out := c.ListDatasetsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+// ListDatasetsPages iterates over the pages of a ListDatasets operation,
+// calling the "fn" function with the response data for each page. To stop
+// iterating, return false from the fn function.
+//
+// See ListDatasets method for more information on how to use this operation.
+//
+// Note: This operation can generate multiple requests to a service.
+//
+//	// Example iterating over at most 3 pages of a ListDatasets operation.
+//	pageNum := 0
+//	err := client.ListDatasetsPages(params,
+//	    func(page *comprehend.ListDatasetsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
+func (c *Comprehend) ListDatasetsPages(input *ListDatasetsInput, fn func(*ListDatasetsOutput, bool) bool) error {
+	return c.ListDatasetsPagesWithContext(aws.BackgroundContext(), input, fn)
+}
+
+// ListDatasetsPagesWithContext same as ListDatasetsPages except
+// it takes a Context and allows setting request options on the pages.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListDatasetsPagesWithContext(ctx aws.Context, input *ListDatasetsInput, fn func(*ListDatasetsOutput, bool) bool, opts ...request.Option) error {
+	p := request.Pagination{
+		NewRequest: func() (*request.Request, error) {
+			var inCpy *ListDatasetsInput
+			if input != nil {
+				tmp := *input
+				inCpy = &tmp
+			}
+			req, _ := c.ListDatasetsRequest(inCpy)
+			req.SetContext(ctx)
+			req.ApplyOptions(opts...)
+			return req, nil
+		},
+	}
+
+	for p.Next() {
+		if !fn(p.Page().(*ListDatasetsOutput), !p.HasNextPage()) {
+			break
+		}
+	}
+
+	return p.Err()
+}
+
 const opListDocumentClassificationJobs = "ListDocumentClassificationJobs"
 
 // ListDocumentClassificationJobsRequest generates a "aws/request.Request" representing the
@@ -2841,14 +4314,13 @@ const opListDocumentClassificationJobs = "ListDocumentClassificationJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListDocumentClassificationJobsRequest method.
+//	req, resp := client.ListDocumentClassificationJobsRequest(params)
 //
-//    // Example sending a request using the ListDocumentClassificationJobsRequest method.
-//    req, resp := client.ListDocumentClassificationJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs
 func (c *Comprehend) ListDocumentClassificationJobsRequest(input *ListDocumentClassificationJobsInput) (req *request.Request, output *ListDocumentClassificationJobsOutput) {
@@ -2885,17 +4357,18 @@ func (c *Comprehend) ListDocumentClassificationJobsRequest(input *ListDocumentCl
 // API operation ListDocumentClassificationJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs
 func (c *Comprehend) ListDocumentClassificationJobs(input *ListDocumentClassificationJobsInput) (*ListDocumentClassificationJobsOutput, error) {
@@ -2927,15 +4400,14 @@ func (c *Comprehend) ListDocumentClassificationJobsWithContext(ctx aws.Context, 
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListDocumentClassificationJobs operation.
-//    pageNum := 0
-//    err := client.ListDocumentClassificationJobsPages(params,
-//        func(page *comprehend.ListDocumentClassificationJobsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListDocumentClassificationJobs operation.
+//	pageNum := 0
+//	err := client.ListDocumentClassificationJobsPages(params,
+//	    func(page *comprehend.ListDocumentClassificationJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListDocumentClassificationJobsPages(input *ListDocumentClassificationJobsInput, fn func(*ListDocumentClassificationJobsOutput, bool) bool) error {
 	return c.ListDocumentClassificationJobsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -2987,14 +4459,13 @@ const opListDocumentClassifierSummaries = "ListDocumentClassifierSummaries"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListDocumentClassifierSummariesRequest method.
+//	req, resp := client.ListDocumentClassifierSummariesRequest(params)
 //
-//    // Example sending a request using the ListDocumentClassifierSummariesRequest method.
-//    req, resp := client.ListDocumentClassifierSummariesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries
 func (c *Comprehend) ListDocumentClassifierSummariesRequest(input *ListDocumentClassifierSummariesInput) (req *request.Request, output *ListDocumentClassifierSummariesOutput) {
@@ -3021,7 +4492,7 @@ func (c *Comprehend) ListDocumentClassifierSummariesRequest(input *ListDocumentC
 
 // ListDocumentClassifierSummaries API operation for Amazon Comprehend.
 //
-// Gets a list of summaries of the document classifiers that you have created
+// # Gets a list of summaries of the document classifiers that you have created
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -3031,14 +4502,15 @@ func (c *Comprehend) ListDocumentClassifierSummariesRequest(input *ListDocumentC
 // API operation ListDocumentClassifierSummaries for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries
 func (c *Comprehend) ListDocumentClassifierSummaries(input *ListDocumentClassifierSummariesInput) (*ListDocumentClassifierSummariesOutput, error) {
@@ -3070,15 +4542,14 @@ func (c *Comprehend) ListDocumentClassifierSummariesWithContext(ctx aws.Context,
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListDocumentClassifierSummaries operation.
-//    pageNum := 0
-//    err := client.ListDocumentClassifierSummariesPages(params,
-//        func(page *comprehend.ListDocumentClassifierSummariesOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListDocumentClassifierSummaries operation.
+//	pageNum := 0
+//	err := client.ListDocumentClassifierSummariesPages(params,
+//	    func(page *comprehend.ListDocumentClassifierSummariesOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListDocumentClassifierSummariesPages(input *ListDocumentClassifierSummariesInput, fn func(*ListDocumentClassifierSummariesOutput, bool) bool) error {
 	return c.ListDocumentClassifierSummariesPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3130,14 +4601,13 @@ const opListDocumentClassifiers = "ListDocumentClassifiers"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListDocumentClassifiersRequest method.
+//	req, resp := client.ListDocumentClassifiersRequest(params)
 //
-//    // Example sending a request using the ListDocumentClassifiersRequest method.
-//    req, resp := client.ListDocumentClassifiersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers
 func (c *Comprehend) ListDocumentClassifiersRequest(input *ListDocumentClassifiersInput) (req *request.Request, output *ListDocumentClassifiersOutput) {
@@ -3174,17 +4644,18 @@ func (c *Comprehend) ListDocumentClassifiersRequest(input *ListDocumentClassifie
 // API operation ListDocumentClassifiers for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers
 func (c *Comprehend) ListDocumentClassifiers(input *ListDocumentClassifiersInput) (*ListDocumentClassifiersOutput, error) {
@@ -3216,15 +4687,14 @@ func (c *Comprehend) ListDocumentClassifiersWithContext(ctx aws.Context, input *
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListDocumentClassifiers operation.
-//    pageNum := 0
-//    err := client.ListDocumentClassifiersPages(params,
-//        func(page *comprehend.ListDocumentClassifiersOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListDocumentClassifiers operation.
+//	pageNum := 0
+//	err := client.ListDocumentClassifiersPages(params,
+//	    func(page *comprehend.ListDocumentClassifiersOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListDocumentClassifiersPages(input *ListDocumentClassifiersInput, fn func(*ListDocumentClassifiersOutput, bool) bool) error {
 	return c.ListDocumentClassifiersPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3276,14 +4746,13 @@ const opListDominantLanguageDetectionJobs = "ListDominantLanguageDetectionJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListDominantLanguageDetectionJobsRequest method.
+//	req, resp := client.ListDominantLanguageDetectionJobsRequest(params)
 //
-//    // Example sending a request using the ListDominantLanguageDetectionJobsRequest method.
-//    req, resp := client.ListDominantLanguageDetectionJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs
 func (c *Comprehend) ListDominantLanguageDetectionJobsRequest(input *ListDominantLanguageDetectionJobsInput) (req *request.Request, output *ListDominantLanguageDetectionJobsOutput) {
@@ -3320,17 +4789,18 @@ func (c *Comprehend) ListDominantLanguageDetectionJobsRequest(input *ListDominan
 // API operation ListDominantLanguageDetectionJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs
 func (c *Comprehend) ListDominantLanguageDetectionJobs(input *ListDominantLanguageDetectionJobsInput) (*ListDominantLanguageDetectionJobsOutput, error) {
@@ -3362,15 +4832,14 @@ func (c *Comprehend) ListDominantLanguageDetectionJobsWithContext(ctx aws.Contex
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListDominantLanguageDetectionJobs operation.
-//    pageNum := 0
-//    err := client.ListDominantLanguageDetectionJobsPages(params,
-//        func(page *comprehend.ListDominantLanguageDetectionJobsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListDominantLanguageDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListDominantLanguageDetectionJobsPages(params,
+//	    func(page *comprehend.ListDominantLanguageDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListDominantLanguageDetectionJobsPages(input *ListDominantLanguageDetectionJobsInput, fn func(*ListDominantLanguageDetectionJobsOutput, bool) bool) error {
 	return c.ListDominantLanguageDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3422,14 +4891,13 @@ const opListEndpoints = "ListEndpoints"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListEndpointsRequest method.
+//	req, resp := client.ListEndpointsRequest(params)
 //
-//    // Example sending a request using the ListEndpointsRequest method.
-//    req, resp := client.ListEndpointsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints
 func (c *Comprehend) ListEndpointsRequest(input *ListEndpointsInput) (req *request.Request, output *ListEndpointsOutput) {
@@ -3437,6 +4905,12 @@ func (c *Comprehend) ListEndpointsRequest(input *ListEndpointsInput) (req *reque
 		Name:       opListEndpoints,
 		HTTPMethod: "POST",
 		HTTPPath:   "/",
+		Paginator: &request.Paginator{
+			InputTokens:     []string{"NextToken"},
+			OutputTokens:    []string{"NextToken"},
+			LimitToken:      "MaxResults",
+			TruncationToken: "",
+		},
 	}
 
 	if input == nil {
@@ -3450,7 +4924,8 @@ func (c *Comprehend) ListEndpointsRequest(input *ListEndpointsInput) (req *reque
 
 // ListEndpoints API operation for Amazon Comprehend.
 //
-// Gets a list of all existing endpoints that you've created.
+// Gets a list of all existing endpoints that you've created. For information
+// about endpoints, see Managing endpoints (https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html).
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -3460,14 +4935,15 @@ func (c *Comprehend) ListEndpointsRequest(input *ListEndpointsInput) (req *reque
 // API operation ListEndpoints for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEndpoints
 func (c *Comprehend) ListEndpoints(input *ListEndpointsInput) (*ListEndpointsOutput, error) {
@@ -3491,6 +4967,57 @@ func (c *Comprehend) ListEndpointsWithContext(ctx aws.Context, input *ListEndpoi
 	return out, req.Send()
 }
 
+// ListEndpointsPages iterates over the pages of a ListEndpoints operation,
+// calling the "fn" function with the response data for each page. To stop
+// iterating, return false from the fn function.
+//
+// See ListEndpoints method for more information on how to use this operation.
+//
+// Note: This operation can generate multiple requests to a service.
+//
+//	// Example iterating over at most 3 pages of a ListEndpoints operation.
+//	pageNum := 0
+//	err := client.ListEndpointsPages(params,
+//	    func(page *comprehend.ListEndpointsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
+func (c *Comprehend) ListEndpointsPages(input *ListEndpointsInput, fn func(*ListEndpointsOutput, bool) bool) error {
+	return c.ListEndpointsPagesWithContext(aws.BackgroundContext(), input, fn)
+}
+
+// ListEndpointsPagesWithContext same as ListEndpointsPages except
+// it takes a Context and allows setting request options on the pages.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListEndpointsPagesWithContext(ctx aws.Context, input *ListEndpointsInput, fn func(*ListEndpointsOutput, bool) bool, opts ...request.Option) error {
+	p := request.Pagination{
+		NewRequest: func() (*request.Request, error) {
+			var inCpy *ListEndpointsInput
+			if input != nil {
+				tmp := *input
+				inCpy = &tmp
+			}
+			req, _ := c.ListEndpointsRequest(inCpy)
+			req.SetContext(ctx)
+			req.ApplyOptions(opts...)
+			return req, nil
+		},
+	}
+
+	for p.Next() {
+		if !fn(p.Page().(*ListEndpointsOutput), !p.HasNextPage()) {
+			break
+		}
+	}
+
+	return p.Err()
+}
+
 const opListEntitiesDetectionJobs = "ListEntitiesDetectionJobs"
 
 // ListEntitiesDetectionJobsRequest generates a "aws/request.Request" representing the
@@ -3507,14 +5034,13 @@ const opListEntitiesDetectionJobs = "ListEntitiesDetectionJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListEntitiesDetectionJobsRequest method.
+//	req, resp := client.ListEntitiesDetectionJobsRequest(params)
 //
-//    // Example sending a request using the ListEntitiesDetectionJobsRequest method.
-//    req, resp := client.ListEntitiesDetectionJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs
 func (c *Comprehend) ListEntitiesDetectionJobsRequest(input *ListEntitiesDetectionJobsInput) (req *request.Request, output *ListEntitiesDetectionJobsOutput) {
@@ -3551,17 +5077,18 @@ func (c *Comprehend) ListEntitiesDetectionJobsRequest(input *ListEntitiesDetecti
 // API operation ListEntitiesDetectionJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs
 func (c *Comprehend) ListEntitiesDetectionJobs(input *ListEntitiesDetectionJobsInput) (*ListEntitiesDetectionJobsOutput, error) {
@@ -3593,15 +5120,14 @@ func (c *Comprehend) ListEntitiesDetectionJobsWithContext(ctx aws.Context, input
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListEntitiesDetectionJobs operation.
-//    pageNum := 0
-//    err := client.ListEntitiesDetectionJobsPages(params,
-//        func(page *comprehend.ListEntitiesDetectionJobsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListEntitiesDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListEntitiesDetectionJobsPages(params,
+//	    func(page *comprehend.ListEntitiesDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListEntitiesDetectionJobsPages(input *ListEntitiesDetectionJobsInput, fn func(*ListEntitiesDetectionJobsOutput, bool) bool) error {
 	return c.ListEntitiesDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3653,14 +5179,13 @@ const opListEntityRecognizerSummaries = "ListEntityRecognizerSummaries"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListEntityRecognizerSummariesRequest method.
+//	req, resp := client.ListEntityRecognizerSummariesRequest(params)
 //
-//    // Example sending a request using the ListEntityRecognizerSummariesRequest method.
-//    req, resp := client.ListEntityRecognizerSummariesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries
 func (c *Comprehend) ListEntityRecognizerSummariesRequest(input *ListEntityRecognizerSummariesInput) (req *request.Request, output *ListEntityRecognizerSummariesOutput) {
@@ -3697,14 +5222,15 @@ func (c *Comprehend) ListEntityRecognizerSummariesRequest(input *ListEntityRecog
 // API operation ListEntityRecognizerSummaries for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizerSummaries
 func (c *Comprehend) ListEntityRecognizerSummaries(input *ListEntityRecognizerSummariesInput) (*ListEntityRecognizerSummariesOutput, error) {
@@ -3736,15 +5262,14 @@ func (c *Comprehend) ListEntityRecognizerSummariesWithContext(ctx aws.Context, i
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListEntityRecognizerSummaries operation.
-//    pageNum := 0
-//    err := client.ListEntityRecognizerSummariesPages(params,
-//        func(page *comprehend.ListEntityRecognizerSummariesOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListEntityRecognizerSummaries operation.
+//	pageNum := 0
+//	err := client.ListEntityRecognizerSummariesPages(params,
+//	    func(page *comprehend.ListEntityRecognizerSummariesOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListEntityRecognizerSummariesPages(input *ListEntityRecognizerSummariesInput, fn func(*ListEntityRecognizerSummariesOutput, bool) bool) error {
 	return c.ListEntityRecognizerSummariesPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3796,14 +5321,13 @@ const opListEntityRecognizers = "ListEntityRecognizers"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListEntityRecognizersRequest method.
+//	req, resp := client.ListEntityRecognizersRequest(params)
 //
-//    // Example sending a request using the ListEntityRecognizersRequest method.
-//    req, resp := client.ListEntityRecognizersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers
 func (c *Comprehend) ListEntityRecognizersRequest(input *ListEntityRecognizersInput) (req *request.Request, output *ListEntityRecognizersOutput) {
@@ -3847,17 +5371,18 @@ func (c *Comprehend) ListEntityRecognizersRequest(input *ListEntityRecognizersIn
 // API operation ListEntityRecognizers for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers
 func (c *Comprehend) ListEntityRecognizers(input *ListEntityRecognizersInput) (*ListEntityRecognizersOutput, error) {
@@ -3889,15 +5414,14 @@ func (c *Comprehend) ListEntityRecognizersWithContext(ctx aws.Context, input *Li
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListEntityRecognizers operation.
-//    pageNum := 0
-//    err := client.ListEntityRecognizersPages(params,
-//        func(page *comprehend.ListEntityRecognizersOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListEntityRecognizers operation.
+//	pageNum := 0
+//	err := client.ListEntityRecognizersPages(params,
+//	    func(page *comprehend.ListEntityRecognizersOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListEntityRecognizersPages(input *ListEntityRecognizersInput, fn func(*ListEntityRecognizersOutput, bool) bool) error {
 	return c.ListEntityRecognizersPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3949,14 +5473,13 @@ const opListEventsDetectionJobs = "ListEventsDetectionJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListEventsDetectionJobsRequest method.
+//	req, resp := client.ListEventsDetectionJobsRequest(params)
 //
-//    // Example sending a request using the ListEventsDetectionJobsRequest method.
-//    req, resp := client.ListEventsDetectionJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs
 func (c *Comprehend) ListEventsDetectionJobsRequest(input *ListEventsDetectionJobsInput) (req *request.Request, output *ListEventsDetectionJobsOutput) {
@@ -3993,17 +5516,18 @@ func (c *Comprehend) ListEventsDetectionJobsRequest(input *ListEventsDetectionJo
 // API operation ListEventsDetectionJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs
 func (c *Comprehend) ListEventsDetectionJobs(input *ListEventsDetectionJobsInput) (*ListEventsDetectionJobsOutput, error) {
@@ -4035,15 +5559,14 @@ func (c *Comprehend) ListEventsDetectionJobsWithContext(ctx aws.Context, input *
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListEventsDetectionJobs operation.
-//    pageNum := 0
-//    err := client.ListEventsDetectionJobsPages(params,
-//        func(page *comprehend.ListEventsDetectionJobsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListEventsDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListEventsDetectionJobsPages(params,
+//	    func(page *comprehend.ListEventsDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListEventsDetectionJobsPages(input *ListEventsDetectionJobsInput, fn func(*ListEventsDetectionJobsOutput, bool) bool) error {
 	return c.ListEventsDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -4079,6 +5602,302 @@ func (c *Comprehend) ListEventsDetectionJobsPagesWithContext(ctx aws.Context, in
 	return p.Err()
 }
 
+const opListFlywheelIterationHistory = "ListFlywheelIterationHistory"
+
+// ListFlywheelIterationHistoryRequest generates a "aws/request.Request" representing the
+// client's request for the ListFlywheelIterationHistory operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListFlywheelIterationHistory for more information on using the ListFlywheelIterationHistory
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListFlywheelIterationHistoryRequest method.
+//	req, resp := client.ListFlywheelIterationHistoryRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory
+func (c *Comprehend) ListFlywheelIterationHistoryRequest(input *ListFlywheelIterationHistoryInput) (req *request.Request, output *ListFlywheelIterationHistoryOutput) {
+	op := &request.Operation{
+		Name:       opListFlywheelIterationHistory,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+		Paginator: &request.Paginator{
+			InputTokens:     []string{"NextToken"},
+			OutputTokens:    []string{"NextToken"},
+			LimitToken:      "MaxResults",
+			TruncationToken: "",
+		},
+	}
+
+	if input == nil {
+		input = &ListFlywheelIterationHistoryInput{}
+	}
+
+	output = &ListFlywheelIterationHistoryOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListFlywheelIterationHistory API operation for Amazon Comprehend.
+//
+// Information about the history of a flywheel iteration. For more information
+// about flywheels, see Flywheel overview (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html)
+// in the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation ListFlywheelIterationHistory for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory
+func (c *Comprehend) ListFlywheelIterationHistory(input *ListFlywheelIterationHistoryInput) (*ListFlywheelIterationHistoryOutput, error) {
+	req, out := c.ListFlywheelIterationHistoryRequest(input)
+	return out, req.Send()
+}
+
+// ListFlywheelIterationHistoryWithContext is the same as ListFlywheelIterationHistory with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListFlywheelIterationHistory for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListFlywheelIterationHistoryWithContext(ctx aws.Context, input *ListFlywheelIterationHistoryInput, opts ...request.Option) (*ListFlywheelIterationHistoryOutput, error) {
+	req, out := c.ListFlywheelIterationHistoryRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+// ListFlywheelIterationHistoryPages iterates over the pages of a ListFlywheelIterationHistory operation,
+// calling the "fn" function with the response data for each page. To stop
+// iterating, return false from the fn function.
+//
+// See ListFlywheelIterationHistory method for more information on how to use this operation.
+//
+// Note: This operation can generate multiple requests to a service.
+//
+//	// Example iterating over at most 3 pages of a ListFlywheelIterationHistory operation.
+//	pageNum := 0
+//	err := client.ListFlywheelIterationHistoryPages(params,
+//	    func(page *comprehend.ListFlywheelIterationHistoryOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
+func (c *Comprehend) ListFlywheelIterationHistoryPages(input *ListFlywheelIterationHistoryInput, fn func(*ListFlywheelIterationHistoryOutput, bool) bool) error {
+	return c.ListFlywheelIterationHistoryPagesWithContext(aws.BackgroundContext(), input, fn)
+}
+
+// ListFlywheelIterationHistoryPagesWithContext same as ListFlywheelIterationHistoryPages except
+// it takes a Context and allows setting request options on the pages.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListFlywheelIterationHistoryPagesWithContext(ctx aws.Context, input *ListFlywheelIterationHistoryInput, fn func(*ListFlywheelIterationHistoryOutput, bool) bool, opts ...request.Option) error {
+	p := request.Pagination{
+		NewRequest: func() (*request.Request, error) {
+			var inCpy *ListFlywheelIterationHistoryInput
+			if input != nil {
+				tmp := *input
+				inCpy = &tmp
+			}
+			req, _ := c.ListFlywheelIterationHistoryRequest(inCpy)
+			req.SetContext(ctx)
+			req.ApplyOptions(opts...)
+			return req, nil
+		},
+	}
+
+	for p.Next() {
+		if !fn(p.Page().(*ListFlywheelIterationHistoryOutput), !p.HasNextPage()) {
+			break
+		}
+	}
+
+	return p.Err()
+}
+
+const opListFlywheels = "ListFlywheels"
+
+// ListFlywheelsRequest generates a "aws/request.Request" representing the
+// client's request for the ListFlywheels operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListFlywheels for more information on using the ListFlywheels
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListFlywheelsRequest method.
+//	req, resp := client.ListFlywheelsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels
+func (c *Comprehend) ListFlywheelsRequest(input *ListFlywheelsInput) (req *request.Request, output *ListFlywheelsOutput) {
+	op := &request.Operation{
+		Name:       opListFlywheels,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+		Paginator: &request.Paginator{
+			InputTokens:     []string{"NextToken"},
+			OutputTokens:    []string{"NextToken"},
+			LimitToken:      "MaxResults",
+			TruncationToken: "",
+		},
+	}
+
+	if input == nil {
+		input = &ListFlywheelsInput{}
+	}
+
+	output = &ListFlywheelsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListFlywheels API operation for Amazon Comprehend.
+//
+// Gets a list of the flywheels that you have created.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation ListFlywheels for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels
+func (c *Comprehend) ListFlywheels(input *ListFlywheelsInput) (*ListFlywheelsOutput, error) {
+	req, out := c.ListFlywheelsRequest(input)
+	return out, req.Send()
+}
+
+// ListFlywheelsWithContext is the same as ListFlywheels with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListFlywheels for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListFlywheelsWithContext(ctx aws.Context, input *ListFlywheelsInput, opts ...request.Option) (*ListFlywheelsOutput, error) {
+	req, out := c.ListFlywheelsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+// ListFlywheelsPages iterates over the pages of a ListFlywheels operation,
+// calling the "fn" function with the response data for each page. To stop
+// iterating, return false from the fn function.
+//
+// See ListFlywheels method for more information on how to use this operation.
+//
+// Note: This operation can generate multiple requests to a service.
+//
+//	// Example iterating over at most 3 pages of a ListFlywheels operation.
+//	pageNum := 0
+//	err := client.ListFlywheelsPages(params,
+//	    func(page *comprehend.ListFlywheelsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
+func (c *Comprehend) ListFlywheelsPages(input *ListFlywheelsInput, fn func(*ListFlywheelsOutput, bool) bool) error {
+	return c.ListFlywheelsPagesWithContext(aws.BackgroundContext(), input, fn)
+}
+
+// ListFlywheelsPagesWithContext same as ListFlywheelsPages except
+// it takes a Context and allows setting request options on the pages.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListFlywheelsPagesWithContext(ctx aws.Context, input *ListFlywheelsInput, fn func(*ListFlywheelsOutput, bool) bool, opts ...request.Option) error {
+	p := request.Pagination{
+		NewRequest: func() (*request.Request, error) {
+			var inCpy *ListFlywheelsInput
+			if input != nil {
+				tmp := *input
+				inCpy = &tmp
+			}
+			req, _ := c.ListFlywheelsRequest(inCpy)
+			req.SetContext(ctx)
+			req.ApplyOptions(opts...)
+			return req, nil
+		},
+	}
+
+	for p.Next() {
+		if !fn(p.Page().(*ListFlywheelsOutput), !p.HasNextPage()) {
+			break
+		}
+	}
+
+	return p.Err()
+}
+
 const opListKeyPhrasesDetectionJobs = "ListKeyPhrasesDetectionJobs"
 
 // ListKeyPhrasesDetectionJobsRequest generates a "aws/request.Request" representing the
@@ -4095,14 +5914,13 @@ const opListKeyPhrasesDetectionJobs = "ListKeyPhrasesDetectionJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListKeyPhrasesDetectionJobsRequest method.
+//	req, resp := client.ListKeyPhrasesDetectionJobsRequest(params)
 //
-//    // Example sending a request using the ListKeyPhrasesDetectionJobsRequest method.
-//    req, resp := client.ListKeyPhrasesDetectionJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs
 func (c *Comprehend) ListKeyPhrasesDetectionJobsRequest(input *ListKeyPhrasesDetectionJobsInput) (req *request.Request, output *ListKeyPhrasesDetectionJobsOutput) {
@@ -4139,17 +5957,18 @@ func (c *Comprehend) ListKeyPhrasesDetectionJobsRequest(input *ListKeyPhrasesDet
 // API operation ListKeyPhrasesDetectionJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs
 func (c *Comprehend) ListKeyPhrasesDetectionJobs(input *ListKeyPhrasesDetectionJobsInput) (*ListKeyPhrasesDetectionJobsOutput, error) {
@@ -4181,15 +6000,14 @@ func (c *Comprehend) ListKeyPhrasesDetectionJobsWithContext(ctx aws.Context, inp
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListKeyPhrasesDetectionJobs operation.
-//    pageNum := 0
-//    err := client.ListKeyPhrasesDetectionJobsPages(params,
-//        func(page *comprehend.ListKeyPhrasesDetectionJobsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListKeyPhrasesDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListKeyPhrasesDetectionJobsPages(params,
+//	    func(page *comprehend.ListKeyPhrasesDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListKeyPhrasesDetectionJobsPages(input *ListKeyPhrasesDetectionJobsInput, fn func(*ListKeyPhrasesDetectionJobsOutput, bool) bool) error {
 	return c.ListKeyPhrasesDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -4241,14 +6059,13 @@ const opListPiiEntitiesDetectionJobs = "ListPiiEntitiesDetectionJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListPiiEntitiesDetectionJobsRequest method.
+//	req, resp := client.ListPiiEntitiesDetectionJobsRequest(params)
 //
-//    // Example sending a request using the ListPiiEntitiesDetectionJobsRequest method.
-//    req, resp := client.ListPiiEntitiesDetectionJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs
 func (c *Comprehend) ListPiiEntitiesDetectionJobsRequest(input *ListPiiEntitiesDetectionJobsInput) (req *request.Request, output *ListPiiEntitiesDetectionJobsOutput) {
@@ -4256,6 +6073,12 @@ func (c *Comprehend) ListPiiEntitiesDetectionJobsRequest(input *ListPiiEntitiesD
 		Name:       opListPiiEntitiesDetectionJobs,
 		HTTPMethod: "POST",
 		HTTPPath:   "/",
+		Paginator: &request.Paginator{
+			InputTokens:     []string{"NextToken"},
+			OutputTokens:    []string{"NextToken"},
+			LimitToken:      "MaxResults",
+			TruncationToken: "",
+		},
 	}
 
 	if input == nil {
@@ -4279,17 +6102,18 @@ func (c *Comprehend) ListPiiEntitiesDetectionJobsRequest(input *ListPiiEntitiesD
 // API operation ListPiiEntitiesDetectionJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs
 func (c *Comprehend) ListPiiEntitiesDetectionJobs(input *ListPiiEntitiesDetectionJobsInput) (*ListPiiEntitiesDetectionJobsOutput, error) {
@@ -4313,6 +6137,57 @@ func (c *Comprehend) ListPiiEntitiesDetectionJobsWithContext(ctx aws.Context, in
 	return out, req.Send()
 }
 
+// ListPiiEntitiesDetectionJobsPages iterates over the pages of a ListPiiEntitiesDetectionJobs operation,
+// calling the "fn" function with the response data for each page. To stop
+// iterating, return false from the fn function.
+//
+// See ListPiiEntitiesDetectionJobs method for more information on how to use this operation.
+//
+// Note: This operation can generate multiple requests to a service.
+//
+//	// Example iterating over at most 3 pages of a ListPiiEntitiesDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListPiiEntitiesDetectionJobsPages(params,
+//	    func(page *comprehend.ListPiiEntitiesDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
+func (c *Comprehend) ListPiiEntitiesDetectionJobsPages(input *ListPiiEntitiesDetectionJobsInput, fn func(*ListPiiEntitiesDetectionJobsOutput, bool) bool) error {
+	return c.ListPiiEntitiesDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
+}
+
+// ListPiiEntitiesDetectionJobsPagesWithContext same as ListPiiEntitiesDetectionJobsPages except
+// it takes a Context and allows setting request options on the pages.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListPiiEntitiesDetectionJobsPagesWithContext(ctx aws.Context, input *ListPiiEntitiesDetectionJobsInput, fn func(*ListPiiEntitiesDetectionJobsOutput, bool) bool, opts ...request.Option) error {
+	p := request.Pagination{
+		NewRequest: func() (*request.Request, error) {
+			var inCpy *ListPiiEntitiesDetectionJobsInput
+			if input != nil {
+				tmp := *input
+				inCpy = &tmp
+			}
+			req, _ := c.ListPiiEntitiesDetectionJobsRequest(inCpy)
+			req.SetContext(ctx)
+			req.ApplyOptions(opts...)
+			return req, nil
+		},
+	}
+
+	for p.Next() {
+		if !fn(p.Page().(*ListPiiEntitiesDetectionJobsOutput), !p.HasNextPage()) {
+			break
+		}
+	}
+
+	return p.Err()
+}
+
 const opListSentimentDetectionJobs = "ListSentimentDetectionJobs"
 
 // ListSentimentDetectionJobsRequest generates a "aws/request.Request" representing the
@@ -4329,14 +6204,13 @@ const opListSentimentDetectionJobs = "ListSentimentDetectionJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListSentimentDetectionJobsRequest method.
+//	req, resp := client.ListSentimentDetectionJobsRequest(params)
 //
-//    // Example sending a request using the ListSentimentDetectionJobsRequest method.
-//    req, resp := client.ListSentimentDetectionJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs
 func (c *Comprehend) ListSentimentDetectionJobsRequest(input *ListSentimentDetectionJobsInput) (req *request.Request, output *ListSentimentDetectionJobsOutput) {
@@ -4373,17 +6247,18 @@ func (c *Comprehend) ListSentimentDetectionJobsRequest(input *ListSentimentDetec
 // API operation ListSentimentDetectionJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs
 func (c *Comprehend) ListSentimentDetectionJobs(input *ListSentimentDetectionJobsInput) (*ListSentimentDetectionJobsOutput, error) {
@@ -4415,15 +6290,14 @@ func (c *Comprehend) ListSentimentDetectionJobsWithContext(ctx aws.Context, inpu
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListSentimentDetectionJobs operation.
-//    pageNum := 0
-//    err := client.ListSentimentDetectionJobsPages(params,
-//        func(page *comprehend.ListSentimentDetectionJobsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListSentimentDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListSentimentDetectionJobsPages(params,
+//	    func(page *comprehend.ListSentimentDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListSentimentDetectionJobsPages(input *ListSentimentDetectionJobsInput, fn func(*ListSentimentDetectionJobsOutput, bool) bool) error {
 	return c.ListSentimentDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -4475,14 +6349,13 @@ const opListTagsForResource = "ListTagsForResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagsForResourceRequest method.
+//	req, resp := client.ListTagsForResourceRequest(params)
 //
-//    // Example sending a request using the ListTagsForResourceRequest method.
-//    req, resp := client.ListTagsForResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource
 func (c *Comprehend) ListTagsForResourceRequest(input *ListTagsForResourceInput) (req *request.Request, output *ListTagsForResourceOutput) {
@@ -4513,15 +6386,16 @@ func (c *Comprehend) ListTagsForResourceRequest(input *ListTagsForResourceInput)
 // API operation ListTagsForResource for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource
 func (c *Comprehend) ListTagsForResource(input *ListTagsForResourceInput) (*ListTagsForResourceOutput, error) {
@@ -4545,6 +6419,151 @@ func (c *Comprehend) ListTagsForResourceWithContext(ctx aws.Context, input *List
 	return out, req.Send()
 }
 
+const opListTargetedSentimentDetectionJobs = "ListTargetedSentimentDetectionJobs"
+
+// ListTargetedSentimentDetectionJobsRequest generates a "aws/request.Request" representing the
+// client's request for the ListTargetedSentimentDetectionJobs operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListTargetedSentimentDetectionJobs for more information on using the ListTargetedSentimentDetectionJobs
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListTargetedSentimentDetectionJobsRequest method.
+//	req, resp := client.ListTargetedSentimentDetectionJobsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs
+func (c *Comprehend) ListTargetedSentimentDetectionJobsRequest(input *ListTargetedSentimentDetectionJobsInput) (req *request.Request, output *ListTargetedSentimentDetectionJobsOutput) {
+	op := &request.Operation{
+		Name:       opListTargetedSentimentDetectionJobs,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+		Paginator: &request.Paginator{
+			InputTokens:     []string{"NextToken"},
+			OutputTokens:    []string{"NextToken"},
+			LimitToken:      "MaxResults",
+			TruncationToken: "",
+		},
+	}
+
+	if input == nil {
+		input = &ListTargetedSentimentDetectionJobsInput{}
+	}
+
+	output = &ListTargetedSentimentDetectionJobsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListTargetedSentimentDetectionJobs API operation for Amazon Comprehend.
+//
+// Gets a list of targeted sentiment detection jobs that you have submitted.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation ListTargetedSentimentDetectionJobs for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTargetedSentimentDetectionJobs
+func (c *Comprehend) ListTargetedSentimentDetectionJobs(input *ListTargetedSentimentDetectionJobsInput) (*ListTargetedSentimentDetectionJobsOutput, error) {
+	req, out := c.ListTargetedSentimentDetectionJobsRequest(input)
+	return out, req.Send()
+}
+
+// ListTargetedSentimentDetectionJobsWithContext is the same as ListTargetedSentimentDetectionJobs with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListTargetedSentimentDetectionJobs for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListTargetedSentimentDetectionJobsWithContext(ctx aws.Context, input *ListTargetedSentimentDetectionJobsInput, opts ...request.Option) (*ListTargetedSentimentDetectionJobsOutput, error) {
+	req, out := c.ListTargetedSentimentDetectionJobsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+// ListTargetedSentimentDetectionJobsPages iterates over the pages of a ListTargetedSentimentDetectionJobs operation,
+// calling the "fn" function with the response data for each page. To stop
+// iterating, return false from the fn function.
+//
+// See ListTargetedSentimentDetectionJobs method for more information on how to use this operation.
+//
+// Note: This operation can generate multiple requests to a service.
+//
+//	// Example iterating over at most 3 pages of a ListTargetedSentimentDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListTargetedSentimentDetectionJobsPages(params,
+//	    func(page *comprehend.ListTargetedSentimentDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
+func (c *Comprehend) ListTargetedSentimentDetectionJobsPages(input *ListTargetedSentimentDetectionJobsInput, fn func(*ListTargetedSentimentDetectionJobsOutput, bool) bool) error {
+	return c.ListTargetedSentimentDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
+}
+
+// ListTargetedSentimentDetectionJobsPagesWithContext same as ListTargetedSentimentDetectionJobsPages except
+// it takes a Context and allows setting request options on the pages.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) ListTargetedSentimentDetectionJobsPagesWithContext(ctx aws.Context, input *ListTargetedSentimentDetectionJobsInput, fn func(*ListTargetedSentimentDetectionJobsOutput, bool) bool, opts ...request.Option) error {
+	p := request.Pagination{
+		NewRequest: func() (*request.Request, error) {
+			var inCpy *ListTargetedSentimentDetectionJobsInput
+			if input != nil {
+				tmp := *input
+				inCpy = &tmp
+			}
+			req, _ := c.ListTargetedSentimentDetectionJobsRequest(inCpy)
+			req.SetContext(ctx)
+			req.ApplyOptions(opts...)
+			return req, nil
+		},
+	}
+
+	for p.Next() {
+		if !fn(p.Page().(*ListTargetedSentimentDetectionJobsOutput), !p.HasNextPage()) {
+			break
+		}
+	}
+
+	return p.Err()
+}
+
 const opListTopicsDetectionJobs = "ListTopicsDetectionJobs"
 
 // ListTopicsDetectionJobsRequest generates a "aws/request.Request" representing the
@@ -4561,14 +6580,13 @@ const opListTopicsDetectionJobs = "ListTopicsDetectionJobs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTopicsDetectionJobsRequest method.
+//	req, resp := client.ListTopicsDetectionJobsRequest(params)
 //
-//    // Example sending a request using the ListTopicsDetectionJobsRequest method.
-//    req, resp := client.ListTopicsDetectionJobsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTopicsDetectionJobs
 func (c *Comprehend) ListTopicsDetectionJobsRequest(input *ListTopicsDetectionJobsInput) (req *request.Request, output *ListTopicsDetectionJobsOutput) {
@@ -4605,17 +6623,18 @@ func (c *Comprehend) ListTopicsDetectionJobsRequest(input *ListTopicsDetectionJo
 // API operation ListTopicsDetectionJobs for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InvalidFilterException
-//   The filter specified for the operation is invalid. Specify a different filter.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - InvalidFilterException
+//     The filter specified for the operation is invalid. Specify a different filter.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTopicsDetectionJobs
 func (c *Comprehend) ListTopicsDetectionJobs(input *ListTopicsDetectionJobsInput) (*ListTopicsDetectionJobsOutput, error) {
@@ -4647,15 +6666,14 @@ func (c *Comprehend) ListTopicsDetectionJobsWithContext(ctx aws.Context, input *
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListTopicsDetectionJobs operation.
-//    pageNum := 0
-//    err := client.ListTopicsDetectionJobsPages(params,
-//        func(page *comprehend.ListTopicsDetectionJobsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListTopicsDetectionJobs operation.
+//	pageNum := 0
+//	err := client.ListTopicsDetectionJobsPages(params,
+//	    func(page *comprehend.ListTopicsDetectionJobsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *Comprehend) ListTopicsDetectionJobsPages(input *ListTopicsDetectionJobsInput, fn func(*ListTopicsDetectionJobsOutput, bool) bool) error {
 	return c.ListTopicsDetectionJobsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -4691,6 +6709,94 @@ func (c *Comprehend) ListTopicsDetectionJobsPagesWithContext(ctx aws.Context, in
 	return p.Err()
 }
 
+const opPutResourcePolicy = "PutResourcePolicy"
+
+// PutResourcePolicyRequest generates a "aws/request.Request" representing the
+// client's request for the PutResourcePolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See PutResourcePolicy for more information on using the PutResourcePolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the PutResourcePolicyRequest method.
+//	req, resp := client.PutResourcePolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PutResourcePolicy
+func (c *Comprehend) PutResourcePolicyRequest(input *PutResourcePolicyInput) (req *request.Request, output *PutResourcePolicyOutput) {
+	op := &request.Operation{
+		Name:       opPutResourcePolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &PutResourcePolicyInput{}
+	}
+
+	output = &PutResourcePolicyOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// PutResourcePolicy API operation for Amazon Comprehend.
+//
+// Attaches a resource-based policy to a custom model. You can use this policy
+// to authorize an entity in another Amazon Web Services account to import the
+// custom model, which replicates it in Amazon Comprehend in their account.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation PutResourcePolicy for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PutResourcePolicy
+func (c *Comprehend) PutResourcePolicy(input *PutResourcePolicyInput) (*PutResourcePolicyOutput, error) {
+	req, out := c.PutResourcePolicyRequest(input)
+	return out, req.Send()
+}
+
+// PutResourcePolicyWithContext is the same as PutResourcePolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See PutResourcePolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) PutResourcePolicyWithContext(ctx aws.Context, input *PutResourcePolicyInput, opts ...request.Option) (*PutResourcePolicyOutput, error) {
+	req, out := c.PutResourcePolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opStartDocumentClassificationJob = "StartDocumentClassificationJob"
 
 // StartDocumentClassificationJobRequest generates a "aws/request.Request" representing the
@@ -4707,14 +6813,13 @@ const opStartDocumentClassificationJob = "StartDocumentClassificationJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartDocumentClassificationJobRequest method.
+//	req, resp := client.StartDocumentClassificationJobRequest(params)
 //
-//    // Example sending a request using the StartDocumentClassificationJobRequest method.
-//    req, resp := client.StartDocumentClassificationJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob
 func (c *Comprehend) StartDocumentClassificationJobRequest(input *StartDocumentClassificationJobInput) (req *request.Request, output *StartDocumentClassificationJobOutput) {
@@ -4735,8 +6840,9 @@ func (c *Comprehend) StartDocumentClassificationJobRequest(input *StartDocumentC
 
 // StartDocumentClassificationJob API operation for Amazon Comprehend.
 //
-// Starts an asynchronous document classification job. Use the operation to
-// track the progress of the job.
+// Starts an asynchronous document classification job using a custom classification
+// model. Use the DescribeDocumentClassificationJob operation to track the progress
+// of the job.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -4746,31 +6852,36 @@ func (c *Comprehend) StartDocumentClassificationJobRequest(input *StartDocumentC
 // API operation StartDocumentClassificationJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob
 func (c *Comprehend) StartDocumentClassificationJob(input *StartDocumentClassificationJobInput) (*StartDocumentClassificationJobOutput, error) {
@@ -4810,14 +6921,13 @@ const opStartDominantLanguageDetectionJob = "StartDominantLanguageDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartDominantLanguageDetectionJobRequest method.
+//	req, resp := client.StartDominantLanguageDetectionJobRequest(params)
 //
-//    // Example sending a request using the StartDominantLanguageDetectionJobRequest method.
-//    req, resp := client.StartDominantLanguageDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob
 func (c *Comprehend) StartDominantLanguageDetectionJobRequest(input *StartDominantLanguageDetectionJobInput) (req *request.Request, output *StartDominantLanguageDetectionJobOutput) {
@@ -4849,23 +6959,28 @@ func (c *Comprehend) StartDominantLanguageDetectionJobRequest(input *StartDomina
 // API operation StartDominantLanguageDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob
 func (c *Comprehend) StartDominantLanguageDetectionJob(input *StartDominantLanguageDetectionJobInput) (*StartDominantLanguageDetectionJobOutput, error) {
@@ -4905,14 +7020,13 @@ const opStartEntitiesDetectionJob = "StartEntitiesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartEntitiesDetectionJobRequest method.
+//	req, resp := client.StartEntitiesDetectionJobRequest(params)
 //
-//    // Example sending a request using the StartEntitiesDetectionJobRequest method.
-//    req, resp := client.StartEntitiesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob
 func (c *Comprehend) StartEntitiesDetectionJobRequest(input *StartEntitiesDetectionJobInput) (req *request.Request, output *StartEntitiesDetectionJobOutput) {
@@ -4949,31 +7063,36 @@ func (c *Comprehend) StartEntitiesDetectionJobRequest(input *StartEntitiesDetect
 // API operation StartEntitiesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob
 func (c *Comprehend) StartEntitiesDetectionJob(input *StartEntitiesDetectionJobInput) (*StartEntitiesDetectionJobOutput, error) {
@@ -5013,14 +7132,13 @@ const opStartEventsDetectionJob = "StartEventsDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartEventsDetectionJobRequest method.
+//	req, resp := client.StartEventsDetectionJobRequest(params)
 //
-//    // Example sending a request using the StartEventsDetectionJobRequest method.
-//    req, resp := client.StartEventsDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob
 func (c *Comprehend) StartEventsDetectionJobRequest(input *StartEventsDetectionJobInput) (req *request.Request, output *StartEventsDetectionJobOutput) {
@@ -5051,23 +7169,28 @@ func (c *Comprehend) StartEventsDetectionJobRequest(input *StartEventsDetectionJ
 // API operation StartEventsDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob
 func (c *Comprehend) StartEventsDetectionJob(input *StartEventsDetectionJobInput) (*StartEventsDetectionJobOutput, error) {
@@ -5091,6 +7214,102 @@ func (c *Comprehend) StartEventsDetectionJobWithContext(ctx aws.Context, input *
 	return out, req.Send()
 }
 
+const opStartFlywheelIteration = "StartFlywheelIteration"
+
+// StartFlywheelIterationRequest generates a "aws/request.Request" representing the
+// client's request for the StartFlywheelIteration operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See StartFlywheelIteration for more information on using the StartFlywheelIteration
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the StartFlywheelIterationRequest method.
+//	req, resp := client.StartFlywheelIterationRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration
+func (c *Comprehend) StartFlywheelIterationRequest(input *StartFlywheelIterationInput) (req *request.Request, output *StartFlywheelIterationOutput) {
+	op := &request.Operation{
+		Name:       opStartFlywheelIteration,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &StartFlywheelIterationInput{}
+	}
+
+	output = &StartFlywheelIterationOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// StartFlywheelIteration API operation for Amazon Comprehend.
+//
+// Start the flywheel iteration.This operation uses any new datasets to train
+// a new model version. For more information about flywheels, see Flywheel overview
+// (https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html) in
+// the Amazon Comprehend Developer Guide.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation StartFlywheelIteration for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration
+func (c *Comprehend) StartFlywheelIteration(input *StartFlywheelIterationInput) (*StartFlywheelIterationOutput, error) {
+	req, out := c.StartFlywheelIterationRequest(input)
+	return out, req.Send()
+}
+
+// StartFlywheelIterationWithContext is the same as StartFlywheelIteration with the addition of
+// the ability to pass a context and additional request options.
+//
+// See StartFlywheelIteration for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) StartFlywheelIterationWithContext(ctx aws.Context, input *StartFlywheelIterationInput, opts ...request.Option) (*StartFlywheelIterationOutput, error) {
+	req, out := c.StartFlywheelIterationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opStartKeyPhrasesDetectionJob = "StartKeyPhrasesDetectionJob"
 
 // StartKeyPhrasesDetectionJobRequest generates a "aws/request.Request" representing the
@@ -5107,14 +7326,13 @@ const opStartKeyPhrasesDetectionJob = "StartKeyPhrasesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartKeyPhrasesDetectionJobRequest method.
+//	req, resp := client.StartKeyPhrasesDetectionJobRequest(params)
 //
-//    // Example sending a request using the StartKeyPhrasesDetectionJobRequest method.
-//    req, resp := client.StartKeyPhrasesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob
 func (c *Comprehend) StartKeyPhrasesDetectionJobRequest(input *StartKeyPhrasesDetectionJobInput) (req *request.Request, output *StartKeyPhrasesDetectionJobOutput) {
@@ -5146,23 +7364,28 @@ func (c *Comprehend) StartKeyPhrasesDetectionJobRequest(input *StartKeyPhrasesDe
 // API operation StartKeyPhrasesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob
 func (c *Comprehend) StartKeyPhrasesDetectionJob(input *StartKeyPhrasesDetectionJobInput) (*StartKeyPhrasesDetectionJobOutput, error) {
@@ -5202,14 +7425,13 @@ const opStartPiiEntitiesDetectionJob = "StartPiiEntitiesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartPiiEntitiesDetectionJobRequest method.
+//	req, resp := client.StartPiiEntitiesDetectionJobRequest(params)
 //
-//    // Example sending a request using the StartPiiEntitiesDetectionJobRequest method.
-//    req, resp := client.StartPiiEntitiesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob
 func (c *Comprehend) StartPiiEntitiesDetectionJobRequest(input *StartPiiEntitiesDetectionJobInput) (req *request.Request, output *StartPiiEntitiesDetectionJobOutput) {
@@ -5240,23 +7462,28 @@ func (c *Comprehend) StartPiiEntitiesDetectionJobRequest(input *StartPiiEntities
 // API operation StartPiiEntitiesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob
 func (c *Comprehend) StartPiiEntitiesDetectionJob(input *StartPiiEntitiesDetectionJobInput) (*StartPiiEntitiesDetectionJobOutput, error) {
@@ -5296,14 +7523,13 @@ const opStartSentimentDetectionJob = "StartSentimentDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartSentimentDetectionJobRequest method.
+//	req, resp := client.StartSentimentDetectionJobRequest(params)
 //
-//    // Example sending a request using the StartSentimentDetectionJobRequest method.
-//    req, resp := client.StartSentimentDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob
 func (c *Comprehend) StartSentimentDetectionJobRequest(input *StartSentimentDetectionJobInput) (req *request.Request, output *StartSentimentDetectionJobOutput) {
@@ -5325,7 +7551,7 @@ func (c *Comprehend) StartSentimentDetectionJobRequest(input *StartSentimentDete
 // StartSentimentDetectionJob API operation for Amazon Comprehend.
 //
 // Starts an asynchronous sentiment detection job for a collection of documents.
-// use the operation to track the status of a job.
+// Use the operation to track the status of a job.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -5335,23 +7561,28 @@ func (c *Comprehend) StartSentimentDetectionJobRequest(input *StartSentimentDete
 // API operation StartSentimentDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob
 func (c *Comprehend) StartSentimentDetectionJob(input *StartSentimentDetectionJobInput) (*StartSentimentDetectionJobOutput, error) {
@@ -5375,6 +7606,106 @@ func (c *Comprehend) StartSentimentDetectionJobWithContext(ctx aws.Context, inpu
 	return out, req.Send()
 }
 
+const opStartTargetedSentimentDetectionJob = "StartTargetedSentimentDetectionJob"
+
+// StartTargetedSentimentDetectionJobRequest generates a "aws/request.Request" representing the
+// client's request for the StartTargetedSentimentDetectionJob operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See StartTargetedSentimentDetectionJob for more information on using the StartTargetedSentimentDetectionJob
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the StartTargetedSentimentDetectionJobRequest method.
+//	req, resp := client.StartTargetedSentimentDetectionJobRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob
+func (c *Comprehend) StartTargetedSentimentDetectionJobRequest(input *StartTargetedSentimentDetectionJobInput) (req *request.Request, output *StartTargetedSentimentDetectionJobOutput) {
+	op := &request.Operation{
+		Name:       opStartTargetedSentimentDetectionJob,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &StartTargetedSentimentDetectionJobInput{}
+	}
+
+	output = &StartTargetedSentimentDetectionJobOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// StartTargetedSentimentDetectionJob API operation for Amazon Comprehend.
+//
+// Starts an asynchronous targeted sentiment detection job for a collection
+// of documents. Use the DescribeTargetedSentimentDetectionJob operation to
+// track the status of a job.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation StartTargetedSentimentDetectionJob for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
+//
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTargetedSentimentDetectionJob
+func (c *Comprehend) StartTargetedSentimentDetectionJob(input *StartTargetedSentimentDetectionJobInput) (*StartTargetedSentimentDetectionJobOutput, error) {
+	req, out := c.StartTargetedSentimentDetectionJobRequest(input)
+	return out, req.Send()
+}
+
+// StartTargetedSentimentDetectionJobWithContext is the same as StartTargetedSentimentDetectionJob with the addition of
+// the ability to pass a context and additional request options.
+//
+// See StartTargetedSentimentDetectionJob for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) StartTargetedSentimentDetectionJobWithContext(ctx aws.Context, input *StartTargetedSentimentDetectionJobInput, opts ...request.Option) (*StartTargetedSentimentDetectionJobOutput, error) {
+	req, out := c.StartTargetedSentimentDetectionJobRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opStartTopicsDetectionJob = "StartTopicsDetectionJob"
 
 // StartTopicsDetectionJobRequest generates a "aws/request.Request" representing the
@@ -5391,14 +7722,13 @@ const opStartTopicsDetectionJob = "StartTopicsDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartTopicsDetectionJobRequest method.
+//	req, resp := client.StartTopicsDetectionJobRequest(params)
 //
-//    // Example sending a request using the StartTopicsDetectionJobRequest method.
-//    req, resp := client.StartTopicsDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTopicsDetectionJob
 func (c *Comprehend) StartTopicsDetectionJobRequest(input *StartTopicsDetectionJobInput) (req *request.Request, output *StartTopicsDetectionJobOutput) {
@@ -5430,23 +7760,28 @@ func (c *Comprehend) StartTopicsDetectionJobRequest(input *StartTopicsDetectionJ
 // API operation StartTopicsDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * KmsKeyValidationException
-//   The KMS customer managed key (CMK) entered cannot be validated. Verify the
-//   key and re-enter it.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartTopicsDetectionJob
 func (c *Comprehend) StartTopicsDetectionJob(input *StartTopicsDetectionJobInput) (*StartTopicsDetectionJobOutput, error) {
@@ -5486,14 +7821,13 @@ const opStopDominantLanguageDetectionJob = "StopDominantLanguageDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopDominantLanguageDetectionJobRequest method.
+//	req, resp := client.StopDominantLanguageDetectionJobRequest(params)
 //
-//    // Example sending a request using the StopDominantLanguageDetectionJobRequest method.
-//    req, resp := client.StopDominantLanguageDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob
 func (c *Comprehend) StopDominantLanguageDetectionJobRequest(input *StopDominantLanguageDetectionJobInput) (req *request.Request, output *StopDominantLanguageDetectionJobOutput) {
@@ -5535,14 +7869,15 @@ func (c *Comprehend) StopDominantLanguageDetectionJobRequest(input *StopDominant
 // API operation StopDominantLanguageDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob
 func (c *Comprehend) StopDominantLanguageDetectionJob(input *StopDominantLanguageDetectionJobInput) (*StopDominantLanguageDetectionJobOutput, error) {
@@ -5582,14 +7917,13 @@ const opStopEntitiesDetectionJob = "StopEntitiesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopEntitiesDetectionJobRequest method.
+//	req, resp := client.StopEntitiesDetectionJobRequest(params)
 //
-//    // Example sending a request using the StopEntitiesDetectionJobRequest method.
-//    req, resp := client.StopEntitiesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob
 func (c *Comprehend) StopEntitiesDetectionJobRequest(input *StopEntitiesDetectionJobInput) (req *request.Request, output *StopEntitiesDetectionJobOutput) {
@@ -5631,14 +7965,15 @@ func (c *Comprehend) StopEntitiesDetectionJobRequest(input *StopEntitiesDetectio
 // API operation StopEntitiesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob
 func (c *Comprehend) StopEntitiesDetectionJob(input *StopEntitiesDetectionJobInput) (*StopEntitiesDetectionJobOutput, error) {
@@ -5678,14 +8013,13 @@ const opStopEventsDetectionJob = "StopEventsDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopEventsDetectionJobRequest method.
+//	req, resp := client.StopEventsDetectionJobRequest(params)
 //
-//    // Example sending a request using the StopEventsDetectionJobRequest method.
-//    req, resp := client.StopEventsDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob
 func (c *Comprehend) StopEventsDetectionJobRequest(input *StopEventsDetectionJobInput) (req *request.Request, output *StopEventsDetectionJobOutput) {
@@ -5716,14 +8050,15 @@ func (c *Comprehend) StopEventsDetectionJobRequest(input *StopEventsDetectionJob
 // API operation StopEventsDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob
 func (c *Comprehend) StopEventsDetectionJob(input *StopEventsDetectionJobInput) (*StopEventsDetectionJobOutput, error) {
@@ -5763,14 +8098,13 @@ const opStopKeyPhrasesDetectionJob = "StopKeyPhrasesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopKeyPhrasesDetectionJobRequest method.
+//	req, resp := client.StopKeyPhrasesDetectionJobRequest(params)
 //
-//    // Example sending a request using the StopKeyPhrasesDetectionJobRequest method.
-//    req, resp := client.StopKeyPhrasesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob
 func (c *Comprehend) StopKeyPhrasesDetectionJobRequest(input *StopKeyPhrasesDetectionJobInput) (req *request.Request, output *StopKeyPhrasesDetectionJobOutput) {
@@ -5812,14 +8146,15 @@ func (c *Comprehend) StopKeyPhrasesDetectionJobRequest(input *StopKeyPhrasesDete
 // API operation StopKeyPhrasesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob
 func (c *Comprehend) StopKeyPhrasesDetectionJob(input *StopKeyPhrasesDetectionJobInput) (*StopKeyPhrasesDetectionJobOutput, error) {
@@ -5859,14 +8194,13 @@ const opStopPiiEntitiesDetectionJob = "StopPiiEntitiesDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopPiiEntitiesDetectionJobRequest method.
+//	req, resp := client.StopPiiEntitiesDetectionJobRequest(params)
 //
-//    // Example sending a request using the StopPiiEntitiesDetectionJobRequest method.
-//    req, resp := client.StopPiiEntitiesDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob
 func (c *Comprehend) StopPiiEntitiesDetectionJobRequest(input *StopPiiEntitiesDetectionJobInput) (req *request.Request, output *StopPiiEntitiesDetectionJobOutput) {
@@ -5897,14 +8231,15 @@ func (c *Comprehend) StopPiiEntitiesDetectionJobRequest(input *StopPiiEntitiesDe
 // API operation StopPiiEntitiesDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob
 func (c *Comprehend) StopPiiEntitiesDetectionJob(input *StopPiiEntitiesDetectionJobInput) (*StopPiiEntitiesDetectionJobOutput, error) {
@@ -5944,14 +8279,13 @@ const opStopSentimentDetectionJob = "StopSentimentDetectionJob"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopSentimentDetectionJobRequest method.
+//	req, resp := client.StopSentimentDetectionJobRequest(params)
 //
-//    // Example sending a request using the StopSentimentDetectionJobRequest method.
-//    req, resp := client.StopSentimentDetectionJobRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob
 func (c *Comprehend) StopSentimentDetectionJobRequest(input *StopSentimentDetectionJobInput) (req *request.Request, output *StopSentimentDetectionJobOutput) {
@@ -5974,7 +8308,7 @@ func (c *Comprehend) StopSentimentDetectionJobRequest(input *StopSentimentDetect
 //
 // Stops a sentiment detection job in progress.
 //
-// If the job state is IN_PROGRESS the job is marked for termination and put
+// If the job state is IN_PROGRESS, the job is marked for termination and put
 // into the STOP_REQUESTED state. If the job completes before it can be stopped,
 // it is put into the COMPLETED state; otherwise the job is be stopped and put
 // into the STOPPED state.
@@ -5993,14 +8327,15 @@ func (c *Comprehend) StopSentimentDetectionJobRequest(input *StopSentimentDetect
 // API operation StopSentimentDetectionJob for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * JobNotFoundException
-//   The specified job was not found. Check the job ID and try again.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob
 func (c *Comprehend) StopSentimentDetectionJob(input *StopSentimentDetectionJobInput) (*StopSentimentDetectionJobOutput, error) {
@@ -6024,6 +8359,102 @@ func (c *Comprehend) StopSentimentDetectionJobWithContext(ctx aws.Context, input
 	return out, req.Send()
 }
 
+const opStopTargetedSentimentDetectionJob = "StopTargetedSentimentDetectionJob"
+
+// StopTargetedSentimentDetectionJobRequest generates a "aws/request.Request" representing the
+// client's request for the StopTargetedSentimentDetectionJob operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See StopTargetedSentimentDetectionJob for more information on using the StopTargetedSentimentDetectionJob
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the StopTargetedSentimentDetectionJobRequest method.
+//	req, resp := client.StopTargetedSentimentDetectionJobRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTargetedSentimentDetectionJob
+func (c *Comprehend) StopTargetedSentimentDetectionJobRequest(input *StopTargetedSentimentDetectionJobInput) (req *request.Request, output *StopTargetedSentimentDetectionJobOutput) {
+	op := &request.Operation{
+		Name:       opStopTargetedSentimentDetectionJob,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &StopTargetedSentimentDetectionJobInput{}
+	}
+
+	output = &StopTargetedSentimentDetectionJobOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// StopTargetedSentimentDetectionJob API operation for Amazon Comprehend.
+//
+// Stops a targeted sentiment detection job in progress.
+//
+// If the job state is IN_PROGRESS, the job is marked for termination and put
+// into the STOP_REQUESTED state. If the job completes before it can be stopped,
+// it is put into the COMPLETED state; otherwise the job is be stopped and put
+// into the STOPPED state.
+//
+// If the job is in the COMPLETED or FAILED state when you call the StopDominantLanguageDetectionJob
+// operation, the operation returns a 400 Internal Request Exception.
+//
+// When a job is stopped, any documents already processed are written to the
+// output location.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation StopTargetedSentimentDetectionJob for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - JobNotFoundException
+//     The specified job was not found. Check the job ID and try again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTargetedSentimentDetectionJob
+func (c *Comprehend) StopTargetedSentimentDetectionJob(input *StopTargetedSentimentDetectionJobInput) (*StopTargetedSentimentDetectionJobOutput, error) {
+	req, out := c.StopTargetedSentimentDetectionJobRequest(input)
+	return out, req.Send()
+}
+
+// StopTargetedSentimentDetectionJobWithContext is the same as StopTargetedSentimentDetectionJob with the addition of
+// the ability to pass a context and additional request options.
+//
+// See StopTargetedSentimentDetectionJob for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) StopTargetedSentimentDetectionJobWithContext(ctx aws.Context, input *StopTargetedSentimentDetectionJobInput, opts ...request.Option) (*StopTargetedSentimentDetectionJobOutput, error) {
+	req, out := c.StopTargetedSentimentDetectionJobRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opStopTrainingDocumentClassifier = "StopTrainingDocumentClassifier"
 
 // StopTrainingDocumentClassifierRequest generates a "aws/request.Request" representing the
@@ -6040,14 +8471,13 @@ const opStopTrainingDocumentClassifier = "StopTrainingDocumentClassifier"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopTrainingDocumentClassifierRequest method.
+//	req, resp := client.StopTrainingDocumentClassifierRequest(params)
 //
-//    // Example sending a request using the StopTrainingDocumentClassifierRequest method.
-//    req, resp := client.StopTrainingDocumentClassifierRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier
 func (c *Comprehend) StopTrainingDocumentClassifierRequest(input *StopTrainingDocumentClassifierInput) (req *request.Request, output *StopTrainingDocumentClassifierOutput) {
@@ -6085,18 +8515,19 @@ func (c *Comprehend) StopTrainingDocumentClassifierRequest(input *StopTrainingDo
 // API operation StopTrainingDocumentClassifier for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier
 func (c *Comprehend) StopTrainingDocumentClassifier(input *StopTrainingDocumentClassifierInput) (*StopTrainingDocumentClassifierOutput, error) {
@@ -6136,14 +8567,13 @@ const opStopTrainingEntityRecognizer = "StopTrainingEntityRecognizer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopTrainingEntityRecognizerRequest method.
+//	req, resp := client.StopTrainingEntityRecognizerRequest(params)
 //
-//    // Example sending a request using the StopTrainingEntityRecognizerRequest method.
-//    req, resp := client.StopTrainingEntityRecognizerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer
 func (c *Comprehend) StopTrainingEntityRecognizerRequest(input *StopTrainingEntityRecognizerInput) (req *request.Request, output *StopTrainingEntityRecognizerOutput) {
@@ -6181,18 +8611,19 @@ func (c *Comprehend) StopTrainingEntityRecognizerRequest(input *StopTrainingEnti
 // API operation StopTrainingEntityRecognizer for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer
 func (c *Comprehend) StopTrainingEntityRecognizer(input *StopTrainingEntityRecognizerInput) (*StopTrainingEntityRecognizerOutput, error) {
@@ -6232,14 +8663,13 @@ const opTagResource = "TagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the TagResourceRequest method.
+//	req, resp := client.TagResourceRequest(params)
 //
-//    // Example sending a request using the TagResourceRequest method.
-//    req, resp := client.TagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource
 func (c *Comprehend) TagResourceRequest(input *TagResourceInput) (req *request.Request, output *TagResourceOutput) {
@@ -6274,24 +8704,25 @@ func (c *Comprehend) TagResourceRequest(input *TagResourceInput) (req *request.R
 // API operation TagResource for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * ConcurrentModificationException
-//   Concurrent modification of the tags associated with an Amazon Comprehend
-//   resource is not supported.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - ConcurrentModificationException
+//     Concurrent modification of the tags associated with an Amazon Comprehend
+//     resource is not supported.
 //
-//   * TooManyTagsException
-//   The request contains more tags than can be associated with a resource (50
-//   tags per resource). The maximum number of tags includes both existing tags
-//   and those included in your current request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - TooManyTagsException
+//     The request contains more tags than can be associated with a resource (50
+//     tags per resource). The maximum number of tags includes both existing tags
+//     and those included in your current request.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource
 func (c *Comprehend) TagResource(input *TagResourceInput) (*TagResourceOutput, error) {
@@ -6331,14 +8762,13 @@ const opUntagResource = "UntagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UntagResourceRequest method.
+//	req, resp := client.UntagResourceRequest(params)
 //
-//    // Example sending a request using the UntagResourceRequest method.
-//    req, resp := client.UntagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UntagResource
 func (c *Comprehend) UntagResourceRequest(input *UntagResourceInput) (req *request.Request, output *UntagResourceOutput) {
@@ -6370,23 +8800,24 @@ func (c *Comprehend) UntagResourceRequest(input *UntagResourceInput) (req *reque
 // API operation UntagResource for usage and error information.
 //
 // Returned Error Types:
-//   * TooManyTagKeysException
-//   The request contains more tag keys than can be associated with a resource
-//   (50 tag keys per resource).
 //
-//   * InvalidRequestException
-//   The request is invalid.
+//   - TooManyTagKeysException
+//     The request contains more tag keys than can be associated with a resource
+//     (50 tag keys per resource).
 //
-//   * ConcurrentModificationException
-//   Concurrent modification of the tags associated with an Amazon Comprehend
-//   resource is not supported.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - ConcurrentModificationException
+//     Concurrent modification of the tags associated with an Amazon Comprehend
+//     resource is not supported.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UntagResource
 func (c *Comprehend) UntagResource(input *UntagResourceInput) (*UntagResourceOutput, error) {
@@ -6426,14 +8857,13 @@ const opUpdateEndpoint = "UpdateEndpoint"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateEndpointRequest method.
+//	req, resp := client.UpdateEndpointRequest(params)
 //
-//    // Example sending a request using the UpdateEndpointRequest method.
-//    req, resp := client.UpdateEndpointRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint
 func (c *Comprehend) UpdateEndpointRequest(input *UpdateEndpointInput) (req *request.Request, output *UpdateEndpointOutput) {
@@ -6449,13 +8879,13 @@ func (c *Comprehend) UpdateEndpointRequest(input *UpdateEndpointInput) (req *req
 
 	output = &UpdateEndpointOutput{}
 	req = c.newRequest(op, input, output)
-	req.Handlers.Unmarshal.Swap(jsonrpc.UnmarshalHandler.Name, protocol.UnmarshalDiscardBodyHandler)
 	return
 }
 
 // UpdateEndpoint API operation for Amazon Comprehend.
 //
-// Updates information about the specified endpoint.
+// Updates information about the specified endpoint. For information about endpoints,
+// see Managing endpoints (https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html).
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -6465,30 +8895,31 @@ func (c *Comprehend) UpdateEndpointRequest(input *UpdateEndpointInput) (req *req
 // API operation UpdateEndpoint for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidRequestException
-//   The request is invalid.
 //
-//   * TooManyRequestsException
-//   The number of requests exceeds the limit. Resubmit your request later.
+//   - InvalidRequestException
+//     The request is invalid.
 //
-//   * ResourceInUseException
-//   The specified resource name is already in use. Use a different name and try
-//   your request again.
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
 //
-//   * ResourceLimitExceededException
-//   The maximum number of resources per account has been exceeded. Review the
-//   resources, and then try your request again.
+//   - ResourceInUseException
+//     The specified resource name is already in use. Use a different name and try
+//     your request again.
 //
-//   * ResourceNotFoundException
-//   The specified resource ARN was not found. Check the ARN and try your request
-//   again.
+//   - ResourceLimitExceededException
+//     The maximum number of resources per account has been exceeded. Review the
+//     resources, and then try your request again.
 //
-//   * ResourceUnavailableException
-//   The specified resource is not available. Check the resource and try your
-//   request again.
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
 //
-//   * InternalServerException
-//   An internal server error occurred. Retry your request.
+//   - ResourceUnavailableException
+//     The specified resource is not available. Check the resource and try your
+//     request again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateEndpoint
 func (c *Comprehend) UpdateEndpoint(input *UpdateEndpointInput) (*UpdateEndpointOutput, error) {
@@ -6507,6 +8938,99 @@ func (c *Comprehend) UpdateEndpoint(input *UpdateEndpointInput) (*UpdateEndpoint
 // for more information on using Contexts.
 func (c *Comprehend) UpdateEndpointWithContext(ctx aws.Context, input *UpdateEndpointInput, opts ...request.Option) (*UpdateEndpointOutput, error) {
 	req, out := c.UpdateEndpointRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUpdateFlywheel = "UpdateFlywheel"
+
+// UpdateFlywheelRequest generates a "aws/request.Request" representing the
+// client's request for the UpdateFlywheel operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UpdateFlywheel for more information on using the UpdateFlywheel
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the UpdateFlywheelRequest method.
+//	req, resp := client.UpdateFlywheelRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel
+func (c *Comprehend) UpdateFlywheelRequest(input *UpdateFlywheelInput) (req *request.Request, output *UpdateFlywheelOutput) {
+	op := &request.Operation{
+		Name:       opUpdateFlywheel,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &UpdateFlywheelInput{}
+	}
+
+	output = &UpdateFlywheelOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// UpdateFlywheel API operation for Amazon Comprehend.
+//
+// Update the configuration information for an existing flywheel.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Comprehend's
+// API operation UpdateFlywheel for usage and error information.
+//
+// Returned Error Types:
+//
+//   - InvalidRequestException
+//     The request is invalid.
+//
+//   - TooManyRequestsException
+//     The number of requests exceeds the limit. Resubmit your request later.
+//
+//   - KmsKeyValidationException
+//     The KMS customer managed key (CMK) entered cannot be validated. Verify the
+//     key and re-enter it.
+//
+//   - ResourceNotFoundException
+//     The specified resource ARN was not found. Check the ARN and try your request
+//     again.
+//
+//   - InternalServerException
+//     An internal server error occurred. Retry your request.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel
+func (c *Comprehend) UpdateFlywheel(input *UpdateFlywheelInput) (*UpdateFlywheelOutput, error) {
+	req, out := c.UpdateFlywheelRequest(input)
+	return out, req.Send()
+}
+
+// UpdateFlywheelWithContext is the same as UpdateFlywheel with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UpdateFlywheel for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Comprehend) UpdateFlywheelWithContext(ctx aws.Context, input *UpdateFlywheelInput, opts ...request.Option) (*UpdateFlywheelOutput, error) {
+	req, out := c.UpdateFlywheelRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -6641,16 +9165,16 @@ func (s *AugmentedManifestsListItem) SetSplit(v string) *AugmentedManifestsListI
 type BatchDetectDominantLanguageInput struct {
 	_ struct{} `type:"structure"`
 
-	// A list containing the text of the input documents. The list can contain a
-	// maximum of 25 documents. Each document should contain at least 20 characters
-	// and must contain fewer than 5,000 bytes of UTF-8 encoded characters.
+	// A list containing the UTF-8 encoded text of the input documents. The list
+	// can contain a maximum of 25 documents. Each document should contain at least
+	// 20 characters. The maximum size of each document is 5 KB.
 	//
 	// TextList is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by BatchDetectDominantLanguageInput's
 	// String and GoString methods.
 	//
 	// TextList is a required field
-	TextList []*string `type:"list" required:"true" sensitive:"true"`
+	TextList []*string `min:"1" type:"list" required:"true" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -6676,6 +9200,9 @@ func (s *BatchDetectDominantLanguageInput) Validate() error {
 	invalidParams := request.ErrInvalidParams{Context: "BatchDetectDominantLanguageInput"}
 	if s.TextList == nil {
 		invalidParams.Add(request.NewErrParamRequired("TextList"))
+	}
+	if s.TextList != nil && len(s.TextList) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("TextList", 1))
 	}
 
 	if invalidParams.Len() > 0 {
@@ -6792,16 +9319,16 @@ type BatchDetectEntitiesInput struct {
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// A list containing the text of the input documents. The list can contain a
-	// maximum of 25 documents. Each document must contain fewer than 5,000 bytes
-	// of UTF-8 encoded characters.
+	// A list containing the UTF-8 encoded text of the input documents. The list
+	// can contain a maximum of 25 documents. The maximum size of each document
+	// is 5 KB.
 	//
 	// TextList is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by BatchDetectEntitiesInput's
 	// String and GoString methods.
 	//
 	// TextList is a required field
-	TextList []*string `type:"list" required:"true" sensitive:"true"`
+	TextList []*string `min:"1" type:"list" required:"true" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -6830,6 +9357,9 @@ func (s *BatchDetectEntitiesInput) Validate() error {
 	}
 	if s.TextList == nil {
 		invalidParams.Add(request.NewErrParamRequired("TextList"))
+	}
+	if s.TextList != nil && len(s.TextList) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("TextList", 1))
 	}
 
 	if invalidParams.Len() > 0 {
@@ -6951,16 +9481,16 @@ type BatchDetectKeyPhrasesInput struct {
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// A list containing the text of the input documents. The list can contain a
-	// maximum of 25 documents. Each document must contain fewer that 5,000 bytes
-	// of UTF-8 encoded characters.
+	// A list containing the UTF-8 encoded text of the input documents. The list
+	// can contain a maximum of 25 documents. The maximum size of each document
+	// is 5 KB.
 	//
 	// TextList is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by BatchDetectKeyPhrasesInput's
 	// String and GoString methods.
 	//
 	// TextList is a required field
-	TextList []*string `type:"list" required:"true" sensitive:"true"`
+	TextList []*string `min:"1" type:"list" required:"true" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -6989,6 +9519,9 @@ func (s *BatchDetectKeyPhrasesInput) Validate() error {
 	}
 	if s.TextList == nil {
 		invalidParams.Add(request.NewErrParamRequired("TextList"))
+	}
+	if s.TextList != nil && len(s.TextList) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("TextList", 1))
 	}
 
 	if invalidParams.Len() > 0 {
@@ -7110,16 +9643,16 @@ type BatchDetectSentimentInput struct {
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// A list containing the text of the input documents. The list can contain a
-	// maximum of 25 documents. Each document must contain fewer that 5,000 bytes
-	// of UTF-8 encoded characters.
+	// A list containing the UTF-8 encoded text of the input documents. The list
+	// can contain a maximum of 25 documents. The maximum size of each document
+	// is 5 KB.
 	//
 	// TextList is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by BatchDetectSentimentInput's
 	// String and GoString methods.
 	//
 	// TextList is a required field
-	TextList []*string `type:"list" required:"true" sensitive:"true"`
+	TextList []*string `min:"1" type:"list" required:"true" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -7148,6 +9681,9 @@ func (s *BatchDetectSentimentInput) Validate() error {
 	}
 	if s.TextList == nil {
 		invalidParams.Add(request.NewErrParamRequired("TextList"))
+	}
+	if s.TextList != nil && len(s.TextList) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("TextList", 1))
 	}
 
 	if invalidParams.Len() > 0 {
@@ -7281,16 +9817,16 @@ type BatchDetectSyntaxInput struct {
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"SyntaxLanguageCode"`
 
-	// A list containing the text of the input documents. The list can contain a
-	// maximum of 25 documents. Each document must contain fewer that 5,000 bytes
-	// of UTF-8 encoded characters.
+	// A list containing the UTF-8 encoded text of the input documents. The list
+	// can contain a maximum of 25 documents. The maximum size for each document
+	// is 5 KB.
 	//
 	// TextList is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by BatchDetectSyntaxInput's
 	// String and GoString methods.
 	//
 	// TextList is a required field
-	TextList []*string `type:"list" required:"true" sensitive:"true"`
+	TextList []*string `min:"1" type:"list" required:"true" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -7319,6 +9855,9 @@ func (s *BatchDetectSyntaxInput) Validate() error {
 	}
 	if s.TextList == nil {
 		invalidParams.Add(request.NewErrParamRequired("TextList"))
+	}
+	if s.TextList != nil && len(s.TextList) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("TextList", 1))
 	}
 
 	if invalidParams.Len() > 0 {
@@ -7427,6 +9966,164 @@ func (s *BatchDetectSyntaxOutput) SetErrorList(v []*BatchItemError) *BatchDetect
 
 // SetResultList sets the ResultList field's value.
 func (s *BatchDetectSyntaxOutput) SetResultList(v []*BatchDetectSyntaxItemResult) *BatchDetectSyntaxOutput {
+	s.ResultList = v
+	return s
+}
+
+type BatchDetectTargetedSentimentInput struct {
+	_ struct{} `type:"structure"`
+
+	// The language of the input documents. Currently, English is the only supported
+	// language.
+	//
+	// LanguageCode is a required field
+	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
+
+	// A list containing the UTF-8 encoded text of the input documents. The list
+	// can contain a maximum of 25 documents. The maximum size of each document
+	// is 5 KB.
+	//
+	// TextList is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by BatchDetectTargetedSentimentInput's
+	// String and GoString methods.
+	//
+	// TextList is a required field
+	TextList []*string `min:"1" type:"list" required:"true" sensitive:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BatchDetectTargetedSentimentInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BatchDetectTargetedSentimentInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *BatchDetectTargetedSentimentInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "BatchDetectTargetedSentimentInput"}
+	if s.LanguageCode == nil {
+		invalidParams.Add(request.NewErrParamRequired("LanguageCode"))
+	}
+	if s.TextList == nil {
+		invalidParams.Add(request.NewErrParamRequired("TextList"))
+	}
+	if s.TextList != nil && len(s.TextList) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("TextList", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetLanguageCode sets the LanguageCode field's value.
+func (s *BatchDetectTargetedSentimentInput) SetLanguageCode(v string) *BatchDetectTargetedSentimentInput {
+	s.LanguageCode = &v
+	return s
+}
+
+// SetTextList sets the TextList field's value.
+func (s *BatchDetectTargetedSentimentInput) SetTextList(v []*string) *BatchDetectTargetedSentimentInput {
+	s.TextList = v
+	return s
+}
+
+// Analysis results for one of the documents in the batch.
+type BatchDetectTargetedSentimentItemResult struct {
+	_ struct{} `type:"structure"`
+
+	// An array of targeted sentiment entities.
+	Entities []*TargetedSentimentEntity `type:"list"`
+
+	// The zero-based index of this result in the input list.
+	Index *int64 `type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BatchDetectTargetedSentimentItemResult) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BatchDetectTargetedSentimentItemResult) GoString() string {
+	return s.String()
+}
+
+// SetEntities sets the Entities field's value.
+func (s *BatchDetectTargetedSentimentItemResult) SetEntities(v []*TargetedSentimentEntity) *BatchDetectTargetedSentimentItemResult {
+	s.Entities = v
+	return s
+}
+
+// SetIndex sets the Index field's value.
+func (s *BatchDetectTargetedSentimentItemResult) SetIndex(v int64) *BatchDetectTargetedSentimentItemResult {
+	s.Index = &v
+	return s
+}
+
+type BatchDetectTargetedSentimentOutput struct {
+	_ struct{} `type:"structure" sensitive:"true"`
+
+	// List of errors that the operation can return.
+	//
+	// ErrorList is a required field
+	ErrorList []*BatchItemError `type:"list" required:"true"`
+
+	// A list of objects containing the results of the operation. The results are
+	// sorted in ascending order by the Index field and match the order of the documents
+	// in the input list. If all of the documents contain an error, the ResultList
+	// is empty.
+	//
+	// ResultList is a required field
+	ResultList []*BatchDetectTargetedSentimentItemResult `type:"list" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BatchDetectTargetedSentimentOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BatchDetectTargetedSentimentOutput) GoString() string {
+	return s.String()
+}
+
+// SetErrorList sets the ErrorList field's value.
+func (s *BatchDetectTargetedSentimentOutput) SetErrorList(v []*BatchItemError) *BatchDetectTargetedSentimentOutput {
+	s.ErrorList = v
+	return s
+}
+
+// SetResultList sets the ResultList field's value.
+func (s *BatchDetectTargetedSentimentOutput) SetResultList(v []*BatchDetectTargetedSentimentItemResult) *BatchDetectTargetedSentimentOutput {
 	s.ResultList = v
 	return s
 }
@@ -7546,6 +10243,269 @@ func (s *BatchSizeLimitExceededException) StatusCode() int {
 // RequestID returns the service's response RequestID for request.
 func (s *BatchSizeLimitExceededException) RequestID() string {
 	return s.RespMetadata.RequestID
+}
+
+// Information about each word or line of text in the input document.
+//
+// For additional information, see Block (https://docs.aws.amazon.com/textract/latest/dg/API_Block.html)
+// in the Amazon Textract API reference.
+type Block struct {
+	_ struct{} `type:"structure"`
+
+	// The block represents a line of text or one word of text.
+	//
+	//    * WORD - A word that's detected on a document page. A word is one or more
+	//    ISO basic Latin script characters that aren't separated by spaces.
+	//
+	//    * LINE - A string of tab-delimited, contiguous words that are detected
+	//    on a document page
+	BlockType *string `type:"string" enum:"BlockType"`
+
+	// Co-ordinates of the rectangle or polygon that contains the text.
+	Geometry *Geometry `type:"structure"`
+
+	// Unique identifier for the block.
+	Id *string `min:"1" type:"string"`
+
+	// Page number where the block appears.
+	Page *int64 `type:"integer"`
+
+	// A list of child blocks of the current block. For example, a LINE object has
+	// child blocks for each WORD block that's part of the line of text.
+	Relationships []*RelationshipsListItem `type:"list"`
+
+	// The word or line of text extracted from the block.
+	Text *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Block) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Block) GoString() string {
+	return s.String()
+}
+
+// SetBlockType sets the BlockType field's value.
+func (s *Block) SetBlockType(v string) *Block {
+	s.BlockType = &v
+	return s
+}
+
+// SetGeometry sets the Geometry field's value.
+func (s *Block) SetGeometry(v *Geometry) *Block {
+	s.Geometry = v
+	return s
+}
+
+// SetId sets the Id field's value.
+func (s *Block) SetId(v string) *Block {
+	s.Id = &v
+	return s
+}
+
+// SetPage sets the Page field's value.
+func (s *Block) SetPage(v int64) *Block {
+	s.Page = &v
+	return s
+}
+
+// SetRelationships sets the Relationships field's value.
+func (s *Block) SetRelationships(v []*RelationshipsListItem) *Block {
+	s.Relationships = v
+	return s
+}
+
+// SetText sets the Text field's value.
+func (s *Block) SetText(v string) *Block {
+	s.Text = &v
+	return s
+}
+
+// A reference to a block.
+type BlockReference struct {
+	_ struct{} `type:"structure"`
+
+	// Offset of the start of the block within its parent block.
+	BeginOffset *int64 `type:"integer"`
+
+	// Unique identifier for the block.
+	BlockId *string `min:"1" type:"string"`
+
+	// List of child blocks within this block.
+	ChildBlocks []*ChildBlock `type:"list"`
+
+	// Offset of the end of the block within its parent block.
+	EndOffset *int64 `type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BlockReference) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BlockReference) GoString() string {
+	return s.String()
+}
+
+// SetBeginOffset sets the BeginOffset field's value.
+func (s *BlockReference) SetBeginOffset(v int64) *BlockReference {
+	s.BeginOffset = &v
+	return s
+}
+
+// SetBlockId sets the BlockId field's value.
+func (s *BlockReference) SetBlockId(v string) *BlockReference {
+	s.BlockId = &v
+	return s
+}
+
+// SetChildBlocks sets the ChildBlocks field's value.
+func (s *BlockReference) SetChildBlocks(v []*ChildBlock) *BlockReference {
+	s.ChildBlocks = v
+	return s
+}
+
+// SetEndOffset sets the EndOffset field's value.
+func (s *BlockReference) SetEndOffset(v int64) *BlockReference {
+	s.EndOffset = &v
+	return s
+}
+
+// The bounding box around the detected page or around an element on a document
+// page. The left (x-coordinate) and top (y-coordinate) are coordinates that
+// represent the top and left sides of the bounding box. Note that the upper-left
+// corner of the image is the origin (0,0).
+//
+// For additional information, see BoundingBox (https://docs.aws.amazon.com/textract/latest/dg/API_BoundingBox.html)
+// in the Amazon Textract API reference.
+type BoundingBox struct {
+	_ struct{} `type:"structure"`
+
+	// The height of the bounding box as a ratio of the overall document page height.
+	Height *float64 `type:"float"`
+
+	// The left coordinate of the bounding box as a ratio of overall document page
+	// width.
+	Left *float64 `type:"float"`
+
+	// The top coordinate of the bounding box as a ratio of overall document page
+	// height.
+	Top *float64 `type:"float"`
+
+	// The width of the bounding box as a ratio of the overall document page width.
+	Width *float64 `type:"float"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BoundingBox) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s BoundingBox) GoString() string {
+	return s.String()
+}
+
+// SetHeight sets the Height field's value.
+func (s *BoundingBox) SetHeight(v float64) *BoundingBox {
+	s.Height = &v
+	return s
+}
+
+// SetLeft sets the Left field's value.
+func (s *BoundingBox) SetLeft(v float64) *BoundingBox {
+	s.Left = &v
+	return s
+}
+
+// SetTop sets the Top field's value.
+func (s *BoundingBox) SetTop(v float64) *BoundingBox {
+	s.Top = &v
+	return s
+}
+
+// SetWidth sets the Width field's value.
+func (s *BoundingBox) SetWidth(v float64) *BoundingBox {
+	s.Width = &v
+	return s
+}
+
+// Nested block contained within a block.
+type ChildBlock struct {
+	_ struct{} `type:"structure"`
+
+	// Offset of the start of the child block within its parent block.
+	BeginOffset *int64 `type:"integer"`
+
+	// Unique identifier for the child block.
+	ChildBlockId *string `min:"1" type:"string"`
+
+	// Offset of the end of the child block within its parent block.
+	EndOffset *int64 `type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ChildBlock) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ChildBlock) GoString() string {
+	return s.String()
+}
+
+// SetBeginOffset sets the BeginOffset field's value.
+func (s *ChildBlock) SetBeginOffset(v int64) *ChildBlock {
+	s.BeginOffset = &v
+	return s
+}
+
+// SetChildBlockId sets the ChildBlockId field's value.
+func (s *ChildBlock) SetChildBlockId(v string) *ChildBlock {
+	s.ChildBlockId = &v
+	return s
+}
+
+// SetEndOffset sets the EndOffset field's value.
+func (s *ChildBlock) SetEndOffset(v int64) *ChildBlock {
+	s.EndOffset = &v
+	return s
 }
 
 // Describes the result metrics for the test data associated with an documentation
@@ -7731,19 +10691,51 @@ func (s *ClassifierMetadata) SetNumberOfTrainedDocuments(v int64) *ClassifierMet
 type ClassifyDocumentInput struct {
 	_ struct{} `type:"structure"`
 
+	// Use the Bytes parameter to input a text, PDF, Word or image file.
+	//
+	// When you classify a document using a custom model, you can also use the Bytes
+	// parameter to input an Amazon Textract DetectDocumentText or AnalyzeDocument
+	// output file.
+	//
+	// To classify a document using the prompt safety classifier, use the Text parameter
+	// for input.
+	//
+	// Provide the input document as a sequence of base64-encoded bytes. If your
+	// code uses an Amazon Web Services SDK to classify documents, the SDK may encode
+	// the document file bytes for you.
+	//
+	// The maximum length of this field depends on the input document type. For
+	// details, see Inputs for real-time custom analysis (https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html)
+	// in the Comprehend Developer Guide.
+	//
+	// If you use the Bytes parameter, do not use the Text parameter.
+	// Bytes is automatically base64 encoded/decoded by the SDK.
+	Bytes []byte `min:"1" type:"blob"`
+
+	// Provides configuration parameters to override the default actions for extracting
+	// text from PDF documents and image files.
+	DocumentReaderConfig *DocumentReaderConfig `type:"structure"`
+
 	// The Amazon Resource Number (ARN) of the endpoint.
+	//
+	// For prompt safety classification, Amazon Comprehend provides the endpoint
+	// ARN. For more information about prompt safety classifiers, see Prompt safety
+	// classification (https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification)
+	// in the Amazon Comprehend Developer Guide
+	//
+	// For custom classification, you create an endpoint for your custom model.
+	// For more information, see Using Amazon Comprehend endpoints (https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html).
 	//
 	// EndpointArn is a required field
 	EndpointArn *string `type:"string" required:"true"`
 
-	// The document text to be analyzed.
+	// The document text to be analyzed. If you enter text using this parameter,
+	// do not use the Bytes parameter.
 	//
 	// Text is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by ClassifyDocumentInput's
 	// String and GoString methods.
-	//
-	// Text is a required field
-	Text *string `min:"1" type:"string" required:"true" sensitive:"true"`
+	Text *string `min:"1" type:"string" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -7767,20 +10759,37 @@ func (s ClassifyDocumentInput) GoString() string {
 // Validate inspects the fields of the type to determine if they are valid.
 func (s *ClassifyDocumentInput) Validate() error {
 	invalidParams := request.ErrInvalidParams{Context: "ClassifyDocumentInput"}
+	if s.Bytes != nil && len(s.Bytes) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Bytes", 1))
+	}
 	if s.EndpointArn == nil {
 		invalidParams.Add(request.NewErrParamRequired("EndpointArn"))
 	}
-	if s.Text == nil {
-		invalidParams.Add(request.NewErrParamRequired("Text"))
-	}
 	if s.Text != nil && len(*s.Text) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("Text", 1))
+	}
+	if s.DocumentReaderConfig != nil {
+		if err := s.DocumentReaderConfig.Validate(); err != nil {
+			invalidParams.AddNested("DocumentReaderConfig", err.(request.ErrInvalidParams))
+		}
 	}
 
 	if invalidParams.Len() > 0 {
 		return invalidParams
 	}
 	return nil
+}
+
+// SetBytes sets the Bytes field's value.
+func (s *ClassifyDocumentInput) SetBytes(v []byte) *ClassifyDocumentInput {
+	s.Bytes = v
+	return s
+}
+
+// SetDocumentReaderConfig sets the DocumentReaderConfig field's value.
+func (s *ClassifyDocumentInput) SetDocumentReaderConfig(v *DocumentReaderConfig) *ClassifyDocumentInput {
+	s.DocumentReaderConfig = v
+	return s
 }
 
 // SetEndpointArn sets the EndpointArn field's value.
@@ -7798,18 +10807,42 @@ func (s *ClassifyDocumentInput) SetText(v string) *ClassifyDocumentInput {
 type ClassifyDocumentOutput struct {
 	_ struct{} `type:"structure" sensitive:"true"`
 
-	// The classes used by the document being analyzed. These are used for multi-class
-	// trained models. Individual classes are mutually exclusive and each document
-	// is expected to have only a single class assigned to it. For example, an animal
-	// can be a dog or a cat, but not both at the same time.
+	// The classes used by the document being analyzed. These are used for models
+	// trained in multi-class mode. Individual classes are mutually exclusive and
+	// each document is expected to have only a single class assigned to it. For
+	// example, an animal can be a dog or a cat, but not both at the same time.
+	//
+	// For prompt safety classification, the response includes only two classes
+	// (SAFE_PROMPT and UNSAFE_PROMPT), along with a confidence score for each class.
+	// The value range of the score is zero to one, where one is the highest confidence.
 	Classes []*DocumentClass `type:"list"`
 
-	// The labels used the document being analyzed. These are used for multi-label
+	// Extraction information about the document. This field is present in the response
+	// only if your request includes the Byte parameter.
+	DocumentMetadata *DocumentMetadata `type:"structure"`
+
+	// The document type for each page in the input document. This field is present
+	// in the response only if your request includes the Byte parameter.
+	DocumentType []*DocumentTypeListItem `type:"list"`
+
+	// Page-level errors that the system detected while processing the input document.
+	// The field is empty if the system encountered no errors.
+	Errors []*ErrorsListItem `type:"list"`
+
+	// The labels used in the document being analyzed. These are used for multi-label
 	// trained models. Individual labels represent different categories that are
 	// related in some manner and are not mutually exclusive. For example, a movie
 	// can be just an action movie, or it can be an action movie, a science fiction
 	// movie, and a comedy, all at the same time.
 	Labels []*DocumentLabel `type:"list"`
+
+	// Warnings detected while processing the input document. The response includes
+	// a warning if there is a mismatch between the input document type and the
+	// model type associated with the endpoint that you specified. The response
+	// can also include warnings for individual pages that have a mismatch.
+	//
+	// The field is empty if the system generated no warnings.
+	Warnings []*WarningsListItem `type:"list"`
 }
 
 // String returns the string representation.
@@ -7836,9 +10869,33 @@ func (s *ClassifyDocumentOutput) SetClasses(v []*DocumentClass) *ClassifyDocumen
 	return s
 }
 
+// SetDocumentMetadata sets the DocumentMetadata field's value.
+func (s *ClassifyDocumentOutput) SetDocumentMetadata(v *DocumentMetadata) *ClassifyDocumentOutput {
+	s.DocumentMetadata = v
+	return s
+}
+
+// SetDocumentType sets the DocumentType field's value.
+func (s *ClassifyDocumentOutput) SetDocumentType(v []*DocumentTypeListItem) *ClassifyDocumentOutput {
+	s.DocumentType = v
+	return s
+}
+
+// SetErrors sets the Errors field's value.
+func (s *ClassifyDocumentOutput) SetErrors(v []*ErrorsListItem) *ClassifyDocumentOutput {
+	s.Errors = v
+	return s
+}
+
 // SetLabels sets the Labels field's value.
 func (s *ClassifyDocumentOutput) SetLabels(v []*DocumentLabel) *ClassifyDocumentOutput {
 	s.Labels = v
+	return s
+}
+
+// SetWarnings sets the Warnings field's value.
+func (s *ClassifyDocumentOutput) SetWarnings(v []*WarningsListItem) *ClassifyDocumentOutput {
+	s.Warnings = v
 	return s
 }
 
@@ -7910,14 +10967,13 @@ func (s *ConcurrentModificationException) RequestID() string {
 type ContainsPiiEntitiesInput struct {
 	_ struct{} `type:"structure"`
 
-	// The language of the input documents.
+	// The language of the input documents. Currently, English is the only valid
+	// language.
 	//
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// Creates a new document classification request to analyze a single document
-	// in real-time, returning personally identifiable information (PII) entity
-	// labels.
+	// A UTF-8 text string. The maximum string size is 100 KB.
 	//
 	// Text is a required field
 	Text *string `min:"1" type:"string" required:"true"`
@@ -8004,6 +11060,170 @@ func (s *ContainsPiiEntitiesOutput) SetLabels(v []*EntityLabel) *ContainsPiiEnti
 	return s
 }
 
+type CreateDatasetInput struct {
+	_ struct{} `type:"structure"`
+
+	// A unique identifier for the request. If you don't set the client request
+	// token, Amazon Comprehend generates one.
+	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
+
+	// Name of the dataset.
+	//
+	// DatasetName is a required field
+	DatasetName *string `type:"string" required:"true"`
+
+	// The dataset type. You can specify that the data in a dataset is for training
+	// the model or for testing the model.
+	DatasetType *string `type:"string" enum:"DatasetType"`
+
+	// Description of the dataset.
+	Description *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the flywheel of the flywheel to receive
+	// the data.
+	//
+	// FlywheelArn is a required field
+	FlywheelArn *string `type:"string" required:"true"`
+
+	// Information about the input data configuration. The type of input data varies
+	// based on the format of the input and whether the data is for a classifier
+	// model or an entity recognition model.
+	//
+	// InputDataConfig is a required field
+	InputDataConfig *DatasetInputDataConfig `type:"structure" required:"true"`
+
+	// Tags for the dataset.
+	Tags []*Tag `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateDatasetInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateDatasetInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateDatasetInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateDatasetInput"}
+	if s.ClientRequestToken != nil && len(*s.ClientRequestToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ClientRequestToken", 1))
+	}
+	if s.DatasetName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DatasetName"))
+	}
+	if s.FlywheelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelArn"))
+	}
+	if s.InputDataConfig == nil {
+		invalidParams.Add(request.NewErrParamRequired("InputDataConfig"))
+	}
+	if s.InputDataConfig != nil {
+		if err := s.InputDataConfig.Validate(); err != nil {
+			invalidParams.AddNested("InputDataConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Tags != nil {
+		for i, v := range s.Tags {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "Tags", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetClientRequestToken sets the ClientRequestToken field's value.
+func (s *CreateDatasetInput) SetClientRequestToken(v string) *CreateDatasetInput {
+	s.ClientRequestToken = &v
+	return s
+}
+
+// SetDatasetName sets the DatasetName field's value.
+func (s *CreateDatasetInput) SetDatasetName(v string) *CreateDatasetInput {
+	s.DatasetName = &v
+	return s
+}
+
+// SetDatasetType sets the DatasetType field's value.
+func (s *CreateDatasetInput) SetDatasetType(v string) *CreateDatasetInput {
+	s.DatasetType = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *CreateDatasetInput) SetDescription(v string) *CreateDatasetInput {
+	s.Description = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *CreateDatasetInput) SetFlywheelArn(v string) *CreateDatasetInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetInputDataConfig sets the InputDataConfig field's value.
+func (s *CreateDatasetInput) SetInputDataConfig(v *DatasetInputDataConfig) *CreateDatasetInput {
+	s.InputDataConfig = v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *CreateDatasetInput) SetTags(v []*Tag) *CreateDatasetInput {
+	s.Tags = v
+	return s
+}
+
+type CreateDatasetOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The ARN of the dataset.
+	DatasetArn *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateDatasetOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateDatasetOutput) GoString() string {
+	return s.String()
+}
+
+// SetDatasetArn sets the DatasetArn field's value.
+func (s *CreateDatasetOutput) SetDatasetArn(v string) *CreateDatasetOutput {
+	s.DatasetArn = &v
+	return s
+}
+
 type CreateDocumentClassifierInput struct {
 	_ struct{} `type:"structure"`
 
@@ -8011,8 +11231,8 @@ type CreateDocumentClassifierInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-	// that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -8027,51 +11247,66 @@ type CreateDocumentClassifierInput struct {
 	// InputDataConfig is a required field
 	InputDataConfig *DocumentClassifierInputDataConfig `type:"structure" required:"true"`
 
-	// The language of the input documents. You can specify any of the following
-	// languages supported by Amazon Comprehend: German ("de"), English ("en"),
-	// Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All
-	// documents must be in the same language.
+	// The language of the input documents. You can specify any of the languages
+	// supported by Amazon Comprehend. All documents must be in the same language.
 	//
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
 	// Indicates the mode in which the classifier will be trained. The classifier
-	// can be trained in multi-class mode, which identifies one and only one class
-	// for each document, or multi-label mode, which identifies one or more labels
-	// for each document. In multi-label mode, multiple labels for an individual
-	// document are separated by a delimiter. The default delimiter between labels
-	// is a pipe (|).
+	// can be trained in multi-class (single-label) mode or multi-label mode. Multi-class
+	// mode identifies a single class label for each document and multi-label mode
+	// identifies one or more class labels for each document. Multiple labels for
+	// an individual document are separated by a delimiter. The default delimiter
+	// between labels is a pipe (|).
 	Mode *string `type:"string" enum:"DocumentClassifierMode"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt trained custom models. The ModelKmsKeyId can be either of the
-	// following formats:
+	// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+	// models. The ModelKmsKeyId can be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
 	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
 	ModelKmsKeyId *string `type:"string"`
 
-	// Enables the addition of output results configuration parameters for custom
-	// classifier jobs.
+	// The resource-based policy to attach to your custom document classifier model.
+	// You can use this policy to allow another Amazon Web Services account to import
+	// your custom model.
+	//
+	// Provide your policy as a JSON body that you enter as a UTF-8 encoded string
+	// without line breaks. To provide valid JSON, enclose the attribute names and
+	// values in double quotes. If the JSON body is also enclosed in double quotes,
+	// then you must escape the double quotes that are inside the policy:
+	//
+	// "{\"attribute\": \"value\", \"attribute\": [\"value\"]}"
+	//
+	// To avoid escaping quotes, you can use single quotes to enclose the policy
+	// and double quotes to enclose the JSON names and values:
+	//
+	// '{"attribute": "value", "attribute": ["value"]}'
+	ModelPolicy *string `min:"1" type:"string"`
+
+	// Specifies the location for the output files from a custom classifier job.
+	// This parameter is required for a request that creates a native document model.
 	OutputDataConfig *DocumentClassifierOutputDataConfig `type:"structure"`
 
-	// Tags to be associated with the document classifier being created. A tag is
-	// a key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-	// For example, a tag with "Sales" as the key might be added to a resource to
-	// indicate its use by the sales department.
+	// Tags to associate with the document classifier. A tag is a key-value pair
+	// that adds as a metadata to a resource used by Amazon Comprehend. For example,
+	// a tag with "Sales" as the key might be added to a resource to indicate its
+	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
 	// The version name given to the newly created classifier. Version names can
 	// have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
 	// underscores (_) are allowed. The version name must be unique among all models
-	// with the same classifier name in the account/AWS Region.
+	// with the same classifier name in the Amazon Web Services account/Amazon Web
+	// Services Region.
 	VersionName *string `type:"string"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -8122,6 +11357,9 @@ func (s *CreateDocumentClassifierInput) Validate() error {
 	}
 	if s.LanguageCode == nil {
 		invalidParams.Add(request.NewErrParamRequired("LanguageCode"))
+	}
+	if s.ModelPolicy != nil && len(*s.ModelPolicy) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ModelPolicy", 1))
 	}
 	if s.InputDataConfig != nil {
 		if err := s.InputDataConfig.Validate(); err != nil {
@@ -8189,6 +11427,12 @@ func (s *CreateDocumentClassifierInput) SetMode(v string) *CreateDocumentClassif
 // SetModelKmsKeyId sets the ModelKmsKeyId field's value.
 func (s *CreateDocumentClassifierInput) SetModelKmsKeyId(v string) *CreateDocumentClassifierInput {
 	s.ModelKmsKeyId = &v
+	return s
+}
+
+// SetModelPolicy sets the ModelPolicy field's value.
+func (s *CreateDocumentClassifierInput) SetModelPolicy(v string) *CreateDocumentClassifierInput {
+	s.ModelPolicy = &v
 	return s
 }
 
@@ -8260,9 +11504,9 @@ type CreateEndpointInput struct {
 	// endpoint creation request, Amazon Comprehend will not return a ResourceInUseException.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to trained custom models
-	// encrypted with a customer managed key (ModelKmsKeyId).
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to trained custom models encrypted with a customer managed key
+	// (ModelKmsKeyId).
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The desired number of inference units to be used by the model using this
@@ -8278,15 +11522,17 @@ type CreateEndpointInput struct {
 	// EndpointName is a required field
 	EndpointName *string `type:"string" required:"true"`
 
+	// The Amazon Resource Number (ARN) of the flywheel to which the endpoint will
+	// be attached.
+	FlywheelArn *string `type:"string"`
+
 	// The Amazon Resource Number (ARN) of the model to which the endpoint will
 	// be attached.
-	//
-	// ModelArn is a required field
-	ModelArn *string `type:"string" required:"true"`
+	ModelArn *string `type:"string"`
 
-	// Tags associated with the endpoint being created. A tag is a key-value pair
-	// that adds metadata to the endpoint. For example, a tag with "Sales" as the
-	// key might be added to an endpoint to indicate its use by the sales department.
+	// Tags to associate with the endpoint. A tag is a key-value pair that adds
+	// metadata to the endpoint. For example, a tag with "Sales" as the key might
+	// be added to an endpoint to indicate its use by the sales department.
 	Tags []*Tag `type:"list"`
 }
 
@@ -8325,9 +11571,6 @@ func (s *CreateEndpointInput) Validate() error {
 	}
 	if s.EndpointName == nil {
 		invalidParams.Add(request.NewErrParamRequired("EndpointName"))
-	}
-	if s.ModelArn == nil {
-		invalidParams.Add(request.NewErrParamRequired("ModelArn"))
 	}
 	if s.Tags != nil {
 		for i, v := range s.Tags {
@@ -8370,6 +11613,12 @@ func (s *CreateEndpointInput) SetEndpointName(v string) *CreateEndpointInput {
 	return s
 }
 
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *CreateEndpointInput) SetFlywheelArn(v string) *CreateEndpointInput {
+	s.FlywheelArn = &v
+	return s
+}
+
 // SetModelArn sets the ModelArn field's value.
 func (s *CreateEndpointInput) SetModelArn(v string) *CreateEndpointInput {
 	s.ModelArn = &v
@@ -8387,6 +11636,9 @@ type CreateEndpointOutput struct {
 
 	// The Amazon Resource Number (ARN) of the endpoint being created.
 	EndpointArn *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+	ModelArn *string `type:"string"`
 }
 
 // String returns the string representation.
@@ -8413,6 +11665,12 @@ func (s *CreateEndpointOutput) SetEndpointArn(v string) *CreateEndpointOutput {
 	return s
 }
 
+// SetModelArn sets the ModelArn field's value.
+func (s *CreateEndpointOutput) SetModelArn(v string) *CreateEndpointOutput {
+	s.ModelArn = &v
+	return s
+}
+
 type CreateEntityRecognizerInput struct {
 	_ struct{} `type:"structure"`
 
@@ -8420,58 +11678,76 @@ type CreateEntityRecognizerInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-	// that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
 
 	// Specifies the format and location of the input data. The S3 bucket containing
-	// the input data must be located in the same region as the entity recognizer
+	// the input data must be located in the same Region as the entity recognizer
 	// being created.
 	//
 	// InputDataConfig is a required field
 	InputDataConfig *EntityRecognizerInputDataConfig `type:"structure" required:"true"`
 
-	// You can specify any of the following languages supported by Amazon Comprehend:
-	// English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"),
-	// or Portuguese ("pt"). All documents must be in the same language.
+	// You can specify any of the following languages: English ("en"), Spanish ("es"),
+	// French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If you
+	// plan to use this entity recognizer with PDF, Word, or image input files,
+	// you must specify English as the language. All training documents must be
+	// in the same language.
 	//
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt trained custom models. The ModelKmsKeyId can be either of the
-	// following formats
+	// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+	// models. The ModelKmsKeyId can be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
 	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
 	ModelKmsKeyId *string `type:"string"`
 
+	// The JSON resource-based policy to attach to your custom entity recognizer
+	// model. You can use this policy to allow another Amazon Web Services account
+	// to import your custom model.
+	//
+	// Provide your JSON as a UTF-8 encoded string without line breaks. To provide
+	// valid JSON for your policy, enclose the attribute names and values in double
+	// quotes. If the JSON body is also enclosed in double quotes, then you must
+	// escape the double quotes that are inside the policy:
+	//
+	// "{\"attribute\": \"value\", \"attribute\": [\"value\"]}"
+	//
+	// To avoid escaping quotes, you can use single quotes to enclose the policy
+	// and double quotes to enclose the JSON names and values:
+	//
+	// '{"attribute": "value", "attribute": ["value"]}'
+	ModelPolicy *string `min:"1" type:"string"`
+
 	// The name given to the newly created recognizer. Recognizer names can be a
 	// maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores
-	// (_) are allowed. The name must be unique in the account/region.
+	// (_) are allowed. The name must be unique in the account/Region.
 	//
 	// RecognizerName is a required field
 	RecognizerName *string `type:"string" required:"true"`
 
-	// Tags to be associated with the entity recognizer being created. A tag is
-	// a key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-	// For example, a tag with "Sales" as the key might be added to a resource to
-	// indicate its use by the sales department.
+	// Tags to associate with the entity recognizer. A tag is a key-value pair that
+	// adds as a metadata to a resource used by Amazon Comprehend. For example,
+	// a tag with "Sales" as the key might be added to a resource to indicate its
+	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
 	// The version name given to the newly created recognizer. Version names can
 	// be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and
 	// underscores (_) are allowed. The version name must be unique among all models
-	// with the same recognizer name in the account/ AWS Region.
+	// with the same recognizer name in the account/Region.
 	VersionName *string `type:"string"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -8519,6 +11795,9 @@ func (s *CreateEntityRecognizerInput) Validate() error {
 	}
 	if s.LanguageCode == nil {
 		invalidParams.Add(request.NewErrParamRequired("LanguageCode"))
+	}
+	if s.ModelPolicy != nil && len(*s.ModelPolicy) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ModelPolicy", 1))
 	}
 	if s.RecognizerName == nil {
 		invalidParams.Add(request.NewErrParamRequired("RecognizerName"))
@@ -8580,6 +11859,12 @@ func (s *CreateEntityRecognizerInput) SetModelKmsKeyId(v string) *CreateEntityRe
 	return s
 }
 
+// SetModelPolicy sets the ModelPolicy field's value.
+func (s *CreateEntityRecognizerInput) SetModelPolicy(v string) *CreateEntityRecognizerInput {
+	s.ModelPolicy = &v
+	return s
+}
+
 // SetRecognizerName sets the RecognizerName field's value.
 func (s *CreateEntityRecognizerInput) SetRecognizerName(v string) *CreateEntityRecognizerInput {
 	s.RecognizerName = &v
@@ -8638,6 +11923,988 @@ func (s CreateEntityRecognizerOutput) GoString() string {
 // SetEntityRecognizerArn sets the EntityRecognizerArn field's value.
 func (s *CreateEntityRecognizerOutput) SetEntityRecognizerArn(v string) *CreateEntityRecognizerOutput {
 	s.EntityRecognizerArn = &v
+	return s
+}
+
+type CreateFlywheelInput struct {
+	_ struct{} `type:"structure"`
+
+	// To associate an existing model with the flywheel, specify the Amazon Resource
+	// Number (ARN) of the model version. Do not set TaskConfig or ModelType if
+	// you specify an ActiveModelArn.
+	ActiveModelArn *string `type:"string"`
+
+	// A unique identifier for the request. If you don't set the client request
+	// token, Amazon Comprehend generates one.
+	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
+
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// the permissions required to access the flywheel data in the data lake.
+	//
+	// DataAccessRoleArn is a required field
+	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
+
+	// Enter the S3 location for the data lake. You can specify a new S3 bucket
+	// or a new folder of an existing S3 bucket. The flywheel creates the data lake
+	// at this location.
+	//
+	// DataLakeS3Uri is a required field
+	DataLakeS3Uri *string `type:"string" required:"true"`
+
+	// Data security configurations.
+	DataSecurityConfig *DataSecurityConfig `type:"structure"`
+
+	// Name for the flywheel.
+	//
+	// FlywheelName is a required field
+	FlywheelName *string `type:"string" required:"true"`
+
+	// The model type. You need to set ModelType if you are creating a flywheel
+	// for a new model.
+	ModelType *string `type:"string" enum:"ModelType"`
+
+	// The tags to associate with this flywheel.
+	Tags []*Tag `type:"list"`
+
+	// Configuration about the model associated with the flywheel. You need to set
+	// TaskConfig if you are creating a flywheel for a new model.
+	TaskConfig *TaskConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateFlywheelInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateFlywheelInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateFlywheelInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateFlywheelInput"}
+	if s.ClientRequestToken != nil && len(*s.ClientRequestToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ClientRequestToken", 1))
+	}
+	if s.DataAccessRoleArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("DataAccessRoleArn"))
+	}
+	if s.DataAccessRoleArn != nil && len(*s.DataAccessRoleArn) < 20 {
+		invalidParams.Add(request.NewErrParamMinLen("DataAccessRoleArn", 20))
+	}
+	if s.DataLakeS3Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("DataLakeS3Uri"))
+	}
+	if s.FlywheelName == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelName"))
+	}
+	if s.DataSecurityConfig != nil {
+		if err := s.DataSecurityConfig.Validate(); err != nil {
+			invalidParams.AddNested("DataSecurityConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Tags != nil {
+		for i, v := range s.Tags {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "Tags", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+	if s.TaskConfig != nil {
+		if err := s.TaskConfig.Validate(); err != nil {
+			invalidParams.AddNested("TaskConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetActiveModelArn sets the ActiveModelArn field's value.
+func (s *CreateFlywheelInput) SetActiveModelArn(v string) *CreateFlywheelInput {
+	s.ActiveModelArn = &v
+	return s
+}
+
+// SetClientRequestToken sets the ClientRequestToken field's value.
+func (s *CreateFlywheelInput) SetClientRequestToken(v string) *CreateFlywheelInput {
+	s.ClientRequestToken = &v
+	return s
+}
+
+// SetDataAccessRoleArn sets the DataAccessRoleArn field's value.
+func (s *CreateFlywheelInput) SetDataAccessRoleArn(v string) *CreateFlywheelInput {
+	s.DataAccessRoleArn = &v
+	return s
+}
+
+// SetDataLakeS3Uri sets the DataLakeS3Uri field's value.
+func (s *CreateFlywheelInput) SetDataLakeS3Uri(v string) *CreateFlywheelInput {
+	s.DataLakeS3Uri = &v
+	return s
+}
+
+// SetDataSecurityConfig sets the DataSecurityConfig field's value.
+func (s *CreateFlywheelInput) SetDataSecurityConfig(v *DataSecurityConfig) *CreateFlywheelInput {
+	s.DataSecurityConfig = v
+	return s
+}
+
+// SetFlywheelName sets the FlywheelName field's value.
+func (s *CreateFlywheelInput) SetFlywheelName(v string) *CreateFlywheelInput {
+	s.FlywheelName = &v
+	return s
+}
+
+// SetModelType sets the ModelType field's value.
+func (s *CreateFlywheelInput) SetModelType(v string) *CreateFlywheelInput {
+	s.ModelType = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *CreateFlywheelInput) SetTags(v []*Tag) *CreateFlywheelInput {
+	s.Tags = v
+	return s
+}
+
+// SetTaskConfig sets the TaskConfig field's value.
+func (s *CreateFlywheelInput) SetTaskConfig(v *TaskConfig) *CreateFlywheelInput {
+	s.TaskConfig = v
+	return s
+}
+
+type CreateFlywheelOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the active model version.
+	ActiveModelArn *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the flywheel.
+	FlywheelArn *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateFlywheelOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateFlywheelOutput) GoString() string {
+	return s.String()
+}
+
+// SetActiveModelArn sets the ActiveModelArn field's value.
+func (s *CreateFlywheelOutput) SetActiveModelArn(v string) *CreateFlywheelOutput {
+	s.ActiveModelArn = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *CreateFlywheelOutput) SetFlywheelArn(v string) *CreateFlywheelOutput {
+	s.FlywheelArn = &v
+	return s
+}
+
+// Data security configuration.
+type DataSecurityConfig struct {
+	_ struct{} `type:"structure"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt the data in the
+	// data lake.
+	DataLakeKmsKeyId *string `type:"string"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+	// models. The ModelKmsKeyId can be either of the following formats:
+	//
+	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+	//
+	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+	ModelKmsKeyId *string `type:"string"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt the volume.
+	VolumeKmsKeyId *string `type:"string"`
+
+	// Configuration parameters for an optional private Virtual Private Cloud (VPC)
+	// containing the resources you are using for the job. For more information,
+	// see Amazon VPC (https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html).
+	VpcConfig *VpcConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DataSecurityConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DataSecurityConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DataSecurityConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DataSecurityConfig"}
+	if s.VpcConfig != nil {
+		if err := s.VpcConfig.Validate(); err != nil {
+			invalidParams.AddNested("VpcConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDataLakeKmsKeyId sets the DataLakeKmsKeyId field's value.
+func (s *DataSecurityConfig) SetDataLakeKmsKeyId(v string) *DataSecurityConfig {
+	s.DataLakeKmsKeyId = &v
+	return s
+}
+
+// SetModelKmsKeyId sets the ModelKmsKeyId field's value.
+func (s *DataSecurityConfig) SetModelKmsKeyId(v string) *DataSecurityConfig {
+	s.ModelKmsKeyId = &v
+	return s
+}
+
+// SetVolumeKmsKeyId sets the VolumeKmsKeyId field's value.
+func (s *DataSecurityConfig) SetVolumeKmsKeyId(v string) *DataSecurityConfig {
+	s.VolumeKmsKeyId = &v
+	return s
+}
+
+// SetVpcConfig sets the VpcConfig field's value.
+func (s *DataSecurityConfig) SetVpcConfig(v *VpcConfig) *DataSecurityConfig {
+	s.VpcConfig = v
+	return s
+}
+
+// An augmented manifest file that provides training data for your custom model.
+// An augmented manifest file is a labeled dataset that is produced by Amazon
+// SageMaker Ground Truth.
+type DatasetAugmentedManifestsListItem struct {
+	_ struct{} `type:"structure"`
+
+	// The S3 prefix to the annotation files that are referred in the augmented
+	// manifest file.
+	AnnotationDataS3Uri *string `type:"string"`
+
+	// The JSON attribute that contains the annotations for your training documents.
+	// The number of attribute names that you specify depends on whether your augmented
+	// manifest file is the output of a single labeling job or a chained labeling
+	// job.
+	//
+	// If your file is the output of a single labeling job, specify the LabelAttributeName
+	// key that was used when the job was created in Ground Truth.
+	//
+	// If your file is the output of a chained labeling job, specify the LabelAttributeName
+	// key for one or more jobs in the chain. Each LabelAttributeName key provides
+	// the annotations from an individual job.
+	//
+	// AttributeNames is a required field
+	AttributeNames []*string `type:"list" required:"true"`
+
+	// The type of augmented manifest. If you don't specify, the default is PlainTextDocument.
+	//
+	// PLAIN_TEXT_DOCUMENT A document type that represents any unicode text that
+	// is encoded in UTF-8.
+	DocumentType *string `type:"string" enum:"AugmentedManifestsDocumentTypeFormat"`
+
+	// The Amazon S3 location of the augmented manifest file.
+	//
+	// S3Uri is a required field
+	S3Uri *string `type:"string" required:"true"`
+
+	// The S3 prefix to the source files (PDFs) that are referred to in the augmented
+	// manifest file.
+	SourceDocumentsS3Uri *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetAugmentedManifestsListItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetAugmentedManifestsListItem) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DatasetAugmentedManifestsListItem) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DatasetAugmentedManifestsListItem"}
+	if s.AttributeNames == nil {
+		invalidParams.Add(request.NewErrParamRequired("AttributeNames"))
+	}
+	if s.S3Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("S3Uri"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAnnotationDataS3Uri sets the AnnotationDataS3Uri field's value.
+func (s *DatasetAugmentedManifestsListItem) SetAnnotationDataS3Uri(v string) *DatasetAugmentedManifestsListItem {
+	s.AnnotationDataS3Uri = &v
+	return s
+}
+
+// SetAttributeNames sets the AttributeNames field's value.
+func (s *DatasetAugmentedManifestsListItem) SetAttributeNames(v []*string) *DatasetAugmentedManifestsListItem {
+	s.AttributeNames = v
+	return s
+}
+
+// SetDocumentType sets the DocumentType field's value.
+func (s *DatasetAugmentedManifestsListItem) SetDocumentType(v string) *DatasetAugmentedManifestsListItem {
+	s.DocumentType = &v
+	return s
+}
+
+// SetS3Uri sets the S3Uri field's value.
+func (s *DatasetAugmentedManifestsListItem) SetS3Uri(v string) *DatasetAugmentedManifestsListItem {
+	s.S3Uri = &v
+	return s
+}
+
+// SetSourceDocumentsS3Uri sets the SourceDocumentsS3Uri field's value.
+func (s *DatasetAugmentedManifestsListItem) SetSourceDocumentsS3Uri(v string) *DatasetAugmentedManifestsListItem {
+	s.SourceDocumentsS3Uri = &v
+	return s
+}
+
+// Describes the dataset input data configuration for a document classifier
+// model.
+//
+// For more information on how the input file is formatted, see Preparing training
+// data (https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html)
+// in the Comprehend Developer Guide.
+type DatasetDocumentClassifierInputDataConfig struct {
+	_ struct{} `type:"structure"`
+
+	// Indicates the delimiter used to separate each label for training a multi-label
+	// classifier. The default delimiter between labels is a pipe (|). You can use
+	// a different character as a delimiter (if it's an allowed character) by specifying
+	// it under Delimiter for labels. If the training documents use a delimiter
+	// other than the default or the delimiter you specify, the labels on that line
+	// will be combined to make a single unique label, such as LABELLABELLABEL.
+	LabelDelimiter *string `min:"1" type:"string"`
+
+	// The Amazon S3 URI for the input data. The S3 bucket must be in the same Region
+	// as the API endpoint that you are calling. The URI can point to a single input
+	// file or it can provide the prefix for a collection of input files.
+	//
+	// For example, if you use the URI S3://bucketName/prefix, if the prefix is
+	// a single file, Amazon Comprehend uses that file as input. If more than one
+	// file begins with the prefix, Amazon Comprehend uses all of them as input.
+	//
+	// This parameter is required if you set DataFormat to COMPREHEND_CSV.
+	//
+	// S3Uri is a required field
+	S3Uri *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetDocumentClassifierInputDataConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetDocumentClassifierInputDataConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DatasetDocumentClassifierInputDataConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DatasetDocumentClassifierInputDataConfig"}
+	if s.LabelDelimiter != nil && len(*s.LabelDelimiter) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("LabelDelimiter", 1))
+	}
+	if s.S3Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("S3Uri"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetLabelDelimiter sets the LabelDelimiter field's value.
+func (s *DatasetDocumentClassifierInputDataConfig) SetLabelDelimiter(v string) *DatasetDocumentClassifierInputDataConfig {
+	s.LabelDelimiter = &v
+	return s
+}
+
+// SetS3Uri sets the S3Uri field's value.
+func (s *DatasetDocumentClassifierInputDataConfig) SetS3Uri(v string) *DatasetDocumentClassifierInputDataConfig {
+	s.S3Uri = &v
+	return s
+}
+
+// Describes the annotations associated with a entity recognizer.
+type DatasetEntityRecognizerAnnotations struct {
+	_ struct{} `type:"structure"`
+
+	// Specifies the Amazon S3 location where the training documents for an entity
+	// recognizer are located. The URI must be in the same Region as the API endpoint
+	// that you are calling.
+	//
+	// S3Uri is a required field
+	S3Uri *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerAnnotations) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerAnnotations) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DatasetEntityRecognizerAnnotations) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DatasetEntityRecognizerAnnotations"}
+	if s.S3Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("S3Uri"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetS3Uri sets the S3Uri field's value.
+func (s *DatasetEntityRecognizerAnnotations) SetS3Uri(v string) *DatasetEntityRecognizerAnnotations {
+	s.S3Uri = &v
+	return s
+}
+
+// Describes the documents submitted with a dataset for an entity recognizer
+// model.
+type DatasetEntityRecognizerDocuments struct {
+	_ struct{} `type:"structure"`
+
+	// Specifies how the text in an input file should be processed. This is optional,
+	// and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered
+	// a separate document. Use this option when you are processing large documents,
+	// such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each
+	// line in a file is considered a separate document. Use this option when you
+	// are processing many short documents, such as text messages.
+	InputFormat *string `type:"string" enum:"InputFormat"`
+
+	// Specifies the Amazon S3 location where the documents for the dataset are
+	// located.
+	//
+	// S3Uri is a required field
+	S3Uri *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerDocuments) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerDocuments) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DatasetEntityRecognizerDocuments) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DatasetEntityRecognizerDocuments"}
+	if s.S3Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("S3Uri"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetInputFormat sets the InputFormat field's value.
+func (s *DatasetEntityRecognizerDocuments) SetInputFormat(v string) *DatasetEntityRecognizerDocuments {
+	s.InputFormat = &v
+	return s
+}
+
+// SetS3Uri sets the S3Uri field's value.
+func (s *DatasetEntityRecognizerDocuments) SetS3Uri(v string) *DatasetEntityRecognizerDocuments {
+	s.S3Uri = &v
+	return s
+}
+
+// Describes the dataset entity list for an entity recognizer model.
+//
+// For more information on how the input file is formatted, see Preparing training
+// data (https://docs.aws.amazon.com/comprehend/latest/dg/prep-training-data-cer.html)
+// in the Comprehend Developer Guide.
+type DatasetEntityRecognizerEntityList struct {
+	_ struct{} `type:"structure"`
+
+	// Specifies the Amazon S3 location where the entity list is located.
+	//
+	// S3Uri is a required field
+	S3Uri *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerEntityList) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerEntityList) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DatasetEntityRecognizerEntityList) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DatasetEntityRecognizerEntityList"}
+	if s.S3Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("S3Uri"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetS3Uri sets the S3Uri field's value.
+func (s *DatasetEntityRecognizerEntityList) SetS3Uri(v string) *DatasetEntityRecognizerEntityList {
+	s.S3Uri = &v
+	return s
+}
+
+// Specifies the format and location of the input data. You must provide either
+// the Annotations parameter or the EntityList parameter.
+type DatasetEntityRecognizerInputDataConfig struct {
+	_ struct{} `type:"structure"`
+
+	// The S3 location of the annotation documents for your custom entity recognizer.
+	Annotations *DatasetEntityRecognizerAnnotations `type:"structure"`
+
+	// The format and location of the training documents for your custom entity
+	// recognizer.
+	//
+	// Documents is a required field
+	Documents *DatasetEntityRecognizerDocuments `type:"structure" required:"true"`
+
+	// The S3 location of the entity list for your custom entity recognizer.
+	EntityList *DatasetEntityRecognizerEntityList `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerInputDataConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetEntityRecognizerInputDataConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DatasetEntityRecognizerInputDataConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DatasetEntityRecognizerInputDataConfig"}
+	if s.Documents == nil {
+		invalidParams.Add(request.NewErrParamRequired("Documents"))
+	}
+	if s.Annotations != nil {
+		if err := s.Annotations.Validate(); err != nil {
+			invalidParams.AddNested("Annotations", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Documents != nil {
+		if err := s.Documents.Validate(); err != nil {
+			invalidParams.AddNested("Documents", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.EntityList != nil {
+		if err := s.EntityList.Validate(); err != nil {
+			invalidParams.AddNested("EntityList", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAnnotations sets the Annotations field's value.
+func (s *DatasetEntityRecognizerInputDataConfig) SetAnnotations(v *DatasetEntityRecognizerAnnotations) *DatasetEntityRecognizerInputDataConfig {
+	s.Annotations = v
+	return s
+}
+
+// SetDocuments sets the Documents field's value.
+func (s *DatasetEntityRecognizerInputDataConfig) SetDocuments(v *DatasetEntityRecognizerDocuments) *DatasetEntityRecognizerInputDataConfig {
+	s.Documents = v
+	return s
+}
+
+// SetEntityList sets the EntityList field's value.
+func (s *DatasetEntityRecognizerInputDataConfig) SetEntityList(v *DatasetEntityRecognizerEntityList) *DatasetEntityRecognizerInputDataConfig {
+	s.EntityList = v
+	return s
+}
+
+// Filter the datasets based on creation time or dataset status.
+type DatasetFilter struct {
+	_ struct{} `type:"structure"`
+
+	// Filter the datasets to include datasets created after the specified time.
+	CreationTimeAfter *time.Time `type:"timestamp"`
+
+	// Filter the datasets to include datasets created before the specified time.
+	CreationTimeBefore *time.Time `type:"timestamp"`
+
+	// Filter the datasets based on the dataset type.
+	DatasetType *string `type:"string" enum:"DatasetType"`
+
+	// Filter the datasets based on the dataset status.
+	Status *string `type:"string" enum:"DatasetStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetFilter) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetFilter) GoString() string {
+	return s.String()
+}
+
+// SetCreationTimeAfter sets the CreationTimeAfter field's value.
+func (s *DatasetFilter) SetCreationTimeAfter(v time.Time) *DatasetFilter {
+	s.CreationTimeAfter = &v
+	return s
+}
+
+// SetCreationTimeBefore sets the CreationTimeBefore field's value.
+func (s *DatasetFilter) SetCreationTimeBefore(v time.Time) *DatasetFilter {
+	s.CreationTimeBefore = &v
+	return s
+}
+
+// SetDatasetType sets the DatasetType field's value.
+func (s *DatasetFilter) SetDatasetType(v string) *DatasetFilter {
+	s.DatasetType = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *DatasetFilter) SetStatus(v string) *DatasetFilter {
+	s.Status = &v
+	return s
+}
+
+// Specifies the format and location of the input data for the dataset.
+type DatasetInputDataConfig struct {
+	_ struct{} `type:"structure"`
+
+	// A list of augmented manifest files that provide training data for your custom
+	// model. An augmented manifest file is a labeled dataset that is produced by
+	// Amazon SageMaker Ground Truth.
+	AugmentedManifests []*DatasetAugmentedManifestsListItem `type:"list"`
+
+	// COMPREHEND_CSV: The data format is a two-column CSV file, where the first
+	// column contains labels and the second column contains documents.
+	//
+	// AUGMENTED_MANIFEST: The data format
+	DataFormat *string `type:"string" enum:"DatasetDataFormat"`
+
+	// The input properties for training a document classifier model.
+	//
+	// For more information on how the input file is formatted, see Preparing training
+	// data (https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html)
+	// in the Comprehend Developer Guide.
+	DocumentClassifierInputDataConfig *DatasetDocumentClassifierInputDataConfig `type:"structure"`
+
+	// The input properties for training an entity recognizer model.
+	EntityRecognizerInputDataConfig *DatasetEntityRecognizerInputDataConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetInputDataConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetInputDataConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DatasetInputDataConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DatasetInputDataConfig"}
+	if s.AugmentedManifests != nil {
+		for i, v := range s.AugmentedManifests {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "AugmentedManifests", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+	if s.DocumentClassifierInputDataConfig != nil {
+		if err := s.DocumentClassifierInputDataConfig.Validate(); err != nil {
+			invalidParams.AddNested("DocumentClassifierInputDataConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.EntityRecognizerInputDataConfig != nil {
+		if err := s.EntityRecognizerInputDataConfig.Validate(); err != nil {
+			invalidParams.AddNested("EntityRecognizerInputDataConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAugmentedManifests sets the AugmentedManifests field's value.
+func (s *DatasetInputDataConfig) SetAugmentedManifests(v []*DatasetAugmentedManifestsListItem) *DatasetInputDataConfig {
+	s.AugmentedManifests = v
+	return s
+}
+
+// SetDataFormat sets the DataFormat field's value.
+func (s *DatasetInputDataConfig) SetDataFormat(v string) *DatasetInputDataConfig {
+	s.DataFormat = &v
+	return s
+}
+
+// SetDocumentClassifierInputDataConfig sets the DocumentClassifierInputDataConfig field's value.
+func (s *DatasetInputDataConfig) SetDocumentClassifierInputDataConfig(v *DatasetDocumentClassifierInputDataConfig) *DatasetInputDataConfig {
+	s.DocumentClassifierInputDataConfig = v
+	return s
+}
+
+// SetEntityRecognizerInputDataConfig sets the EntityRecognizerInputDataConfig field's value.
+func (s *DatasetInputDataConfig) SetEntityRecognizerInputDataConfig(v *DatasetEntityRecognizerInputDataConfig) *DatasetInputDataConfig {
+	s.EntityRecognizerInputDataConfig = v
+	return s
+}
+
+// Properties associated with the dataset.
+type DatasetProperties struct {
+	_ struct{} `type:"structure"`
+
+	// Creation time of the dataset.
+	CreationTime *time.Time `type:"timestamp"`
+
+	// The ARN of the dataset.
+	DatasetArn *string `type:"string"`
+
+	// The name of the dataset.
+	DatasetName *string `type:"string"`
+
+	// The S3 URI where the dataset is stored.
+	DatasetS3Uri *string `type:"string"`
+
+	// The dataset type (training data or test data).
+	DatasetType *string `type:"string" enum:"DatasetType"`
+
+	// Description of the dataset.
+	Description *string `type:"string"`
+
+	// Time when the data from the dataset becomes available in the data lake.
+	EndTime *time.Time `type:"timestamp"`
+
+	// A description of the status of the dataset.
+	Message *string `type:"string"`
+
+	// The number of documents in the dataset.
+	NumberOfDocuments *int64 `type:"long"`
+
+	// The dataset status. While the system creates the dataset, the status is CREATING.
+	// When the dataset is ready to use, the status changes to COMPLETED.
+	Status *string `type:"string" enum:"DatasetStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetProperties) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DatasetProperties) GoString() string {
+	return s.String()
+}
+
+// SetCreationTime sets the CreationTime field's value.
+func (s *DatasetProperties) SetCreationTime(v time.Time) *DatasetProperties {
+	s.CreationTime = &v
+	return s
+}
+
+// SetDatasetArn sets the DatasetArn field's value.
+func (s *DatasetProperties) SetDatasetArn(v string) *DatasetProperties {
+	s.DatasetArn = &v
+	return s
+}
+
+// SetDatasetName sets the DatasetName field's value.
+func (s *DatasetProperties) SetDatasetName(v string) *DatasetProperties {
+	s.DatasetName = &v
+	return s
+}
+
+// SetDatasetS3Uri sets the DatasetS3Uri field's value.
+func (s *DatasetProperties) SetDatasetS3Uri(v string) *DatasetProperties {
+	s.DatasetS3Uri = &v
+	return s
+}
+
+// SetDatasetType sets the DatasetType field's value.
+func (s *DatasetProperties) SetDatasetType(v string) *DatasetProperties {
+	s.DatasetType = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *DatasetProperties) SetDescription(v string) *DatasetProperties {
+	s.Description = &v
+	return s
+}
+
+// SetEndTime sets the EndTime field's value.
+func (s *DatasetProperties) SetEndTime(v time.Time) *DatasetProperties {
+	s.EndTime = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *DatasetProperties) SetMessage(v string) *DatasetProperties {
+	s.Message = &v
+	return s
+}
+
+// SetNumberOfDocuments sets the NumberOfDocuments field's value.
+func (s *DatasetProperties) SetNumberOfDocuments(v int64) *DatasetProperties {
+	s.NumberOfDocuments = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *DatasetProperties) SetStatus(v string) *DatasetProperties {
+	s.Status = &v
 	return s
 }
 
@@ -8845,11 +13112,234 @@ func (s DeleteEntityRecognizerOutput) GoString() string {
 	return s.String()
 }
 
+type DeleteFlywheelInput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the flywheel to delete.
+	//
+	// FlywheelArn is a required field
+	FlywheelArn *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteFlywheelInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteFlywheelInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteFlywheelInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteFlywheelInput"}
+	if s.FlywheelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelArn"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *DeleteFlywheelInput) SetFlywheelArn(v string) *DeleteFlywheelInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+type DeleteFlywheelOutput struct {
+	_ struct{} `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteFlywheelOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteFlywheelOutput) GoString() string {
+	return s.String()
+}
+
+type DeleteResourcePolicyInput struct {
+	_ struct{} `type:"structure"`
+
+	// The revision ID of the policy to delete.
+	PolicyRevisionId *string `type:"string"`
+
+	// The Amazon Resource Name (ARN) of the custom model version that has the policy
+	// to delete.
+	//
+	// ResourceArn is a required field
+	ResourceArn *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteResourcePolicyInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteResourcePolicyInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteResourcePolicyInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteResourcePolicyInput"}
+	if s.ResourceArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("ResourceArn"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetPolicyRevisionId sets the PolicyRevisionId field's value.
+func (s *DeleteResourcePolicyInput) SetPolicyRevisionId(v string) *DeleteResourcePolicyInput {
+	s.PolicyRevisionId = &v
+	return s
+}
+
+// SetResourceArn sets the ResourceArn field's value.
+func (s *DeleteResourcePolicyInput) SetResourceArn(v string) *DeleteResourcePolicyInput {
+	s.ResourceArn = &v
+	return s
+}
+
+type DeleteResourcePolicyOutput struct {
+	_ struct{} `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteResourcePolicyOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteResourcePolicyOutput) GoString() string {
+	return s.String()
+}
+
+type DescribeDatasetInput struct {
+	_ struct{} `type:"structure"`
+
+	// The ARN of the dataset.
+	//
+	// DatasetArn is a required field
+	DatasetArn *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeDatasetInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeDatasetInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeDatasetInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeDatasetInput"}
+	if s.DatasetArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("DatasetArn"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDatasetArn sets the DatasetArn field's value.
+func (s *DescribeDatasetInput) SetDatasetArn(v string) *DescribeDatasetInput {
+	s.DatasetArn = &v
+	return s
+}
+
+type DescribeDatasetOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The dataset properties.
+	DatasetProperties *DatasetProperties `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeDatasetOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeDatasetOutput) GoString() string {
+	return s.String()
+}
+
+// SetDatasetProperties sets the DatasetProperties field's value.
+func (s *DescribeDatasetOutput) SetDatasetProperties(v *DatasetProperties) *DescribeDatasetOutput {
+	s.DatasetProperties = v
+	return s
+}
+
 type DescribeDocumentClassificationJobInput struct {
 	_ struct{} `type:"structure"`
 
-	// The identifier that Amazon Comprehend generated for the job. The operation
-	// returns this identifier in its response.
+	// The identifier that Amazon Comprehend generated for the job. The StartDocumentClassificationJob
+	// operation returns this identifier in its response.
 	//
 	// JobId is a required field
 	JobId *string `min:"1" type:"string" required:"true"`
@@ -8931,7 +13421,7 @@ type DescribeDocumentClassifierInput struct {
 	_ struct{} `type:"structure"`
 
 	// The Amazon Resource Name (ARN) that identifies the document classifier. The
-	// operation returns this identifier in its response.
+	// CreateDocumentClassifier operation returns this identifier in its response.
 	//
 	// DocumentClassifierArn is a required field
 	DocumentClassifierArn *string `type:"string" required:"true"`
@@ -9008,8 +13498,8 @@ func (s *DescribeDocumentClassifierOutput) SetDocumentClassifierProperties(v *Do
 type DescribeDominantLanguageDetectionJobInput struct {
 	_ struct{} `type:"structure"`
 
-	// The identifier that Amazon Comprehend generated for the job. The operation
-	// returns this identifier in its response.
+	// The identifier that Amazon Comprehend generated for the job. The StartDominantLanguageDetectionJob
+	// operation returns this identifier in its response.
 	//
 	// JobId is a required field
 	JobId *string `min:"1" type:"string" required:"true"`
@@ -9167,8 +13657,8 @@ func (s *DescribeEndpointOutput) SetEndpointProperties(v *EndpointProperties) *D
 type DescribeEntitiesDetectionJobInput struct {
 	_ struct{} `type:"structure"`
 
-	// The identifier that Amazon Comprehend generated for the job. The operation
-	// returns this identifier in its response.
+	// The identifier that Amazon Comprehend generated for the job. The StartEntitiesDetectionJob
+	// operation returns this identifier in its response.
 	//
 	// JobId is a required field
 	JobId *string `min:"1" type:"string" required:"true"`
@@ -9404,11 +13894,175 @@ func (s *DescribeEventsDetectionJobOutput) SetEventsDetectionJobProperties(v *Ev
 	return s
 }
 
+type DescribeFlywheelInput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the flywheel.
+	//
+	// FlywheelArn is a required field
+	FlywheelArn *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeFlywheelInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeFlywheelInput"}
+	if s.FlywheelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelArn"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *DescribeFlywheelInput) SetFlywheelArn(v string) *DescribeFlywheelInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+type DescribeFlywheelIterationInput struct {
+	_ struct{} `type:"structure"`
+
+	// FlywheelArn is a required field
+	FlywheelArn *string `type:"string" required:"true"`
+
+	// FlywheelIterationId is a required field
+	FlywheelIterationId *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelIterationInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelIterationInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeFlywheelIterationInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeFlywheelIterationInput"}
+	if s.FlywheelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelArn"))
+	}
+	if s.FlywheelIterationId == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelIterationId"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *DescribeFlywheelIterationInput) SetFlywheelArn(v string) *DescribeFlywheelIterationInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetFlywheelIterationId sets the FlywheelIterationId field's value.
+func (s *DescribeFlywheelIterationInput) SetFlywheelIterationId(v string) *DescribeFlywheelIterationInput {
+	s.FlywheelIterationId = &v
+	return s
+}
+
+type DescribeFlywheelIterationOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The configuration properties of a flywheel iteration.
+	FlywheelIterationProperties *FlywheelIterationProperties `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelIterationOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelIterationOutput) GoString() string {
+	return s.String()
+}
+
+// SetFlywheelIterationProperties sets the FlywheelIterationProperties field's value.
+func (s *DescribeFlywheelIterationOutput) SetFlywheelIterationProperties(v *FlywheelIterationProperties) *DescribeFlywheelIterationOutput {
+	s.FlywheelIterationProperties = v
+	return s
+}
+
+type DescribeFlywheelOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The flywheel properties.
+	FlywheelProperties *FlywheelProperties `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeFlywheelOutput) GoString() string {
+	return s.String()
+}
+
+// SetFlywheelProperties sets the FlywheelProperties field's value.
+func (s *DescribeFlywheelOutput) SetFlywheelProperties(v *FlywheelProperties) *DescribeFlywheelOutput {
+	s.FlywheelProperties = v
+	return s
+}
+
 type DescribeKeyPhrasesDetectionJobInput struct {
 	_ struct{} `type:"structure"`
 
-	// The identifier that Amazon Comprehend generated for the job. The operation
-	// returns this identifier in its response.
+	// The identifier that Amazon Comprehend generated for the job. The StartKeyPhrasesDetectionJob
+	// operation returns this identifier in its response.
 	//
 	// JobId is a required field
 	JobId *string `min:"1" type:"string" required:"true"`
@@ -9567,6 +14221,112 @@ func (s *DescribePiiEntitiesDetectionJobOutput) SetPiiEntitiesDetectionJobProper
 	return s
 }
 
+type DescribeResourcePolicyInput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Name (ARN) of the custom model version that has the resource
+	// policy.
+	//
+	// ResourceArn is a required field
+	ResourceArn *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeResourcePolicyInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeResourcePolicyInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeResourcePolicyInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeResourcePolicyInput"}
+	if s.ResourceArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("ResourceArn"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetResourceArn sets the ResourceArn field's value.
+func (s *DescribeResourcePolicyInput) SetResourceArn(v string) *DescribeResourcePolicyInput {
+	s.ResourceArn = &v
+	return s
+}
+
+type DescribeResourcePolicyOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The time at which the policy was created.
+	CreationTime *time.Time `type:"timestamp"`
+
+	// The time at which the policy was last modified.
+	LastModifiedTime *time.Time `type:"timestamp"`
+
+	// The revision ID of the policy. Each time you modify a policy, Amazon Comprehend
+	// assigns a new revision ID, and it deletes the prior version of the policy.
+	PolicyRevisionId *string `type:"string"`
+
+	// The JSON body of the resource-based policy.
+	ResourcePolicy *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeResourcePolicyOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeResourcePolicyOutput) GoString() string {
+	return s.String()
+}
+
+// SetCreationTime sets the CreationTime field's value.
+func (s *DescribeResourcePolicyOutput) SetCreationTime(v time.Time) *DescribeResourcePolicyOutput {
+	s.CreationTime = &v
+	return s
+}
+
+// SetLastModifiedTime sets the LastModifiedTime field's value.
+func (s *DescribeResourcePolicyOutput) SetLastModifiedTime(v time.Time) *DescribeResourcePolicyOutput {
+	s.LastModifiedTime = &v
+	return s
+}
+
+// SetPolicyRevisionId sets the PolicyRevisionId field's value.
+func (s *DescribeResourcePolicyOutput) SetPolicyRevisionId(v string) *DescribeResourcePolicyOutput {
+	s.PolicyRevisionId = &v
+	return s
+}
+
+// SetResourcePolicy sets the ResourcePolicy field's value.
+func (s *DescribeResourcePolicyOutput) SetResourcePolicy(v string) *DescribeResourcePolicyOutput {
+	s.ResourcePolicy = &v
+	return s
+}
+
 type DescribeSentimentDetectionJobInput struct {
 	_ struct{} `type:"structure"`
 
@@ -9646,6 +14406,88 @@ func (s DescribeSentimentDetectionJobOutput) GoString() string {
 // SetSentimentDetectionJobProperties sets the SentimentDetectionJobProperties field's value.
 func (s *DescribeSentimentDetectionJobOutput) SetSentimentDetectionJobProperties(v *SentimentDetectionJobProperties) *DescribeSentimentDetectionJobOutput {
 	s.SentimentDetectionJobProperties = v
+	return s
+}
+
+type DescribeTargetedSentimentDetectionJobInput struct {
+	_ struct{} `type:"structure"`
+
+	// The identifier that Amazon Comprehend generated for the job. The StartTargetedSentimentDetectionJob
+	// operation returns this identifier in its response.
+	//
+	// JobId is a required field
+	JobId *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeTargetedSentimentDetectionJobInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeTargetedSentimentDetectionJobInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DescribeTargetedSentimentDetectionJobInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DescribeTargetedSentimentDetectionJobInput"}
+	if s.JobId == nil {
+		invalidParams.Add(request.NewErrParamRequired("JobId"))
+	}
+	if s.JobId != nil && len(*s.JobId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("JobId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetJobId sets the JobId field's value.
+func (s *DescribeTargetedSentimentDetectionJobInput) SetJobId(v string) *DescribeTargetedSentimentDetectionJobInput {
+	s.JobId = &v
+	return s
+}
+
+type DescribeTargetedSentimentDetectionJobOutput struct {
+	_ struct{} `type:"structure"`
+
+	// An object that contains the properties associated with a targeted sentiment
+	// detection job.
+	TargetedSentimentDetectionJobProperties *TargetedSentimentDetectionJobProperties `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeTargetedSentimentDetectionJobOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DescribeTargetedSentimentDetectionJobOutput) GoString() string {
+	return s.String()
+}
+
+// SetTargetedSentimentDetectionJobProperties sets the TargetedSentimentDetectionJobProperties field's value.
+func (s *DescribeTargetedSentimentDetectionJobOutput) SetTargetedSentimentDetectionJobProperties(v *TargetedSentimentDetectionJobProperties) *DescribeTargetedSentimentDetectionJobOutput {
+	s.TargetedSentimentDetectionJobProperties = v
 	return s
 }
 
@@ -9732,8 +14574,8 @@ func (s *DescribeTopicsDetectionJobOutput) SetTopicsDetectionJobProperties(v *To
 type DetectDominantLanguageInput struct {
 	_ struct{} `type:"structure"`
 
-	// A UTF-8 text string. Each string should contain at least 20 characters and
-	// must contain fewer that 5,000 bytes of UTF-8 encoded characters.
+	// A UTF-8 text string. The string must contain at least 20 characters. The
+	// maximum string size is 100 KB.
 	//
 	// Text is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by DetectDominantLanguageInput's
@@ -9786,10 +14628,13 @@ func (s *DetectDominantLanguageInput) SetText(v string) *DetectDominantLanguageI
 type DetectDominantLanguageOutput struct {
 	_ struct{} `type:"structure" sensitive:"true"`
 
-	// The languages that Amazon Comprehend detected in the input text. For each
-	// language, the response returns the RFC 5646 language code and the level of
-	// confidence that Amazon Comprehend has in the accuracy of its inference. For
-	// more information about RFC 5646, see Tags for Identifying Languages (https://tools.ietf.org/html/rfc5646)
+	// Array of languages that Amazon Comprehend detected in the input text. The
+	// array is sorted in descending order of the score (the dominant language is
+	// always the first element in the array).
+	//
+	// For each language, the response returns the RFC 5646 language code and the
+	// level of confidence that Amazon Comprehend has in the accuracy of its inference.
+	// For more information about RFC 5646, see Tags for Identifying Languages (https://tools.ietf.org/html/rfc5646)
 	// on the IETF Tools web site.
 	Languages []*DominantLanguage `type:"list"`
 }
@@ -9821,6 +14666,33 @@ func (s *DetectDominantLanguageOutput) SetLanguages(v []*DominantLanguage) *Dete
 type DetectEntitiesInput struct {
 	_ struct{} `type:"structure"`
 
+	// This field applies only when you use a custom entity recognition model that
+	// was trained with PDF annotations. For other cases, enter your text input
+	// in the Text field.
+	//
+	// Use the Bytes parameter to input a text, PDF, Word or image file. Using a
+	// plain-text file in the Bytes parameter is equivelent to using the Text parameter
+	// (the Entities field in the response is identical).
+	//
+	// You can also use the Bytes parameter to input an Amazon Textract DetectDocumentText
+	// or AnalyzeDocument output file.
+	//
+	// Provide the input document as a sequence of base64-encoded bytes. If your
+	// code uses an Amazon Web Services SDK to detect entities, the SDK may encode
+	// the document file bytes for you.
+	//
+	// The maximum length of this field depends on the input document type. For
+	// details, see Inputs for real-time custom analysis (https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html)
+	// in the Comprehend Developer Guide.
+	//
+	// If you use the Bytes parameter, do not use the Text parameter.
+	// Bytes is automatically base64 encoded/decoded by the SDK.
+	Bytes []byte `min:"1" type:"blob"`
+
+	// Provides configuration parameters to override the default actions for extracting
+	// text from PDF documents and image files.
+	DocumentReaderConfig *DocumentReaderConfig `type:"structure"`
+
 	// The Amazon Resource Name of an endpoint that is associated with a custom
 	// entity recognition model. Provide an endpoint if you want to detect entities
 	// by using your own custom model instead of the default model that is used
@@ -9828,25 +14700,25 @@ type DetectEntitiesInput struct {
 	//
 	// If you specify an endpoint, Amazon Comprehend uses the language of your custom
 	// model, and it ignores any language code that you provide in your request.
+	//
+	// For information about endpoints, see Managing endpoints (https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html).
 	EndpointArn *string `type:"string"`
 
 	// The language of the input documents. You can specify any of the primary languages
-	// supported by Amazon Comprehend. All documents must be in the same language.
+	// supported by Amazon Comprehend. If your request includes the endpoint for
+	// a custom entity recognition model, Amazon Comprehend uses the language of
+	// your custom model, and it ignores any language code that you specify here.
 	//
-	// If your request includes the endpoint for a custom entity recognition model,
-	// Amazon Comprehend uses the language of your custom model, and it ignores
-	// any language code that you specify here.
+	// All input documents must be in the same language.
 	LanguageCode *string `type:"string" enum:"LanguageCode"`
 
-	// A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-	// encoded characters.
+	// A UTF-8 text string. The maximum string size is 100 KB. If you enter text
+	// using this parameter, do not use the Bytes parameter.
 	//
 	// Text is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by DetectEntitiesInput's
 	// String and GoString methods.
-	//
-	// Text is a required field
-	Text *string `min:"1" type:"string" required:"true" sensitive:"true"`
+	Text *string `min:"1" type:"string" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -9870,17 +14742,34 @@ func (s DetectEntitiesInput) GoString() string {
 // Validate inspects the fields of the type to determine if they are valid.
 func (s *DetectEntitiesInput) Validate() error {
 	invalidParams := request.ErrInvalidParams{Context: "DetectEntitiesInput"}
-	if s.Text == nil {
-		invalidParams.Add(request.NewErrParamRequired("Text"))
+	if s.Bytes != nil && len(s.Bytes) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Bytes", 1))
 	}
 	if s.Text != nil && len(*s.Text) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("Text", 1))
+	}
+	if s.DocumentReaderConfig != nil {
+		if err := s.DocumentReaderConfig.Validate(); err != nil {
+			invalidParams.AddNested("DocumentReaderConfig", err.(request.ErrInvalidParams))
+		}
 	}
 
 	if invalidParams.Len() > 0 {
 		return invalidParams
 	}
 	return nil
+}
+
+// SetBytes sets the Bytes field's value.
+func (s *DetectEntitiesInput) SetBytes(v []byte) *DetectEntitiesInput {
+	s.Bytes = v
+	return s
+}
+
+// SetDocumentReaderConfig sets the DocumentReaderConfig field's value.
+func (s *DetectEntitiesInput) SetDocumentReaderConfig(v *DocumentReaderConfig) *DetectEntitiesInput {
+	s.DocumentReaderConfig = v
+	return s
 }
 
 // SetEndpointArn sets the EndpointArn field's value.
@@ -9904,6 +14793,23 @@ func (s *DetectEntitiesInput) SetText(v string) *DetectEntitiesInput {
 type DetectEntitiesOutput struct {
 	_ struct{} `type:"structure" sensitive:"true"`
 
+	// Information about each block of text in the input document. Blocks are nested.
+	// A page block contains a block for each line of text, which contains a block
+	// for each word.
+	//
+	// The Block content for a Word input document does not include a Geometry field.
+	//
+	// The Block field is not present in the response for plain-text inputs.
+	Blocks []*Block `type:"list"`
+
+	// Information about the document, discovered during text extraction. This field
+	// is present in the response only if your request used the Byte parameter.
+	DocumentMetadata *DocumentMetadata `type:"structure"`
+
+	// The document type for each page in the input document. This field is present
+	// in the response only if your request used the Byte parameter.
+	DocumentType []*DocumentTypeListItem `type:"list"`
+
 	// A collection of entities identified in the input text. For each entity, the
 	// response provides the entity text, entity type, where the entity text begins
 	// and ends, and the level of confidence that Amazon Comprehend has in the detection.
@@ -9911,8 +14817,13 @@ type DetectEntitiesOutput struct {
 	// If your request uses a custom entity recognition model, Amazon Comprehend
 	// detects the entities that the model is trained to recognize. Otherwise, it
 	// detects the default entity types. For a list of default entity types, see
-	// how-entities.
+	// Entities (https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html)
+	// in the Comprehend Developer Guide.
 	Entities []*Entity `type:"list"`
+
+	// Page-level errors that the system detected while processing the input document.
+	// The field is empty if the system encountered no errors.
+	Errors []*ErrorsListItem `type:"list"`
 }
 
 // String returns the string representation.
@@ -9933,9 +14844,33 @@ func (s DetectEntitiesOutput) GoString() string {
 	return s.String()
 }
 
+// SetBlocks sets the Blocks field's value.
+func (s *DetectEntitiesOutput) SetBlocks(v []*Block) *DetectEntitiesOutput {
+	s.Blocks = v
+	return s
+}
+
+// SetDocumentMetadata sets the DocumentMetadata field's value.
+func (s *DetectEntitiesOutput) SetDocumentMetadata(v *DocumentMetadata) *DetectEntitiesOutput {
+	s.DocumentMetadata = v
+	return s
+}
+
+// SetDocumentType sets the DocumentType field's value.
+func (s *DetectEntitiesOutput) SetDocumentType(v []*DocumentTypeListItem) *DetectEntitiesOutput {
+	s.DocumentType = v
+	return s
+}
+
 // SetEntities sets the Entities field's value.
 func (s *DetectEntitiesOutput) SetEntities(v []*Entity) *DetectEntitiesOutput {
 	s.Entities = v
+	return s
+}
+
+// SetErrors sets the Errors field's value.
+func (s *DetectEntitiesOutput) SetErrors(v []*ErrorsListItem) *DetectEntitiesOutput {
+	s.Errors = v
 	return s
 }
 
@@ -9948,8 +14883,8 @@ type DetectKeyPhrasesInput struct {
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-	// encoded characters.
+	// A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded
+	// characters.
 	//
 	// Text is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by DetectKeyPhrasesInput's
@@ -10045,13 +14980,13 @@ func (s *DetectKeyPhrasesOutput) SetKeyPhrases(v []*KeyPhrase) *DetectKeyPhrases
 type DetectPiiEntitiesInput struct {
 	_ struct{} `type:"structure"`
 
-	// The language of the input documents.
+	// The language of the input documents. Currently, English is the only valid
+	// language.
 	//
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-	// encoded characters.
+	// A UTF-8 text string. The maximum string size is 100 KB.
 	//
 	// Text is a required field
 	Text *string `min:"1" type:"string" required:"true"`
@@ -10148,8 +15083,7 @@ type DetectSentimentInput struct {
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
 
-	// A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8
-	// encoded characters.
+	// A UTF-8 text string. The maximum string size is 5 KB.
 	//
 	// Text is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by DetectSentimentInput's
@@ -10259,8 +15193,7 @@ type DetectSyntaxInput struct {
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"SyntaxLanguageCode"`
 
-	// A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
-	// characters.
+	// A UTF-8 string. The maximum string size is 5 KB.
 	//
 	// Text is a sensitive parameter and its value will be
 	// replaced with "sensitive" in string returned by DetectSyntaxInput's
@@ -10325,7 +15258,8 @@ type DetectSyntaxOutput struct {
 	// A collection of syntax tokens describing the text. For each token, the response
 	// provides the text, the token type, where the text begins and ends, and the
 	// level of confidence that Amazon Comprehend has that the token is correct.
-	// For a list of token types, see how-syntax.
+	// For a list of token types, see Syntax (https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html)
+	// in the Comprehend Developer Guide.
 	SyntaxTokens []*SyntaxToken `type:"list"`
 }
 
@@ -10353,12 +15287,229 @@ func (s *DetectSyntaxOutput) SetSyntaxTokens(v []*SyntaxToken) *DetectSyntaxOutp
 	return s
 }
 
+type DetectTargetedSentimentInput struct {
+	_ struct{} `type:"structure"`
+
+	// The language of the input documents. Currently, English is the only supported
+	// language.
+	//
+	// LanguageCode is a required field
+	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
+
+	// A UTF-8 text string. The maximum string length is 5 KB.
+	//
+	// Text is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by DetectTargetedSentimentInput's
+	// String and GoString methods.
+	//
+	// Text is a required field
+	Text *string `min:"1" type:"string" required:"true" sensitive:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectTargetedSentimentInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectTargetedSentimentInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DetectTargetedSentimentInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DetectTargetedSentimentInput"}
+	if s.LanguageCode == nil {
+		invalidParams.Add(request.NewErrParamRequired("LanguageCode"))
+	}
+	if s.Text == nil {
+		invalidParams.Add(request.NewErrParamRequired("Text"))
+	}
+	if s.Text != nil && len(*s.Text) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Text", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetLanguageCode sets the LanguageCode field's value.
+func (s *DetectTargetedSentimentInput) SetLanguageCode(v string) *DetectTargetedSentimentInput {
+	s.LanguageCode = &v
+	return s
+}
+
+// SetText sets the Text field's value.
+func (s *DetectTargetedSentimentInput) SetText(v string) *DetectTargetedSentimentInput {
+	s.Text = &v
+	return s
+}
+
+type DetectTargetedSentimentOutput struct {
+	_ struct{} `type:"structure" sensitive:"true"`
+
+	// Targeted sentiment analysis for each of the entities identified in the input
+	// text.
+	Entities []*TargetedSentimentEntity `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectTargetedSentimentOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectTargetedSentimentOutput) GoString() string {
+	return s.String()
+}
+
+// SetEntities sets the Entities field's value.
+func (s *DetectTargetedSentimentOutput) SetEntities(v []*TargetedSentimentEntity) *DetectTargetedSentimentOutput {
+	s.Entities = v
+	return s
+}
+
+type DetectToxicContentInput struct {
+	_ struct{} `type:"structure"`
+
+	// The language of the input text. Currently, English is the only supported
+	// language.
+	//
+	// LanguageCode is a required field
+	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
+
+	// A list of up to 10 text strings. Each string has a maximum size of 1 KB,
+	// and the maximum size of the list is 10 KB.
+	//
+	// TextSegments is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by DetectToxicContentInput's
+	// String and GoString methods.
+	//
+	// TextSegments is a required field
+	TextSegments []*TextSegment `min:"1" type:"list" required:"true" sensitive:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectToxicContentInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectToxicContentInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DetectToxicContentInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DetectToxicContentInput"}
+	if s.LanguageCode == nil {
+		invalidParams.Add(request.NewErrParamRequired("LanguageCode"))
+	}
+	if s.TextSegments == nil {
+		invalidParams.Add(request.NewErrParamRequired("TextSegments"))
+	}
+	if s.TextSegments != nil && len(s.TextSegments) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("TextSegments", 1))
+	}
+	if s.TextSegments != nil {
+		for i, v := range s.TextSegments {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "TextSegments", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetLanguageCode sets the LanguageCode field's value.
+func (s *DetectToxicContentInput) SetLanguageCode(v string) *DetectToxicContentInput {
+	s.LanguageCode = &v
+	return s
+}
+
+// SetTextSegments sets the TextSegments field's value.
+func (s *DetectToxicContentInput) SetTextSegments(v []*TextSegment) *DetectToxicContentInput {
+	s.TextSegments = v
+	return s
+}
+
+type DetectToxicContentOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Results of the content moderation analysis. Each entry in the results list
+	// contains a list of toxic content types identified in the text, along with
+	// a confidence score for each content type. The results list also includes
+	// a toxicity score for each entry in the results list.
+	ResultList []*ToxicLabels `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectToxicContentOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectToxicContentOutput) GoString() string {
+	return s.String()
+}
+
+// SetResultList sets the ResultList field's value.
+func (s *DetectToxicContentOutput) SetResultList(v []*ToxicLabels) *DetectToxicContentOutput {
+	s.ResultList = v
+	return s
+}
+
 // Specifies the class that categorizes the document being analyzed
 type DocumentClass struct {
 	_ struct{} `type:"structure"`
 
 	// The name of the class.
 	Name *string `min:"1" type:"string"`
+
+	// Page number in the input document. This field is present in the response
+	// only if your request includes the Byte parameter.
+	Page *int64 `type:"integer"`
 
 	// The confidence score that Amazon Comprehend has this class correctly attributed.
 	Score *float64 `type:"float"`
@@ -10388,9 +15539,71 @@ func (s *DocumentClass) SetName(v string) *DocumentClass {
 	return s
 }
 
+// SetPage sets the Page field's value.
+func (s *DocumentClass) SetPage(v int64) *DocumentClass {
+	s.Page = &v
+	return s
+}
+
 // SetScore sets the Score field's value.
 func (s *DocumentClass) SetScore(v float64) *DocumentClass {
 	s.Score = &v
+	return s
+}
+
+// Configuration required for a document classification model.
+type DocumentClassificationConfig struct {
+	_ struct{} `type:"structure"`
+
+	// One or more labels to associate with the custom classifier.
+	Labels []*string `type:"list"`
+
+	// Classification mode indicates whether the documents are MULTI_CLASS or MULTI_LABEL.
+	//
+	// Mode is a required field
+	Mode *string `type:"string" required:"true" enum:"DocumentClassifierMode"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentClassificationConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentClassificationConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DocumentClassificationConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DocumentClassificationConfig"}
+	if s.Mode == nil {
+		invalidParams.Add(request.NewErrParamRequired("Mode"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetLabels sets the Labels field's value.
+func (s *DocumentClassificationConfig) SetLabels(v []*string) *DocumentClassificationConfig {
+	s.Labels = v
+	return s
+}
+
+// SetMode sets the Mode field's value.
+func (s *DocumentClassificationConfig) SetMode(v string) *DocumentClassificationConfig {
+	s.Mode = &v
 	return s
 }
 
@@ -10477,8 +15690,8 @@ func (s *DocumentClassificationJobFilter) SetSubmitTimeBefore(v time.Time) *Docu
 type DocumentClassificationJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) of the AWS identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The Amazon Resource Name (ARN) that identifies the document classifier.
@@ -10487,13 +15700,17 @@ type DocumentClassificationJobProperties struct {
 	// The time that the document classification job completed.
 	EndTime *time.Time `type:"timestamp"`
 
+	// The Amazon Resource Number (ARN) of the flywheel
+	FlywheelArn *string `type:"string"`
+
 	// The input data configuration that you supplied when you created the document
 	// classification job.
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the document classification job. It is
-	// a unique, fully qualified identifier for the job. It includes the AWS account,
-	// Region, and the job ID. The format of the ARN is as follows:
+	// a unique, fully qualified identifier for the job. It includes the Amazon
+	// Web Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:document-classification-job/<job-id>
 	//
@@ -10522,10 +15739,10 @@ type DocumentClassificationJobProperties struct {
 	// The time that the document classification job was submitted for processing.
 	SubmitTime *time.Time `type:"timestamp"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -10571,6 +15788,12 @@ func (s *DocumentClassificationJobProperties) SetDocumentClassifierArn(v string)
 // SetEndTime sets the EndTime field's value.
 func (s *DocumentClassificationJobProperties) SetEndTime(v time.Time) *DocumentClassificationJobProperties {
 	s.EndTime = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *DocumentClassificationJobProperties) SetFlywheelArn(v string) *DocumentClassificationJobProperties {
+	s.FlywheelArn = &v
 	return s
 }
 
@@ -10634,9 +15857,68 @@ func (s *DocumentClassificationJobProperties) SetVpcConfig(v *VpcConfig) *Docume
 	return s
 }
 
+// The location of the training documents. This parameter is required in a request
+// to create a semi-structured document classification model.
+type DocumentClassifierDocuments struct {
+	_ struct{} `type:"structure"`
+
+	// The S3 URI location of the training documents specified in the S3Uri CSV
+	// file.
+	//
+	// S3Uri is a required field
+	S3Uri *string `type:"string" required:"true"`
+
+	// The S3 URI location of the test documents included in the TestS3Uri CSV file.
+	// This field is not required if you do not specify a test CSV file.
+	TestS3Uri *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentClassifierDocuments) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentClassifierDocuments) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DocumentClassifierDocuments) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DocumentClassifierDocuments"}
+	if s.S3Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("S3Uri"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetS3Uri sets the S3Uri field's value.
+func (s *DocumentClassifierDocuments) SetS3Uri(v string) *DocumentClassifierDocuments {
+	s.S3Uri = &v
+	return s
+}
+
+// SetTestS3Uri sets the TestS3Uri field's value.
+func (s *DocumentClassifierDocuments) SetTestS3Uri(v string) *DocumentClassifierDocuments {
+	s.TestS3Uri = &v
+	return s
+}
+
 // Provides information for filtering a list of document classifiers. You can
 // only specify one filtering parameter in a request. For more information,
-// see the operation.
+// see the ListDocumentClassifiers operation.
 type DocumentClassifierFilter struct {
 	_ struct{} `type:"structure"`
 
@@ -10701,7 +15983,9 @@ func (s *DocumentClassifierFilter) SetSubmitTimeBefore(v time.Time) *DocumentCla
 
 // The input properties for training a document classifier.
 //
-// For more information on how the input file is formatted, see how-document-classification-training-data.
+// For more information on how the input file is formatted, see Preparing training
+// data (https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html)
+// in the Comprehend Developer Guide.
 type DocumentClassifierInputDataConfig struct {
 	_ struct{} `type:"structure"`
 
@@ -10728,6 +16012,36 @@ type DocumentClassifierInputDataConfig struct {
 	// default.
 	DataFormat *string `type:"string" enum:"DocumentClassifierDataFormat"`
 
+	// Provides configuration parameters to override the default actions for extracting
+	// text from PDF documents and image files.
+	//
+	// By default, Amazon Comprehend performs the following actions to extract text
+	// from files, based on the input file type:
+	//
+	//    * Word files - Amazon Comprehend parser extracts the text.
+	//
+	//    * Digital PDF files - Amazon Comprehend parser extracts the text.
+	//
+	//    * Image files and scanned PDF files - Amazon Comprehend uses the Amazon
+	//    Textract DetectDocumentText API to extract the text.
+	//
+	// DocumentReaderConfig does not apply to plain text files or Word files.
+	//
+	// For image files and PDF documents, you can override these default actions
+	// using the fields listed below. For more information, see Setting text extraction
+	// options (https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html)
+	// in the Comprehend Developer Guide.
+	DocumentReaderConfig *DocumentReaderConfig `type:"structure"`
+
+	// The type of input documents for training the model. Provide plain-text documents
+	// to create a plain-text model, and provide semi-structured documents to create
+	// a native document model.
+	DocumentType *string `type:"string" enum:"DocumentClassifierDocumentTypeFormat"`
+
+	// The S3 location of the training documents. This parameter is required in
+	// a request to create a native document model.
+	Documents *DocumentClassifierDocuments `type:"structure"`
+
 	// Indicates the delimiter used to separate each label for training a multi-label
 	// classifier. The default delimiter between labels is a pipe (|). You can use
 	// a different character as a delimiter (if it's an allowed character) by specifying
@@ -10736,7 +16050,7 @@ type DocumentClassifierInputDataConfig struct {
 	// will be combined to make a single unique label, such as LABELLABELLABEL.
 	LabelDelimiter *string `min:"1" type:"string"`
 
-	// The Amazon S3 URI for the input data. The S3 bucket must be in the same region
+	// The Amazon S3 URI for the input data. The S3 bucket must be in the same Region
 	// as the API endpoint that you are calling. The URI can point to a single input
 	// file or it can provide the prefix for a collection of input files.
 	//
@@ -10747,10 +16061,9 @@ type DocumentClassifierInputDataConfig struct {
 	// This parameter is required if you set DataFormat to COMPREHEND_CSV.
 	S3Uri *string `type:"string"`
 
-	// The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-	// same AWS Region as the API endpoint that you are calling. The URI can point
-	// to a single input file or it can provide the prefix for a collection of input
-	// files.
+	// This specifies the Amazon S3 location that contains the test annotations
+	// for the document classifier. The URI must be in the same Amazon Web Services
+	// Region as the API endpoint that you are calling.
 	TestS3Uri *string `type:"string"`
 }
 
@@ -10788,6 +16101,16 @@ func (s *DocumentClassifierInputDataConfig) Validate() error {
 			}
 		}
 	}
+	if s.DocumentReaderConfig != nil {
+		if err := s.DocumentReaderConfig.Validate(); err != nil {
+			invalidParams.AddNested("DocumentReaderConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Documents != nil {
+		if err := s.Documents.Validate(); err != nil {
+			invalidParams.AddNested("Documents", err.(request.ErrInvalidParams))
+		}
+	}
 
 	if invalidParams.Len() > 0 {
 		return invalidParams
@@ -10804,6 +16127,24 @@ func (s *DocumentClassifierInputDataConfig) SetAugmentedManifests(v []*Augmented
 // SetDataFormat sets the DataFormat field's value.
 func (s *DocumentClassifierInputDataConfig) SetDataFormat(v string) *DocumentClassifierInputDataConfig {
 	s.DataFormat = &v
+	return s
+}
+
+// SetDocumentReaderConfig sets the DocumentReaderConfig field's value.
+func (s *DocumentClassifierInputDataConfig) SetDocumentReaderConfig(v *DocumentReaderConfig) *DocumentClassifierInputDataConfig {
+	s.DocumentReaderConfig = v
+	return s
+}
+
+// SetDocumentType sets the DocumentType field's value.
+func (s *DocumentClassifierInputDataConfig) SetDocumentType(v string) *DocumentClassifierInputDataConfig {
+	s.DocumentType = &v
+	return s
+}
+
+// SetDocuments sets the Documents field's value.
+func (s *DocumentClassifierInputDataConfig) SetDocuments(v *DocumentClassifierDocuments) *DocumentClassifierInputDataConfig {
+	s.Documents = v
 	return s
 }
 
@@ -10825,13 +16166,17 @@ func (s *DocumentClassifierInputDataConfig) SetTestS3Uri(v string) *DocumentClas
 	return s
 }
 
-// Provides output results configuration parameters for custom classifier jobs.
+// Provide the location for output data from a custom classifier job. This field
+// is mandatory if you are training a native document model.
 type DocumentClassifierOutputDataConfig struct {
 	_ struct{} `type:"structure"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt the output results from an analysis job. The KmsKeyId can be one
-	// of the following formats:
+	// The Amazon S3 prefix for the data lake location of the flywheel statistics.
+	FlywheelStatsS3Prefix *string `type:"string"`
+
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId
+	// can be one of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -10844,9 +16189,9 @@ type DocumentClassifierOutputDataConfig struct {
 
 	// When you use the OutputDataConfig object while creating a custom classifier,
 	// you specify the Amazon S3 location where you want to write the confusion
-	// matrix. The URI must be in the same region as the API endpoint that you are
-	// calling. The location is used as the prefix for the actual location of this
-	// output file.
+	// matrix and other output files. The URI must be in the same Region as the
+	// API endpoint that you are calling. The location is used as the prefix for
+	// the actual location of this output file.
 	//
 	// When the custom classifier job is finished, the service creates the output
 	// file in a directory specific to the job. The S3Uri field contains the location
@@ -10871,6 +16216,12 @@ func (s DocumentClassifierOutputDataConfig) String() string {
 // value will be replaced with "sensitive".
 func (s DocumentClassifierOutputDataConfig) GoString() string {
 	return s.String()
+}
+
+// SetFlywheelStatsS3Prefix sets the FlywheelStatsS3Prefix field's value.
+func (s *DocumentClassifierOutputDataConfig) SetFlywheelStatsS3Prefix(v string) *DocumentClassifierOutputDataConfig {
+	s.FlywheelStatsS3Prefix = &v
+	return s
 }
 
 // SetKmsKeyId sets the KmsKeyId field's value.
@@ -10898,8 +16249,8 @@ type DocumentClassifierProperties struct {
 	// String and GoString methods.
 	ClassifierMetadata *ClassifierMetadata `type:"structure" sensitive:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-	// that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The Amazon Resource Name (ARN) that identifies the document classifier.
@@ -10907,6 +16258,9 @@ type DocumentClassifierProperties struct {
 
 	// The time that training the document classifier completed.
 	EndTime *time.Time `type:"timestamp"`
+
+	// The Amazon Resource Number (ARN) of the flywheel
+	FlywheelArn *string `type:"string"`
 
 	// The input data configuration that you supplied when you created the document
 	// classifier for training.
@@ -10925,9 +16279,8 @@ type DocumentClassifierProperties struct {
 	// once the classifier is trained.
 	Mode *string `type:"string" enum:"DocumentClassifierMode"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt trained custom models. The ModelKmsKeyId can be either of the
-	// following formats:
+	// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+	// models. The ModelKmsKeyId can be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -10937,9 +16290,18 @@ type DocumentClassifierProperties struct {
 	// Provides output results configuration parameters for custom classifier jobs.
 	OutputDataConfig *DocumentClassifierOutputDataConfig `type:"structure"`
 
+	// The Amazon Resource Name (ARN) of the source model. This model was imported
+	// from a different Amazon Web Services account to create the document classifier
+	// model in your Amazon Web Services account.
+	SourceModelArn *string `type:"string"`
+
 	// The status of the document classifier. If the status is TRAINED the classifier
-	// is ready to use. If the status is FAILED you can see additional information
-	// about why the classifier wasn't trained in the Message field.
+	// is ready to use. If the status is TRAINED_WITH_WARNINGS the classifier training
+	// succeeded, but you should review the warnings returned in the CreateDocumentClassifier
+	// response.
+	//
+	// If the status is FAILED you can see additional information about why the
+	// classifier wasn't trained in the Message field.
 	Status *string `type:"string" enum:"ModelStatus"`
 
 	// The time that the document classifier was submitted for training.
@@ -10957,10 +16319,10 @@ type DocumentClassifierProperties struct {
 	// The version name that you assigned to the document classifier.
 	VersionName *string `type:"string"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -11015,6 +16377,12 @@ func (s *DocumentClassifierProperties) SetEndTime(v time.Time) *DocumentClassifi
 	return s
 }
 
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *DocumentClassifierProperties) SetFlywheelArn(v string) *DocumentClassifierProperties {
+	s.FlywheelArn = &v
+	return s
+}
+
 // SetInputDataConfig sets the InputDataConfig field's value.
 func (s *DocumentClassifierProperties) SetInputDataConfig(v *DocumentClassifierInputDataConfig) *DocumentClassifierProperties {
 	s.InputDataConfig = v
@@ -11048,6 +16416,12 @@ func (s *DocumentClassifierProperties) SetModelKmsKeyId(v string) *DocumentClass
 // SetOutputDataConfig sets the OutputDataConfig field's value.
 func (s *DocumentClassifierProperties) SetOutputDataConfig(v *DocumentClassifierOutputDataConfig) *DocumentClassifierProperties {
 	s.OutputDataConfig = v
+	return s
+}
+
+// SetSourceModelArn sets the SourceModelArn field's value.
+func (s *DocumentClassifierProperties) SetSourceModelArn(v string) *DocumentClassifierProperties {
+	s.SourceModelArn = &v
 	return s
 }
 
@@ -11168,6 +16542,10 @@ type DocumentLabel struct {
 	// The name of the label.
 	Name *string `min:"1" type:"string"`
 
+	// Page number where the label occurs. This field is present in the response
+	// only if your request includes the Byte parameter.
+	Page *int64 `type:"integer"`
+
 	// The confidence score that Amazon Comprehend has this label correctly attributed.
 	Score *float64 `type:"float"`
 }
@@ -11196,38 +16574,115 @@ func (s *DocumentLabel) SetName(v string) *DocumentLabel {
 	return s
 }
 
+// SetPage sets the Page field's value.
+func (s *DocumentLabel) SetPage(v int64) *DocumentLabel {
+	s.Page = &v
+	return s
+}
+
 // SetScore sets the Score field's value.
 func (s *DocumentLabel) SetScore(v float64) *DocumentLabel {
 	s.Score = &v
 	return s
 }
 
-// The input properties for a topic detection job.
+// Information about the document, discovered during text extraction.
+type DocumentMetadata struct {
+	_ struct{} `type:"structure"`
+
+	// List of pages in the document, with the number of characters extracted from
+	// each page.
+	ExtractedCharacters []*ExtractedCharactersListItem `type:"list"`
+
+	// Number of pages in the document.
+	Pages *int64 `type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentMetadata) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentMetadata) GoString() string {
+	return s.String()
+}
+
+// SetExtractedCharacters sets the ExtractedCharacters field's value.
+func (s *DocumentMetadata) SetExtractedCharacters(v []*ExtractedCharactersListItem) *DocumentMetadata {
+	s.ExtractedCharacters = v
+	return s
+}
+
+// SetPages sets the Pages field's value.
+func (s *DocumentMetadata) SetPages(v int64) *DocumentMetadata {
+	s.Pages = &v
+	return s
+}
+
+// Provides configuration parameters to override the default actions for extracting
+// text from PDF documents and image files.
+//
+// By default, Amazon Comprehend performs the following actions to extract text
+// from files, based on the input file type:
+//
+//   - Word files - Amazon Comprehend parser extracts the text.
+//
+//   - Digital PDF files - Amazon Comprehend parser extracts the text.
+//
+//   - Image files and scanned PDF files - Amazon Comprehend uses the Amazon
+//     Textract DetectDocumentText API to extract the text.
+//
+// DocumentReaderConfig does not apply to plain text files or Word files.
+//
+// For image files and PDF documents, you can override these default actions
+// using the fields listed below. For more information, see Setting text extraction
+// options (https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html)
+// in the Comprehend Developer Guide.
 type DocumentReaderConfig struct {
 	_ struct{} `type:"structure"`
 
-	// This enum field will start with two values which will apply to PDFs:
+	// This field defines the Amazon Textract API operation that Amazon Comprehend
+	// uses to extract text from PDF files and image files. Enter one of the following
+	// values:
 	//
-	//    * TEXTRACT_DETECT_DOCUMENT_TEXT - The service calls DetectDocumentText
-	//    for PDF documents per page.
+	//    * TEXTRACT_DETECT_DOCUMENT_TEXT - The Amazon Comprehend service uses the
+	//    DetectDocumentText API operation.
 	//
-	//    * TEXTRACT_ANALYZE_DOCUMENT - The service calls AnalyzeDocument for PDF
-	//    documents per page.
+	//    * TEXTRACT_ANALYZE_DOCUMENT - The Amazon Comprehend service uses the AnalyzeDocument
+	//    API operation.
 	//
 	// DocumentReadAction is a required field
 	DocumentReadAction *string `type:"string" required:"true" enum:"DocumentReadAction"`
 
-	// This enum field provides two values:
+	// Determines the text extraction actions for PDF files. Enter one of the following
+	// values:
 	//
-	//    * SERVICE_DEFAULT - use service defaults for Document reading. For Digital
-	//    PDF it would mean using an internal parser instead of Textract APIs
+	//    * SERVICE_DEFAULT - use the Amazon Comprehend service defaults for PDF
+	//    files.
 	//
-	//    * FORCE_DOCUMENT_READ_ACTION - Always use specified action for DocumentReadAction,
-	//    including Digital PDF.
+	//    * FORCE_DOCUMENT_READ_ACTION - Amazon Comprehend uses the Textract API
+	//    specified by DocumentReadAction for all PDF files, including digital PDF
+	//    files.
 	DocumentReadMode *string `type:"string" enum:"DocumentReadMode"`
 
-	// Specifies how the text in an input file should be processed:
-	FeatureTypes []*string `min:"1" type:"list"`
+	// Specifies the type of Amazon Textract features to apply. If you chose TEXTRACT_ANALYZE_DOCUMENT
+	// as the read action, you must specify one or both of the following values:
+	//
+	//    * TABLES - Returns additional information about any tables that are detected
+	//    in the input document.
+	//
+	//    * FORMS - Returns additional information about any forms that are detected
+	//    in the input document.
+	FeatureTypes []*string `min:"1" type:"list" enum:"DocumentReadFeatureTypes"`
 }
 
 // String returns the string representation.
@@ -11279,6 +16734,47 @@ func (s *DocumentReaderConfig) SetDocumentReadMode(v string) *DocumentReaderConf
 // SetFeatureTypes sets the FeatureTypes field's value.
 func (s *DocumentReaderConfig) SetFeatureTypes(v []*string) *DocumentReaderConfig {
 	s.FeatureTypes = v
+	return s
+}
+
+// Document type for each page in the document.
+type DocumentTypeListItem struct {
+	_ struct{} `type:"structure"`
+
+	// Page number.
+	Page *int64 `type:"integer"`
+
+	// Document type.
+	Type *string `type:"string" enum:"DocumentType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentTypeListItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DocumentTypeListItem) GoString() string {
+	return s.String()
+}
+
+// SetPage sets the Page field's value.
+func (s *DocumentTypeListItem) SetPage(v int64) *DocumentTypeListItem {
+	s.Page = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *DocumentTypeListItem) SetType(v string) *DocumentTypeListItem {
+	s.Type = &v
 	return s
 }
 
@@ -11409,8 +16905,8 @@ func (s *DominantLanguageDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *D
 type DominantLanguageDetectionJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
-	// your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the dominant language detection job completed.
@@ -11421,8 +16917,9 @@ type DominantLanguageDetectionJobProperties struct {
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the dominant language detection job. It
-	// is a unique, fully qualified identifier for the job. It includes the AWS
-	// account, Region, and the job ID. The format of the ARN is as follows:
+	// is a unique, fully qualified identifier for the job. It includes the Amazon
+	// Web Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:dominant-language-detection-job/<job-id>
 	//
@@ -11451,10 +16948,10 @@ type DominantLanguageDetectionJobProperties struct {
 	// The time that the dominant language detection job was submitted for processing.
 	SubmitTime *time.Time `type:"timestamp"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -11619,7 +17116,8 @@ func (s *EndpointFilter) SetStatus(v string) *EndpointFilter {
 	return s
 }
 
-// Specifies information about the specified endpoint.
+// Specifies information about the specified endpoint. For information about
+// endpoints, see Managing endpoints (https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html).
 type EndpointProperties struct {
 	_ struct{} `type:"structure"`
 
@@ -11629,9 +17127,9 @@ type EndpointProperties struct {
 	// The number of inference units currently used by the model using this endpoint.
 	CurrentInferenceUnits *int64 `min:"1" type:"integer"`
 
-	// The Amazon Resource Name (ARN) of the AWS identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to trained custom models
-	// encrypted with a customer managed key (ModelKmsKeyId).
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to trained custom models encrypted with a customer managed key
+	// (ModelKmsKeyId).
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// Data access role ARN to use in case the new model is encrypted with a customer
@@ -11649,6 +17147,9 @@ type EndpointProperties struct {
 
 	// The Amazon Resource Number (ARN) of the endpoint.
 	EndpointArn *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the flywheel
+	FlywheelArn *string `type:"string"`
 
 	// The date and time that the endpoint was last modified.
 	LastModifiedTime *time.Time `type:"timestamp"`
@@ -11722,6 +17223,12 @@ func (s *EndpointProperties) SetDesiredModelArn(v string) *EndpointProperties {
 // SetEndpointArn sets the EndpointArn field's value.
 func (s *EndpointProperties) SetEndpointArn(v string) *EndpointProperties {
 	s.EndpointArn = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *EndpointProperties) SetFlywheelArn(v string) *EndpointProperties {
+	s.FlywheelArn = &v
 	return s
 }
 
@@ -11831,8 +17338,8 @@ func (s *EntitiesDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *EntitiesD
 type EntitiesDetectionJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
-	// your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the entities detection job completed
@@ -11841,13 +17348,17 @@ type EntitiesDetectionJobProperties struct {
 	// The Amazon Resource Name (ARN) that identifies the entity recognizer.
 	EntityRecognizerArn *string `type:"string"`
 
+	// The Amazon Resource Name (ARN) of the flywheel associated with this job.
+	FlywheelArn *string `type:"string"`
+
 	// The input data configuration that you supplied when you created the entities
 	// detection job.
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the entities detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:entities-detection-job/<job-id>
 	//
@@ -11879,10 +17390,10 @@ type EntitiesDetectionJobProperties struct {
 	// The time that the entities detection job was submitted for processing.
 	SubmitTime *time.Time `type:"timestamp"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -11928,6 +17439,12 @@ func (s *EntitiesDetectionJobProperties) SetEndTime(v time.Time) *EntitiesDetect
 // SetEntityRecognizerArn sets the EntityRecognizerArn field's value.
 func (s *EntitiesDetectionJobProperties) SetEntityRecognizerArn(v string) *EntitiesDetectionJobProperties {
 	s.EntityRecognizerArn = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *EntitiesDetectionJobProperties) SetFlywheelArn(v string) *EntitiesDetectionJobProperties {
+	s.FlywheelArn = &v
 	return s
 }
 
@@ -12001,17 +17518,20 @@ func (s *EntitiesDetectionJobProperties) SetVpcConfig(v *VpcConfig) *EntitiesDet
 type Entity struct {
 	_ struct{} `type:"structure"`
 
-	// A character offset in the input text that shows where the entity begins (the
-	// first character is at position 0). The offset returns the position of each
-	// UTF-8 code point in the string. A code point is the abstract character from
-	// a particular graphical representation. For example, a multi-byte UTF-8 character
-	// maps to a single code point.
+	// The zero-based offset from the beginning of the source text to the first
+	// character in the entity.
+	//
+	// This field is empty for non-text input.
 	BeginOffset *int64 `type:"integer"`
 
-	// A character offset in the input text that shows where the entity ends. The
-	// offset returns the position of each UTF-8 code point in the string. A code
-	// point is the abstract character from a particular graphical representation.
-	// For example, a multi-byte UTF-8 character maps to a single code point.
+	// A reference to each block for this entity. This field is empty for plain-text
+	// input.
+	BlockReferences []*BlockReference `type:"list"`
+
+	// The zero-based offset from the beginning of the source text to the last character
+	// in the entity.
+	//
+	// This field is empty for non-text input.
 	EndOffset *int64 `type:"integer"`
 
 	// The level of confidence that Amazon Comprehend has in the accuracy of the
@@ -12021,7 +17541,11 @@ type Entity struct {
 	// The text of the entity.
 	Text *string `min:"1" type:"string"`
 
-	// The entity's type.
+	// The entity type. For entity detection using the built-in model, this field
+	// contains one of the standard entity types listed below.
+	//
+	// For custom entity detection, this field contains one of the entity types
+	// that you specified when you trained your custom model.
 	Type *string `type:"string" enum:"EntityType"`
 }
 
@@ -12046,6 +17570,12 @@ func (s Entity) GoString() string {
 // SetBeginOffset sets the BeginOffset field's value.
 func (s *Entity) SetBeginOffset(v int64) *Entity {
 	s.BeginOffset = &v
+	return s
+}
+
+// SetBlockReferences sets the BlockReferences field's value.
+func (s *Entity) SetBlockReferences(v []*BlockReference) *Entity {
+	s.BlockReferences = v
 	return s
 }
 
@@ -12116,20 +17646,77 @@ func (s *EntityLabel) SetScore(v float64) *EntityLabel {
 	return s
 }
 
+// Configuration required for an entity recognition model.
+type EntityRecognitionConfig struct {
+	_ struct{} `type:"structure"`
+
+	// Up to 25 entity types that the model is trained to recognize.
+	//
+	// EntityTypes is a required field
+	EntityTypes []*EntityTypesListItem `type:"list" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EntityRecognitionConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EntityRecognitionConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *EntityRecognitionConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "EntityRecognitionConfig"}
+	if s.EntityTypes == nil {
+		invalidParams.Add(request.NewErrParamRequired("EntityTypes"))
+	}
+	if s.EntityTypes != nil {
+		for i, v := range s.EntityTypes {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "EntityTypes", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetEntityTypes sets the EntityTypes field's value.
+func (s *EntityRecognitionConfig) SetEntityTypes(v []*EntityTypesListItem) *EntityRecognitionConfig {
+	s.EntityTypes = v
+	return s
+}
+
 // Describes the annotations associated with a entity recognizer.
 type EntityRecognizerAnnotations struct {
 	_ struct{} `type:"structure"`
 
 	// Specifies the Amazon S3 location where the annotations for an entity recognizer
-	// are located. The URI must be in the same region as the API endpoint that
+	// are located. The URI must be in the same Region as the API endpoint that
 	// you are calling.
 	//
 	// S3Uri is a required field
 	S3Uri *string `type:"string" required:"true"`
 
-	// This specifies the Amazon S3 location where the test annotations for an entity
-	// recognizer are located. The URI must be in the same AWS Region as the API
-	// endpoint that you are calling.
+	// Specifies the Amazon S3 location where the test annotations for an entity
+	// recognizer are located. The URI must be in the same Region as the API endpoint
+	// that you are calling.
 	TestS3Uri *string `type:"string"`
 }
 
@@ -12189,15 +17776,15 @@ type EntityRecognizerDocuments struct {
 	InputFormat *string `type:"string" enum:"InputFormat"`
 
 	// Specifies the Amazon S3 location where the training documents for an entity
-	// recognizer are located. The URI must be in the same region as the API endpoint
+	// recognizer are located. The URI must be in the same Region as the API endpoint
 	// that you are calling.
 	//
 	// S3Uri is a required field
 	S3Uri *string `type:"string" required:"true"`
 
 	// Specifies the Amazon S3 location where the test documents for an entity recognizer
-	// are located. The URI must be in the same AWS Region as the API endpoint that
-	// you are calling.
+	// are located. The URI must be in the same Amazon Web Services Region as the
+	// API endpoint that you are calling.
 	TestS3Uri *string `type:"string"`
 }
 
@@ -12250,12 +17837,12 @@ func (s *EntityRecognizerDocuments) SetTestS3Uri(v string) *EntityRecognizerDocu
 	return s
 }
 
-// Describes the entity recognizer submitted with an entity recognizer.
+// Describes the entity list submitted with an entity recognizer.
 type EntityRecognizerEntityList struct {
 	_ struct{} `type:"structure"`
 
 	// Specifies the Amazon S3 location where the entity list is located. The URI
-	// must be in the same region as the API endpoint that you are calling.
+	// must be in the same Region as the API endpoint that you are calling.
 	//
 	// S3Uri is a required field
 	S3Uri *string `type:"string" required:"true"`
@@ -12304,8 +17891,9 @@ type EntityRecognizerEvaluationMetrics struct {
 
 	// A measure of how accurate the recognizer results are for the test data. It
 	// is derived from the Precision and Recall values. The F1Score is the harmonic
-	// average of the two scores. The highest score is 1, and the worst score is
-	// 0.
+	// average of the two scores. For plain text entity recognizer models, the range
+	// is 0 to 100, where 100 is the best score. For PDF/Word entity recognizer
+	// models, the range is 0 to 1, where 1 is the best score.
 	F1Score *float64 `type:"double"`
 
 	// A measure of the usefulness of the recognizer results in the test data. High
@@ -12356,7 +17944,7 @@ func (s *EntityRecognizerEvaluationMetrics) SetRecall(v float64) *EntityRecogniz
 
 // Provides information for filtering a list of entity recognizers. You can
 // only specify one filtering parameter in a request. For more information,
-// see the operation./>
+// see the ListEntityRecognizers operation./>
 type EntityRecognizerFilter struct {
 	_ struct{} `type:"structure"`
 
@@ -12693,12 +18281,44 @@ func (s *EntityRecognizerMetadataEntityTypesListItem) SetType(v string) *EntityR
 	return s
 }
 
+// Output data configuration.
+type EntityRecognizerOutputDataConfig struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon S3 prefix for the data lake location of the flywheel statistics.
+	FlywheelStatsS3Prefix *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EntityRecognizerOutputDataConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EntityRecognizerOutputDataConfig) GoString() string {
+	return s.String()
+}
+
+// SetFlywheelStatsS3Prefix sets the FlywheelStatsS3Prefix field's value.
+func (s *EntityRecognizerOutputDataConfig) SetFlywheelStatsS3Prefix(v string) *EntityRecognizerOutputDataConfig {
+	s.FlywheelStatsS3Prefix = &v
+	return s
+}
+
 // Describes information about an entity recognizer.
 type EntityRecognizerProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-	// that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the recognizer creation completed.
@@ -12706,6 +18326,9 @@ type EntityRecognizerProperties struct {
 
 	// The Amazon Resource Name (ARN) that identifies the entity recognizer.
 	EntityRecognizerArn *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the flywheel
+	FlywheelArn *string `type:"string"`
 
 	// The input data properties of an entity recognizer.
 	InputDataConfig *EntityRecognizerInputDataConfig `type:"structure"`
@@ -12717,14 +18340,16 @@ type EntityRecognizerProperties struct {
 	// A description of the status of the recognizer.
 	Message *string `type:"string"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt trained custom models. The ModelKmsKeyId can be either of the
-	// following formats:
+	// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+	// models. The ModelKmsKeyId can be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
 	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
 	ModelKmsKeyId *string `type:"string"`
+
+	// Output data configuration.
+	OutputDataConfig *EntityRecognizerOutputDataConfig `type:"structure"`
 
 	// Provides information about an entity recognizer.
 	//
@@ -12732,6 +18357,11 @@ type EntityRecognizerProperties struct {
 	// replaced with "sensitive" in string returned by EntityRecognizerProperties's
 	// String and GoString methods.
 	RecognizerMetadata *EntityRecognizerMetadata `type:"structure" sensitive:"true"`
+
+	// The Amazon Resource Name (ARN) of the source model. This model was imported
+	// from a different Amazon Web Services account to create the entity recognizer
+	// model in your Amazon Web Services account.
+	SourceModelArn *string `type:"string"`
 
 	// Provides the status of the entity recognizer.
 	Status *string `type:"string" enum:"ModelStatus"`
@@ -12748,10 +18378,10 @@ type EntityRecognizerProperties struct {
 	// The version name you assigned to the entity recognizer.
 	VersionName *string `type:"string"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -12800,6 +18430,12 @@ func (s *EntityRecognizerProperties) SetEntityRecognizerArn(v string) *EntityRec
 	return s
 }
 
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *EntityRecognizerProperties) SetFlywheelArn(v string) *EntityRecognizerProperties {
+	s.FlywheelArn = &v
+	return s
+}
+
 // SetInputDataConfig sets the InputDataConfig field's value.
 func (s *EntityRecognizerProperties) SetInputDataConfig(v *EntityRecognizerInputDataConfig) *EntityRecognizerProperties {
 	s.InputDataConfig = v
@@ -12824,9 +18460,21 @@ func (s *EntityRecognizerProperties) SetModelKmsKeyId(v string) *EntityRecognize
 	return s
 }
 
+// SetOutputDataConfig sets the OutputDataConfig field's value.
+func (s *EntityRecognizerProperties) SetOutputDataConfig(v *EntityRecognizerOutputDataConfig) *EntityRecognizerProperties {
+	s.OutputDataConfig = v
+	return s
+}
+
 // SetRecognizerMetadata sets the RecognizerMetadata field's value.
 func (s *EntityRecognizerProperties) SetRecognizerMetadata(v *EntityRecognizerMetadata) *EntityRecognizerProperties {
 	s.RecognizerMetadata = v
+	return s
+}
+
+// SetSourceModelArn sets the SourceModelArn field's value.
+func (s *EntityRecognizerProperties) SetSourceModelArn(v string) *EntityRecognizerProperties {
+	s.SourceModelArn = &v
 	return s
 }
 
@@ -13008,7 +18656,7 @@ type EntityTypesListItem struct {
 	//
 	// Entity types must not contain the following invalid characters: \n (line
 	// break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage
-	// return), \t (tab), \\t (escaped tab), space, and , (comma).
+	// return), \t (tab), \\t (escaped tab), and , (comma).
 	//
 	// Type is a required field
 	Type *string `type:"string" required:"true"`
@@ -13048,6 +18696,74 @@ func (s *EntityTypesListItem) Validate() error {
 // SetType sets the Type field's value.
 func (s *EntityTypesListItem) SetType(v string) *EntityTypesListItem {
 	s.Type = &v
+	return s
+}
+
+// Text extraction encountered one or more page-level errors in the input document.
+//
+// The ErrorCode contains one of the following values:
+//
+//   - TEXTRACT_BAD_PAGE - Amazon Textract cannot read the page. For more information
+//     about page limits in Amazon Textract, see Page Quotas in Amazon Textract
+//     (https://docs.aws.amazon.com/textract/latest/dg/limits-document.html).
+//
+//   - TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED - The number of requests exceeded
+//     your throughput limit. For more information about throughput quotas in
+//     Amazon Textract, see Default quotas in Amazon Textract (https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html).
+//
+//   - PAGE_CHARACTERS_EXCEEDED - Too many text characters on the page (10,000
+//     characters maximum).
+//
+//   - PAGE_SIZE_EXCEEDED - The maximum page size is 10 MB.
+//
+//   - INTERNAL_SERVER_ERROR - The request encountered a service issue. Try
+//     the API request again.
+type ErrorsListItem struct {
+	_ struct{} `type:"structure"`
+
+	// Error code for the cause of the error.
+	ErrorCode *string `type:"string" enum:"PageBasedErrorCode"`
+
+	// Text message explaining the reason for the error.
+	ErrorMessage *string `min:"1" type:"string"`
+
+	// Page number where the error occurred.
+	Page *int64 `type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ErrorsListItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ErrorsListItem) GoString() string {
+	return s.String()
+}
+
+// SetErrorCode sets the ErrorCode field's value.
+func (s *ErrorsListItem) SetErrorCode(v string) *ErrorsListItem {
+	s.ErrorCode = &v
+	return s
+}
+
+// SetErrorMessage sets the ErrorMessage field's value.
+func (s *ErrorsListItem) SetErrorMessage(v string) *ErrorsListItem {
+	s.ErrorMessage = &v
+	return s
+}
+
+// SetPage sets the Page field's value.
+func (s *ErrorsListItem) SetPage(v int64) *ErrorsListItem {
+	s.Page = &v
 	return s
 }
 
@@ -13132,8 +18848,8 @@ func (s *EventsDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *EventsDetec
 type EventsDetectionJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identify and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the events detection job completed.
@@ -13144,8 +18860,9 @@ type EventsDetectionJobProperties struct {
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:events-detection-job/<job-id>
 	//
@@ -13270,15 +18987,755 @@ func (s *EventsDetectionJobProperties) SetTargetEventTypes(v []*string) *EventsD
 	return s
 }
 
-// The input properties for an inference job.
+// Array of the number of characters extracted from each page.
+type ExtractedCharactersListItem struct {
+	_ struct{} `type:"structure"`
+
+	// Number of characters extracted from each page.
+	Count *int64 `type:"integer"`
+
+	// Page number.
+	Page *int64 `type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ExtractedCharactersListItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ExtractedCharactersListItem) GoString() string {
+	return s.String()
+}
+
+// SetCount sets the Count field's value.
+func (s *ExtractedCharactersListItem) SetCount(v int64) *ExtractedCharactersListItem {
+	s.Count = &v
+	return s
+}
+
+// SetPage sets the Page field's value.
+func (s *ExtractedCharactersListItem) SetPage(v int64) *ExtractedCharactersListItem {
+	s.Page = &v
+	return s
+}
+
+// Filter the flywheels based on creation time or flywheel status.
+type FlywheelFilter struct {
+	_ struct{} `type:"structure"`
+
+	// Filter the flywheels to include flywheels created after the specified time.
+	CreationTimeAfter *time.Time `type:"timestamp"`
+
+	// Filter the flywheels to include flywheels created before the specified time.
+	CreationTimeBefore *time.Time `type:"timestamp"`
+
+	// Filter the flywheels based on the flywheel status.
+	Status *string `type:"string" enum:"FlywheelStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelFilter) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelFilter) GoString() string {
+	return s.String()
+}
+
+// SetCreationTimeAfter sets the CreationTimeAfter field's value.
+func (s *FlywheelFilter) SetCreationTimeAfter(v time.Time) *FlywheelFilter {
+	s.CreationTimeAfter = &v
+	return s
+}
+
+// SetCreationTimeBefore sets the CreationTimeBefore field's value.
+func (s *FlywheelFilter) SetCreationTimeBefore(v time.Time) *FlywheelFilter {
+	s.CreationTimeBefore = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *FlywheelFilter) SetStatus(v string) *FlywheelFilter {
+	s.Status = &v
+	return s
+}
+
+// Filter the flywheel iterations based on creation time.
+type FlywheelIterationFilter struct {
+	_ struct{} `type:"structure"`
+
+	// Filter the flywheel iterations to include iterations created after the specified
+	// time.
+	CreationTimeAfter *time.Time `type:"timestamp"`
+
+	// Filter the flywheel iterations to include iterations created before the specified
+	// time.
+	CreationTimeBefore *time.Time `type:"timestamp"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelIterationFilter) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelIterationFilter) GoString() string {
+	return s.String()
+}
+
+// SetCreationTimeAfter sets the CreationTimeAfter field's value.
+func (s *FlywheelIterationFilter) SetCreationTimeAfter(v time.Time) *FlywheelIterationFilter {
+	s.CreationTimeAfter = &v
+	return s
+}
+
+// SetCreationTimeBefore sets the CreationTimeBefore field's value.
+func (s *FlywheelIterationFilter) SetCreationTimeBefore(v time.Time) *FlywheelIterationFilter {
+	s.CreationTimeBefore = &v
+	return s
+}
+
+// The configuration properties of a flywheel iteration.
+type FlywheelIterationProperties struct {
+	_ struct{} `type:"structure"`
+
+	// The creation start time of the flywheel iteration.
+	CreationTime *time.Time `type:"timestamp"`
+
+	// The completion time of this flywheel iteration.
+	EndTime *time.Time `type:"timestamp"`
+
+	// The ARN of the evaluated model associated with this flywheel iteration.
+	EvaluatedModelArn *string `type:"string"`
+
+	// The evaluation metrics associated with the evaluated model.
+	EvaluatedModelMetrics *FlywheelModelEvaluationMetrics `type:"structure"`
+
+	EvaluationManifestS3Prefix *string `type:"string"`
+
+	FlywheelArn *string `type:"string"`
+
+	FlywheelIterationId *string `type:"string"`
+
+	// A description of the status of the flywheel iteration.
+	Message *string `type:"string"`
+
+	// The status of the flywheel iteration.
+	Status *string `type:"string" enum:"FlywheelIterationStatus"`
+
+	// The ARN of the trained model associated with this flywheel iteration.
+	TrainedModelArn *string `type:"string"`
+
+	// The metrics associated with the trained model.
+	TrainedModelMetrics *FlywheelModelEvaluationMetrics `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelIterationProperties) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelIterationProperties) GoString() string {
+	return s.String()
+}
+
+// SetCreationTime sets the CreationTime field's value.
+func (s *FlywheelIterationProperties) SetCreationTime(v time.Time) *FlywheelIterationProperties {
+	s.CreationTime = &v
+	return s
+}
+
+// SetEndTime sets the EndTime field's value.
+func (s *FlywheelIterationProperties) SetEndTime(v time.Time) *FlywheelIterationProperties {
+	s.EndTime = &v
+	return s
+}
+
+// SetEvaluatedModelArn sets the EvaluatedModelArn field's value.
+func (s *FlywheelIterationProperties) SetEvaluatedModelArn(v string) *FlywheelIterationProperties {
+	s.EvaluatedModelArn = &v
+	return s
+}
+
+// SetEvaluatedModelMetrics sets the EvaluatedModelMetrics field's value.
+func (s *FlywheelIterationProperties) SetEvaluatedModelMetrics(v *FlywheelModelEvaluationMetrics) *FlywheelIterationProperties {
+	s.EvaluatedModelMetrics = v
+	return s
+}
+
+// SetEvaluationManifestS3Prefix sets the EvaluationManifestS3Prefix field's value.
+func (s *FlywheelIterationProperties) SetEvaluationManifestS3Prefix(v string) *FlywheelIterationProperties {
+	s.EvaluationManifestS3Prefix = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *FlywheelIterationProperties) SetFlywheelArn(v string) *FlywheelIterationProperties {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetFlywheelIterationId sets the FlywheelIterationId field's value.
+func (s *FlywheelIterationProperties) SetFlywheelIterationId(v string) *FlywheelIterationProperties {
+	s.FlywheelIterationId = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *FlywheelIterationProperties) SetMessage(v string) *FlywheelIterationProperties {
+	s.Message = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *FlywheelIterationProperties) SetStatus(v string) *FlywheelIterationProperties {
+	s.Status = &v
+	return s
+}
+
+// SetTrainedModelArn sets the TrainedModelArn field's value.
+func (s *FlywheelIterationProperties) SetTrainedModelArn(v string) *FlywheelIterationProperties {
+	s.TrainedModelArn = &v
+	return s
+}
+
+// SetTrainedModelMetrics sets the TrainedModelMetrics field's value.
+func (s *FlywheelIterationProperties) SetTrainedModelMetrics(v *FlywheelModelEvaluationMetrics) *FlywheelIterationProperties {
+	s.TrainedModelMetrics = v
+	return s
+}
+
+// The evaluation metrics associated with the evaluated model.
+type FlywheelModelEvaluationMetrics struct {
+	_ struct{} `type:"structure"`
+
+	// Average accuracy metric for the model.
+	AverageAccuracy *float64 `type:"double"`
+
+	// The average F1 score from the evaluation metrics.
+	AverageF1Score *float64 `type:"double"`
+
+	// Average precision metric for the model.
+	AveragePrecision *float64 `type:"double"`
+
+	// Average recall metric for the model.
+	AverageRecall *float64 `type:"double"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelModelEvaluationMetrics) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelModelEvaluationMetrics) GoString() string {
+	return s.String()
+}
+
+// SetAverageAccuracy sets the AverageAccuracy field's value.
+func (s *FlywheelModelEvaluationMetrics) SetAverageAccuracy(v float64) *FlywheelModelEvaluationMetrics {
+	s.AverageAccuracy = &v
+	return s
+}
+
+// SetAverageF1Score sets the AverageF1Score field's value.
+func (s *FlywheelModelEvaluationMetrics) SetAverageF1Score(v float64) *FlywheelModelEvaluationMetrics {
+	s.AverageF1Score = &v
+	return s
+}
+
+// SetAveragePrecision sets the AveragePrecision field's value.
+func (s *FlywheelModelEvaluationMetrics) SetAveragePrecision(v float64) *FlywheelModelEvaluationMetrics {
+	s.AveragePrecision = &v
+	return s
+}
+
+// SetAverageRecall sets the AverageRecall field's value.
+func (s *FlywheelModelEvaluationMetrics) SetAverageRecall(v float64) *FlywheelModelEvaluationMetrics {
+	s.AverageRecall = &v
+	return s
+}
+
+// The flywheel properties.
+type FlywheelProperties struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the active model version.
+	ActiveModelArn *string `type:"string"`
+
+	// Creation time of the flywheel.
+	CreationTime *time.Time `type:"timestamp"`
+
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// permission to access the flywheel data.
+	DataAccessRoleArn *string `min:"20" type:"string"`
+
+	// Amazon S3 URI of the data lake location.
+	DataLakeS3Uri *string `type:"string"`
+
+	// Data security configuration.
+	DataSecurityConfig *DataSecurityConfig `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the flywheel.
+	FlywheelArn *string `type:"string"`
+
+	// Last modified time for the flywheel.
+	LastModifiedTime *time.Time `type:"timestamp"`
+
+	// The most recent flywheel iteration.
+	LatestFlywheelIteration *string `type:"string"`
+
+	// A description of the status of the flywheel.
+	Message *string `type:"string"`
+
+	// Model type of the flywheel's model.
+	ModelType *string `type:"string" enum:"ModelType"`
+
+	// The status of the flywheel.
+	Status *string `type:"string" enum:"FlywheelStatus"`
+
+	// Configuration about the model associated with a flywheel.
+	TaskConfig *TaskConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelProperties) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelProperties) GoString() string {
+	return s.String()
+}
+
+// SetActiveModelArn sets the ActiveModelArn field's value.
+func (s *FlywheelProperties) SetActiveModelArn(v string) *FlywheelProperties {
+	s.ActiveModelArn = &v
+	return s
+}
+
+// SetCreationTime sets the CreationTime field's value.
+func (s *FlywheelProperties) SetCreationTime(v time.Time) *FlywheelProperties {
+	s.CreationTime = &v
+	return s
+}
+
+// SetDataAccessRoleArn sets the DataAccessRoleArn field's value.
+func (s *FlywheelProperties) SetDataAccessRoleArn(v string) *FlywheelProperties {
+	s.DataAccessRoleArn = &v
+	return s
+}
+
+// SetDataLakeS3Uri sets the DataLakeS3Uri field's value.
+func (s *FlywheelProperties) SetDataLakeS3Uri(v string) *FlywheelProperties {
+	s.DataLakeS3Uri = &v
+	return s
+}
+
+// SetDataSecurityConfig sets the DataSecurityConfig field's value.
+func (s *FlywheelProperties) SetDataSecurityConfig(v *DataSecurityConfig) *FlywheelProperties {
+	s.DataSecurityConfig = v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *FlywheelProperties) SetFlywheelArn(v string) *FlywheelProperties {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetLastModifiedTime sets the LastModifiedTime field's value.
+func (s *FlywheelProperties) SetLastModifiedTime(v time.Time) *FlywheelProperties {
+	s.LastModifiedTime = &v
+	return s
+}
+
+// SetLatestFlywheelIteration sets the LatestFlywheelIteration field's value.
+func (s *FlywheelProperties) SetLatestFlywheelIteration(v string) *FlywheelProperties {
+	s.LatestFlywheelIteration = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *FlywheelProperties) SetMessage(v string) *FlywheelProperties {
+	s.Message = &v
+	return s
+}
+
+// SetModelType sets the ModelType field's value.
+func (s *FlywheelProperties) SetModelType(v string) *FlywheelProperties {
+	s.ModelType = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *FlywheelProperties) SetStatus(v string) *FlywheelProperties {
+	s.Status = &v
+	return s
+}
+
+// SetTaskConfig sets the TaskConfig field's value.
+func (s *FlywheelProperties) SetTaskConfig(v *TaskConfig) *FlywheelProperties {
+	s.TaskConfig = v
+	return s
+}
+
+// Flywheel summary information.
+type FlywheelSummary struct {
+	_ struct{} `type:"structure"`
+
+	// ARN of the active model version for the flywheel.
+	ActiveModelArn *string `type:"string"`
+
+	// Creation time of the flywheel.
+	CreationTime *time.Time `type:"timestamp"`
+
+	// Amazon S3 URI of the data lake location.
+	DataLakeS3Uri *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the flywheel
+	FlywheelArn *string `type:"string"`
+
+	// Last modified time for the flywheel.
+	LastModifiedTime *time.Time `type:"timestamp"`
+
+	// The most recent flywheel iteration.
+	LatestFlywheelIteration *string `type:"string"`
+
+	// A description of the status of the flywheel.
+	Message *string `type:"string"`
+
+	// Model type of the flywheel's model.
+	ModelType *string `type:"string" enum:"ModelType"`
+
+	// The status of the flywheel.
+	Status *string `type:"string" enum:"FlywheelStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelSummary) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FlywheelSummary) GoString() string {
+	return s.String()
+}
+
+// SetActiveModelArn sets the ActiveModelArn field's value.
+func (s *FlywheelSummary) SetActiveModelArn(v string) *FlywheelSummary {
+	s.ActiveModelArn = &v
+	return s
+}
+
+// SetCreationTime sets the CreationTime field's value.
+func (s *FlywheelSummary) SetCreationTime(v time.Time) *FlywheelSummary {
+	s.CreationTime = &v
+	return s
+}
+
+// SetDataLakeS3Uri sets the DataLakeS3Uri field's value.
+func (s *FlywheelSummary) SetDataLakeS3Uri(v string) *FlywheelSummary {
+	s.DataLakeS3Uri = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *FlywheelSummary) SetFlywheelArn(v string) *FlywheelSummary {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetLastModifiedTime sets the LastModifiedTime field's value.
+func (s *FlywheelSummary) SetLastModifiedTime(v time.Time) *FlywheelSummary {
+	s.LastModifiedTime = &v
+	return s
+}
+
+// SetLatestFlywheelIteration sets the LatestFlywheelIteration field's value.
+func (s *FlywheelSummary) SetLatestFlywheelIteration(v string) *FlywheelSummary {
+	s.LatestFlywheelIteration = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *FlywheelSummary) SetMessage(v string) *FlywheelSummary {
+	s.Message = &v
+	return s
+}
+
+// SetModelType sets the ModelType field's value.
+func (s *FlywheelSummary) SetModelType(v string) *FlywheelSummary {
+	s.ModelType = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *FlywheelSummary) SetStatus(v string) *FlywheelSummary {
+	s.Status = &v
+	return s
+}
+
+// Information about the location of items on a document page.
+//
+// For additional information, see Geometry (https://docs.aws.amazon.com/textract/latest/dg/API_Geometry.html)
+// in the Amazon Textract API reference.
+type Geometry struct {
+	_ struct{} `type:"structure"`
+
+	// An axis-aligned coarse representation of the location of the recognized item
+	// on the document page.
+	BoundingBox *BoundingBox `type:"structure"`
+
+	// Within the bounding box, a fine-grained polygon around the recognized item.
+	Polygon []*Point `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Geometry) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Geometry) GoString() string {
+	return s.String()
+}
+
+// SetBoundingBox sets the BoundingBox field's value.
+func (s *Geometry) SetBoundingBox(v *BoundingBox) *Geometry {
+	s.BoundingBox = v
+	return s
+}
+
+// SetPolygon sets the Polygon field's value.
+func (s *Geometry) SetPolygon(v []*Point) *Geometry {
+	s.Polygon = v
+	return s
+}
+
+type ImportModelInput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// permission to use Amazon Key Management Service (KMS) to encrypt or decrypt
+	// the custom model.
+	DataAccessRoleArn *string `min:"20" type:"string"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+	// models. The ModelKmsKeyId can be either of the following formats:
+	//
+	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+	//
+	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+	ModelKmsKeyId *string `type:"string"`
+
+	// The name to assign to the custom model that is created in Amazon Comprehend
+	// by this import.
+	ModelName *string `type:"string"`
+
+	// The Amazon Resource Name (ARN) of the custom model to import.
+	//
+	// SourceModelArn is a required field
+	SourceModelArn *string `type:"string" required:"true"`
+
+	// Tags to associate with the custom model that is created by this import. A
+	// tag is a key-value pair that adds as a metadata to a resource used by Amazon
+	// Comprehend. For example, a tag with "Sales" as the key might be added to
+	// a resource to indicate its use by the sales department.
+	Tags []*Tag `type:"list"`
+
+	// The version name given to the custom model that is created by this import.
+	// Version names can have a maximum of 256 characters. Alphanumeric characters,
+	// hyphens (-) and underscores (_) are allowed. The version name must be unique
+	// among all models with the same classifier name in the account/Region.
+	VersionName *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ImportModelInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ImportModelInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ImportModelInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ImportModelInput"}
+	if s.DataAccessRoleArn != nil && len(*s.DataAccessRoleArn) < 20 {
+		invalidParams.Add(request.NewErrParamMinLen("DataAccessRoleArn", 20))
+	}
+	if s.SourceModelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("SourceModelArn"))
+	}
+	if s.Tags != nil {
+		for i, v := range s.Tags {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "Tags", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDataAccessRoleArn sets the DataAccessRoleArn field's value.
+func (s *ImportModelInput) SetDataAccessRoleArn(v string) *ImportModelInput {
+	s.DataAccessRoleArn = &v
+	return s
+}
+
+// SetModelKmsKeyId sets the ModelKmsKeyId field's value.
+func (s *ImportModelInput) SetModelKmsKeyId(v string) *ImportModelInput {
+	s.ModelKmsKeyId = &v
+	return s
+}
+
+// SetModelName sets the ModelName field's value.
+func (s *ImportModelInput) SetModelName(v string) *ImportModelInput {
+	s.ModelName = &v
+	return s
+}
+
+// SetSourceModelArn sets the SourceModelArn field's value.
+func (s *ImportModelInput) SetSourceModelArn(v string) *ImportModelInput {
+	s.SourceModelArn = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *ImportModelInput) SetTags(v []*Tag) *ImportModelInput {
+	s.Tags = v
+	return s
+}
+
+// SetVersionName sets the VersionName field's value.
+func (s *ImportModelInput) SetVersionName(v string) *ImportModelInput {
+	s.VersionName = &v
+	return s
+}
+
+type ImportModelOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Name (ARN) of the custom model being imported.
+	ModelArn *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ImportModelOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ImportModelOutput) GoString() string {
+	return s.String()
+}
+
+// SetModelArn sets the ModelArn field's value.
+func (s *ImportModelOutput) SetModelArn(v string) *ImportModelOutput {
+	s.ModelArn = &v
+	return s
+}
+
+// The input properties for an inference job. The document reader config field
+// applies only to non-text inputs for custom analysis.
 type InputDataConfig struct {
 	_ struct{} `type:"structure"`
 
-	// The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob.
-	//
-	// Use DocumentReaderConfig to provide specifications about how you want your
-	// inference documents read. Currently it applies for PDF documents in StartEntitiesDetectionJob
-	// custom inference.
+	// Provides configuration parameters to override the default actions for extracting
+	// text from PDF documents and image files.
 	DocumentReaderConfig *DocumentReaderConfig `type:"structure"`
 
 	// Specifies how the text in an input file should be processed:
@@ -13292,7 +19749,7 @@ type InputDataConfig struct {
 	//    text messages.
 	InputFormat *string `type:"string" enum:"InputFormat"`
 
-	// The Amazon S3 URI for the input data. The URI must be in same region as the
+	// The Amazon S3 URI for the input data. The URI must be in same Region as the
 	// API endpoint that you are calling. The URI can point to a single input file
 	// or it can provide the prefix for a collection of data files.
 	//
@@ -13486,12 +19943,71 @@ func (s *InvalidFilterException) RequestID() string {
 	return s.RespMetadata.RequestID
 }
 
+// Provides additional detail about why the request failed.
+type InvalidRequestDetail struct {
+	_ struct{} `type:"structure"`
+
+	// Reason codes include the following values:
+	//
+	//    * DOCUMENT_SIZE_EXCEEDED - Document size is too large. Check the size
+	//    of your file and resubmit the request.
+	//
+	//    * UNSUPPORTED_DOC_TYPE - Document type is not supported. Check the file
+	//    type and resubmit the request.
+	//
+	//    * PAGE_LIMIT_EXCEEDED - Too many pages in the document. Check the number
+	//    of pages in your file and resubmit the request.
+	//
+	//    * TEXTRACT_ACCESS_DENIED - Access denied to Amazon Textract. Verify that
+	//    your account has permission to use Amazon Textract API operations and
+	//    resubmit the request.
+	//
+	//    * NOT_TEXTRACT_JSON - Document is not Amazon Textract JSON format. Verify
+	//    the format and resubmit the request.
+	//
+	//    * MISMATCHED_TOTAL_PAGE_COUNT - Check the number of pages in your file
+	//    and resubmit the request.
+	//
+	//    * INVALID_DOCUMENT - Invalid document. Check the file and resubmit the
+	//    request.
+	Reason *string `type:"string" enum:"InvalidRequestDetailReason"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s InvalidRequestDetail) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s InvalidRequestDetail) GoString() string {
+	return s.String()
+}
+
+// SetReason sets the Reason field's value.
+func (s *InvalidRequestDetail) SetReason(v string) *InvalidRequestDetail {
+	s.Reason = &v
+	return s
+}
+
 // The request is invalid.
 type InvalidRequestException struct {
 	_            struct{}                  `type:"structure"`
 	RespMetadata protocol.ResponseMetadata `json:"-" xml:"-"`
 
+	// Provides additional detail about why the request failed.
+	Detail *InvalidRequestDetail `type:"structure"`
+
 	Message_ *string `locationName:"Message" min:"1" type:"string"`
+
+	Reason *string `type:"string" enum:"InvalidRequestReason"`
 }
 
 // String returns the string representation.
@@ -13537,7 +20053,7 @@ func (s *InvalidRequestException) OrigErr() error {
 }
 
 func (s *InvalidRequestException) Error() string {
-	return fmt.Sprintf("%s: %s", s.Code(), s.Message())
+	return fmt.Sprintf("%s: %s\n%s", s.Code(), s.Message(), s.String())
 }
 
 // Status code returns the HTTP status code for the request's response error.
@@ -13618,17 +20134,12 @@ func (s *JobNotFoundException) RequestID() string {
 type KeyPhrase struct {
 	_ struct{} `type:"structure"`
 
-	// A character offset in the input text that shows where the key phrase begins
-	// (the first character is at position 0). The offset returns the position of
-	// each UTF-8 code point in the string. A code point is the abstract character
-	// from a particular graphical representation. For example, a multi-byte UTF-8
-	// character maps to a single code point.
+	// The zero-based offset from the beginning of the source text to the first
+	// character in the key phrase.
 	BeginOffset *int64 `type:"integer"`
 
-	// A character offset in the input text where the key phrase ends. The offset
-	// returns the position of each UTF-8 code point in the string. A code point
-	// is the abstract character from a particular graphical representation. For
-	// example, a multi-byte UTF-8 character maps to a single code point.
+	// The zero-based offset from the beginning of the source text to the last character
+	// in the key phrase.
 	EndOffset *int64 `type:"integer"`
 
 	// The level of confidence that Amazon Comprehend has in the accuracy of the
@@ -13763,8 +20274,8 @@ func (s *KeyPhrasesDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *KeyPhra
 type KeyPhrasesDetectionJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
-	// your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the key phrases detection job completed.
@@ -13775,8 +20286,9 @@ type KeyPhrasesDetectionJobProperties struct {
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the key phrases detection job. It is a
-	// unique, fully qualified identifier for the job. It includes the AWS account,
-	// Region, and the job ID. The format of the ARN is as follows:
+	// unique, fully qualified identifier for the job. It includes the Amazon Web
+	// Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:key-phrases-detection-job/<job-id>
 	//
@@ -13808,10 +20320,9 @@ type KeyPhrasesDetectionJobProperties struct {
 	// The time that the key phrases detection job was submitted for processing.
 	SubmitTime *time.Time `type:"timestamp"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage
+	// volume attached to the ML compute instance(s) that process the analysis job.
+	// The VolumeKmsKeyId can be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -13983,6 +20494,120 @@ func (s *KmsKeyValidationException) StatusCode() int {
 // RequestID returns the service's response RequestID for request.
 func (s *KmsKeyValidationException) RequestID() string {
 	return s.RespMetadata.RequestID
+}
+
+type ListDatasetsInput struct {
+	_ struct{} `type:"structure"`
+
+	// Filters the datasets to be returned in the response.
+	Filter *DatasetFilter `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the flywheel.
+	FlywheelArn *string `type:"string"`
+
+	// Maximum number of results to return in a response. The default is 100.
+	MaxResults *int64 `min:"1" type:"integer"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListDatasetsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListDatasetsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListDatasetsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListDatasetsInput"}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFilter sets the Filter field's value.
+func (s *ListDatasetsInput) SetFilter(v *DatasetFilter) *ListDatasetsInput {
+	s.Filter = v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *ListDatasetsInput) SetFlywheelArn(v string) *ListDatasetsInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListDatasetsInput) SetMaxResults(v int64) *ListDatasetsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListDatasetsInput) SetNextToken(v string) *ListDatasetsInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListDatasetsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The dataset properties list.
+	DatasetPropertiesList []*DatasetProperties `type:"list"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListDatasetsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListDatasetsOutput) GoString() string {
+	return s.String()
+}
+
+// SetDatasetPropertiesList sets the DatasetPropertiesList field's value.
+func (s *ListDatasetsOutput) SetDatasetPropertiesList(v []*DatasetProperties) *ListDatasetsOutput {
+	s.DatasetPropertiesList = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListDatasetsOutput) SetNextToken(v string) *ListDatasetsOutput {
+	s.NextToken = &v
+	return s
 }
 
 type ListDocumentClassificationJobsInput struct {
@@ -14694,7 +21319,7 @@ type ListEntityRecognizerSummariesOutput struct {
 	// The list entity recognizer summaries.
 	EntityRecognizerSummariesList []*EntityRecognizerSummary `type:"list"`
 
-	// The list entity recognizer summaries.
+	// Identifies the next page of results to return.
 	NextToken *string `min:"1" type:"string"`
 }
 
@@ -14942,6 +21567,233 @@ func (s *ListEventsDetectionJobsOutput) SetEventsDetectionJobPropertiesList(v []
 
 // SetNextToken sets the NextToken field's value.
 func (s *ListEventsDetectionJobsOutput) SetNextToken(v string) *ListEventsDetectionJobsOutput {
+	s.NextToken = &v
+	return s
+}
+
+type ListFlywheelIterationHistoryInput struct {
+	_ struct{} `type:"structure"`
+
+	// Filter the flywheel iteration history based on creation time.
+	Filter *FlywheelIterationFilter `type:"structure"`
+
+	// The ARN of the flywheel.
+	//
+	// FlywheelArn is a required field
+	FlywheelArn *string `type:"string" required:"true"`
+
+	// Maximum number of iteration history results to return
+	MaxResults *int64 `min:"1" type:"integer"`
+
+	// Next token
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelIterationHistoryInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelIterationHistoryInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListFlywheelIterationHistoryInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListFlywheelIterationHistoryInput"}
+	if s.FlywheelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelArn"))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFilter sets the Filter field's value.
+func (s *ListFlywheelIterationHistoryInput) SetFilter(v *FlywheelIterationFilter) *ListFlywheelIterationHistoryInput {
+	s.Filter = v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *ListFlywheelIterationHistoryInput) SetFlywheelArn(v string) *ListFlywheelIterationHistoryInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListFlywheelIterationHistoryInput) SetMaxResults(v int64) *ListFlywheelIterationHistoryInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListFlywheelIterationHistoryInput) SetNextToken(v string) *ListFlywheelIterationHistoryInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListFlywheelIterationHistoryOutput struct {
+	_ struct{} `type:"structure"`
+
+	// List of flywheel iteration properties
+	FlywheelIterationPropertiesList []*FlywheelIterationProperties `type:"list"`
+
+	// Next token
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelIterationHistoryOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelIterationHistoryOutput) GoString() string {
+	return s.String()
+}
+
+// SetFlywheelIterationPropertiesList sets the FlywheelIterationPropertiesList field's value.
+func (s *ListFlywheelIterationHistoryOutput) SetFlywheelIterationPropertiesList(v []*FlywheelIterationProperties) *ListFlywheelIterationHistoryOutput {
+	s.FlywheelIterationPropertiesList = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListFlywheelIterationHistoryOutput) SetNextToken(v string) *ListFlywheelIterationHistoryOutput {
+	s.NextToken = &v
+	return s
+}
+
+type ListFlywheelsInput struct {
+	_ struct{} `type:"structure"`
+
+	// Filters the flywheels that are returned. You can filter flywheels on their
+	// status, or the date and time that they were submitted. You can only set one
+	// filter at a time.
+	Filter *FlywheelFilter `type:"structure"`
+
+	// Maximum number of results to return in a response. The default is 100.
+	MaxResults *int64 `min:"1" type:"integer"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListFlywheelsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListFlywheelsInput"}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFilter sets the Filter field's value.
+func (s *ListFlywheelsInput) SetFilter(v *FlywheelFilter) *ListFlywheelsInput {
+	s.Filter = v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListFlywheelsInput) SetMaxResults(v int64) *ListFlywheelsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListFlywheelsInput) SetNextToken(v string) *ListFlywheelsInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListFlywheelsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// A list of flywheel properties retrieved by the service in response to the
+	// request.
+	FlywheelSummaryList []*FlywheelSummary `type:"list"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListFlywheelsOutput) GoString() string {
+	return s.String()
+}
+
+// SetFlywheelSummaryList sets the FlywheelSummaryList field's value.
+func (s *ListFlywheelsOutput) SetFlywheelSummaryList(v []*FlywheelSummary) *ListFlywheelsOutput {
+	s.FlywheelSummaryList = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListFlywheelsOutput) SetNextToken(v string) *ListFlywheelsOutput {
 	s.NextToken = &v
 	return s
 }
@@ -15373,6 +22225,118 @@ func (s *ListTagsForResourceOutput) SetTags(v []*Tag) *ListTagsForResourceOutput
 	return s
 }
 
+type ListTargetedSentimentDetectionJobsInput struct {
+	_ struct{} `type:"structure"`
+
+	// Filters the jobs that are returned. You can filter jobs on their name, status,
+	// or the date and time that they were submitted. You can only set one filter
+	// at a time.
+	Filter *TargetedSentimentDetectionJobFilter `type:"structure"`
+
+	// The maximum number of results to return in each page. The default is 100.
+	MaxResults *int64 `min:"1" type:"integer"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListTargetedSentimentDetectionJobsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListTargetedSentimentDetectionJobsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListTargetedSentimentDetectionJobsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListTargetedSentimentDetectionJobsInput"}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+	if s.Filter != nil {
+		if err := s.Filter.Validate(); err != nil {
+			invalidParams.AddNested("Filter", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetFilter sets the Filter field's value.
+func (s *ListTargetedSentimentDetectionJobsInput) SetFilter(v *TargetedSentimentDetectionJobFilter) *ListTargetedSentimentDetectionJobsInput {
+	s.Filter = v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListTargetedSentimentDetectionJobsInput) SetMaxResults(v int64) *ListTargetedSentimentDetectionJobsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListTargetedSentimentDetectionJobsInput) SetNextToken(v string) *ListTargetedSentimentDetectionJobsInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListTargetedSentimentDetectionJobsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `min:"1" type:"string"`
+
+	// A list containing the properties of each job that is returned.
+	TargetedSentimentDetectionJobPropertiesList []*TargetedSentimentDetectionJobProperties `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListTargetedSentimentDetectionJobsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListTargetedSentimentDetectionJobsOutput) GoString() string {
+	return s.String()
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListTargetedSentimentDetectionJobsOutput) SetNextToken(v string) *ListTargetedSentimentDetectionJobsOutput {
+	s.NextToken = &v
+	return s
+}
+
+// SetTargetedSentimentDetectionJobPropertiesList sets the TargetedSentimentDetectionJobPropertiesList field's value.
+func (s *ListTargetedSentimentDetectionJobsOutput) SetTargetedSentimentDetectionJobPropertiesList(v []*TargetedSentimentDetectionJobProperties) *ListTargetedSentimentDetectionJobsOutput {
+	s.TargetedSentimentDetectionJobPropertiesList = v
+	return s
+}
+
 type ListTopicsDetectionJobsInput struct {
 	_ struct{} `type:"structure"`
 
@@ -15485,13 +22449,61 @@ func (s *ListTopicsDetectionJobsOutput) SetTopicsDetectionJobPropertiesList(v []
 	return s
 }
 
-// Provides configuration parameters for the output of topic detection jobs.
+// Contains the sentiment and sentiment score for one mention of an entity.
+//
+// For more information about targeted sentiment, see Targeted sentiment (https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html)
+// in the Amazon Comprehend Developer Guide.
+type MentionSentiment struct {
+	_ struct{} `type:"structure"`
+
+	// The sentiment of the mention.
+	Sentiment *string `type:"string" enum:"SentimentType"`
+
+	// Describes the level of confidence that Amazon Comprehend has in the accuracy
+	// of its detection of sentiments.
+	SentimentScore *SentimentScore `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s MentionSentiment) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s MentionSentiment) GoString() string {
+	return s.String()
+}
+
+// SetSentiment sets the Sentiment field's value.
+func (s *MentionSentiment) SetSentiment(v string) *MentionSentiment {
+	s.Sentiment = &v
+	return s
+}
+
+// SetSentimentScore sets the SentimentScore field's value.
+func (s *MentionSentiment) SetSentimentScore(v *SentimentScore) *MentionSentiment {
+	s.SentimentScore = v
+	return s
+}
+
+// Provides configuration parameters for the output of inference jobs.
 type OutputDataConfig struct {
 	_ struct{} `type:"structure"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt the output results from an analysis job. The KmsKeyId can be one
-	// of the following formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt the output results from an analysis job. Specify
+	// the Key Id of a symmetric key, because you cannot use an asymmetric key for
+	// uploading data to S3.
+	//
+	// The KmsKeyId can be one of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -15504,7 +22516,7 @@ type OutputDataConfig struct {
 
 	// When you use the OutputDataConfig object with asynchronous operations, you
 	// specify the Amazon S3 location where you want to write the output data. The
-	// URI must be in the same region as the API endpoint that you are calling.
+	// URI must be in the same Region as the API endpoint that you are calling.
 	// The location is used as the prefix for the actual location of the output
 	// file.
 	//
@@ -15512,6 +22524,10 @@ type OutputDataConfig struct {
 	// in a directory specific to the job. The S3Uri field contains the location
 	// of the output file, called output.tar.gz. It is a compressed archive that
 	// contains the ouput of the operation.
+	//
+	// For a PII entity detection job, the output file is plain text, not a compressed
+	// archive. The output file name is the same as the input file, with .out appended
+	// at the end.
 	//
 	// S3Uri is a required field
 	S3Uri *string `type:"string" required:"true"`
@@ -15563,7 +22579,8 @@ func (s *OutputDataConfig) SetS3Uri(v string) *OutputDataConfig {
 // Identifies the part of speech represented by the token and gives the confidence
 // that Amazon Comprehend has that the part of speech was correctly identified.
 // For more information about the parts of speech that Amazon Comprehend can
-// identify, see how-syntax.
+// identify, see Syntax (https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html)
+// in the Comprehend Developer Guide.
 type PartOfSpeechTag struct {
 	_ struct{} `type:"structure"`
 
@@ -15686,8 +22703,8 @@ func (s *PiiEntitiesDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *PiiEnt
 type PiiEntitiesDetectionJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
-	// your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the PII entities detection job completed.
@@ -15697,8 +22714,9 @@ type PiiEntitiesDetectionJobProperties struct {
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the PII entities detection job. It is a
-	// unique, fully qualified identifier for the job. It includes the AWS account,
-	// Region, and the job ID. The format of the ARN is as follows:
+	// unique, fully qualified identifier for the job. It includes the Amazon Web
+	// Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:pii-entities-detection-job/<job-id>
 	//
@@ -15842,17 +22860,12 @@ func (s *PiiEntitiesDetectionJobProperties) SetSubmitTime(v time.Time) *PiiEntit
 type PiiEntity struct {
 	_ struct{} `type:"structure"`
 
-	// A character offset in the input text that shows where the PII entity begins
-	// (the first character is at position 0). The offset returns the position of
-	// each UTF-8 code point in the string. A code point is the abstract character
-	// from a particular graphical representation. For example, a multi-byte UTF-8
-	// character maps to a single code point.
+	// The zero-based offset from the beginning of the source text to the first
+	// character in the entity.
 	BeginOffset *int64 `type:"integer"`
 
-	// A character offset in the input text that shows where the PII entity ends.
-	// The offset returns the position of each UTF-8 code point in the string. A
-	// code point is the abstract character from a particular graphical representation.
-	// For example, a multi-byte UTF-8 character maps to a single code point.
+	// The zero-based offset from the beginning of the source text to the last character
+	// in the entity.
 	EndOffset *int64 `type:"integer"`
 
 	// The level of confidence that Amazon Comprehend has in the accuracy of the
@@ -15910,12 +22923,16 @@ func (s *PiiEntity) SetType(v string) *PiiEntity {
 type PiiOutputDataConfig struct {
 	_ struct{} `type:"structure"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt the output results from an analysis job.
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt the output results from an analysis job.
 	KmsKeyId *string `type:"string"`
 
 	// When you use the PiiOutputDataConfig object with asynchronous operations,
 	// you specify the Amazon S3 location where you want to write the output data.
+	//
+	// For a PII entity detection job, the output file is plain text, not a compressed
+	// archive. The output file name is the same as the input file, with .out appended
+	// at the end.
 	//
 	// S3Uri is a required field
 	S3Uri *string `type:"string" required:"true"`
@@ -15951,6 +22968,167 @@ func (s *PiiOutputDataConfig) SetS3Uri(v string) *PiiOutputDataConfig {
 	return s
 }
 
+// The X and Y coordinates of a point on a document page.
+//
+// For additional information, see Point (https://docs.aws.amazon.com/textract/latest/dg/API_Point.html)
+// in the Amazon Textract API reference.
+type Point struct {
+	_ struct{} `type:"structure"`
+
+	// The value of the X coordinate for a point on a polygon
+	X *float64 `type:"float"`
+
+	// The value of the Y coordinate for a point on a polygon
+	Y *float64 `type:"float"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Point) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Point) GoString() string {
+	return s.String()
+}
+
+// SetX sets the X field's value.
+func (s *Point) SetX(v float64) *Point {
+	s.X = &v
+	return s
+}
+
+// SetY sets the Y field's value.
+func (s *Point) SetY(v float64) *Point {
+	s.Y = &v
+	return s
+}
+
+type PutResourcePolicyInput struct {
+	_ struct{} `type:"structure"`
+
+	// The revision ID that Amazon Comprehend assigned to the policy that you are
+	// updating. If you are creating a new policy that has no prior version, don't
+	// use this parameter. Amazon Comprehend creates the revision ID for you.
+	PolicyRevisionId *string `type:"string"`
+
+	// The Amazon Resource Name (ARN) of the custom model to attach the policy to.
+	//
+	// ResourceArn is a required field
+	ResourceArn *string `type:"string" required:"true"`
+
+	// The JSON resource-based policy to attach to your custom model. Provide your
+	// JSON as a UTF-8 encoded string without line breaks. To provide valid JSON
+	// for your policy, enclose the attribute names and values in double quotes.
+	// If the JSON body is also enclosed in double quotes, then you must escape
+	// the double quotes that are inside the policy:
+	//
+	// "{\"attribute\": \"value\", \"attribute\": [\"value\"]}"
+	//
+	// To avoid escaping quotes, you can use single quotes to enclose the policy
+	// and double quotes to enclose the JSON names and values:
+	//
+	// '{"attribute": "value", "attribute": ["value"]}'
+	//
+	// ResourcePolicy is a required field
+	ResourcePolicy *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s PutResourcePolicyInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s PutResourcePolicyInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *PutResourcePolicyInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "PutResourcePolicyInput"}
+	if s.ResourceArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("ResourceArn"))
+	}
+	if s.ResourcePolicy == nil {
+		invalidParams.Add(request.NewErrParamRequired("ResourcePolicy"))
+	}
+	if s.ResourcePolicy != nil && len(*s.ResourcePolicy) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ResourcePolicy", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetPolicyRevisionId sets the PolicyRevisionId field's value.
+func (s *PutResourcePolicyInput) SetPolicyRevisionId(v string) *PutResourcePolicyInput {
+	s.PolicyRevisionId = &v
+	return s
+}
+
+// SetResourceArn sets the ResourceArn field's value.
+func (s *PutResourcePolicyInput) SetResourceArn(v string) *PutResourcePolicyInput {
+	s.ResourceArn = &v
+	return s
+}
+
+// SetResourcePolicy sets the ResourcePolicy field's value.
+func (s *PutResourcePolicyInput) SetResourcePolicy(v string) *PutResourcePolicyInput {
+	s.ResourcePolicy = &v
+	return s
+}
+
+type PutResourcePolicyOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The revision ID of the policy. Each time you modify a policy, Amazon Comprehend
+	// assigns a new revision ID, and it deletes the prior version of the policy.
+	PolicyRevisionId *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s PutResourcePolicyOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s PutResourcePolicyOutput) GoString() string {
+	return s.String()
+}
+
+// SetPolicyRevisionId sets the PolicyRevisionId field's value.
+func (s *PutResourcePolicyOutput) SetPolicyRevisionId(v string) *PutResourcePolicyOutput {
+	s.PolicyRevisionId = &v
+	return s
+}
+
 // Provides configuration parameters for PII entity redaction.
 type RedactionConfig struct {
 	_ struct{} `type:"structure"`
@@ -15964,7 +23142,7 @@ type RedactionConfig struct {
 
 	// An array of the types of PII entities that Amazon Comprehend detects in the
 	// input text for your request.
-	PiiEntityTypes []*string `type:"list"`
+	PiiEntityTypes []*string `type:"list" enum:"PiiEntityType"`
 }
 
 // String returns the string representation.
@@ -16013,6 +23191,47 @@ func (s *RedactionConfig) SetMaskMode(v string) *RedactionConfig {
 // SetPiiEntityTypes sets the PiiEntityTypes field's value.
 func (s *RedactionConfig) SetPiiEntityTypes(v []*string) *RedactionConfig {
 	s.PiiEntityTypes = v
+	return s
+}
+
+// List of child blocks for the current block.
+type RelationshipsListItem struct {
+	_ struct{} `type:"structure"`
+
+	// Identifers of the child blocks.
+	Ids []*string `type:"list"`
+
+	// Only supported relationship is a child relationship.
+	Type *string `type:"string" enum:"RelationshipType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s RelationshipsListItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s RelationshipsListItem) GoString() string {
+	return s.String()
+}
+
+// SetIds sets the Ids field's value.
+func (s *RelationshipsListItem) SetIds(v []*string) *RelationshipsListItem {
+	s.Ids = v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *RelationshipsListItem) SetType(v string) *RelationshipsListItem {
+	s.Type = &v
 	return s
 }
 
@@ -16358,8 +23577,8 @@ func (s *SentimentDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *Sentimen
 type SentimentDetectionJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
-	// your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the sentiment detection job ended.
@@ -16370,8 +23589,9 @@ type SentimentDetectionJobProperties struct {
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:sentiment-detection-job/<job-id>
 	//
@@ -16403,10 +23623,10 @@ type SentimentDetectionJobProperties struct {
 	// The time that the sentiment detection job was submitted for processing.
 	SubmitTime *time.Time `type:"timestamp"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -16586,17 +23806,19 @@ type StartDocumentClassificationJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
 
 	// The Amazon Resource Name (ARN) of the document classifier to use to process
 	// the job.
-	//
-	// DocumentClassifierArn is a required field
-	DocumentClassifierArn *string `type:"string" required:"true"`
+	DocumentClassifierArn *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the flywheel associated with the model
+	// to use.
+	FlywheelArn *string `type:"string"`
 
 	// Specifies the format and location of the input data for the job.
 	//
@@ -16611,16 +23833,16 @@ type StartDocumentClassificationJobInput struct {
 	// OutputDataConfig is a required field
 	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
 
-	// Tags to be associated with the document classification job. A tag is a key-value
+	// Tags to associate with the document classification job. A tag is a key-value
 	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
 	// a tag with "Sales" as the key might be added to a resource to indicate its
 	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -16662,9 +23884,6 @@ func (s *StartDocumentClassificationJobInput) Validate() error {
 	}
 	if s.DataAccessRoleArn != nil && len(*s.DataAccessRoleArn) < 20 {
 		invalidParams.Add(request.NewErrParamMinLen("DataAccessRoleArn", 20))
-	}
-	if s.DocumentClassifierArn == nil {
-		invalidParams.Add(request.NewErrParamRequired("DocumentClassifierArn"))
 	}
 	if s.InputDataConfig == nil {
 		invalidParams.Add(request.NewErrParamRequired("InputDataConfig"))
@@ -16725,6 +23944,12 @@ func (s *StartDocumentClassificationJobInput) SetDocumentClassifierArn(v string)
 	return s
 }
 
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *StartDocumentClassificationJobInput) SetFlywheelArn(v string) *StartDocumentClassificationJobInput {
+	s.FlywheelArn = &v
+	return s
+}
+
 // SetInputDataConfig sets the InputDataConfig field's value.
 func (s *StartDocumentClassificationJobInput) SetInputDataConfig(v *InputDataConfig) *StartDocumentClassificationJobInput {
 	s.InputDataConfig = v
@@ -16764,9 +23989,13 @@ func (s *StartDocumentClassificationJobInput) SetVpcConfig(v *VpcConfig) *StartD
 type StartDocumentClassificationJobOutput struct {
 	_ struct{} `type:"structure"`
 
+	// The ARN of the custom classification model.
+	DocumentClassifierArn *string `type:"string"`
+
 	// The Amazon Resource Name (ARN) of the document classification job. It is
-	// a unique, fully qualified identifier for the job. It includes the AWS account,
-	// Region, and the job ID. The format of the ARN is as follows:
+	// a unique, fully qualified identifier for the job. It includes the Amazon
+	// Web Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:document-classification-job/<job-id>
 	//
@@ -16776,7 +24005,7 @@ type StartDocumentClassificationJobOutput struct {
 	JobArn *string `type:"string"`
 
 	// The identifier generated for the job. To get the status of the job, use this
-	// identifier with the operation.
+	// identifier with the DescribeDocumentClassificationJob operation.
 	JobId *string `min:"1" type:"string"`
 
 	// The status of the job:
@@ -16787,7 +24016,8 @@ type StartDocumentClassificationJobOutput struct {
 	//
 	//    * COMPLETED - The job was successfully completed and the output is available.
 	//
-	//    * FAILED - The job did not complete. For details, use the operation.
+	//    * FAILED - The job did not complete. For details, use the DescribeDocumentClassificationJob
+	//    operation.
 	//
 	//    * STOP_REQUESTED - Amazon Comprehend has received a stop request for the
 	//    job and is processing the request.
@@ -16812,6 +24042,12 @@ func (s StartDocumentClassificationJobOutput) String() string {
 // value will be replaced with "sensitive".
 func (s StartDocumentClassificationJobOutput) GoString() string {
 	return s.String()
+}
+
+// SetDocumentClassifierArn sets the DocumentClassifierArn field's value.
+func (s *StartDocumentClassificationJobOutput) SetDocumentClassifierArn(v string) *StartDocumentClassificationJobOutput {
+	s.DocumentClassifierArn = &v
+	return s
 }
 
 // SetJobArn sets the JobArn field's value.
@@ -16839,10 +24075,9 @@ type StartDominantLanguageDetectionJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
-	// For more information, see https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions
-	// (https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions).
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data. For more information, see Role-based permissions
+	// (https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions).
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -16860,16 +24095,16 @@ type StartDominantLanguageDetectionJobInput struct {
 	// OutputDataConfig is a required field
 	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
 
-	// Tags to be associated with the dominant language detection job. A tag is
-	// a key-value pair that adds metadata to a resource used by Amazon Comprehend.
-	// For example, a tag with "Sales" as the key might be added to a resource to
-	// indicate its use by the sales department.
+	// Tags to associate with the dominant language detection job. A tag is a key-value
+	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
+	// a tag with "Sales" as the key might be added to a resource to indicate its
+	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -17005,8 +24240,9 @@ type StartDominantLanguageDetectionJobOutput struct {
 	_ struct{} `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the dominant language detection job. It
-	// is a unique, fully qualified identifier for the job. It includes the AWS
-	// account, Region, and the job ID. The format of the ARN is as follows:
+	// is a unique, fully qualified identifier for the job. It includes the Amazon
+	// Web Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:dominant-language-detection-job/<job-id>
 	//
@@ -17074,10 +24310,9 @@ type StartEntitiesDetectionJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
-	// For more information, see https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions
-	// (https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions).
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data. For more information, see Role-based permissions
+	// (https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions).
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -17086,6 +24321,10 @@ type StartEntitiesDetectionJobInput struct {
 	// to be used by the StartEntitiesDetectionJob. This ARN is optional and is
 	// only used for a custom entity recognition job.
 	EntityRecognizerArn *string `type:"string"`
+
+	// The Amazon Resource Number (ARN) of the flywheel associated with the model
+	// to use.
+	FlywheelArn *string `type:"string"`
 
 	// Specifies the format and location of the input data for the job.
 	//
@@ -17108,16 +24347,16 @@ type StartEntitiesDetectionJobInput struct {
 	// OutputDataConfig is a required field
 	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
 
-	// Tags to be associated with the entities detection job. A tag is a key-value
-	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
+	// Tags to associate with the entities detection job. A tag is a key-value pair
+	// that adds metadata to a resource used by Amazon Comprehend. For example,
 	// a tag with "Sales" as the key might be added to a resource to indicate its
 	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -17222,6 +24461,12 @@ func (s *StartEntitiesDetectionJobInput) SetEntityRecognizerArn(v string) *Start
 	return s
 }
 
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *StartEntitiesDetectionJobInput) SetFlywheelArn(v string) *StartEntitiesDetectionJobInput {
+	s.FlywheelArn = &v
+	return s
+}
+
 // SetInputDataConfig sets the InputDataConfig field's value.
 func (s *StartEntitiesDetectionJobInput) SetInputDataConfig(v *InputDataConfig) *StartEntitiesDetectionJobInput {
 	s.InputDataConfig = v
@@ -17267,9 +24512,13 @@ func (s *StartEntitiesDetectionJobInput) SetVpcConfig(v *VpcConfig) *StartEntiti
 type StartEntitiesDetectionJobOutput struct {
 	_ struct{} `type:"structure"`
 
+	// The ARN of the custom entity recognition model.
+	EntityRecognizerArn *string `type:"string"`
+
 	// The Amazon Resource Name (ARN) of the entities detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:entities-detection-job/<job-id>
 	//
@@ -17317,6 +24566,12 @@ func (s StartEntitiesDetectionJobOutput) GoString() string {
 	return s.String()
 }
 
+// SetEntityRecognizerArn sets the EntityRecognizerArn field's value.
+func (s *StartEntitiesDetectionJobOutput) SetEntityRecognizerArn(v string) *StartEntitiesDetectionJobOutput {
+	s.EntityRecognizerArn = &v
+	return s
+}
+
 // SetJobArn sets the JobArn field's value.
 func (s *StartEntitiesDetectionJobOutput) SetJobArn(v string) *StartEntitiesDetectionJobOutput {
 	s.JobArn = &v
@@ -17342,8 +24597,8 @@ type StartEventsDetectionJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -17366,8 +24621,8 @@ type StartEventsDetectionJobInput struct {
 	// OutputDataConfig is a required field
 	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
 
-	// Tags to be associated with the events detection job. A tag is a key-value
-	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
+	// Tags to associate with the events detection job. A tag is a key-value pair
+	// that adds metadata to a resource used by Amazon Comprehend. For example,
 	// a tag with "Sales" as the key might be added to a resource to indicate its
 	// use by the sales department.
 	Tags []*Tag `type:"list"`
@@ -17505,8 +24760,9 @@ type StartEventsDetectionJobOutput struct {
 	_ struct{} `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the events detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:events-detection-job/<job-id>
 	//
@@ -17559,6 +24815,103 @@ func (s *StartEventsDetectionJobOutput) SetJobStatus(v string) *StartEventsDetec
 	return s
 }
 
+type StartFlywheelIterationInput struct {
+	_ struct{} `type:"structure"`
+
+	// A unique identifier for the request. If you don't set the client request
+	// token, Amazon Comprehend generates one.
+	ClientRequestToken *string `min:"1" type:"string"`
+
+	// The ARN of the flywheel.
+	//
+	// FlywheelArn is a required field
+	FlywheelArn *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartFlywheelIterationInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartFlywheelIterationInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *StartFlywheelIterationInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "StartFlywheelIterationInput"}
+	if s.ClientRequestToken != nil && len(*s.ClientRequestToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ClientRequestToken", 1))
+	}
+	if s.FlywheelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelArn"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetClientRequestToken sets the ClientRequestToken field's value.
+func (s *StartFlywheelIterationInput) SetClientRequestToken(v string) *StartFlywheelIterationInput {
+	s.ClientRequestToken = &v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *StartFlywheelIterationInput) SetFlywheelArn(v string) *StartFlywheelIterationInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+type StartFlywheelIterationOutput struct {
+	_ struct{} `type:"structure"`
+
+	FlywheelArn *string `type:"string"`
+
+	FlywheelIterationId *string `type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartFlywheelIterationOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartFlywheelIterationOutput) GoString() string {
+	return s.String()
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *StartFlywheelIterationOutput) SetFlywheelArn(v string) *StartFlywheelIterationOutput {
+	s.FlywheelArn = &v
+	return s
+}
+
+// SetFlywheelIterationId sets the FlywheelIterationId field's value.
+func (s *StartFlywheelIterationOutput) SetFlywheelIterationId(v string) *StartFlywheelIterationOutput {
+	s.FlywheelIterationId = &v
+	return s
+}
+
 type StartKeyPhrasesDetectionJobInput struct {
 	_ struct{} `type:"structure"`
 
@@ -17566,10 +24919,9 @@ type StartKeyPhrasesDetectionJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
-	// For more information, see https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions
-	// (https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions).
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data. For more information, see Role-based permissions
+	// (https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions).
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -17593,16 +24945,16 @@ type StartKeyPhrasesDetectionJobInput struct {
 	// OutputDataConfig is a required field
 	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
 
-	// Tags to be associated with the key phrases detection job. A tag is a key-value
+	// Tags to associate with the key phrases detection job. A tag is a key-value
 	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
 	// a tag with "Sales" as the key might be added to a resource to indicate its
 	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -17747,8 +25099,9 @@ type StartKeyPhrasesDetectionJobOutput struct {
 	_ struct{} `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:key-phrases-detection-job/<job-id>
 	//
@@ -17816,8 +25169,8 @@ type StartPiiEntitiesDetectionJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -17830,7 +25183,8 @@ type StartPiiEntitiesDetectionJobInput struct {
 	// The identifier of the job.
 	JobName *string `min:"1" type:"string"`
 
-	// The language of the input documents.
+	// The language of the input documents. Currently, English is the only valid
+	// language.
 	//
 	// LanguageCode is a required field
 	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
@@ -17854,7 +25208,7 @@ type StartPiiEntitiesDetectionJobInput struct {
 	// the PiiEntityTypes parameter.
 	RedactionConfig *RedactionConfig `type:"structure"`
 
-	// Tags to be associated with the PII entities detection job. A tag is a key-value
+	// Tags to associate with the PII entities detection job. A tag is a key-value
 	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
 	// a tag with "Sales" as the key might be added to a resource to indicate its
 	// use by the sales department.
@@ -17996,8 +25350,9 @@ type StartPiiEntitiesDetectionJobOutput struct {
 	_ struct{} `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:pii-entities-detection-job/<job-id>
 	//
@@ -18056,10 +25411,9 @@ type StartSentimentDetectionJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
-	// For more information, see https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions
-	// (https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions).
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data. For more information, see Role-based permissions
+	// (https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions).
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -18083,16 +25437,16 @@ type StartSentimentDetectionJobInput struct {
 	// OutputDataConfig is a required field
 	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
 
-	// Tags to be associated with the sentiment detection job. A tag is a key-value
+	// Tags to associate with the sentiment detection job. A tag is a key-value
 	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
 	// a tag with "Sales" as the key might be added to a resource to indicate its
 	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -18237,8 +25591,9 @@ type StartSentimentDetectionJobOutput struct {
 	_ struct{} `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:sentiment-detection-job/<job-id>
 	//
@@ -18299,6 +25654,257 @@ func (s *StartSentimentDetectionJobOutput) SetJobStatus(v string) *StartSentimen
 	return s
 }
 
+type StartTargetedSentimentDetectionJobInput struct {
+	_ struct{} `type:"structure"`
+
+	// A unique identifier for the request. If you don't set the client request
+	// token, Amazon Comprehend generates one.
+	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
+
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data. For more information, see Role-based permissions
+	// (https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions).
+	//
+	// DataAccessRoleArn is a required field
+	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
+
+	// The input properties for an inference job. The document reader config field
+	// applies only to non-text inputs for custom analysis.
+	//
+	// InputDataConfig is a required field
+	InputDataConfig *InputDataConfig `type:"structure" required:"true"`
+
+	// The identifier of the job.
+	JobName *string `min:"1" type:"string"`
+
+	// The language of the input documents. Currently, English is the only supported
+	// language.
+	//
+	// LanguageCode is a required field
+	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
+
+	// Specifies where to send the output files.
+	//
+	// OutputDataConfig is a required field
+	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
+
+	// Tags to associate with the targeted sentiment detection job. A tag is a key-value
+	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
+	// a tag with "Sales" as the key might be added to a resource to indicate its
+	// use by the sales department.
+	Tags []*Tag `type:"list"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage
+	// volume attached to the ML compute instance(s) that process the analysis job.
+	// The VolumeKmsKeyId can be either of the following formats:
+	//
+	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+	//
+	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+	VolumeKmsKeyId *string `type:"string"`
+
+	// Configuration parameters for an optional private Virtual Private Cloud (VPC)
+	// containing the resources you are using for the job. For more information,
+	// see Amazon VPC (https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html).
+	VpcConfig *VpcConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartTargetedSentimentDetectionJobInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartTargetedSentimentDetectionJobInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *StartTargetedSentimentDetectionJobInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "StartTargetedSentimentDetectionJobInput"}
+	if s.ClientRequestToken != nil && len(*s.ClientRequestToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ClientRequestToken", 1))
+	}
+	if s.DataAccessRoleArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("DataAccessRoleArn"))
+	}
+	if s.DataAccessRoleArn != nil && len(*s.DataAccessRoleArn) < 20 {
+		invalidParams.Add(request.NewErrParamMinLen("DataAccessRoleArn", 20))
+	}
+	if s.InputDataConfig == nil {
+		invalidParams.Add(request.NewErrParamRequired("InputDataConfig"))
+	}
+	if s.JobName != nil && len(*s.JobName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("JobName", 1))
+	}
+	if s.LanguageCode == nil {
+		invalidParams.Add(request.NewErrParamRequired("LanguageCode"))
+	}
+	if s.OutputDataConfig == nil {
+		invalidParams.Add(request.NewErrParamRequired("OutputDataConfig"))
+	}
+	if s.InputDataConfig != nil {
+		if err := s.InputDataConfig.Validate(); err != nil {
+			invalidParams.AddNested("InputDataConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.OutputDataConfig != nil {
+		if err := s.OutputDataConfig.Validate(); err != nil {
+			invalidParams.AddNested("OutputDataConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Tags != nil {
+		for i, v := range s.Tags {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "Tags", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+	if s.VpcConfig != nil {
+		if err := s.VpcConfig.Validate(); err != nil {
+			invalidParams.AddNested("VpcConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetClientRequestToken sets the ClientRequestToken field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetClientRequestToken(v string) *StartTargetedSentimentDetectionJobInput {
+	s.ClientRequestToken = &v
+	return s
+}
+
+// SetDataAccessRoleArn sets the DataAccessRoleArn field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetDataAccessRoleArn(v string) *StartTargetedSentimentDetectionJobInput {
+	s.DataAccessRoleArn = &v
+	return s
+}
+
+// SetInputDataConfig sets the InputDataConfig field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetInputDataConfig(v *InputDataConfig) *StartTargetedSentimentDetectionJobInput {
+	s.InputDataConfig = v
+	return s
+}
+
+// SetJobName sets the JobName field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetJobName(v string) *StartTargetedSentimentDetectionJobInput {
+	s.JobName = &v
+	return s
+}
+
+// SetLanguageCode sets the LanguageCode field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetLanguageCode(v string) *StartTargetedSentimentDetectionJobInput {
+	s.LanguageCode = &v
+	return s
+}
+
+// SetOutputDataConfig sets the OutputDataConfig field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetOutputDataConfig(v *OutputDataConfig) *StartTargetedSentimentDetectionJobInput {
+	s.OutputDataConfig = v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetTags(v []*Tag) *StartTargetedSentimentDetectionJobInput {
+	s.Tags = v
+	return s
+}
+
+// SetVolumeKmsKeyId sets the VolumeKmsKeyId field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetVolumeKmsKeyId(v string) *StartTargetedSentimentDetectionJobInput {
+	s.VolumeKmsKeyId = &v
+	return s
+}
+
+// SetVpcConfig sets the VpcConfig field's value.
+func (s *StartTargetedSentimentDetectionJobInput) SetVpcConfig(v *VpcConfig) *StartTargetedSentimentDetectionJobInput {
+	s.VpcConfig = v
+	return s
+}
+
+type StartTargetedSentimentDetectionJobOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Name (ARN) of the targeted sentiment detection job. It
+	// is a unique, fully qualified identifier for the job. It includes the Amazon
+	// Web Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
+	//
+	// arn:<partition>:comprehend:<region>:<account-id>:targeted-sentiment-detection-job/<job-id>
+	//
+	// The following is an example job ARN:
+	//
+	// arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab
+	JobArn *string `type:"string"`
+
+	// The identifier generated for the job. To get the status of a job, use this
+	// identifier with the DescribeTargetedSentimentDetectionJob operation.
+	JobId *string `min:"1" type:"string"`
+
+	// The status of the job.
+	//
+	//    * SUBMITTED - The job has been received and is queued for processing.
+	//
+	//    * IN_PROGRESS - Amazon Comprehend is processing the job.
+	//
+	//    * COMPLETED - The job was successfully completed and the output is available.
+	//
+	//    * FAILED - The job did not complete. To get details, use the DescribeTargetedSentimentDetectionJob
+	//    operation.
+	JobStatus *string `type:"string" enum:"JobStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartTargetedSentimentDetectionJobOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StartTargetedSentimentDetectionJobOutput) GoString() string {
+	return s.String()
+}
+
+// SetJobArn sets the JobArn field's value.
+func (s *StartTargetedSentimentDetectionJobOutput) SetJobArn(v string) *StartTargetedSentimentDetectionJobOutput {
+	s.JobArn = &v
+	return s
+}
+
+// SetJobId sets the JobId field's value.
+func (s *StartTargetedSentimentDetectionJobOutput) SetJobId(v string) *StartTargetedSentimentDetectionJobOutput {
+	s.JobId = &v
+	return s
+}
+
+// SetJobStatus sets the JobStatus field's value.
+func (s *StartTargetedSentimentDetectionJobOutput) SetJobStatus(v string) *StartTargetedSentimentDetectionJobOutput {
+	s.JobStatus = &v
+	return s
+}
+
 type StartTopicsDetectionJobInput struct {
 	_ struct{} `type:"structure"`
 
@@ -18306,10 +25912,9 @@ type StartTopicsDetectionJobInput struct {
 	// token, Amazon Comprehend generates one.
 	ClientRequestToken *string `min:"1" type:"string" idempotencyToken:"true"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-	// (IAM) role that grants Amazon Comprehend read access to your input data.
-	// For more information, see https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions
-	// (https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions).
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data. For more information, see Role-based permissions
+	// (https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions).
 	//
 	// DataAccessRoleArn is a required field
 	DataAccessRoleArn *string `min:"20" type:"string" required:"true"`
@@ -18332,16 +25937,16 @@ type StartTopicsDetectionJobInput struct {
 	// OutputDataConfig is a required field
 	OutputDataConfig *OutputDataConfig `type:"structure" required:"true"`
 
-	// Tags to be associated with the topics detection job. A tag is a key-value
-	// pair that adds metadata to a resource used by Amazon Comprehend. For example,
+	// Tags to associate with the topics detection job. A tag is a key-value pair
+	// that adds metadata to a resource used by Amazon Comprehend. For example,
 	// a tag with "Sales" as the key might be added to a resource to indicate its
 	// use by the sales department.
 	Tags []*Tag `type:"list"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -18486,8 +26091,9 @@ type StartTopicsDetectionJobOutput struct {
 	_ struct{} `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:topics-detection-job/<job-id>
 	//
@@ -19087,6 +26693,96 @@ func (s *StopSentimentDetectionJobOutput) SetJobStatus(v string) *StopSentimentD
 	return s
 }
 
+type StopTargetedSentimentDetectionJobInput struct {
+	_ struct{} `type:"structure"`
+
+	// The identifier of the targeted sentiment detection job to stop.
+	//
+	// JobId is a required field
+	JobId *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StopTargetedSentimentDetectionJobInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StopTargetedSentimentDetectionJobInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *StopTargetedSentimentDetectionJobInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "StopTargetedSentimentDetectionJobInput"}
+	if s.JobId == nil {
+		invalidParams.Add(request.NewErrParamRequired("JobId"))
+	}
+	if s.JobId != nil && len(*s.JobId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("JobId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetJobId sets the JobId field's value.
+func (s *StopTargetedSentimentDetectionJobInput) SetJobId(v string) *StopTargetedSentimentDetectionJobInput {
+	s.JobId = &v
+	return s
+}
+
+type StopTargetedSentimentDetectionJobOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The identifier of the targeted sentiment detection job to stop.
+	JobId *string `min:"1" type:"string"`
+
+	// Either STOP_REQUESTED if the job is currently running, or STOPPED if the
+	// job was previously stopped with the StopSentimentDetectionJob operation.
+	JobStatus *string `type:"string" enum:"JobStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StopTargetedSentimentDetectionJobOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StopTargetedSentimentDetectionJobOutput) GoString() string {
+	return s.String()
+}
+
+// SetJobId sets the JobId field's value.
+func (s *StopTargetedSentimentDetectionJobOutput) SetJobId(v string) *StopTargetedSentimentDetectionJobOutput {
+	s.JobId = &v
+	return s
+}
+
+// SetJobStatus sets the JobStatus field's value.
+func (s *StopTargetedSentimentDetectionJobOutput) SetJobStatus(v string) *StopTargetedSentimentDetectionJobOutput {
+	s.JobStatus = &v
+	return s
+}
+
 type StopTrainingDocumentClassifierInput struct {
 	_ struct{} `type:"structure"`
 
@@ -19240,7 +26936,8 @@ type SyntaxToken struct {
 
 	// Provides the part of speech label and the confidence level that Amazon Comprehend
 	// has that the part of speech was correctly identified. For more information,
-	// see how-syntax.
+	// see Syntax (https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html)
+	// in the Comprehend Developer Guide.
 	PartOfSpeech *PartOfSpeechTag `type:"structure"`
 
 	// The word that was recognized in the source text.
@@ -19458,6 +27155,514 @@ func (s TagResourceOutput) String() string {
 // value will be replaced with "sensitive".
 func (s TagResourceOutput) GoString() string {
 	return s.String()
+}
+
+// Provides information for filtering a list of dominant language detection
+// jobs. For more information, see the ListTargetedSentimentDetectionJobs operation.
+type TargetedSentimentDetectionJobFilter struct {
+	_ struct{} `type:"structure"`
+
+	// Filters on the name of the job.
+	JobName *string `min:"1" type:"string"`
+
+	// Filters the list of jobs based on job status. Returns only jobs with the
+	// specified status.
+	JobStatus *string `type:"string" enum:"JobStatus"`
+
+	// Filters the list of jobs based on the time that the job was submitted for
+	// processing. Returns only jobs submitted after the specified time. Jobs are
+	// returned in descending order, newest to oldest.
+	SubmitTimeAfter *time.Time `type:"timestamp"`
+
+	// Filters the list of jobs based on the time that the job was submitted for
+	// processing. Returns only jobs submitted before the specified time. Jobs are
+	// returned in ascending order, oldest to newest.
+	SubmitTimeBefore *time.Time `type:"timestamp"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentDetectionJobFilter) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentDetectionJobFilter) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *TargetedSentimentDetectionJobFilter) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "TargetedSentimentDetectionJobFilter"}
+	if s.JobName != nil && len(*s.JobName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("JobName", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetJobName sets the JobName field's value.
+func (s *TargetedSentimentDetectionJobFilter) SetJobName(v string) *TargetedSentimentDetectionJobFilter {
+	s.JobName = &v
+	return s
+}
+
+// SetJobStatus sets the JobStatus field's value.
+func (s *TargetedSentimentDetectionJobFilter) SetJobStatus(v string) *TargetedSentimentDetectionJobFilter {
+	s.JobStatus = &v
+	return s
+}
+
+// SetSubmitTimeAfter sets the SubmitTimeAfter field's value.
+func (s *TargetedSentimentDetectionJobFilter) SetSubmitTimeAfter(v time.Time) *TargetedSentimentDetectionJobFilter {
+	s.SubmitTimeAfter = &v
+	return s
+}
+
+// SetSubmitTimeBefore sets the SubmitTimeBefore field's value.
+func (s *TargetedSentimentDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *TargetedSentimentDetectionJobFilter {
+	s.SubmitTimeBefore = &v
+	return s
+}
+
+// Provides information about a targeted sentiment detection job.
+type TargetedSentimentDetectionJobProperties struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your input data.
+	DataAccessRoleArn *string `min:"20" type:"string"`
+
+	// The time that the targeted sentiment detection job ended.
+	EndTime *time.Time `type:"timestamp"`
+
+	// The input properties for an inference job. The document reader config field
+	// applies only to non-text inputs for custom analysis.
+	InputDataConfig *InputDataConfig `type:"structure"`
+
+	// The Amazon Resource Name (ARN) of the targeted sentiment detection job. It
+	// is a unique, fully qualified identifier for the job. It includes the Amazon
+	// Web Services account, Amazon Web Services Region, and the job ID. The format
+	// of the ARN is as follows:
+	//
+	// arn:<partition>:comprehend:<region>:<account-id>:targeted-sentiment-detection-job/<job-id>
+	//
+	// The following is an example job ARN:
+	//
+	// arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab
+	JobArn *string `type:"string"`
+
+	// The identifier assigned to the targeted sentiment detection job.
+	JobId *string `min:"1" type:"string"`
+
+	// The name that you assigned to the targeted sentiment detection job.
+	JobName *string `min:"1" type:"string"`
+
+	// The current status of the targeted sentiment detection job. If the status
+	// is FAILED, the Messages field shows the reason for the failure.
+	JobStatus *string `type:"string" enum:"JobStatus"`
+
+	// The language code of the input documents.
+	LanguageCode *string `type:"string" enum:"LanguageCode"`
+
+	// A description of the status of a job.
+	Message *string `type:"string"`
+
+	// Provides configuration parameters for the output of inference jobs.
+	OutputDataConfig *OutputDataConfig `type:"structure"`
+
+	// The time that the targeted sentiment detection job was submitted for processing.
+	SubmitTime *time.Time `type:"timestamp"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt the data on the
+	// storage volume attached to the ML compute instance(s) that process the targeted
+	// sentiment detection job. The VolumeKmsKeyId can be either of the following
+	// formats:
+	//
+	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+	//
+	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+	VolumeKmsKeyId *string `type:"string"`
+
+	// Configuration parameters for an optional private Virtual Private Cloud (VPC)
+	// containing the resources you are using for the job. For more information,
+	// see Amazon VPC (https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html).
+	VpcConfig *VpcConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentDetectionJobProperties) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentDetectionJobProperties) GoString() string {
+	return s.String()
+}
+
+// SetDataAccessRoleArn sets the DataAccessRoleArn field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetDataAccessRoleArn(v string) *TargetedSentimentDetectionJobProperties {
+	s.DataAccessRoleArn = &v
+	return s
+}
+
+// SetEndTime sets the EndTime field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetEndTime(v time.Time) *TargetedSentimentDetectionJobProperties {
+	s.EndTime = &v
+	return s
+}
+
+// SetInputDataConfig sets the InputDataConfig field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetInputDataConfig(v *InputDataConfig) *TargetedSentimentDetectionJobProperties {
+	s.InputDataConfig = v
+	return s
+}
+
+// SetJobArn sets the JobArn field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetJobArn(v string) *TargetedSentimentDetectionJobProperties {
+	s.JobArn = &v
+	return s
+}
+
+// SetJobId sets the JobId field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetJobId(v string) *TargetedSentimentDetectionJobProperties {
+	s.JobId = &v
+	return s
+}
+
+// SetJobName sets the JobName field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetJobName(v string) *TargetedSentimentDetectionJobProperties {
+	s.JobName = &v
+	return s
+}
+
+// SetJobStatus sets the JobStatus field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetJobStatus(v string) *TargetedSentimentDetectionJobProperties {
+	s.JobStatus = &v
+	return s
+}
+
+// SetLanguageCode sets the LanguageCode field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetLanguageCode(v string) *TargetedSentimentDetectionJobProperties {
+	s.LanguageCode = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetMessage(v string) *TargetedSentimentDetectionJobProperties {
+	s.Message = &v
+	return s
+}
+
+// SetOutputDataConfig sets the OutputDataConfig field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetOutputDataConfig(v *OutputDataConfig) *TargetedSentimentDetectionJobProperties {
+	s.OutputDataConfig = v
+	return s
+}
+
+// SetSubmitTime sets the SubmitTime field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetSubmitTime(v time.Time) *TargetedSentimentDetectionJobProperties {
+	s.SubmitTime = &v
+	return s
+}
+
+// SetVolumeKmsKeyId sets the VolumeKmsKeyId field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetVolumeKmsKeyId(v string) *TargetedSentimentDetectionJobProperties {
+	s.VolumeKmsKeyId = &v
+	return s
+}
+
+// SetVpcConfig sets the VpcConfig field's value.
+func (s *TargetedSentimentDetectionJobProperties) SetVpcConfig(v *VpcConfig) *TargetedSentimentDetectionJobProperties {
+	s.VpcConfig = v
+	return s
+}
+
+// Information about one of the entities found by targeted sentiment analysis.
+//
+// For more information about targeted sentiment, see Targeted sentiment (https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html)
+// in the Amazon Comprehend Developer Guide.
+type TargetedSentimentEntity struct {
+	_ struct{} `type:"structure"`
+
+	// One or more index into the Mentions array that provides the best name for
+	// the entity group.
+	DescriptiveMentionIndex []*int64 `type:"list"`
+
+	// An array of mentions of the entity in the document. The array represents
+	// a co-reference group. See Co-reference group (https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values)
+	// for an example.
+	Mentions []*TargetedSentimentMention `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentEntity) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentEntity) GoString() string {
+	return s.String()
+}
+
+// SetDescriptiveMentionIndex sets the DescriptiveMentionIndex field's value.
+func (s *TargetedSentimentEntity) SetDescriptiveMentionIndex(v []*int64) *TargetedSentimentEntity {
+	s.DescriptiveMentionIndex = v
+	return s
+}
+
+// SetMentions sets the Mentions field's value.
+func (s *TargetedSentimentEntity) SetMentions(v []*TargetedSentimentMention) *TargetedSentimentEntity {
+	s.Mentions = v
+	return s
+}
+
+// Information about one mention of an entity. The mention information includes
+// the location of the mention in the text and the sentiment of the mention.
+//
+// For more information about targeted sentiment, see Targeted sentiment (https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html)
+// in the Amazon Comprehend Developer Guide.
+type TargetedSentimentMention struct {
+	_ struct{} `type:"structure"`
+
+	// The offset into the document text where the mention begins.
+	BeginOffset *int64 `type:"integer"`
+
+	// The offset into the document text where the mention ends.
+	EndOffset *int64 `type:"integer"`
+
+	// The confidence that all the entities mentioned in the group relate to the
+	// same entity.
+	GroupScore *float64 `type:"float"`
+
+	// Contains the sentiment and sentiment score for the mention.
+	MentionSentiment *MentionSentiment `type:"structure"`
+
+	// Model confidence that the entity is relevant. Value range is zero to one,
+	// where one is highest confidence.
+	Score *float64 `type:"float"`
+
+	// The text in the document that identifies the entity.
+	Text *string `min:"1" type:"string"`
+
+	// The type of the entity. Amazon Comprehend supports a variety of entity types
+	// (https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities).
+	Type *string `type:"string" enum:"TargetedSentimentEntityType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentMention) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TargetedSentimentMention) GoString() string {
+	return s.String()
+}
+
+// SetBeginOffset sets the BeginOffset field's value.
+func (s *TargetedSentimentMention) SetBeginOffset(v int64) *TargetedSentimentMention {
+	s.BeginOffset = &v
+	return s
+}
+
+// SetEndOffset sets the EndOffset field's value.
+func (s *TargetedSentimentMention) SetEndOffset(v int64) *TargetedSentimentMention {
+	s.EndOffset = &v
+	return s
+}
+
+// SetGroupScore sets the GroupScore field's value.
+func (s *TargetedSentimentMention) SetGroupScore(v float64) *TargetedSentimentMention {
+	s.GroupScore = &v
+	return s
+}
+
+// SetMentionSentiment sets the MentionSentiment field's value.
+func (s *TargetedSentimentMention) SetMentionSentiment(v *MentionSentiment) *TargetedSentimentMention {
+	s.MentionSentiment = v
+	return s
+}
+
+// SetScore sets the Score field's value.
+func (s *TargetedSentimentMention) SetScore(v float64) *TargetedSentimentMention {
+	s.Score = &v
+	return s
+}
+
+// SetText sets the Text field's value.
+func (s *TargetedSentimentMention) SetText(v string) *TargetedSentimentMention {
+	s.Text = &v
+	return s
+}
+
+// SetType sets the Type field's value.
+func (s *TargetedSentimentMention) SetType(v string) *TargetedSentimentMention {
+	s.Type = &v
+	return s
+}
+
+// Configuration about the model associated with a flywheel.
+type TaskConfig struct {
+	_ struct{} `type:"structure"`
+
+	// Configuration required for a document classification model.
+	DocumentClassificationConfig *DocumentClassificationConfig `type:"structure"`
+
+	// Configuration required for an entity recognition model.
+	EntityRecognitionConfig *EntityRecognitionConfig `type:"structure"`
+
+	// Language code for the language that the model supports.
+	//
+	// LanguageCode is a required field
+	LanguageCode *string `type:"string" required:"true" enum:"LanguageCode"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TaskConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TaskConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *TaskConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "TaskConfig"}
+	if s.LanguageCode == nil {
+		invalidParams.Add(request.NewErrParamRequired("LanguageCode"))
+	}
+	if s.DocumentClassificationConfig != nil {
+		if err := s.DocumentClassificationConfig.Validate(); err != nil {
+			invalidParams.AddNested("DocumentClassificationConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.EntityRecognitionConfig != nil {
+		if err := s.EntityRecognitionConfig.Validate(); err != nil {
+			invalidParams.AddNested("EntityRecognitionConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDocumentClassificationConfig sets the DocumentClassificationConfig field's value.
+func (s *TaskConfig) SetDocumentClassificationConfig(v *DocumentClassificationConfig) *TaskConfig {
+	s.DocumentClassificationConfig = v
+	return s
+}
+
+// SetEntityRecognitionConfig sets the EntityRecognitionConfig field's value.
+func (s *TaskConfig) SetEntityRecognitionConfig(v *EntityRecognitionConfig) *TaskConfig {
+	s.EntityRecognitionConfig = v
+	return s
+}
+
+// SetLanguageCode sets the LanguageCode field's value.
+func (s *TaskConfig) SetLanguageCode(v string) *TaskConfig {
+	s.LanguageCode = &v
+	return s
+}
+
+// One of the of text strings. Each string has a size limit of 1KB.
+type TextSegment struct {
+	_ struct{} `type:"structure"`
+
+	// The text content.
+	//
+	// Text is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by TextSegment's
+	// String and GoString methods.
+	//
+	// Text is a required field
+	Text *string `min:"1" type:"string" required:"true" sensitive:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TextSegment) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s TextSegment) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *TextSegment) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "TextSegment"}
+	if s.Text == nil {
+		invalidParams.Add(request.NewErrParamRequired("Text"))
+	}
+	if s.Text != nil && len(*s.Text) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Text", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetText sets the Text field's value.
+func (s *TextSegment) SetText(v string) *TextSegment {
+	s.Text = &v
+	return s
 }
 
 // The size of the input text exceeds the limit. Use a smaller document.
@@ -19800,8 +28005,8 @@ func (s *TopicsDetectionJobFilter) SetSubmitTimeBefore(v time.Time) *TopicsDetec
 type TopicsDetectionJobProperties struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
-	// that grants Amazon Comprehend read access to your job data.
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// read access to your job data.
 	DataAccessRoleArn *string `min:"20" type:"string"`
 
 	// The time that the topic detection job was completed.
@@ -19812,8 +28017,9 @@ type TopicsDetectionJobProperties struct {
 	InputDataConfig *InputDataConfig `type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the topics detection job. It is a unique,
-	// fully qualified identifier for the job. It includes the AWS account, Region,
-	// and the job ID. The format of the ARN is as follows:
+	// fully qualified identifier for the job. It includes the Amazon Web Services
+	// account, Amazon Web Services Region, and the job ID. The format of the ARN
+	// is as follows:
 	//
 	// arn:<partition>:comprehend:<region>:<account-id>:topics-detection-job/<job-id>
 	//
@@ -19846,10 +28052,10 @@ type TopicsDetectionJobProperties struct {
 	// The time that the topic detection job was submitted for processing.
 	SubmitTime *time.Time `type:"timestamp"`
 
-	// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses
-	// to encrypt data on the storage volume attached to the ML compute instance(s)
-	// that process the analysis job. The VolumeKmsKeyId can be either of the following
-	// formats:
+	// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon
+	// Comprehend uses to encrypt data on the storage volume attached to the ML
+	// compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+	// be either of the following formats:
 	//
 	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
 	//
@@ -19958,9 +28164,97 @@ func (s *TopicsDetectionJobProperties) SetVpcConfig(v *VpcConfig) *TopicsDetecti
 	return s
 }
 
-// Amazon Comprehend can't process the language of the input text. For custom
-// entity recognition APIs, only English, Spanish, French, Italian, German,
-// or Portuguese are accepted. For a list of supported languages, see supported-languages.
+// Toxic content analysis result for one string. For more information about
+// toxicity detection, see Toxicity detection (https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html)
+// in the Amazon Comprehend Developer Guide
+type ToxicContent struct {
+	_ struct{} `type:"structure"`
+
+	// The name of the toxic content type.
+	Name *string `type:"string" enum:"ToxicContentType"`
+
+	// Model confidence in the detected content type. Value range is zero to one,
+	// where one is highest confidence.
+	Score *float64 `type:"float"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ToxicContent) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ToxicContent) GoString() string {
+	return s.String()
+}
+
+// SetName sets the Name field's value.
+func (s *ToxicContent) SetName(v string) *ToxicContent {
+	s.Name = &v
+	return s
+}
+
+// SetScore sets the Score field's value.
+func (s *ToxicContent) SetScore(v float64) *ToxicContent {
+	s.Score = &v
+	return s
+}
+
+// Toxicity analysis result for one string. For more information about toxicity
+// detection, see Toxicity detection (https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html)
+// in the Amazon Comprehend Developer Guide.
+type ToxicLabels struct {
+	_ struct{} `type:"structure"`
+
+	// Array of toxic content types identified in the string.
+	Labels []*ToxicContent `type:"list"`
+
+	// Overall toxicity score for the string. Value range is zero to one, where
+	// one is the highest confidence.
+	Toxicity *float64 `type:"float"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ToxicLabels) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ToxicLabels) GoString() string {
+	return s.String()
+}
+
+// SetLabels sets the Labels field's value.
+func (s *ToxicLabels) SetLabels(v []*ToxicContent) *ToxicLabels {
+	s.Labels = v
+	return s
+}
+
+// SetToxicity sets the Toxicity field's value.
+func (s *ToxicLabels) SetToxicity(v float64) *ToxicLabels {
+	s.Toxicity = &v
+	return s
+}
+
+// Amazon Comprehend can't process the language of the input text. For a list
+// of supported languages, Supported languages (https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+// in the Comprehend Developer Guide.
 type UnsupportedLanguageException struct {
 	_            struct{}                  `type:"structure"`
 	RespMetadata protocol.ResponseMetadata `json:"-" xml:"-"`
@@ -20110,6 +28404,78 @@ func (s UntagResourceOutput) GoString() string {
 	return s.String()
 }
 
+// Data security configuration.
+type UpdateDataSecurityConfig struct {
+	_ struct{} `type:"structure"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
+	// models. The ModelKmsKeyId can be either of the following formats:
+	//
+	//    * KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"
+	//
+	//    * Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+	ModelKmsKeyId *string `type:"string"`
+
+	// ID for the KMS key that Amazon Comprehend uses to encrypt the volume.
+	VolumeKmsKeyId *string `type:"string"`
+
+	// Configuration parameters for an optional private Virtual Private Cloud (VPC)
+	// containing the resources you are using for the job. For more information,
+	// see Amazon VPC (https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html).
+	VpcConfig *VpcConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateDataSecurityConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateDataSecurityConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *UpdateDataSecurityConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "UpdateDataSecurityConfig"}
+	if s.VpcConfig != nil {
+		if err := s.VpcConfig.Validate(); err != nil {
+			invalidParams.AddNested("VpcConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetModelKmsKeyId sets the ModelKmsKeyId field's value.
+func (s *UpdateDataSecurityConfig) SetModelKmsKeyId(v string) *UpdateDataSecurityConfig {
+	s.ModelKmsKeyId = &v
+	return s
+}
+
+// SetVolumeKmsKeyId sets the VolumeKmsKeyId field's value.
+func (s *UpdateDataSecurityConfig) SetVolumeKmsKeyId(v string) *UpdateDataSecurityConfig {
+	s.VolumeKmsKeyId = &v
+	return s
+}
+
+// SetVpcConfig sets the VpcConfig field's value.
+func (s *UpdateDataSecurityConfig) SetVpcConfig(v *VpcConfig) *UpdateDataSecurityConfig {
+	s.VpcConfig = v
+	return s
+}
+
 type UpdateEndpointInput struct {
 	_ struct{} `type:"structure"`
 
@@ -20129,6 +28495,9 @@ type UpdateEndpointInput struct {
 	//
 	// EndpointArn is a required field
 	EndpointArn *string `type:"string" required:"true"`
+
+	// The Amazon Resource Number (ARN) of the flywheel
+	FlywheelArn *string `type:"string"`
 }
 
 // String returns the string representation.
@@ -20192,8 +28561,17 @@ func (s *UpdateEndpointInput) SetEndpointArn(v string) *UpdateEndpointInput {
 	return s
 }
 
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *UpdateEndpointInput) SetFlywheelArn(v string) *UpdateEndpointInput {
+	s.FlywheelArn = &v
+	return s
+}
+
 type UpdateEndpointOutput struct {
 	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the new model.
+	DesiredModelArn *string `type:"string"`
 }
 
 // String returns the string representation.
@@ -20214,6 +28592,125 @@ func (s UpdateEndpointOutput) GoString() string {
 	return s.String()
 }
 
+// SetDesiredModelArn sets the DesiredModelArn field's value.
+func (s *UpdateEndpointOutput) SetDesiredModelArn(v string) *UpdateEndpointOutput {
+	s.DesiredModelArn = &v
+	return s
+}
+
+type UpdateFlywheelInput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the active model version.
+	ActiveModelArn *string `type:"string"`
+
+	// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
+	// permission to access the flywheel data.
+	DataAccessRoleArn *string `min:"20" type:"string"`
+
+	// Flywheel data security configuration.
+	DataSecurityConfig *UpdateDataSecurityConfig `type:"structure"`
+
+	// The Amazon Resource Number (ARN) of the flywheel to update.
+	//
+	// FlywheelArn is a required field
+	FlywheelArn *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateFlywheelInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateFlywheelInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *UpdateFlywheelInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "UpdateFlywheelInput"}
+	if s.DataAccessRoleArn != nil && len(*s.DataAccessRoleArn) < 20 {
+		invalidParams.Add(request.NewErrParamMinLen("DataAccessRoleArn", 20))
+	}
+	if s.FlywheelArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlywheelArn"))
+	}
+	if s.DataSecurityConfig != nil {
+		if err := s.DataSecurityConfig.Validate(); err != nil {
+			invalidParams.AddNested("DataSecurityConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetActiveModelArn sets the ActiveModelArn field's value.
+func (s *UpdateFlywheelInput) SetActiveModelArn(v string) *UpdateFlywheelInput {
+	s.ActiveModelArn = &v
+	return s
+}
+
+// SetDataAccessRoleArn sets the DataAccessRoleArn field's value.
+func (s *UpdateFlywheelInput) SetDataAccessRoleArn(v string) *UpdateFlywheelInput {
+	s.DataAccessRoleArn = &v
+	return s
+}
+
+// SetDataSecurityConfig sets the DataSecurityConfig field's value.
+func (s *UpdateFlywheelInput) SetDataSecurityConfig(v *UpdateDataSecurityConfig) *UpdateFlywheelInput {
+	s.DataSecurityConfig = v
+	return s
+}
+
+// SetFlywheelArn sets the FlywheelArn field's value.
+func (s *UpdateFlywheelInput) SetFlywheelArn(v string) *UpdateFlywheelInput {
+	s.FlywheelArn = &v
+	return s
+}
+
+type UpdateFlywheelOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The flywheel properties.
+	FlywheelProperties *FlywheelProperties `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateFlywheelOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateFlywheelOutput) GoString() string {
+	return s.String()
+}
+
+// SetFlywheelProperties sets the FlywheelProperties field's value.
+func (s *UpdateFlywheelOutput) SetFlywheelProperties(v *FlywheelProperties) *UpdateFlywheelOutput {
+	s.FlywheelProperties = v
+	return s
+}
+
 // Configuration parameters for an optional private Virtual Private Cloud (VPC)
 // containing the resources you are using for the job. For more information,
 // see Amazon VPC (https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html).
@@ -20232,7 +28729,7 @@ type VpcConfig struct {
 
 	// The ID for each subnet being used in your private VPC. This subnet is a subset
 	// of the a range of IPv4 addresses used by the VPC and is specific to a given
-	// availability zone in the VPC’s region. This ID number is preceded by "subnet-",
+	// availability zone in the VPC’s Region. This ID number is preceded by "subnet-",
 	// for instance: "subnet-04ccf456919e69055". For more information, see VPCs
 	// and Subnets (https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html).
 	//
@@ -20292,6 +28789,63 @@ func (s *VpcConfig) SetSubnets(v []*string) *VpcConfig {
 	return s
 }
 
+// The system identified one of the following warnings while processing the
+// input document:
+//
+//   - The document to classify is plain text, but the classifier is a native
+//     document model.
+//
+//   - The document to classify is semi-structured, but the classifier is a
+//     plain-text model.
+type WarningsListItem struct {
+	_ struct{} `type:"structure"`
+
+	// Page number in the input document.
+	Page *int64 `type:"integer"`
+
+	// The type of warning.
+	WarnCode *string `type:"string" enum:"PageBasedWarningCode"`
+
+	// Text message associated with the warning.
+	WarnMessage *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WarningsListItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WarningsListItem) GoString() string {
+	return s.String()
+}
+
+// SetPage sets the Page field's value.
+func (s *WarningsListItem) SetPage(v int64) *WarningsListItem {
+	s.Page = &v
+	return s
+}
+
+// SetWarnCode sets the WarnCode field's value.
+func (s *WarningsListItem) SetWarnCode(v string) *WarningsListItem {
+	s.WarnCode = &v
+	return s
+}
+
+// SetWarnMessage sets the WarnMessage field's value.
+func (s *WarningsListItem) SetWarnMessage(v string) *WarningsListItem {
+	s.WarnMessage = &v
+	return s
+}
+
 const (
 	// AugmentedManifestsDocumentTypeFormatPlainTextDocument is a AugmentedManifestsDocumentTypeFormat enum value
 	AugmentedManifestsDocumentTypeFormatPlainTextDocument = "PLAIN_TEXT_DOCUMENT"
@@ -20309,6 +28863,74 @@ func AugmentedManifestsDocumentTypeFormat_Values() []string {
 }
 
 const (
+	// BlockTypeLine is a BlockType enum value
+	BlockTypeLine = "LINE"
+
+	// BlockTypeWord is a BlockType enum value
+	BlockTypeWord = "WORD"
+)
+
+// BlockType_Values returns all elements of the BlockType enum
+func BlockType_Values() []string {
+	return []string{
+		BlockTypeLine,
+		BlockTypeWord,
+	}
+}
+
+const (
+	// DatasetDataFormatComprehendCsv is a DatasetDataFormat enum value
+	DatasetDataFormatComprehendCsv = "COMPREHEND_CSV"
+
+	// DatasetDataFormatAugmentedManifest is a DatasetDataFormat enum value
+	DatasetDataFormatAugmentedManifest = "AUGMENTED_MANIFEST"
+)
+
+// DatasetDataFormat_Values returns all elements of the DatasetDataFormat enum
+func DatasetDataFormat_Values() []string {
+	return []string{
+		DatasetDataFormatComprehendCsv,
+		DatasetDataFormatAugmentedManifest,
+	}
+}
+
+const (
+	// DatasetStatusCreating is a DatasetStatus enum value
+	DatasetStatusCreating = "CREATING"
+
+	// DatasetStatusCompleted is a DatasetStatus enum value
+	DatasetStatusCompleted = "COMPLETED"
+
+	// DatasetStatusFailed is a DatasetStatus enum value
+	DatasetStatusFailed = "FAILED"
+)
+
+// DatasetStatus_Values returns all elements of the DatasetStatus enum
+func DatasetStatus_Values() []string {
+	return []string{
+		DatasetStatusCreating,
+		DatasetStatusCompleted,
+		DatasetStatusFailed,
+	}
+}
+
+const (
+	// DatasetTypeTrain is a DatasetType enum value
+	DatasetTypeTrain = "TRAIN"
+
+	// DatasetTypeTest is a DatasetType enum value
+	DatasetTypeTest = "TEST"
+)
+
+// DatasetType_Values returns all elements of the DatasetType enum
+func DatasetType_Values() []string {
+	return []string{
+		DatasetTypeTrain,
+		DatasetTypeTest,
+	}
+}
+
+const (
 	// DocumentClassifierDataFormatComprehendCsv is a DocumentClassifierDataFormat enum value
 	DocumentClassifierDataFormatComprehendCsv = "COMPREHEND_CSV"
 
@@ -20321,6 +28943,22 @@ func DocumentClassifierDataFormat_Values() []string {
 	return []string{
 		DocumentClassifierDataFormatComprehendCsv,
 		DocumentClassifierDataFormatAugmentedManifest,
+	}
+}
+
+const (
+	// DocumentClassifierDocumentTypeFormatPlainTextDocument is a DocumentClassifierDocumentTypeFormat enum value
+	DocumentClassifierDocumentTypeFormatPlainTextDocument = "PLAIN_TEXT_DOCUMENT"
+
+	// DocumentClassifierDocumentTypeFormatSemiStructuredDocument is a DocumentClassifierDocumentTypeFormat enum value
+	DocumentClassifierDocumentTypeFormatSemiStructuredDocument = "SEMI_STRUCTURED_DOCUMENT"
+)
+
+// DocumentClassifierDocumentTypeFormat_Values returns all elements of the DocumentClassifierDocumentTypeFormat enum
+func DocumentClassifierDocumentTypeFormat_Values() []string {
+	return []string{
+		DocumentClassifierDocumentTypeFormatPlainTextDocument,
+		DocumentClassifierDocumentTypeFormatSemiStructuredDocument,
 	}
 }
 
@@ -20356,14 +28994,7 @@ func DocumentReadAction_Values() []string {
 	}
 }
 
-// A list of the types of analyses to perform. This field specifies what feature
-// types need to be extracted from the document where entity recognition is
-// expected.
-//
-//    * TABLES - Add TABLES to the list to return information about the tables
-//    that are detected in the input document.
-//
-//    * FORMS - Add FORMS to return detected form data.
+// TABLES or FORMS
 const (
 	// DocumentReadFeatureTypesTables is a DocumentReadFeatureTypes enum value
 	DocumentReadFeatureTypesTables = "TABLES"
@@ -20393,6 +29024,42 @@ func DocumentReadMode_Values() []string {
 	return []string{
 		DocumentReadModeServiceDefault,
 		DocumentReadModeForceDocumentReadAction,
+	}
+}
+
+const (
+	// DocumentTypeNativePdf is a DocumentType enum value
+	DocumentTypeNativePdf = "NATIVE_PDF"
+
+	// DocumentTypeScannedPdf is a DocumentType enum value
+	DocumentTypeScannedPdf = "SCANNED_PDF"
+
+	// DocumentTypeMsWord is a DocumentType enum value
+	DocumentTypeMsWord = "MS_WORD"
+
+	// DocumentTypeImage is a DocumentType enum value
+	DocumentTypeImage = "IMAGE"
+
+	// DocumentTypePlainText is a DocumentType enum value
+	DocumentTypePlainText = "PLAIN_TEXT"
+
+	// DocumentTypeTextractDetectDocumentTextJson is a DocumentType enum value
+	DocumentTypeTextractDetectDocumentTextJson = "TEXTRACT_DETECT_DOCUMENT_TEXT_JSON"
+
+	// DocumentTypeTextractAnalyzeDocumentJson is a DocumentType enum value
+	DocumentTypeTextractAnalyzeDocumentJson = "TEXTRACT_ANALYZE_DOCUMENT_JSON"
+)
+
+// DocumentType_Values returns all elements of the DocumentType enum
+func DocumentType_Values() []string {
+	return []string{
+		DocumentTypeNativePdf,
+		DocumentTypeScannedPdf,
+		DocumentTypeMsWord,
+		DocumentTypeImage,
+		DocumentTypePlainText,
+		DocumentTypeTextractDetectDocumentTextJson,
+		DocumentTypeTextractAnalyzeDocumentJson,
 	}
 }
 
@@ -20485,6 +29152,66 @@ func EntityType_Values() []string {
 }
 
 const (
+	// FlywheelIterationStatusTraining is a FlywheelIterationStatus enum value
+	FlywheelIterationStatusTraining = "TRAINING"
+
+	// FlywheelIterationStatusEvaluating is a FlywheelIterationStatus enum value
+	FlywheelIterationStatusEvaluating = "EVALUATING"
+
+	// FlywheelIterationStatusCompleted is a FlywheelIterationStatus enum value
+	FlywheelIterationStatusCompleted = "COMPLETED"
+
+	// FlywheelIterationStatusFailed is a FlywheelIterationStatus enum value
+	FlywheelIterationStatusFailed = "FAILED"
+
+	// FlywheelIterationStatusStopRequested is a FlywheelIterationStatus enum value
+	FlywheelIterationStatusStopRequested = "STOP_REQUESTED"
+
+	// FlywheelIterationStatusStopped is a FlywheelIterationStatus enum value
+	FlywheelIterationStatusStopped = "STOPPED"
+)
+
+// FlywheelIterationStatus_Values returns all elements of the FlywheelIterationStatus enum
+func FlywheelIterationStatus_Values() []string {
+	return []string{
+		FlywheelIterationStatusTraining,
+		FlywheelIterationStatusEvaluating,
+		FlywheelIterationStatusCompleted,
+		FlywheelIterationStatusFailed,
+		FlywheelIterationStatusStopRequested,
+		FlywheelIterationStatusStopped,
+	}
+}
+
+const (
+	// FlywheelStatusCreating is a FlywheelStatus enum value
+	FlywheelStatusCreating = "CREATING"
+
+	// FlywheelStatusActive is a FlywheelStatus enum value
+	FlywheelStatusActive = "ACTIVE"
+
+	// FlywheelStatusUpdating is a FlywheelStatus enum value
+	FlywheelStatusUpdating = "UPDATING"
+
+	// FlywheelStatusDeleting is a FlywheelStatus enum value
+	FlywheelStatusDeleting = "DELETING"
+
+	// FlywheelStatusFailed is a FlywheelStatus enum value
+	FlywheelStatusFailed = "FAILED"
+)
+
+// FlywheelStatus_Values returns all elements of the FlywheelStatus enum
+func FlywheelStatus_Values() []string {
+	return []string{
+		FlywheelStatusCreating,
+		FlywheelStatusActive,
+		FlywheelStatusUpdating,
+		FlywheelStatusDeleting,
+		FlywheelStatusFailed,
+	}
+}
+
+const (
 	// InputFormatOneDocPerFile is a InputFormat enum value
 	InputFormatOneDocPerFile = "ONE_DOC_PER_FILE"
 
@@ -20497,6 +29224,42 @@ func InputFormat_Values() []string {
 	return []string{
 		InputFormatOneDocPerFile,
 		InputFormatOneDocPerLine,
+	}
+}
+
+const (
+	// InvalidRequestDetailReasonDocumentSizeExceeded is a InvalidRequestDetailReason enum value
+	InvalidRequestDetailReasonDocumentSizeExceeded = "DOCUMENT_SIZE_EXCEEDED"
+
+	// InvalidRequestDetailReasonUnsupportedDocType is a InvalidRequestDetailReason enum value
+	InvalidRequestDetailReasonUnsupportedDocType = "UNSUPPORTED_DOC_TYPE"
+
+	// InvalidRequestDetailReasonPageLimitExceeded is a InvalidRequestDetailReason enum value
+	InvalidRequestDetailReasonPageLimitExceeded = "PAGE_LIMIT_EXCEEDED"
+
+	// InvalidRequestDetailReasonTextractAccessDenied is a InvalidRequestDetailReason enum value
+	InvalidRequestDetailReasonTextractAccessDenied = "TEXTRACT_ACCESS_DENIED"
+)
+
+// InvalidRequestDetailReason_Values returns all elements of the InvalidRequestDetailReason enum
+func InvalidRequestDetailReason_Values() []string {
+	return []string{
+		InvalidRequestDetailReasonDocumentSizeExceeded,
+		InvalidRequestDetailReasonUnsupportedDocType,
+		InvalidRequestDetailReasonPageLimitExceeded,
+		InvalidRequestDetailReasonTextractAccessDenied,
+	}
+}
+
+const (
+	// InvalidRequestReasonInvalidDocument is a InvalidRequestReason enum value
+	InvalidRequestReasonInvalidDocument = "INVALID_DOCUMENT"
+)
+
+// InvalidRequestReason_Values returns all elements of the InvalidRequestReason enum
+func InvalidRequestReason_Values() []string {
+	return []string{
+		InvalidRequestReasonInvalidDocument,
 	}
 }
 
@@ -20609,6 +29372,9 @@ const (
 
 	// ModelStatusTrained is a ModelStatus enum value
 	ModelStatusTrained = "TRAINED"
+
+	// ModelStatusTrainedWithWarning is a ModelStatus enum value
+	ModelStatusTrainedWithWarning = "TRAINED_WITH_WARNING"
 )
 
 // ModelStatus_Values returns all elements of the ModelStatus enum
@@ -20621,6 +29387,67 @@ func ModelStatus_Values() []string {
 		ModelStatusStopped,
 		ModelStatusInError,
 		ModelStatusTrained,
+		ModelStatusTrainedWithWarning,
+	}
+}
+
+const (
+	// ModelTypeDocumentClassifier is a ModelType enum value
+	ModelTypeDocumentClassifier = "DOCUMENT_CLASSIFIER"
+
+	// ModelTypeEntityRecognizer is a ModelType enum value
+	ModelTypeEntityRecognizer = "ENTITY_RECOGNIZER"
+)
+
+// ModelType_Values returns all elements of the ModelType enum
+func ModelType_Values() []string {
+	return []string{
+		ModelTypeDocumentClassifier,
+		ModelTypeEntityRecognizer,
+	}
+}
+
+const (
+	// PageBasedErrorCodeTextractBadPage is a PageBasedErrorCode enum value
+	PageBasedErrorCodeTextractBadPage = "TEXTRACT_BAD_PAGE"
+
+	// PageBasedErrorCodeTextractProvisionedThroughputExceeded is a PageBasedErrorCode enum value
+	PageBasedErrorCodeTextractProvisionedThroughputExceeded = "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED"
+
+	// PageBasedErrorCodePageCharactersExceeded is a PageBasedErrorCode enum value
+	PageBasedErrorCodePageCharactersExceeded = "PAGE_CHARACTERS_EXCEEDED"
+
+	// PageBasedErrorCodePageSizeExceeded is a PageBasedErrorCode enum value
+	PageBasedErrorCodePageSizeExceeded = "PAGE_SIZE_EXCEEDED"
+
+	// PageBasedErrorCodeInternalServerError is a PageBasedErrorCode enum value
+	PageBasedErrorCodeInternalServerError = "INTERNAL_SERVER_ERROR"
+)
+
+// PageBasedErrorCode_Values returns all elements of the PageBasedErrorCode enum
+func PageBasedErrorCode_Values() []string {
+	return []string{
+		PageBasedErrorCodeTextractBadPage,
+		PageBasedErrorCodeTextractProvisionedThroughputExceeded,
+		PageBasedErrorCodePageCharactersExceeded,
+		PageBasedErrorCodePageSizeExceeded,
+		PageBasedErrorCodeInternalServerError,
+	}
+}
+
+const (
+	// PageBasedWarningCodeInferencingPlaintextWithNativeTrainedModel is a PageBasedWarningCode enum value
+	PageBasedWarningCodeInferencingPlaintextWithNativeTrainedModel = "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL"
+
+	// PageBasedWarningCodeInferencingNativeDocumentWithPlaintextTrainedModel is a PageBasedWarningCode enum value
+	PageBasedWarningCodeInferencingNativeDocumentWithPlaintextTrainedModel = "INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL"
+)
+
+// PageBasedWarningCode_Values returns all elements of the PageBasedWarningCode enum
+func PageBasedWarningCode_Values() []string {
+	return []string{
+		PageBasedWarningCodeInferencingPlaintextWithNativeTrainedModel,
+		PageBasedWarningCodeInferencingNativeDocumentWithPlaintextTrainedModel,
 	}
 }
 
@@ -20805,6 +29632,48 @@ const (
 
 	// PiiEntityTypeAll is a PiiEntityType enum value
 	PiiEntityTypeAll = "ALL"
+
+	// PiiEntityTypeLicensePlate is a PiiEntityType enum value
+	PiiEntityTypeLicensePlate = "LICENSE_PLATE"
+
+	// PiiEntityTypeVehicleIdentificationNumber is a PiiEntityType enum value
+	PiiEntityTypeVehicleIdentificationNumber = "VEHICLE_IDENTIFICATION_NUMBER"
+
+	// PiiEntityTypeUkNationalInsuranceNumber is a PiiEntityType enum value
+	PiiEntityTypeUkNationalInsuranceNumber = "UK_NATIONAL_INSURANCE_NUMBER"
+
+	// PiiEntityTypeCaSocialInsuranceNumber is a PiiEntityType enum value
+	PiiEntityTypeCaSocialInsuranceNumber = "CA_SOCIAL_INSURANCE_NUMBER"
+
+	// PiiEntityTypeUsIndividualTaxIdentificationNumber is a PiiEntityType enum value
+	PiiEntityTypeUsIndividualTaxIdentificationNumber = "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"
+
+	// PiiEntityTypeUkUniqueTaxpayerReferenceNumber is a PiiEntityType enum value
+	PiiEntityTypeUkUniqueTaxpayerReferenceNumber = "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER"
+
+	// PiiEntityTypeInPermanentAccountNumber is a PiiEntityType enum value
+	PiiEntityTypeInPermanentAccountNumber = "IN_PERMANENT_ACCOUNT_NUMBER"
+
+	// PiiEntityTypeInNrega is a PiiEntityType enum value
+	PiiEntityTypeInNrega = "IN_NREGA"
+
+	// PiiEntityTypeInternationalBankAccountNumber is a PiiEntityType enum value
+	PiiEntityTypeInternationalBankAccountNumber = "INTERNATIONAL_BANK_ACCOUNT_NUMBER"
+
+	// PiiEntityTypeSwiftCode is a PiiEntityType enum value
+	PiiEntityTypeSwiftCode = "SWIFT_CODE"
+
+	// PiiEntityTypeUkNationalHealthServiceNumber is a PiiEntityType enum value
+	PiiEntityTypeUkNationalHealthServiceNumber = "UK_NATIONAL_HEALTH_SERVICE_NUMBER"
+
+	// PiiEntityTypeCaHealthNumber is a PiiEntityType enum value
+	PiiEntityTypeCaHealthNumber = "CA_HEALTH_NUMBER"
+
+	// PiiEntityTypeInAadhaar is a PiiEntityType enum value
+	PiiEntityTypeInAadhaar = "IN_AADHAAR"
+
+	// PiiEntityTypeInVoterNumber is a PiiEntityType enum value
+	PiiEntityTypeInVoterNumber = "IN_VOTER_NUMBER"
 )
 
 // PiiEntityType_Values returns all elements of the PiiEntityType enum
@@ -20833,6 +29702,32 @@ func PiiEntityType_Values() []string {
 		PiiEntityTypeIpAddress,
 		PiiEntityTypeMacAddress,
 		PiiEntityTypeAll,
+		PiiEntityTypeLicensePlate,
+		PiiEntityTypeVehicleIdentificationNumber,
+		PiiEntityTypeUkNationalInsuranceNumber,
+		PiiEntityTypeCaSocialInsuranceNumber,
+		PiiEntityTypeUsIndividualTaxIdentificationNumber,
+		PiiEntityTypeUkUniqueTaxpayerReferenceNumber,
+		PiiEntityTypeInPermanentAccountNumber,
+		PiiEntityTypeInNrega,
+		PiiEntityTypeInternationalBankAccountNumber,
+		PiiEntityTypeSwiftCode,
+		PiiEntityTypeUkNationalHealthServiceNumber,
+		PiiEntityTypeCaHealthNumber,
+		PiiEntityTypeInAadhaar,
+		PiiEntityTypeInVoterNumber,
+	}
+}
+
+const (
+	// RelationshipTypeChild is a RelationshipType enum value
+	RelationshipTypeChild = "CHILD"
+)
+
+// RelationshipType_Values returns all elements of the RelationshipType enum
+func RelationshipType_Values() []string {
+	return []string{
+		RelationshipTypeChild,
 	}
 }
 
@@ -20905,5 +29800,117 @@ func SyntaxLanguageCode_Values() []string {
 		SyntaxLanguageCodeDe,
 		SyntaxLanguageCodeIt,
 		SyntaxLanguageCodePt,
+	}
+}
+
+const (
+	// TargetedSentimentEntityTypePerson is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypePerson = "PERSON"
+
+	// TargetedSentimentEntityTypeLocation is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeLocation = "LOCATION"
+
+	// TargetedSentimentEntityTypeOrganization is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeOrganization = "ORGANIZATION"
+
+	// TargetedSentimentEntityTypeFacility is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeFacility = "FACILITY"
+
+	// TargetedSentimentEntityTypeBrand is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeBrand = "BRAND"
+
+	// TargetedSentimentEntityTypeCommercialItem is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeCommercialItem = "COMMERCIAL_ITEM"
+
+	// TargetedSentimentEntityTypeMovie is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeMovie = "MOVIE"
+
+	// TargetedSentimentEntityTypeMusic is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeMusic = "MUSIC"
+
+	// TargetedSentimentEntityTypeBook is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeBook = "BOOK"
+
+	// TargetedSentimentEntityTypeSoftware is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeSoftware = "SOFTWARE"
+
+	// TargetedSentimentEntityTypeGame is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeGame = "GAME"
+
+	// TargetedSentimentEntityTypePersonalTitle is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypePersonalTitle = "PERSONAL_TITLE"
+
+	// TargetedSentimentEntityTypeEvent is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeEvent = "EVENT"
+
+	// TargetedSentimentEntityTypeDate is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeDate = "DATE"
+
+	// TargetedSentimentEntityTypeQuantity is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeQuantity = "QUANTITY"
+
+	// TargetedSentimentEntityTypeAttribute is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeAttribute = "ATTRIBUTE"
+
+	// TargetedSentimentEntityTypeOther is a TargetedSentimentEntityType enum value
+	TargetedSentimentEntityTypeOther = "OTHER"
+)
+
+// TargetedSentimentEntityType_Values returns all elements of the TargetedSentimentEntityType enum
+func TargetedSentimentEntityType_Values() []string {
+	return []string{
+		TargetedSentimentEntityTypePerson,
+		TargetedSentimentEntityTypeLocation,
+		TargetedSentimentEntityTypeOrganization,
+		TargetedSentimentEntityTypeFacility,
+		TargetedSentimentEntityTypeBrand,
+		TargetedSentimentEntityTypeCommercialItem,
+		TargetedSentimentEntityTypeMovie,
+		TargetedSentimentEntityTypeMusic,
+		TargetedSentimentEntityTypeBook,
+		TargetedSentimentEntityTypeSoftware,
+		TargetedSentimentEntityTypeGame,
+		TargetedSentimentEntityTypePersonalTitle,
+		TargetedSentimentEntityTypeEvent,
+		TargetedSentimentEntityTypeDate,
+		TargetedSentimentEntityTypeQuantity,
+		TargetedSentimentEntityTypeAttribute,
+		TargetedSentimentEntityTypeOther,
+	}
+}
+
+const (
+	// ToxicContentTypeGraphic is a ToxicContentType enum value
+	ToxicContentTypeGraphic = "GRAPHIC"
+
+	// ToxicContentTypeHarassmentOrAbuse is a ToxicContentType enum value
+	ToxicContentTypeHarassmentOrAbuse = "HARASSMENT_OR_ABUSE"
+
+	// ToxicContentTypeHateSpeech is a ToxicContentType enum value
+	ToxicContentTypeHateSpeech = "HATE_SPEECH"
+
+	// ToxicContentTypeInsult is a ToxicContentType enum value
+	ToxicContentTypeInsult = "INSULT"
+
+	// ToxicContentTypeProfanity is a ToxicContentType enum value
+	ToxicContentTypeProfanity = "PROFANITY"
+
+	// ToxicContentTypeSexual is a ToxicContentType enum value
+	ToxicContentTypeSexual = "SEXUAL"
+
+	// ToxicContentTypeViolenceOrThreat is a ToxicContentType enum value
+	ToxicContentTypeViolenceOrThreat = "VIOLENCE_OR_THREAT"
+)
+
+// ToxicContentType_Values returns all elements of the ToxicContentType enum
+func ToxicContentType_Values() []string {
+	return []string{
+		ToxicContentTypeGraphic,
+		ToxicContentTypeHarassmentOrAbuse,
+		ToxicContentTypeHateSpeech,
+		ToxicContentTypeInsult,
+		ToxicContentTypeProfanity,
+		ToxicContentTypeSexual,
+		ToxicContentTypeViolenceOrThreat,
 	}
 }

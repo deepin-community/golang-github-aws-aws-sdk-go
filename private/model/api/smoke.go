@@ -27,7 +27,39 @@ type SmokeTestCase struct {
 }
 
 var smokeTestsCustomizations = map[string]func(*SmokeTestSuite) error{
-	"sts": stsSmokeTestCustomization,
+	"sts":          stsSmokeTestCustomization,
+	"waf":          wafSmokeTestCustomization,
+	"wafregional":  wafRegionalSmokeTestCustomization,
+	"iotdataplane": iotDataPlaneSmokeTestCustomization,
+}
+
+func iotDataPlaneSmokeTestCustomization(suite *SmokeTestSuite) error {
+	suite.TestCases = []SmokeTestCase{}
+	return nil
+}
+
+func wafSmokeTestCustomization(suite *SmokeTestSuite) error {
+	return filterWAFCreateSqlInjectionMatchSet(suite)
+}
+
+func wafRegionalSmokeTestCustomization(suite *SmokeTestSuite) error {
+	return filterWAFCreateSqlInjectionMatchSet(suite)
+}
+
+func filterWAFCreateSqlInjectionMatchSet(suite *SmokeTestSuite) error {
+	const createSqlInjectionMatchSetOp = "CreateSqlInjectionMatchSet"
+
+	var testCases []SmokeTestCase
+	for _, testCase := range suite.TestCases {
+		if testCase.OpName == createSqlInjectionMatchSetOp {
+			continue
+		}
+		testCases = append(testCases, testCase)
+	}
+
+	suite.TestCases = testCases
+
+	return nil
 }
 
 func stsSmokeTestCustomization(suite *SmokeTestSuite) error {
@@ -141,6 +173,7 @@ func (a *API) APISmokeTestsGoCode() string {
 var smokeTestTmpl = template.Must(template.New(`smokeTestTmpl`).Parse(`
 {{- range $i, $testCase := $.TestCases }}
 	{{- $op := index $.API.Operations $testCase.OpName }}
+	{{- if $op }}
 	func TestInteg_{{ printf "%02d" $i }}_{{ $op.ExportedName }}(t *testing.T) {
 		ctx, cancelFn := context.WithTimeout(context.Background(), 5 *time.Second)
 		defer cancelFn()
@@ -174,5 +207,6 @@ var smokeTestTmpl = template.Must(template.New(`smokeTestTmpl`).Parse(`
 			}
 		{{- end }}
 	}
+	{{- end }}
 {{- end }}
 `))

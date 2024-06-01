@@ -1,0 +1,33 @@
+From: Daniel Swarbrick <dswarbrick@debian.org>
+Date: Tue, 27 Feb 2024 17:52:27 +0100
+Subject: Fix misaligned struct member used in atomic operation
+
+Forwarded: https://github.com/aws/aws-sdk-go/pull/5182
+
+This fixes a panic caused by attempting to atomically access a struct
+member which is not 64-bit aligned when running on 32-bit arch, due to
+the smaller sync.Map struct.
+---
+ aws/crr/cache.go | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/aws/crr/cache.go b/aws/crr/cache.go
+index c07f673..eeb3bc0 100644
+--- a/aws/crr/cache.go
++++ b/aws/crr/cache.go
+@@ -8,12 +8,12 @@ import (
+ // based on some key. The datastructure makes use of a read write
+ // mutex to enable asynchronous use.
+ type EndpointCache struct {
+-	endpoints     syncMap
+-	endpointLimit int64
+ 	// size is used to count the number elements in the cache.
+ 	// The atomic package is used to ensure this size is accurate when
+ 	// using multiple goroutines.
+-	size int64
++	size          int64
++	endpoints     syncMap
++	endpointLimit int64
+ }
+ 
+ // NewEndpointCache will return a newly initialized cache with a limit

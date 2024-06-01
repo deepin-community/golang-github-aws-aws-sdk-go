@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: aws-sdk-go
 Source: https://github.com/aws/aws-sdk-go
+Upstream-Name: aws-sdk-go
 
 Files: *
 Copyright: 2015      Amazon.com, Inc. or its affiliates.

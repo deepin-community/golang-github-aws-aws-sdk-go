@@ -29,14 +29,13 @@ const opCancelJournalKinesisStream = "CancelJournalKinesisStream"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CancelJournalKinesisStreamRequest method.
+//	req, resp := client.CancelJournalKinesisStreamRequest(params)
 //
-//    // Example sending a request using the CancelJournalKinesisStreamRequest method.
-//    req, resp := client.CancelJournalKinesisStreamRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream
 func (c *QLDB) CancelJournalKinesisStreamRequest(input *CancelJournalKinesisStreamInput) (req *request.Request, output *CancelJournalKinesisStreamOutput) {
@@ -72,14 +71,15 @@ func (c *QLDB) CancelJournalKinesisStreamRequest(input *CancelJournalKinesisStre
 // API operation CancelJournalKinesisStream for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream
 func (c *QLDB) CancelJournalKinesisStream(input *CancelJournalKinesisStreamInput) (*CancelJournalKinesisStreamOutput, error) {
@@ -119,14 +119,13 @@ const opCreateLedger = "CreateLedger"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateLedgerRequest method.
+//	req, resp := client.CreateLedgerRequest(params)
 //
-//    // Example sending a request using the CreateLedgerRequest method.
-//    req, resp := client.CreateLedgerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger
 func (c *QLDB) CreateLedgerRequest(input *CreateLedgerInput) (req *request.Request, output *CreateLedgerOutput) {
@@ -147,7 +146,7 @@ func (c *QLDB) CreateLedgerRequest(input *CreateLedgerInput) (req *request.Reque
 
 // CreateLedger API operation for Amazon QLDB.
 //
-// Creates a new ledger in your account in the current Region.
+// Creates a new ledger in your Amazon Web Services account in the current Region.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -157,17 +156,18 @@ func (c *QLDB) CreateLedgerRequest(input *CreateLedgerInput) (req *request.Reque
 // API operation CreateLedger for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceAlreadyExistsException
-//   The specified resource already exists.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * LimitExceededException
-//   You have reached the limit on the maximum number of resources allowed.
+//   - ResourceAlreadyExistsException
+//     The specified resource already exists.
 //
-//   * ResourceInUseException
-//   The specified resource can't be modified at this time.
+//   - LimitExceededException
+//     You have reached the limit on the maximum number of resources allowed.
+//
+//   - ResourceInUseException
+//     The specified resource can't be modified at this time.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger
 func (c *QLDB) CreateLedger(input *CreateLedgerInput) (*CreateLedgerOutput, error) {
@@ -207,14 +207,13 @@ const opDeleteLedger = "DeleteLedger"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteLedgerRequest method.
+//	req, resp := client.DeleteLedgerRequest(params)
 //
-//    // Example sending a request using the DeleteLedgerRequest method.
-//    req, resp := client.DeleteLedgerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger
 func (c *QLDB) DeleteLedgerRequest(input *DeleteLedgerInput) (req *request.Request, output *DeleteLedgerOutput) {
@@ -240,7 +239,7 @@ func (c *QLDB) DeleteLedgerRequest(input *DeleteLedgerInput) (req *request.Reque
 //
 // If deletion protection is enabled, you must first disable it before you can
 // delete the ledger. You can disable it by calling the UpdateLedger operation
-// to set the flag to false.
+// to set this parameter to false.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -250,17 +249,18 @@ func (c *QLDB) DeleteLedgerRequest(input *DeleteLedgerInput) (req *request.Reque
 // API operation DeleteLedger for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourceInUseException
-//   The specified resource can't be modified at this time.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceInUseException
+//     The specified resource can't be modified at this time.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger
 func (c *QLDB) DeleteLedger(input *DeleteLedgerInput) (*DeleteLedgerOutput, error) {
@@ -300,14 +300,13 @@ const opDescribeJournalKinesisStream = "DescribeJournalKinesisStream"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeJournalKinesisStreamRequest method.
+//	req, resp := client.DescribeJournalKinesisStreamRequest(params)
 //
-//    // Example sending a request using the DescribeJournalKinesisStreamRequest method.
-//    req, resp := client.DescribeJournalKinesisStreamRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream
 func (c *QLDB) DescribeJournalKinesisStreamRequest(input *DescribeJournalKinesisStreamInput) (req *request.Request, output *DescribeJournalKinesisStreamOutput) {
@@ -344,14 +343,15 @@ func (c *QLDB) DescribeJournalKinesisStreamRequest(input *DescribeJournalKinesis
 // API operation DescribeJournalKinesisStream for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream
 func (c *QLDB) DescribeJournalKinesisStream(input *DescribeJournalKinesisStreamInput) (*DescribeJournalKinesisStreamOutput, error) {
@@ -391,14 +391,13 @@ const opDescribeJournalS3Export = "DescribeJournalS3Export"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeJournalS3ExportRequest method.
+//	req, resp := client.DescribeJournalS3ExportRequest(params)
 //
-//    // Example sending a request using the DescribeJournalS3ExportRequest method.
-//    req, resp := client.DescribeJournalS3ExportRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export
 func (c *QLDB) DescribeJournalS3ExportRequest(input *DescribeJournalS3ExportInput) (req *request.Request, output *DescribeJournalS3ExportOutput) {
@@ -439,8 +438,8 @@ func (c *QLDB) DescribeJournalS3ExportRequest(input *DescribeJournalS3ExportInpu
 // API operation DescribeJournalS3Export for usage and error information.
 //
 // Returned Error Types:
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export
 func (c *QLDB) DescribeJournalS3Export(input *DescribeJournalS3ExportInput) (*DescribeJournalS3ExportOutput, error) {
@@ -480,14 +479,13 @@ const opDescribeLedger = "DescribeLedger"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeLedgerRequest method.
+//	req, resp := client.DescribeLedgerRequest(params)
 //
-//    // Example sending a request using the DescribeLedgerRequest method.
-//    req, resp := client.DescribeLedgerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger
 func (c *QLDB) DescribeLedgerRequest(input *DescribeLedgerInput) (req *request.Request, output *DescribeLedgerOutput) {
@@ -519,11 +517,12 @@ func (c *QLDB) DescribeLedgerRequest(input *DescribeLedgerInput) (req *request.R
 // API operation DescribeLedger for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
+//
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger
 func (c *QLDB) DescribeLedger(input *DescribeLedgerInput) (*DescribeLedgerOutput, error) {
@@ -563,14 +562,13 @@ const opExportJournalToS3 = "ExportJournalToS3"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ExportJournalToS3Request method.
+//	req, resp := client.ExportJournalToS3Request(params)
 //
-//    // Example sending a request using the ExportJournalToS3Request method.
-//    req, resp := client.ExportJournalToS3Request(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ExportJournalToS3
 func (c *QLDB) ExportJournalToS3Request(input *ExportJournalToS3Input) (req *request.Request, output *ExportJournalToS3Output) {
@@ -592,8 +590,9 @@ func (c *QLDB) ExportJournalToS3Request(input *ExportJournalToS3Input) (req *req
 // ExportJournalToS3 API operation for Amazon QLDB.
 //
 // Exports journal contents within a date and time range from a ledger into
-// a specified Amazon Simple Storage Service (Amazon S3) bucket. The data is
-// written as files in Amazon Ion format.
+// a specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export
+// job can write the data objects in either the text or binary representation
+// of Amazon Ion format, or in JSON Lines text format.
 //
 // If the ledger with the given Name doesn't exist, then throws ResourceNotFoundException.
 //
@@ -610,11 +609,12 @@ func (c *QLDB) ExportJournalToS3Request(input *ExportJournalToS3Input) (req *req
 // API operation ExportJournalToS3 for usage and error information.
 //
 // Returned Error Types:
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ExportJournalToS3
 func (c *QLDB) ExportJournalToS3(input *ExportJournalToS3Input) (*ExportJournalToS3Output, error) {
@@ -654,14 +654,13 @@ const opGetBlock = "GetBlock"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetBlockRequest method.
+//	req, resp := client.GetBlockRequest(params)
 //
-//    // Example sending a request using the GetBlockRequest method.
-//    req, resp := client.GetBlockRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetBlock
 func (c *QLDB) GetBlockRequest(input *GetBlockInput) (req *request.Request, output *GetBlockOutput) {
@@ -704,14 +703,15 @@ func (c *QLDB) GetBlockRequest(input *GetBlockInput) (req *request.Request, outp
 // API operation GetBlock for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetBlock
 func (c *QLDB) GetBlock(input *GetBlockInput) (*GetBlockOutput, error) {
@@ -751,14 +751,13 @@ const opGetDigest = "GetDigest"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetDigestRequest method.
+//	req, resp := client.GetDigestRequest(params)
 //
-//    // Example sending a request using the GetDigestRequest method.
-//    req, resp := client.GetDigestRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetDigest
 func (c *QLDB) GetDigestRequest(input *GetDigestInput) (req *request.Request, output *GetDigestOutput) {
@@ -790,14 +789,15 @@ func (c *QLDB) GetDigestRequest(input *GetDigestInput) (req *request.Request, ou
 // API operation GetDigest for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetDigest
 func (c *QLDB) GetDigest(input *GetDigestInput) (*GetDigestOutput, error) {
@@ -837,14 +837,13 @@ const opGetRevision = "GetRevision"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetRevisionRequest method.
+//	req, resp := client.GetRevisionRequest(params)
 //
-//    // Example sending a request using the GetRevisionRequest method.
-//    req, resp := client.GetRevisionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetRevision
 func (c *QLDB) GetRevisionRequest(input *GetRevisionInput) (req *request.Request, output *GetRevisionOutput) {
@@ -877,14 +876,15 @@ func (c *QLDB) GetRevisionRequest(input *GetRevisionInput) (req *request.Request
 // API operation GetRevision for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetRevision
 func (c *QLDB) GetRevision(input *GetRevisionInput) (*GetRevisionOutput, error) {
@@ -924,14 +924,13 @@ const opListJournalKinesisStreamsForLedger = "ListJournalKinesisStreamsForLedger
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListJournalKinesisStreamsForLedgerRequest method.
+//	req, resp := client.ListJournalKinesisStreamsForLedgerRequest(params)
 //
-//    // Example sending a request using the ListJournalKinesisStreamsForLedgerRequest method.
-//    req, resp := client.ListJournalKinesisStreamsForLedgerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger
 func (c *QLDB) ListJournalKinesisStreamsForLedgerRequest(input *ListJournalKinesisStreamsForLedgerInput) (req *request.Request, output *ListJournalKinesisStreamsForLedgerOutput) {
@@ -958,9 +957,7 @@ func (c *QLDB) ListJournalKinesisStreamsForLedgerRequest(input *ListJournalKines
 
 // ListJournalKinesisStreamsForLedger API operation for Amazon QLDB.
 //
-// Returns an array of all Amazon QLDB journal stream descriptors for a given
-// ledger. The output of each stream descriptor includes the same details that
-// are returned by DescribeJournalKinesisStream.
+// Returns all Amazon QLDB journal streams for a given ledger.
 //
 // This action does not return any expired journal streams. For more information,
 // see Expiration for terminal streams (https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration)
@@ -978,14 +975,15 @@ func (c *QLDB) ListJournalKinesisStreamsForLedgerRequest(input *ListJournalKines
 // API operation ListJournalKinesisStreamsForLedger for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger
 func (c *QLDB) ListJournalKinesisStreamsForLedger(input *ListJournalKinesisStreamsForLedgerInput) (*ListJournalKinesisStreamsForLedgerOutput, error) {
@@ -1017,15 +1015,14 @@ func (c *QLDB) ListJournalKinesisStreamsForLedgerWithContext(ctx aws.Context, in
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListJournalKinesisStreamsForLedger operation.
-//    pageNum := 0
-//    err := client.ListJournalKinesisStreamsForLedgerPages(params,
-//        func(page *qldb.ListJournalKinesisStreamsForLedgerOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListJournalKinesisStreamsForLedger operation.
+//	pageNum := 0
+//	err := client.ListJournalKinesisStreamsForLedgerPages(params,
+//	    func(page *qldb.ListJournalKinesisStreamsForLedgerOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *QLDB) ListJournalKinesisStreamsForLedgerPages(input *ListJournalKinesisStreamsForLedgerInput, fn func(*ListJournalKinesisStreamsForLedgerOutput, bool) bool) error {
 	return c.ListJournalKinesisStreamsForLedgerPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -1077,14 +1074,13 @@ const opListJournalS3Exports = "ListJournalS3Exports"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListJournalS3ExportsRequest method.
+//	req, resp := client.ListJournalS3ExportsRequest(params)
 //
-//    // Example sending a request using the ListJournalS3ExportsRequest method.
-//    req, resp := client.ListJournalS3ExportsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports
 func (c *QLDB) ListJournalS3ExportsRequest(input *ListJournalS3ExportsInput) (req *request.Request, output *ListJournalS3ExportsOutput) {
@@ -1111,8 +1107,8 @@ func (c *QLDB) ListJournalS3ExportsRequest(input *ListJournalS3ExportsInput) (re
 
 // ListJournalS3Exports API operation for Amazon QLDB.
 //
-// Returns an array of journal export job descriptions for all ledgers that
-// are associated with the current account and Region.
+// Returns all journal export jobs for all ledgers that are associated with
+// the current Amazon Web Services account and Region.
 //
 // This action returns a maximum of MaxResults items, and is paginated so that
 // you can retrieve all the items by calling ListJournalS3Exports multiple times.
@@ -1157,15 +1153,14 @@ func (c *QLDB) ListJournalS3ExportsWithContext(ctx aws.Context, input *ListJourn
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListJournalS3Exports operation.
-//    pageNum := 0
-//    err := client.ListJournalS3ExportsPages(params,
-//        func(page *qldb.ListJournalS3ExportsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListJournalS3Exports operation.
+//	pageNum := 0
+//	err := client.ListJournalS3ExportsPages(params,
+//	    func(page *qldb.ListJournalS3ExportsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *QLDB) ListJournalS3ExportsPages(input *ListJournalS3ExportsInput, fn func(*ListJournalS3ExportsOutput, bool) bool) error {
 	return c.ListJournalS3ExportsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -1217,14 +1212,13 @@ const opListJournalS3ExportsForLedger = "ListJournalS3ExportsForLedger"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListJournalS3ExportsForLedgerRequest method.
+//	req, resp := client.ListJournalS3ExportsForLedgerRequest(params)
 //
-//    // Example sending a request using the ListJournalS3ExportsForLedgerRequest method.
-//    req, resp := client.ListJournalS3ExportsForLedgerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger
 func (c *QLDB) ListJournalS3ExportsForLedgerRequest(input *ListJournalS3ExportsForLedgerInput) (req *request.Request, output *ListJournalS3ExportsForLedgerOutput) {
@@ -1251,7 +1245,7 @@ func (c *QLDB) ListJournalS3ExportsForLedgerRequest(input *ListJournalS3ExportsF
 
 // ListJournalS3ExportsForLedger API operation for Amazon QLDB.
 //
-// Returns an array of journal export job descriptions for a specified ledger.
+// Returns all journal export jobs for a specified ledger.
 //
 // This action returns a maximum of MaxResults items, and is paginated so that
 // you can retrieve all the items by calling ListJournalS3ExportsForLedger multiple
@@ -1297,15 +1291,14 @@ func (c *QLDB) ListJournalS3ExportsForLedgerWithContext(ctx aws.Context, input *
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListJournalS3ExportsForLedger operation.
-//    pageNum := 0
-//    err := client.ListJournalS3ExportsForLedgerPages(params,
-//        func(page *qldb.ListJournalS3ExportsForLedgerOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListJournalS3ExportsForLedger operation.
+//	pageNum := 0
+//	err := client.ListJournalS3ExportsForLedgerPages(params,
+//	    func(page *qldb.ListJournalS3ExportsForLedgerOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *QLDB) ListJournalS3ExportsForLedgerPages(input *ListJournalS3ExportsForLedgerInput, fn func(*ListJournalS3ExportsForLedgerOutput, bool) bool) error {
 	return c.ListJournalS3ExportsForLedgerPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -1357,14 +1350,13 @@ const opListLedgers = "ListLedgers"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListLedgersRequest method.
+//	req, resp := client.ListLedgersRequest(params)
 //
-//    // Example sending a request using the ListLedgersRequest method.
-//    req, resp := client.ListLedgersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers
 func (c *QLDB) ListLedgersRequest(input *ListLedgersInput) (req *request.Request, output *ListLedgersOutput) {
@@ -1391,11 +1383,11 @@ func (c *QLDB) ListLedgersRequest(input *ListLedgersInput) (req *request.Request
 
 // ListLedgers API operation for Amazon QLDB.
 //
-// Returns an array of ledger summaries that are associated with the current
+// Returns all ledgers that are associated with the current Amazon Web Services
 // account and Region.
 //
-// This action returns a maximum of 100 items and is paginated so that you can
-// retrieve all the items by calling ListLedgers multiple times.
+// This action returns a maximum of MaxResults items and is paginated so that
+// you can retrieve all the items by calling ListLedgers multiple times.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -1433,15 +1425,14 @@ func (c *QLDB) ListLedgersWithContext(ctx aws.Context, input *ListLedgersInput, 
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListLedgers operation.
-//    pageNum := 0
-//    err := client.ListLedgersPages(params,
-//        func(page *qldb.ListLedgersOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListLedgers operation.
+//	pageNum := 0
+//	err := client.ListLedgersPages(params,
+//	    func(page *qldb.ListLedgersOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *QLDB) ListLedgersPages(input *ListLedgersInput, fn func(*ListLedgersOutput, bool) bool) error {
 	return c.ListLedgersPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -1493,14 +1484,13 @@ const opListTagsForResource = "ListTagsForResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagsForResourceRequest method.
+//	req, resp := client.ListTagsForResourceRequest(params)
 //
-//    // Example sending a request using the ListTagsForResourceRequest method.
-//    req, resp := client.ListTagsForResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListTagsForResource
 func (c *QLDB) ListTagsForResourceRequest(input *ListTagsForResourceInput) (req *request.Request, output *ListTagsForResourceOutput) {
@@ -1531,11 +1521,12 @@ func (c *QLDB) ListTagsForResourceRequest(input *ListTagsForResourceInput) (req 
 // API operation ListTagsForResource for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
+//
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListTagsForResource
 func (c *QLDB) ListTagsForResource(input *ListTagsForResourceInput) (*ListTagsForResourceOutput, error) {
@@ -1575,14 +1566,13 @@ const opStreamJournalToKinesis = "StreamJournalToKinesis"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StreamJournalToKinesisRequest method.
+//	req, resp := client.StreamJournalToKinesisRequest(params)
 //
-//    // Example sending a request using the StreamJournalToKinesisRequest method.
-//    req, resp := client.StreamJournalToKinesisRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis
 func (c *QLDB) StreamJournalToKinesisRequest(input *StreamJournalToKinesisInput) (req *request.Request, output *StreamJournalToKinesisOutput) {
@@ -1615,14 +1605,15 @@ func (c *QLDB) StreamJournalToKinesisRequest(input *StreamJournalToKinesisInput)
 // API operation StreamJournalToKinesis for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
 //
-//   * ResourcePreconditionNotMetException
-//   The operation failed because a condition wasn't satisfied in advance.
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
+//
+//   - ResourcePreconditionNotMetException
+//     The operation failed because a condition wasn't satisfied in advance.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis
 func (c *QLDB) StreamJournalToKinesis(input *StreamJournalToKinesisInput) (*StreamJournalToKinesisOutput, error) {
@@ -1662,14 +1653,13 @@ const opTagResource = "TagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the TagResourceRequest method.
+//	req, resp := client.TagResourceRequest(params)
 //
-//    // Example sending a request using the TagResourceRequest method.
-//    req, resp := client.TagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/TagResource
 func (c *QLDB) TagResourceRequest(input *TagResourceInput) (req *request.Request, output *TagResourceOutput) {
@@ -1704,11 +1694,12 @@ func (c *QLDB) TagResourceRequest(input *TagResourceInput) (req *request.Request
 // API operation TagResource for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
+//
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/TagResource
 func (c *QLDB) TagResource(input *TagResourceInput) (*TagResourceOutput, error) {
@@ -1748,14 +1739,13 @@ const opUntagResource = "UntagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UntagResourceRequest method.
+//	req, resp := client.UntagResourceRequest(params)
 //
-//    // Example sending a request using the UntagResourceRequest method.
-//    req, resp := client.UntagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UntagResource
 func (c *QLDB) UntagResourceRequest(input *UntagResourceInput) (req *request.Request, output *UntagResourceOutput) {
@@ -1788,11 +1778,12 @@ func (c *QLDB) UntagResourceRequest(input *UntagResourceInput) (req *request.Req
 // API operation UntagResource for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
+//
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UntagResource
 func (c *QLDB) UntagResource(input *UntagResourceInput) (*UntagResourceOutput, error) {
@@ -1832,14 +1823,13 @@ const opUpdateLedger = "UpdateLedger"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateLedgerRequest method.
+//	req, resp := client.UpdateLedgerRequest(params)
 //
-//    // Example sending a request using the UpdateLedgerRequest method.
-//    req, resp := client.UpdateLedgerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedger
 func (c *QLDB) UpdateLedgerRequest(input *UpdateLedgerInput) (req *request.Request, output *UpdateLedgerOutput) {
@@ -1870,11 +1860,12 @@ func (c *QLDB) UpdateLedgerRequest(input *UpdateLedgerInput) (req *request.Reque
 // API operation UpdateLedger for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
+//
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedger
 func (c *QLDB) UpdateLedger(input *UpdateLedgerInput) (*UpdateLedgerOutput, error) {
@@ -1914,14 +1905,13 @@ const opUpdateLedgerPermissionsMode = "UpdateLedgerPermissionsMode"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateLedgerPermissionsModeRequest method.
+//	req, resp := client.UpdateLedgerPermissionsModeRequest(params)
 //
-//    // Example sending a request using the UpdateLedgerPermissionsModeRequest method.
-//    req, resp := client.UpdateLedgerPermissionsModeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode
 func (c *QLDB) UpdateLedgerPermissionsModeRequest(input *UpdateLedgerPermissionsModeInput) (req *request.Request, output *UpdateLedgerPermissionsModeOutput) {
@@ -1957,11 +1947,12 @@ func (c *QLDB) UpdateLedgerPermissionsModeRequest(input *UpdateLedgerPermissions
 // API operation UpdateLedgerPermissionsMode for usage and error information.
 //
 // Returned Error Types:
-//   * InvalidParameterException
-//   One or more parameters in the request aren't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource doesn't exist.
+//   - InvalidParameterException
+//     One or more parameters in the request aren't valid.
+//
+//   - ResourceNotFoundException
+//     The specified resource doesn't exist.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode
 func (c *QLDB) UpdateLedgerPermissionsMode(input *UpdateLedgerPermissionsModeInput) (*UpdateLedgerPermissionsModeOutput, error) {
@@ -2086,12 +2077,13 @@ func (s *CancelJournalKinesisStreamOutput) SetStreamId(v string) *CancelJournalK
 type CreateLedgerInput struct {
 	_ struct{} `type:"structure"`
 
-	// The flag that prevents a ledger from being deleted by any user. If not provided
-	// on ledger creation, this feature is enabled (true) by default.
+	// Specifies whether the ledger is protected from being deleted by any user.
+	// If not defined during ledger creation, this feature is enabled (true) by
+	// default.
 	//
 	// If deletion protection is enabled, you must first disable it before you can
 	// delete the ledger. You can disable it by calling the UpdateLedger operation
-	// to set the flag to false.
+	// to set this parameter to false.
 	DeletionProtection *bool `type:"boolean"`
 
 	// The key in Key Management Service (KMS) to use for encryption of data at
@@ -2105,16 +2097,16 @@ type CreateLedgerInput struct {
 	//
 	//    * Undefined: By default, use an Amazon Web Services owned KMS key.
 	//
-	//    * A valid symmetric customer managed KMS key: Use the specified KMS key
-	//    in your account that you create, own, and manage. Amazon QLDB does not
-	//    support asymmetric keys. For more information, see Using symmetric and
-	//    asymmetric keys (https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html)
+	//    * A valid symmetric customer managed KMS key: Use the specified symmetric
+	//    encryption KMS key in your account that you create, own, and manage. Amazon
+	//    QLDB does not support asymmetric keys. For more information, see Using
+	//    symmetric and asymmetric keys (https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html)
 	//    in the Key Management Service Developer Guide.
 	//
 	// To specify a customer managed KMS key, you can use its key ID, Amazon Resource
 	// Name (ARN), alias name, or alias ARN. When using an alias name, prefix it
-	// with "alias/". To specify a key in a different account, you must use the
-	// key ARN or alias ARN.
+	// with "alias/". To specify a key in a different Amazon Web Services account,
+	// you must use the key ARN or alias ARN.
 	//
 	// For example:
 	//
@@ -2131,7 +2123,7 @@ type CreateLedgerInput struct {
 	KmsKey *string `type:"string"`
 
 	// The name of the ledger that you want to create. The name must be unique among
-	// all of the ledgers in your account in the current Region.
+	// all of the ledgers in your Amazon Web Services account in the current Region.
 	//
 	// Naming constraints for ledger names are defined in Quotas in Amazon QLDB
 	// (https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming)
@@ -2248,12 +2240,13 @@ type CreateLedgerOutput struct {
 	// 1970 UTC.)
 	CreationDateTime *time.Time `type:"timestamp"`
 
-	// The flag that prevents a ledger from being deleted by any user. If not provided
-	// on ledger creation, this feature is enabled (true) by default.
+	// Specifies whether the ledger is protected from being deleted by any user.
+	// If not defined during ledger creation, this feature is enabled (true) by
+	// default.
 	//
 	// If deletion protection is enabled, you must first disable it before you can
 	// delete the ledger. You can disable it by calling the UpdateLedger operation
-	// to set the flag to false.
+	// to set this parameter to false.
 	DeletionProtection *bool `type:"boolean"`
 
 	// The ARN of the customer managed KMS key that the ledger uses for encryption
@@ -2662,12 +2655,13 @@ type DescribeLedgerOutput struct {
 	// 1970 UTC.)
 	CreationDateTime *time.Time `type:"timestamp"`
 
-	// The flag that prevents a ledger from being deleted by any user. If not provided
-	// on ledger creation, this feature is enabled (true) by default.
+	// Specifies whether the ledger is protected from being deleted by any user.
+	// If not defined during ledger creation, this feature is enabled (true) by
+	// default.
 	//
 	// If deletion protection is enabled, you must first disable it before you can
 	// delete the ledger. You can disable it by calling the UpdateLedger operation
-	// to set the flag to false.
+	// to set this parameter to false.
 	DeletionProtection *bool `type:"boolean"`
 
 	// Information about the encryption of data at rest in the ledger. This includes
@@ -2777,13 +2771,30 @@ type ExportJournalToS3Input struct {
 	// Name is a required field
 	Name *string `location:"uri" locationName:"name" min:"1" type:"string" required:"true"`
 
+	// The output format of your exported journal data. A journal export job can
+	// write the data objects in either the text or binary representation of Amazon
+	// Ion (https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html) format,
+	// or in JSON Lines (https://jsonlines.org/) text format.
+	//
+	// Default: ION_TEXT
+	//
+	// In JSON Lines format, each journal block in an exported data object is a
+	// valid JSON object that is delimited by a newline. You can use this format
+	// to directly integrate JSON exports with analytics tools such as Amazon Athena
+	// and Glue because these services can parse newline-delimited JSON automatically.
+	OutputFormat *string `type:"string" enum:"OutputFormat"`
+
 	// The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
 	// for a journal export job to do the following:
 	//
-	//    * Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+	//    * Write objects into your Amazon S3 bucket.
 	//
-	//    * (Optional) Use your customer master key (CMK) in Key Management Service
-	//    (KMS) for server-side encryption of your exported data.
+	//    * (Optional) Use your customer managed key in Key Management Service (KMS)
+	//    for server-side encryption of your exported data.
+	//
+	// To pass a role to QLDB when requesting a journal export, you must have permissions
+	// to perform the iam:PassRole action on the IAM role resource. This is required
+	// for all journal export requests.
 	//
 	// RoleArn is a required field
 	RoleArn *string `min:"20" type:"string" required:"true"`
@@ -2864,6 +2875,12 @@ func (s *ExportJournalToS3Input) SetInclusiveStartTime(v time.Time) *ExportJourn
 // SetName sets the Name field's value.
 func (s *ExportJournalToS3Input) SetName(v string) *ExportJournalToS3Input {
 	s.Name = &v
+	return s
+}
+
+// SetOutputFormat sets the OutputFormat field's value.
+func (s *ExportJournalToS3Input) SetOutputFormat(v string) *ExportJournalToS3Input {
+	s.OutputFormat = &v
 	return s
 }
 
@@ -3545,7 +3562,7 @@ func (s *JournalKinesisStreamDescription) SetStreamName(v string) *JournalKinesi
 type JournalS3ExportDescription struct {
 	_ struct{} `type:"structure"`
 
-	// The exclusive end date and time for the range of journal contents that are
+	// The exclusive end date and time for the range of journal contents that was
 	// specified in the original export request.
 	//
 	// ExclusiveEndTime is a required field
@@ -3564,7 +3581,7 @@ type JournalS3ExportDescription struct {
 	ExportId *string `min:"22" type:"string" required:"true"`
 
 	// The inclusive start date and time for the range of journal contents that
-	// are specified in the original export request.
+	// was specified in the original export request.
 	//
 	// InclusiveStartTime is a required field
 	InclusiveStartTime *time.Time `type:"timestamp" required:"true"`
@@ -3574,13 +3591,16 @@ type JournalS3ExportDescription struct {
 	// LedgerName is a required field
 	LedgerName *string `min:"1" type:"string" required:"true"`
 
+	// The output format of the exported journal data.
+	OutputFormat *string `type:"string" enum:"OutputFormat"`
+
 	// The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
 	// for a journal export job to do the following:
 	//
 	//    * Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
 	//
-	//    * (Optional) Use your customer master key (CMK) in Key Management Service
-	//    (KMS) for server-side encryption of your exported data.
+	//    * (Optional) Use your customer managed key in Key Management Service (KMS)
+	//    for server-side encryption of your exported data.
 	//
 	// RoleArn is a required field
 	RoleArn *string `min:"20" type:"string" required:"true"`
@@ -3645,6 +3665,12 @@ func (s *JournalS3ExportDescription) SetLedgerName(v string) *JournalS3ExportDes
 	return s
 }
 
+// SetOutputFormat sets the OutputFormat field's value.
+func (s *JournalS3ExportDescription) SetOutputFormat(v string) *JournalS3ExportDescription {
+	s.OutputFormat = &v
+	return s
+}
+
 // SetRoleArn sets the RoleArn field's value.
 func (s *JournalS3ExportDescription) SetRoleArn(v string) *JournalS3ExportDescription {
 	s.RoleArn = &v
@@ -3671,9 +3697,11 @@ type KinesisConfiguration struct {
 	// Enables QLDB to publish multiple data records in a single Kinesis Data Streams
 	// record, increasing the number of records sent per API call.
 	//
-	// This option is enabled by default. Record aggregation has important implications
-	// for processing records and requires de-aggregation in your stream consumer.
-	// To learn more, see KPL Key Concepts (https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html)
+	// Default: True
+	//
+	// Record aggregation has important implications for processing records and
+	// requires de-aggregation in your stream consumer. To learn more, see KPL Key
+	// Concepts (https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html)
 	// and Consumer De-aggregation (https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html)
 	// in the Amazon Kinesis Data Streams Developer Guide.
 	AggregationEnabled *bool `type:"boolean"`
@@ -4020,8 +4048,7 @@ type ListJournalKinesisStreamsForLedgerOutput struct {
 	//    call.
 	NextToken *string `min:"4" type:"string"`
 
-	// The array of QLDB journal stream descriptors that are associated with the
-	// given ledger.
+	// The QLDB journal streams that are currently associated with the given ledger.
 	Streams []*JournalKinesisStreamDescription `type:"list"`
 }
 
@@ -4135,8 +4162,8 @@ func (s *ListJournalS3ExportsForLedgerInput) SetNextToken(v string) *ListJournal
 type ListJournalS3ExportsForLedgerOutput struct {
 	_ struct{} `type:"structure"`
 
-	// The array of journal export job descriptions that are associated with the
-	// specified ledger.
+	// The journal export jobs that are currently associated with the specified
+	// ledger.
 	JournalS3Exports []*JournalS3ExportDescription `type:"list"`
 
 	//    * If NextToken is empty, then the last page of results has been processed
@@ -4240,8 +4267,8 @@ func (s *ListJournalS3ExportsInput) SetNextToken(v string) *ListJournalS3Exports
 type ListJournalS3ExportsOutput struct {
 	_ struct{} `type:"structure"`
 
-	// The array of journal export job descriptions for all ledgers that are associated
-	// with the current account and Region.
+	// The journal export jobs for all ledgers that are associated with the current
+	// Amazon Web Services account and Region.
 	JournalS3Exports []*JournalS3ExportDescription `type:"list"`
 
 	//    * If NextToken is empty, then the last page of results has been processed
@@ -4345,7 +4372,7 @@ func (s *ListLedgersInput) SetNextToken(v string) *ListLedgersInput {
 type ListLedgersOutput struct {
 	_ struct{} `type:"structure"`
 
-	// The array of ledger summaries that are associated with the current account
+	// The ledgers that are associated with the current Amazon Web Services account
 	// and Region.
 	Ledgers []*LedgerSummary `type:"list"`
 
@@ -4757,8 +4784,8 @@ func (s *ResourcePreconditionNotMetException) RequestID() string {
 type S3EncryptionConfiguration struct {
 	_ struct{} `type:"structure"`
 
-	// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in
-	// Key Management Service (KMS). Amazon S3 does not support asymmetric CMKs.
+	// The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management
+	// Service (KMS). Amazon S3 does not support asymmetric KMS keys.
 	//
 	// You must provide a KmsKeyArn if you specify SSE_KMS as the ObjectEncryptionType.
 	//
@@ -4959,6 +4986,10 @@ type StreamJournalToKinesisInput struct {
 
 	// The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
 	// for a journal stream to write data records to a Kinesis Data Streams resource.
+	//
+	// To pass a role to QLDB when requesting a journal stream, you must have permissions
+	// to perform the iam:PassRole action on the IAM role resource. This is required
+	// for all journal stream requests.
 	//
 	// RoleArn is a required field
 	RoleArn *string `min:"20" type:"string" required:"true"`
@@ -5290,12 +5321,13 @@ func (s UntagResourceOutput) GoString() string {
 type UpdateLedgerInput struct {
 	_ struct{} `type:"structure"`
 
-	// The flag that prevents a ledger from being deleted by any user. If not provided
-	// on ledger creation, this feature is enabled (true) by default.
+	// Specifies whether the ledger is protected from being deleted by any user.
+	// If not defined during ledger creation, this feature is enabled (true) by
+	// default.
 	//
 	// If deletion protection is enabled, you must first disable it before you can
 	// delete the ledger. You can disable it by calling the UpdateLedger operation
-	// to set the flag to false.
+	// to set this parameter to false.
 	DeletionProtection *bool `type:"boolean"`
 
 	// The key in Key Management Service (KMS) to use for encryption of data at
@@ -5309,16 +5341,16 @@ type UpdateLedgerInput struct {
 	//
 	//    * Undefined: Make no changes to the KMS key of the ledger.
 	//
-	//    * A valid symmetric customer managed KMS key: Use the specified KMS key
-	//    in your account that you create, own, and manage. Amazon QLDB does not
-	//    support asymmetric keys. For more information, see Using symmetric and
-	//    asymmetric keys (https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html)
+	//    * A valid symmetric customer managed KMS key: Use the specified symmetric
+	//    encryption KMS key in your account that you create, own, and manage. Amazon
+	//    QLDB does not support asymmetric keys. For more information, see Using
+	//    symmetric and asymmetric keys (https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html)
 	//    in the Key Management Service Developer Guide.
 	//
 	// To specify a customer managed KMS key, you can use its key ID, Amazon Resource
 	// Name (ARN), alias name, or alias ARN. When using an alias name, prefix it
-	// with "alias/". To specify a key in a different account, you must use the
-	// key ARN or alias ARN.
+	// with "alias/". To specify a key in a different Amazon Web Services account,
+	// you must use the key ARN or alias ARN.
 	//
 	// For example:
 	//
@@ -5403,12 +5435,13 @@ type UpdateLedgerOutput struct {
 	// 1970 UTC.)
 	CreationDateTime *time.Time `type:"timestamp"`
 
-	// The flag that prevents a ledger from being deleted by any user. If not provided
-	// on ledger creation, this feature is enabled (true) by default.
+	// Specifies whether the ledger is protected from being deleted by any user.
+	// If not defined during ledger creation, this feature is enabled (true) by
+	// default.
 	//
 	// If deletion protection is enabled, you must first disable it before you can
 	// delete the ledger. You can disable it by calling the UpdateLedger operation
-	// to set the flag to false.
+	// to set this parameter to false.
 	DeletionProtection *bool `type:"boolean"`
 
 	// Information about the encryption of data at rest in the ledger. This includes
@@ -5735,6 +5768,26 @@ func LedgerState_Values() []string {
 		LedgerStateActive,
 		LedgerStateDeleting,
 		LedgerStateDeleted,
+	}
+}
+
+const (
+	// OutputFormatIonBinary is a OutputFormat enum value
+	OutputFormatIonBinary = "ION_BINARY"
+
+	// OutputFormatIonText is a OutputFormat enum value
+	OutputFormatIonText = "ION_TEXT"
+
+	// OutputFormatJson is a OutputFormat enum value
+	OutputFormatJson = "JSON"
+)
+
+// OutputFormat_Values returns all elements of the OutputFormat enum
+func OutputFormat_Values() []string {
+	return []string{
+		OutputFormatIonBinary,
+		OutputFormatIonText,
+		OutputFormatJson,
 	}
 }
 
