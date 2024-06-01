@@ -11,14 +11,14 @@ const (
 	// ErrCodeInsufficientCapacityException for service response error code
 	// "InsufficientCapacityException".
 	//
-	// AWS doesn't currently have enough available capacity to fulfill your request.
-	// Try your request later.
+	// Amazon Web Services doesn't currently have enough available capacity to fulfill
+	// your request. Try your request later.
 	ErrCodeInsufficientCapacityException = "InsufficientCapacityException"
 
 	// ErrCodeInternalServerError for service response error code
 	// "InternalServerError".
 	//
-	// Your request is valid, but Network Firewall couldn’t perform the operation
+	// Your request is valid, but Network Firewall couldn't perform the operation
 	// because of a system problem. Retry your request.
 	ErrCodeInternalServerError = "InternalServerError"
 

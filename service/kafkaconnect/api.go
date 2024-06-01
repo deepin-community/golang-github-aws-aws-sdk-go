@@ -28,14 +28,13 @@ const opCreateConnector = "CreateConnector"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateConnectorRequest method.
+//	req, resp := client.CreateConnectorRequest(params)
 //
-//    // Example sending a request using the CreateConnectorRequest method.
-//    req, resp := client.CreateConnectorRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateConnector
 func (c *KafkaConnect) CreateConnectorRequest(input *CreateConnectorInput) (req *request.Request, output *CreateConnectorOutput) {
@@ -66,36 +65,37 @@ func (c *KafkaConnect) CreateConnectorRequest(input *CreateConnectorInput) (req 
 // API operation CreateConnector for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * ConflictException
-//   HTTP Status Code 409: Conflict. A resource with this name already exists.
-//   Retry your request with another name.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - ConflictException
+//     HTTP Status Code 409: Conflict. A resource with this name already exists.
+//     Retry your request with another name.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateConnector
 func (c *KafkaConnect) CreateConnector(input *CreateConnectorInput) (*CreateConnectorOutput, error) {
@@ -135,14 +135,13 @@ const opCreateCustomPlugin = "CreateCustomPlugin"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateCustomPluginRequest method.
+//	req, resp := client.CreateCustomPluginRequest(params)
 //
-//    // Example sending a request using the CreateCustomPluginRequest method.
-//    req, resp := client.CreateCustomPluginRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateCustomPlugin
 func (c *KafkaConnect) CreateCustomPluginRequest(input *CreateCustomPluginInput) (req *request.Request, output *CreateCustomPluginOutput) {
@@ -173,36 +172,37 @@ func (c *KafkaConnect) CreateCustomPluginRequest(input *CreateCustomPluginInput)
 // API operation CreateCustomPlugin for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * ConflictException
-//   HTTP Status Code 409: Conflict. A resource with this name already exists.
-//   Retry your request with another name.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - ConflictException
+//     HTTP Status Code 409: Conflict. A resource with this name already exists.
+//     Retry your request with another name.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateCustomPlugin
 func (c *KafkaConnect) CreateCustomPlugin(input *CreateCustomPluginInput) (*CreateCustomPluginOutput, error) {
@@ -242,14 +242,13 @@ const opCreateWorkerConfiguration = "CreateWorkerConfiguration"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateWorkerConfigurationRequest method.
+//	req, resp := client.CreateWorkerConfigurationRequest(params)
 //
-//    // Example sending a request using the CreateWorkerConfigurationRequest method.
-//    req, resp := client.CreateWorkerConfigurationRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateWorkerConfiguration
 func (c *KafkaConnect) CreateWorkerConfigurationRequest(input *CreateWorkerConfigurationInput) (req *request.Request, output *CreateWorkerConfigurationOutput) {
@@ -280,36 +279,37 @@ func (c *KafkaConnect) CreateWorkerConfigurationRequest(input *CreateWorkerConfi
 // API operation CreateWorkerConfiguration for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * ConflictException
-//   HTTP Status Code 409: Conflict. A resource with this name already exists.
-//   Retry your request with another name.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - ConflictException
+//     HTTP Status Code 409: Conflict. A resource with this name already exists.
+//     Retry your request with another name.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CreateWorkerConfiguration
 func (c *KafkaConnect) CreateWorkerConfiguration(input *CreateWorkerConfigurationInput) (*CreateWorkerConfigurationOutput, error) {
@@ -349,14 +349,13 @@ const opDeleteConnector = "DeleteConnector"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteConnectorRequest method.
+//	req, resp := client.DeleteConnectorRequest(params)
 //
-//    // Example sending a request using the DeleteConnectorRequest method.
-//    req, resp := client.DeleteConnectorRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteConnector
 func (c *KafkaConnect) DeleteConnectorRequest(input *DeleteConnectorInput) (req *request.Request, output *DeleteConnectorOutput) {
@@ -387,32 +386,33 @@ func (c *KafkaConnect) DeleteConnectorRequest(input *DeleteConnectorInput) (req 
 // API operation DeleteConnector for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteConnector
 func (c *KafkaConnect) DeleteConnector(input *DeleteConnectorInput) (*DeleteConnectorOutput, error) {
@@ -436,6 +436,109 @@ func (c *KafkaConnect) DeleteConnectorWithContext(ctx aws.Context, input *Delete
 	return out, req.Send()
 }
 
+const opDeleteCustomPlugin = "DeleteCustomPlugin"
+
+// DeleteCustomPluginRequest generates a "aws/request.Request" representing the
+// client's request for the DeleteCustomPlugin operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteCustomPlugin for more information on using the DeleteCustomPlugin
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteCustomPluginRequest method.
+//	req, resp := client.DeleteCustomPluginRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteCustomPlugin
+func (c *KafkaConnect) DeleteCustomPluginRequest(input *DeleteCustomPluginInput) (req *request.Request, output *DeleteCustomPluginOutput) {
+	op := &request.Operation{
+		Name:       opDeleteCustomPlugin,
+		HTTPMethod: "DELETE",
+		HTTPPath:   "/v1/custom-plugins/{customPluginArn}",
+	}
+
+	if input == nil {
+		input = &DeleteCustomPluginInput{}
+	}
+
+	output = &DeleteCustomPluginOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DeleteCustomPlugin API operation for Managed Streaming for Kafka Connect.
+//
+// Deletes a custom plugin.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Managed Streaming for Kafka Connect's
+// API operation DeleteCustomPlugin for usage and error information.
+//
+// Returned Error Types:
+//
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
+//
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
+//
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
+//
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
+//
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteCustomPlugin
+func (c *KafkaConnect) DeleteCustomPlugin(input *DeleteCustomPluginInput) (*DeleteCustomPluginOutput, error) {
+	req, out := c.DeleteCustomPluginRequest(input)
+	return out, req.Send()
+}
+
+// DeleteCustomPluginWithContext is the same as DeleteCustomPlugin with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteCustomPlugin for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *KafkaConnect) DeleteCustomPluginWithContext(ctx aws.Context, input *DeleteCustomPluginInput, opts ...request.Option) (*DeleteCustomPluginOutput, error) {
+	req, out := c.DeleteCustomPluginRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeConnector = "DescribeConnector"
 
 // DescribeConnectorRequest generates a "aws/request.Request" representing the
@@ -452,14 +555,13 @@ const opDescribeConnector = "DescribeConnector"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeConnectorRequest method.
+//	req, resp := client.DescribeConnectorRequest(params)
 //
-//    // Example sending a request using the DescribeConnectorRequest method.
-//    req, resp := client.DescribeConnectorRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnector
 func (c *KafkaConnect) DescribeConnectorRequest(input *DescribeConnectorInput) (req *request.Request, output *DescribeConnectorOutput) {
@@ -490,32 +592,33 @@ func (c *KafkaConnect) DescribeConnectorRequest(input *DescribeConnectorInput) (
 // API operation DescribeConnector for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeConnector
 func (c *KafkaConnect) DescribeConnector(input *DescribeConnectorInput) (*DescribeConnectorOutput, error) {
@@ -555,14 +658,13 @@ const opDescribeCustomPlugin = "DescribeCustomPlugin"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeCustomPluginRequest method.
+//	req, resp := client.DescribeCustomPluginRequest(params)
 //
-//    // Example sending a request using the DescribeCustomPluginRequest method.
-//    req, resp := client.DescribeCustomPluginRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeCustomPlugin
 func (c *KafkaConnect) DescribeCustomPluginRequest(input *DescribeCustomPluginInput) (req *request.Request, output *DescribeCustomPluginOutput) {
@@ -593,32 +695,33 @@ func (c *KafkaConnect) DescribeCustomPluginRequest(input *DescribeCustomPluginIn
 // API operation DescribeCustomPlugin for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeCustomPlugin
 func (c *KafkaConnect) DescribeCustomPlugin(input *DescribeCustomPluginInput) (*DescribeCustomPluginOutput, error) {
@@ -658,14 +761,13 @@ const opDescribeWorkerConfiguration = "DescribeWorkerConfiguration"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeWorkerConfigurationRequest method.
+//	req, resp := client.DescribeWorkerConfigurationRequest(params)
 //
-//    // Example sending a request using the DescribeWorkerConfigurationRequest method.
-//    req, resp := client.DescribeWorkerConfigurationRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeWorkerConfiguration
 func (c *KafkaConnect) DescribeWorkerConfigurationRequest(input *DescribeWorkerConfigurationInput) (req *request.Request, output *DescribeWorkerConfigurationOutput) {
@@ -696,32 +798,33 @@ func (c *KafkaConnect) DescribeWorkerConfigurationRequest(input *DescribeWorkerC
 // API operation DescribeWorkerConfiguration for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DescribeWorkerConfiguration
 func (c *KafkaConnect) DescribeWorkerConfiguration(input *DescribeWorkerConfigurationInput) (*DescribeWorkerConfigurationOutput, error) {
@@ -761,14 +864,13 @@ const opListConnectors = "ListConnectors"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListConnectorsRequest method.
+//	req, resp := client.ListConnectorsRequest(params)
 //
-//    // Example sending a request using the ListConnectorsRequest method.
-//    req, resp := client.ListConnectorsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectors
 func (c *KafkaConnect) ListConnectorsRequest(input *ListConnectorsInput) (req *request.Request, output *ListConnectorsOutput) {
@@ -807,32 +909,33 @@ func (c *KafkaConnect) ListConnectorsRequest(input *ListConnectorsInput) (req *r
 // API operation ListConnectors for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListConnectors
 func (c *KafkaConnect) ListConnectors(input *ListConnectorsInput) (*ListConnectorsOutput, error) {
@@ -864,15 +967,14 @@ func (c *KafkaConnect) ListConnectorsWithContext(ctx aws.Context, input *ListCon
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListConnectors operation.
-//    pageNum := 0
-//    err := client.ListConnectorsPages(params,
-//        func(page *kafkaconnect.ListConnectorsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListConnectors operation.
+//	pageNum := 0
+//	err := client.ListConnectorsPages(params,
+//	    func(page *kafkaconnect.ListConnectorsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *KafkaConnect) ListConnectorsPages(input *ListConnectorsInput, fn func(*ListConnectorsOutput, bool) bool) error {
 	return c.ListConnectorsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -924,14 +1026,13 @@ const opListCustomPlugins = "ListCustomPlugins"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListCustomPluginsRequest method.
+//	req, resp := client.ListCustomPluginsRequest(params)
 //
-//    // Example sending a request using the ListCustomPluginsRequest method.
-//    req, resp := client.ListCustomPluginsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListCustomPlugins
 func (c *KafkaConnect) ListCustomPluginsRequest(input *ListCustomPluginsInput) (req *request.Request, output *ListCustomPluginsOutput) {
@@ -968,32 +1069,33 @@ func (c *KafkaConnect) ListCustomPluginsRequest(input *ListCustomPluginsInput) (
 // API operation ListCustomPlugins for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListCustomPlugins
 func (c *KafkaConnect) ListCustomPlugins(input *ListCustomPluginsInput) (*ListCustomPluginsOutput, error) {
@@ -1025,15 +1127,14 @@ func (c *KafkaConnect) ListCustomPluginsWithContext(ctx aws.Context, input *List
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListCustomPlugins operation.
-//    pageNum := 0
-//    err := client.ListCustomPluginsPages(params,
-//        func(page *kafkaconnect.ListCustomPluginsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListCustomPlugins operation.
+//	pageNum := 0
+//	err := client.ListCustomPluginsPages(params,
+//	    func(page *kafkaconnect.ListCustomPluginsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *KafkaConnect) ListCustomPluginsPages(input *ListCustomPluginsInput, fn func(*ListCustomPluginsOutput, bool) bool) error {
 	return c.ListCustomPluginsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -1085,14 +1186,13 @@ const opListWorkerConfigurations = "ListWorkerConfigurations"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListWorkerConfigurationsRequest method.
+//	req, resp := client.ListWorkerConfigurationsRequest(params)
 //
-//    // Example sending a request using the ListWorkerConfigurationsRequest method.
-//    req, resp := client.ListWorkerConfigurationsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListWorkerConfigurations
 func (c *KafkaConnect) ListWorkerConfigurationsRequest(input *ListWorkerConfigurationsInput) (req *request.Request, output *ListWorkerConfigurationsOutput) {
@@ -1129,32 +1229,33 @@ func (c *KafkaConnect) ListWorkerConfigurationsRequest(input *ListWorkerConfigur
 // API operation ListWorkerConfigurations for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListWorkerConfigurations
 func (c *KafkaConnect) ListWorkerConfigurations(input *ListWorkerConfigurationsInput) (*ListWorkerConfigurationsOutput, error) {
@@ -1186,15 +1287,14 @@ func (c *KafkaConnect) ListWorkerConfigurationsWithContext(ctx aws.Context, inpu
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListWorkerConfigurations operation.
-//    pageNum := 0
-//    err := client.ListWorkerConfigurationsPages(params,
-//        func(page *kafkaconnect.ListWorkerConfigurationsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListWorkerConfigurations operation.
+//	pageNum := 0
+//	err := client.ListWorkerConfigurationsPages(params,
+//	    func(page *kafkaconnect.ListWorkerConfigurationsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *KafkaConnect) ListWorkerConfigurationsPages(input *ListWorkerConfigurationsInput, fn func(*ListWorkerConfigurationsOutput, bool) bool) error {
 	return c.ListWorkerConfigurationsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -1246,14 +1346,13 @@ const opUpdateConnector = "UpdateConnector"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateConnectorRequest method.
+//	req, resp := client.UpdateConnectorRequest(params)
 //
-//    // Example sending a request using the UpdateConnectorRequest method.
-//    req, resp := client.UpdateConnectorRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UpdateConnector
 func (c *KafkaConnect) UpdateConnectorRequest(input *UpdateConnectorInput) (req *request.Request, output *UpdateConnectorOutput) {
@@ -1284,32 +1383,33 @@ func (c *KafkaConnect) UpdateConnectorRequest(input *UpdateConnectorInput) (req 
 // API operation UpdateConnector for usage and error information.
 //
 // Returned Error Types:
-//   * NotFoundException
-//   HTTP Status Code 404: Resource not found due to incorrect input. Correct
-//   your request and then retry it.
 //
-//   * BadRequestException
-//   HTTP Status Code 400: Bad request due to incorrect input. Correct your request
-//   and then retry it.
+//   - NotFoundException
+//     HTTP Status Code 404: Resource not found due to incorrect input. Correct
+//     your request and then retry it.
 //
-//   * ForbiddenException
-//   HTTP Status Code 403: Access forbidden. Correct your credentials and then
-//   retry your request.
+//   - BadRequestException
+//     HTTP Status Code 400: Bad request due to incorrect input. Correct your request
+//     and then retry it.
 //
-//   * ServiceUnavailableException
-//   HTTP Status Code 503: Service Unavailable. Retrying your request in some
-//   time might resolve the issue.
+//   - ForbiddenException
+//     HTTP Status Code 403: Access forbidden. Correct your credentials and then
+//     retry your request.
 //
-//   * TooManyRequestsException
-//   HTTP Status Code 429: Limit exceeded. Resource limit reached.
+//   - ServiceUnavailableException
+//     HTTP Status Code 503: Service Unavailable. Retrying your request in some
+//     time might resolve the issue.
 //
-//   * UnauthorizedException
-//   HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
-//   be validated.
+//   - TooManyRequestsException
+//     HTTP Status Code 429: Limit exceeded. Resource limit reached.
 //
-//   * InternalServerErrorException
-//   HTTP Status Code 500: Unexpected internal server error. Retrying your request
-//   might resolve the issue.
+//   - UnauthorizedException
+//     HTTP Status Code 401: Unauthorized request. The provided credentials couldn't
+//     be validated.
+//
+//   - InternalServerErrorException
+//     HTTP Status Code 500: Unexpected internal server error. Retrying your request
+//     might resolve the issue.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UpdateConnector
 func (c *KafkaConnect) UpdateConnector(input *UpdateConnectorInput) (*UpdateConnectorOutput, error) {
@@ -2311,8 +2411,12 @@ type CreateConnectorInput struct {
 
 	// A map of keys to values that represent the configuration for the connector.
 	//
+	// ConnectorConfiguration is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateConnectorInput's
+	// String and GoString methods.
+	//
 	// ConnectorConfiguration is a required field
-	ConnectorConfiguration map[string]*string `locationName:"connectorConfiguration" type:"map" required:"true"`
+	ConnectorConfiguration map[string]*string `locationName:"connectorConfiguration" type:"map" required:"true" sensitive:"true"`
 
 	// A summary description of the connector.
 	ConnectorDescription *string `locationName:"connectorDescription" type:"string"`
@@ -2745,8 +2849,12 @@ type CreateWorkerConfigurationInput struct {
 
 	// Base64 encoded contents of connect-distributed.properties file.
 	//
+	// PropertiesFileContent is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateWorkerConfigurationInput's
+	// String and GoString methods.
+	//
 	// PropertiesFileContent is a required field
-	PropertiesFileContent *string `locationName:"propertiesFileContent" type:"string" required:"true"`
+	PropertiesFileContent *string `locationName:"propertiesFileContent" type:"string" required:"true" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -3349,6 +3457,96 @@ func (s *DeleteConnectorOutput) SetConnectorState(v string) *DeleteConnectorOutp
 	return s
 }
 
+type DeleteCustomPluginInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The Amazon Resource Name (ARN) of the custom plugin that you want to delete.
+	//
+	// CustomPluginArn is a required field
+	CustomPluginArn *string `location:"uri" locationName:"customPluginArn" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCustomPluginInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCustomPluginInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteCustomPluginInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteCustomPluginInput"}
+	if s.CustomPluginArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("CustomPluginArn"))
+	}
+	if s.CustomPluginArn != nil && len(*s.CustomPluginArn) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("CustomPluginArn", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetCustomPluginArn sets the CustomPluginArn field's value.
+func (s *DeleteCustomPluginInput) SetCustomPluginArn(v string) *DeleteCustomPluginInput {
+	s.CustomPluginArn = &v
+	return s
+}
+
+type DeleteCustomPluginOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The Amazon Resource Name (ARN) of the custom plugin that you requested to
+	// delete.
+	CustomPluginArn *string `locationName:"customPluginArn" type:"string"`
+
+	// The state of the custom plugin.
+	CustomPluginState *string `locationName:"customPluginState" type:"string" enum:"CustomPluginState"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCustomPluginOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCustomPluginOutput) GoString() string {
+	return s.String()
+}
+
+// SetCustomPluginArn sets the CustomPluginArn field's value.
+func (s *DeleteCustomPluginOutput) SetCustomPluginArn(v string) *DeleteCustomPluginOutput {
+	s.CustomPluginArn = &v
+	return s
+}
+
+// SetCustomPluginState sets the CustomPluginState field's value.
+func (s *DeleteCustomPluginOutput) SetCustomPluginState(v string) *DeleteCustomPluginOutput {
+	s.CustomPluginState = &v
+	return s
+}
+
 type DescribeConnectorInput struct {
 	_ struct{} `type:"structure" nopayload:"true"`
 
@@ -3409,7 +3607,11 @@ type DescribeConnectorOutput struct {
 	ConnectorArn *string `locationName:"connectorArn" type:"string"`
 
 	// A map of keys to values that represent the configuration for the connector.
-	ConnectorConfiguration map[string]*string `locationName:"connectorConfiguration" type:"map"`
+	//
+	// ConnectorConfiguration is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by DescribeConnectorOutput's
+	// String and GoString methods.
+	ConnectorConfiguration map[string]*string `locationName:"connectorConfiguration" type:"map" sensitive:"true"`
 
 	// A summary description of the connector.
 	ConnectorDescription *string `locationName:"connectorDescription" type:"string"`
@@ -3449,6 +3651,9 @@ type DescribeConnectorOutput struct {
 	// The Amazon Resource Name (ARN) of the IAM role used by the connector to access
 	// Amazon Web Services resources.
 	ServiceExecutionRoleArn *string `locationName:"serviceExecutionRoleArn" type:"string"`
+
+	// Details about the state of a connector.
+	StateDescription *StateDescription `locationName:"stateDescription" type:"structure"`
 
 	// Specifies which worker configuration was used for the connector.
 	WorkerConfiguration *WorkerConfigurationDescription `locationName:"workerConfiguration" type:"structure"`
@@ -3562,6 +3767,12 @@ func (s *DescribeConnectorOutput) SetServiceExecutionRoleArn(v string) *Describe
 	return s
 }
 
+// SetStateDescription sets the StateDescription field's value.
+func (s *DescribeConnectorOutput) SetStateDescription(v *StateDescription) *DescribeConnectorOutput {
+	s.StateDescription = v
+	return s
+}
+
 // SetWorkerConfiguration sets the WorkerConfiguration field's value.
 func (s *DescribeConnectorOutput) SetWorkerConfiguration(v *WorkerConfigurationDescription) *DescribeConnectorOutput {
 	s.WorkerConfiguration = v
@@ -3638,6 +3849,9 @@ type DescribeCustomPluginOutput struct {
 
 	// The name of the custom plugin.
 	Name *string `locationName:"name" type:"string"`
+
+	// Details about the state of a custom plugin.
+	StateDescription *StateDescription `locationName:"stateDescription" type:"structure"`
 }
 
 // String returns the string representation.
@@ -3691,6 +3905,12 @@ func (s *DescribeCustomPluginOutput) SetLatestRevision(v *CustomPluginRevisionSu
 // SetName sets the Name field's value.
 func (s *DescribeCustomPluginOutput) SetName(v string) *DescribeCustomPluginOutput {
 	s.Name = &v
+	return s
+}
+
+// SetStateDescription sets the StateDescription field's value.
+func (s *DescribeCustomPluginOutput) SetStateDescription(v *StateDescription) *DescribeCustomPluginOutput {
+	s.StateDescription = v
 	return s
 }
 
@@ -5571,6 +5791,47 @@ func (s *ServiceUnavailableException) RequestID() string {
 	return s.RespMetadata.RequestID
 }
 
+// Details about the state of a resource.
+type StateDescription struct {
+	_ struct{} `type:"structure"`
+
+	// A code that describes the state of a resource.
+	Code *string `locationName:"code" type:"string"`
+
+	// A message that describes the state of a resource.
+	Message *string `locationName:"message" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StateDescription) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s StateDescription) GoString() string {
+	return s.String()
+}
+
+// SetCode sets the Code field's value.
+func (s *StateDescription) SetCode(v string) *StateDescription {
+	s.Code = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *StateDescription) SetMessage(v string) *StateDescription {
+	s.Message = &v
+	return s
+}
+
 // HTTP Status Code 429: Limit exceeded. Resource limit reached.
 type TooManyRequestsException struct {
 	_            struct{}                  `type:"structure"`
@@ -6036,7 +6297,11 @@ type WorkerConfigurationRevisionDescription struct {
 	Description *string `locationName:"description" type:"string"`
 
 	// Base64 encoded contents of the connect-distributed.properties file.
-	PropertiesFileContent *string `locationName:"propertiesFileContent" type:"string"`
+	//
+	// PropertiesFileContent is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by WorkerConfigurationRevisionDescription's
+	// String and GoString methods.
+	PropertiesFileContent *string `locationName:"propertiesFileContent" type:"string" sensitive:"true"`
 
 	// The description of a revision of the worker configuration.
 	Revision *int64 `locationName:"revision" type:"long"`

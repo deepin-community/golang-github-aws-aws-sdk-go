@@ -1,2 +1,3 @@
 0001-dfsg-footer.erb.patch
 0002-dfsg-godoc.html.patch
+0003-Fix-misaligned-struct-member-used-in-atomic-op.patch

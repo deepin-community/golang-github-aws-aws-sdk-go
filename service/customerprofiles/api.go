@@ -29,14 +29,13 @@ const opAddProfileKey = "AddProfileKey"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AddProfileKeyRequest method.
+//	req, resp := client.AddProfileKeyRequest(params)
 //
-//    // Example sending a request using the AddProfileKeyRequest method.
-//    req, resp := client.AddProfileKeyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AddProfileKey
 func (c *CustomerProfiles) AddProfileKeyRequest(input *AddProfileKeyInput) (req *request.Request, output *AddProfileKeyOutput) {
@@ -57,8 +56,8 @@ func (c *CustomerProfiles) AddProfileKeyRequest(input *AddProfileKeyInput) (req 
 
 // AddProfileKey API operation for Amazon Connect Customer Profiles.
 //
-// Associates a new key value with a specific profile, such as a Contact Trace
-// Record (CTR) ContactId.
+// Associates a new key value with a specific profile, such as a Contact Record
+// ContactId.
 //
 // A profile object can have a single unique key and any number of additional
 // keys that can be used to identify the profile that it belongs to.
@@ -71,20 +70,21 @@ func (c *CustomerProfiles) AddProfileKeyRequest(input *AddProfileKeyInput) (req 
 // API operation AddProfileKey for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AddProfileKey
 func (c *CustomerProfiles) AddProfileKey(input *AddProfileKeyInput) (*AddProfileKeyOutput, error) {
@@ -108,6 +108,103 @@ func (c *CustomerProfiles) AddProfileKeyWithContext(ctx aws.Context, input *AddP
 	return out, req.Send()
 }
 
+const opCreateCalculatedAttributeDefinition = "CreateCalculatedAttributeDefinition"
+
+// CreateCalculatedAttributeDefinitionRequest generates a "aws/request.Request" representing the
+// client's request for the CreateCalculatedAttributeDefinition operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateCalculatedAttributeDefinition for more information on using the CreateCalculatedAttributeDefinition
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateCalculatedAttributeDefinitionRequest method.
+//	req, resp := client.CreateCalculatedAttributeDefinitionRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition
+func (c *CustomerProfiles) CreateCalculatedAttributeDefinitionRequest(input *CreateCalculatedAttributeDefinitionInput) (req *request.Request, output *CreateCalculatedAttributeDefinitionOutput) {
+	op := &request.Operation{
+		Name:       opCreateCalculatedAttributeDefinition,
+		HTTPMethod: "POST",
+		HTTPPath:   "/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}",
+	}
+
+	if input == nil {
+		input = &CreateCalculatedAttributeDefinitionInput{}
+	}
+
+	output = &CreateCalculatedAttributeDefinitionOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// CreateCalculatedAttributeDefinition API operation for Amazon Connect Customer Profiles.
+//
+// Creates a new calculated attribute definition. After creation, new object
+// data ingested into Customer Profiles will be included in the calculated attribute,
+// which can be retrieved for a profile using the GetCalculatedAttributeForProfile
+// (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html)
+// API. Defining a calculated attribute makes it available for all profiles
+// within a domain. Each calculated attribute can only reference one ObjectType
+// and at most, two fields from that ObjectType.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation CreateCalculatedAttributeDefinition for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition
+func (c *CustomerProfiles) CreateCalculatedAttributeDefinition(input *CreateCalculatedAttributeDefinitionInput) (*CreateCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.CreateCalculatedAttributeDefinitionRequest(input)
+	return out, req.Send()
+}
+
+// CreateCalculatedAttributeDefinitionWithContext is the same as CreateCalculatedAttributeDefinition with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateCalculatedAttributeDefinition for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) CreateCalculatedAttributeDefinitionWithContext(ctx aws.Context, input *CreateCalculatedAttributeDefinitionInput, opts ...request.Option) (*CreateCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.CreateCalculatedAttributeDefinitionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateDomain = "CreateDomain"
 
 // CreateDomainRequest generates a "aws/request.Request" representing the
@@ -124,14 +221,13 @@ const opCreateDomain = "CreateDomain"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateDomainRequest method.
+//	req, resp := client.CreateDomainRequest(params)
 //
-//    // Example sending a request using the CreateDomainRequest method.
-//    req, resp := client.CreateDomainRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain
 func (c *CustomerProfiles) CreateDomainRequest(input *CreateDomainInput) (req *request.Request, output *CreateDomainOutput) {
@@ -164,6 +260,10 @@ func (c *CustomerProfiles) CreateDomainRequest(input *CreateDomainInput) (req *r
 // to enable identity resolution (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html):
 // set Matching to true.
 //
+// To prevent cross-service impersonation when you call this API, see Cross-service
+// confused deputy prevention (https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html)
+// for sample policies that you should apply.
+//
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
@@ -172,20 +272,21 @@ func (c *CustomerProfiles) CreateDomainRequest(input *CreateDomainInput) (req *r
 // API operation CreateDomain for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateDomain
 func (c *CustomerProfiles) CreateDomain(input *CreateDomainInput) (*CreateDomainOutput, error) {
@@ -209,6 +310,196 @@ func (c *CustomerProfiles) CreateDomainWithContext(ctx aws.Context, input *Creat
 	return out, req.Send()
 }
 
+const opCreateEventStream = "CreateEventStream"
+
+// CreateEventStreamRequest generates a "aws/request.Request" representing the
+// client's request for the CreateEventStream operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateEventStream for more information on using the CreateEventStream
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateEventStreamRequest method.
+//	req, resp := client.CreateEventStreamRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream
+func (c *CustomerProfiles) CreateEventStreamRequest(input *CreateEventStreamInput) (req *request.Request, output *CreateEventStreamOutput) {
+	op := &request.Operation{
+		Name:       opCreateEventStream,
+		HTTPMethod: "POST",
+		HTTPPath:   "/domains/{DomainName}/event-streams/{EventStreamName}",
+	}
+
+	if input == nil {
+		input = &CreateEventStreamInput{}
+	}
+
+	output = &CreateEventStreamOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// CreateEventStream API operation for Amazon Connect Customer Profiles.
+//
+// Creates an event stream, which is a subscription to real-time events, such
+// as when profiles are created and updated through Amazon Connect Customer
+// Profiles.
+//
+// Each event stream can be associated with only one Kinesis Data Stream destination
+// in the same region and Amazon Web Services account as the customer profiles
+// domain
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation CreateEventStream for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream
+func (c *CustomerProfiles) CreateEventStream(input *CreateEventStreamInput) (*CreateEventStreamOutput, error) {
+	req, out := c.CreateEventStreamRequest(input)
+	return out, req.Send()
+}
+
+// CreateEventStreamWithContext is the same as CreateEventStream with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateEventStream for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) CreateEventStreamWithContext(ctx aws.Context, input *CreateEventStreamInput, opts ...request.Option) (*CreateEventStreamOutput, error) {
+	req, out := c.CreateEventStreamRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateIntegrationWorkflow = "CreateIntegrationWorkflow"
+
+// CreateIntegrationWorkflowRequest generates a "aws/request.Request" representing the
+// client's request for the CreateIntegrationWorkflow operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateIntegrationWorkflow for more information on using the CreateIntegrationWorkflow
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateIntegrationWorkflowRequest method.
+//	req, resp := client.CreateIntegrationWorkflowRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateIntegrationWorkflow
+func (c *CustomerProfiles) CreateIntegrationWorkflowRequest(input *CreateIntegrationWorkflowInput) (req *request.Request, output *CreateIntegrationWorkflowOutput) {
+	op := &request.Operation{
+		Name:       opCreateIntegrationWorkflow,
+		HTTPMethod: "POST",
+		HTTPPath:   "/domains/{DomainName}/workflows/integrations",
+	}
+
+	if input == nil {
+		input = &CreateIntegrationWorkflowInput{}
+	}
+
+	output = &CreateIntegrationWorkflowOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// CreateIntegrationWorkflow API operation for Amazon Connect Customer Profiles.
+//
+// Creates an integration workflow. An integration workflow is an async process
+// which ingests historic data and sets up an integration for ongoing updates.
+// The supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation CreateIntegrationWorkflow for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateIntegrationWorkflow
+func (c *CustomerProfiles) CreateIntegrationWorkflow(input *CreateIntegrationWorkflowInput) (*CreateIntegrationWorkflowOutput, error) {
+	req, out := c.CreateIntegrationWorkflowRequest(input)
+	return out, req.Send()
+}
+
+// CreateIntegrationWorkflowWithContext is the same as CreateIntegrationWorkflow with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateIntegrationWorkflow for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) CreateIntegrationWorkflowWithContext(ctx aws.Context, input *CreateIntegrationWorkflowInput, opts ...request.Option) (*CreateIntegrationWorkflowOutput, error) {
+	req, out := c.CreateIntegrationWorkflowRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateProfile = "CreateProfile"
 
 // CreateProfileRequest generates a "aws/request.Request" representing the
@@ -225,14 +516,13 @@ const opCreateProfile = "CreateProfile"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateProfileRequest method.
+//	req, resp := client.CreateProfileRequest(params)
 //
-//    // Example sending a request using the CreateProfileRequest method.
-//    req, resp := client.CreateProfileRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateProfile
 func (c *CustomerProfiles) CreateProfileRequest(input *CreateProfileInput) (req *request.Request, output *CreateProfileOutput) {
@@ -266,20 +556,21 @@ func (c *CustomerProfiles) CreateProfileRequest(input *CreateProfileInput) (req 
 // API operation CreateProfile for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateProfile
 func (c *CustomerProfiles) CreateProfile(input *CreateProfileInput) (*CreateProfileOutput, error) {
@@ -303,6 +594,101 @@ func (c *CustomerProfiles) CreateProfileWithContext(ctx aws.Context, input *Crea
 	return out, req.Send()
 }
 
+const opDeleteCalculatedAttributeDefinition = "DeleteCalculatedAttributeDefinition"
+
+// DeleteCalculatedAttributeDefinitionRequest generates a "aws/request.Request" representing the
+// client's request for the DeleteCalculatedAttributeDefinition operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteCalculatedAttributeDefinition for more information on using the DeleteCalculatedAttributeDefinition
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteCalculatedAttributeDefinitionRequest method.
+//	req, resp := client.DeleteCalculatedAttributeDefinitionRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition
+func (c *CustomerProfiles) DeleteCalculatedAttributeDefinitionRequest(input *DeleteCalculatedAttributeDefinitionInput) (req *request.Request, output *DeleteCalculatedAttributeDefinitionOutput) {
+	op := &request.Operation{
+		Name:       opDeleteCalculatedAttributeDefinition,
+		HTTPMethod: "DELETE",
+		HTTPPath:   "/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}",
+	}
+
+	if input == nil {
+		input = &DeleteCalculatedAttributeDefinitionInput{}
+	}
+
+	output = &DeleteCalculatedAttributeDefinitionOutput{}
+	req = c.newRequest(op, input, output)
+	req.Handlers.Unmarshal.Swap(restjson.UnmarshalHandler.Name, protocol.UnmarshalDiscardBodyHandler)
+	return
+}
+
+// DeleteCalculatedAttributeDefinition API operation for Amazon Connect Customer Profiles.
+//
+// Deletes an existing calculated attribute definition. Note that deleting a
+// default calculated attribute is possible, however once deleted, you will
+// be unable to undo that action and will need to recreate it on your own using
+// the CreateCalculatedAttributeDefinition API if you want it back.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation DeleteCalculatedAttributeDefinition for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition
+func (c *CustomerProfiles) DeleteCalculatedAttributeDefinition(input *DeleteCalculatedAttributeDefinitionInput) (*DeleteCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.DeleteCalculatedAttributeDefinitionRequest(input)
+	return out, req.Send()
+}
+
+// DeleteCalculatedAttributeDefinitionWithContext is the same as DeleteCalculatedAttributeDefinition with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteCalculatedAttributeDefinition for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) DeleteCalculatedAttributeDefinitionWithContext(ctx aws.Context, input *DeleteCalculatedAttributeDefinitionInput, opts ...request.Option) (*DeleteCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.DeleteCalculatedAttributeDefinitionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteDomain = "DeleteDomain"
 
 // DeleteDomainRequest generates a "aws/request.Request" representing the
@@ -319,14 +705,13 @@ const opDeleteDomain = "DeleteDomain"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteDomainRequest method.
+//	req, resp := client.DeleteDomainRequest(params)
 //
-//    // Example sending a request using the DeleteDomainRequest method.
-//    req, resp := client.DeleteDomainRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomain
 func (c *CustomerProfiles) DeleteDomainRequest(input *DeleteDomainInput) (req *request.Request, output *DeleteDomainOutput) {
@@ -358,20 +743,21 @@ func (c *CustomerProfiles) DeleteDomainRequest(input *DeleteDomainInput) (req *r
 // API operation DeleteDomain for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomain
 func (c *CustomerProfiles) DeleteDomain(input *DeleteDomainInput) (*DeleteDomainOutput, error) {
@@ -395,6 +781,98 @@ func (c *CustomerProfiles) DeleteDomainWithContext(ctx aws.Context, input *Delet
 	return out, req.Send()
 }
 
+const opDeleteEventStream = "DeleteEventStream"
+
+// DeleteEventStreamRequest generates a "aws/request.Request" representing the
+// client's request for the DeleteEventStream operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteEventStream for more information on using the DeleteEventStream
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteEventStreamRequest method.
+//	req, resp := client.DeleteEventStreamRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream
+func (c *CustomerProfiles) DeleteEventStreamRequest(input *DeleteEventStreamInput) (req *request.Request, output *DeleteEventStreamOutput) {
+	op := &request.Operation{
+		Name:       opDeleteEventStream,
+		HTTPMethod: "DELETE",
+		HTTPPath:   "/domains/{DomainName}/event-streams/{EventStreamName}",
+	}
+
+	if input == nil {
+		input = &DeleteEventStreamInput{}
+	}
+
+	output = &DeleteEventStreamOutput{}
+	req = c.newRequest(op, input, output)
+	req.Handlers.Unmarshal.Swap(restjson.UnmarshalHandler.Name, protocol.UnmarshalDiscardBodyHandler)
+	return
+}
+
+// DeleteEventStream API operation for Amazon Connect Customer Profiles.
+//
+// Disables and deletes the specified event stream.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation DeleteEventStream for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream
+func (c *CustomerProfiles) DeleteEventStream(input *DeleteEventStreamInput) (*DeleteEventStreamOutput, error) {
+	req, out := c.DeleteEventStreamRequest(input)
+	return out, req.Send()
+}
+
+// DeleteEventStreamWithContext is the same as DeleteEventStream with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteEventStream for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) DeleteEventStreamWithContext(ctx aws.Context, input *DeleteEventStreamInput, opts ...request.Option) (*DeleteEventStreamOutput, error) {
+	req, out := c.DeleteEventStreamRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteIntegration = "DeleteIntegration"
 
 // DeleteIntegrationRequest generates a "aws/request.Request" representing the
@@ -411,14 +889,13 @@ const opDeleteIntegration = "DeleteIntegration"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteIntegrationRequest method.
+//	req, resp := client.DeleteIntegrationRequest(params)
 //
-//    // Example sending a request using the DeleteIntegrationRequest method.
-//    req, resp := client.DeleteIntegrationRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteIntegration
 func (c *CustomerProfiles) DeleteIntegrationRequest(input *DeleteIntegrationInput) (req *request.Request, output *DeleteIntegrationOutput) {
@@ -449,20 +926,21 @@ func (c *CustomerProfiles) DeleteIntegrationRequest(input *DeleteIntegrationInpu
 // API operation DeleteIntegration for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteIntegration
 func (c *CustomerProfiles) DeleteIntegration(input *DeleteIntegrationInput) (*DeleteIntegrationOutput, error) {
@@ -502,14 +980,13 @@ const opDeleteProfile = "DeleteProfile"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteProfileRequest method.
+//	req, resp := client.DeleteProfileRequest(params)
 //
-//    // Example sending a request using the DeleteProfileRequest method.
-//    req, resp := client.DeleteProfileRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfile
 func (c *CustomerProfiles) DeleteProfileRequest(input *DeleteProfileInput) (req *request.Request, output *DeleteProfileOutput) {
@@ -540,20 +1017,21 @@ func (c *CustomerProfiles) DeleteProfileRequest(input *DeleteProfileInput) (req 
 // API operation DeleteProfile for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfile
 func (c *CustomerProfiles) DeleteProfile(input *DeleteProfileInput) (*DeleteProfileOutput, error) {
@@ -593,14 +1071,13 @@ const opDeleteProfileKey = "DeleteProfileKey"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteProfileKeyRequest method.
+//	req, resp := client.DeleteProfileKeyRequest(params)
 //
-//    // Example sending a request using the DeleteProfileKeyRequest method.
-//    req, resp := client.DeleteProfileKeyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileKey
 func (c *CustomerProfiles) DeleteProfileKeyRequest(input *DeleteProfileKeyInput) (req *request.Request, output *DeleteProfileKeyOutput) {
@@ -631,20 +1108,21 @@ func (c *CustomerProfiles) DeleteProfileKeyRequest(input *DeleteProfileKeyInput)
 // API operation DeleteProfileKey for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileKey
 func (c *CustomerProfiles) DeleteProfileKey(input *DeleteProfileKeyInput) (*DeleteProfileKeyOutput, error) {
@@ -684,14 +1162,13 @@ const opDeleteProfileObject = "DeleteProfileObject"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteProfileObjectRequest method.
+//	req, resp := client.DeleteProfileObjectRequest(params)
 //
-//    // Example sending a request using the DeleteProfileObjectRequest method.
-//    req, resp := client.DeleteProfileObjectRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObject
 func (c *CustomerProfiles) DeleteProfileObjectRequest(input *DeleteProfileObjectInput) (req *request.Request, output *DeleteProfileObjectOutput) {
@@ -722,20 +1199,21 @@ func (c *CustomerProfiles) DeleteProfileObjectRequest(input *DeleteProfileObject
 // API operation DeleteProfileObject for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObject
 func (c *CustomerProfiles) DeleteProfileObject(input *DeleteProfileObjectInput) (*DeleteProfileObjectOutput, error) {
@@ -775,14 +1253,13 @@ const opDeleteProfileObjectType = "DeleteProfileObjectType"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteProfileObjectTypeRequest method.
+//	req, resp := client.DeleteProfileObjectTypeRequest(params)
 //
-//    // Example sending a request using the DeleteProfileObjectTypeRequest method.
-//    req, resp := client.DeleteProfileObjectTypeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObjectType
 func (c *CustomerProfiles) DeleteProfileObjectTypeRequest(input *DeleteProfileObjectTypeInput) (req *request.Request, output *DeleteProfileObjectTypeOutput) {
@@ -816,20 +1293,21 @@ func (c *CustomerProfiles) DeleteProfileObjectTypeRequest(input *DeleteProfileOb
 // API operation DeleteProfileObjectType for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteProfileObjectType
 func (c *CustomerProfiles) DeleteProfileObjectType(input *DeleteProfileObjectTypeInput) (*DeleteProfileObjectTypeOutput, error) {
@@ -853,6 +1331,477 @@ func (c *CustomerProfiles) DeleteProfileObjectTypeWithContext(ctx aws.Context, i
 	return out, req.Send()
 }
 
+const opDeleteWorkflow = "DeleteWorkflow"
+
+// DeleteWorkflowRequest generates a "aws/request.Request" representing the
+// client's request for the DeleteWorkflow operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteWorkflow for more information on using the DeleteWorkflow
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteWorkflowRequest method.
+//	req, resp := client.DeleteWorkflowRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteWorkflow
+func (c *CustomerProfiles) DeleteWorkflowRequest(input *DeleteWorkflowInput) (req *request.Request, output *DeleteWorkflowOutput) {
+	op := &request.Operation{
+		Name:       opDeleteWorkflow,
+		HTTPMethod: "DELETE",
+		HTTPPath:   "/domains/{DomainName}/workflows/{WorkflowId}",
+	}
+
+	if input == nil {
+		input = &DeleteWorkflowInput{}
+	}
+
+	output = &DeleteWorkflowOutput{}
+	req = c.newRequest(op, input, output)
+	req.Handlers.Unmarshal.Swap(restjson.UnmarshalHandler.Name, protocol.UnmarshalDiscardBodyHandler)
+	return
+}
+
+// DeleteWorkflow API operation for Amazon Connect Customer Profiles.
+//
+// Deletes the specified workflow and all its corresponding resources. This
+// is an async process.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation DeleteWorkflow for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteWorkflow
+func (c *CustomerProfiles) DeleteWorkflow(input *DeleteWorkflowInput) (*DeleteWorkflowOutput, error) {
+	req, out := c.DeleteWorkflowRequest(input)
+	return out, req.Send()
+}
+
+// DeleteWorkflowWithContext is the same as DeleteWorkflow with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteWorkflow for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) DeleteWorkflowWithContext(ctx aws.Context, input *DeleteWorkflowInput, opts ...request.Option) (*DeleteWorkflowOutput, error) {
+	req, out := c.DeleteWorkflowRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDetectProfileObjectType = "DetectProfileObjectType"
+
+// DetectProfileObjectTypeRequest generates a "aws/request.Request" representing the
+// client's request for the DetectProfileObjectType operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DetectProfileObjectType for more information on using the DetectProfileObjectType
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DetectProfileObjectTypeRequest method.
+//	req, resp := client.DetectProfileObjectTypeRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType
+func (c *CustomerProfiles) DetectProfileObjectTypeRequest(input *DetectProfileObjectTypeInput) (req *request.Request, output *DetectProfileObjectTypeOutput) {
+	op := &request.Operation{
+		Name:       opDetectProfileObjectType,
+		HTTPMethod: "POST",
+		HTTPPath:   "/domains/{DomainName}/detect/object-types",
+	}
+
+	if input == nil {
+		input = &DetectProfileObjectTypeInput{}
+	}
+
+	output = &DetectProfileObjectTypeOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// DetectProfileObjectType API operation for Amazon Connect Customer Profiles.
+//
+// The process of detecting profile object type mapping by using given objects.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation DetectProfileObjectType for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType
+func (c *CustomerProfiles) DetectProfileObjectType(input *DetectProfileObjectTypeInput) (*DetectProfileObjectTypeOutput, error) {
+	req, out := c.DetectProfileObjectTypeRequest(input)
+	return out, req.Send()
+}
+
+// DetectProfileObjectTypeWithContext is the same as DetectProfileObjectType with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DetectProfileObjectType for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) DetectProfileObjectTypeWithContext(ctx aws.Context, input *DetectProfileObjectTypeInput, opts ...request.Option) (*DetectProfileObjectTypeOutput, error) {
+	req, out := c.DetectProfileObjectTypeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opGetAutoMergingPreview = "GetAutoMergingPreview"
+
+// GetAutoMergingPreviewRequest generates a "aws/request.Request" representing the
+// client's request for the GetAutoMergingPreview operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetAutoMergingPreview for more information on using the GetAutoMergingPreview
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetAutoMergingPreviewRequest method.
+//	req, resp := client.GetAutoMergingPreviewRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview
+func (c *CustomerProfiles) GetAutoMergingPreviewRequest(input *GetAutoMergingPreviewInput) (req *request.Request, output *GetAutoMergingPreviewOutput) {
+	op := &request.Operation{
+		Name:       opGetAutoMergingPreview,
+		HTTPMethod: "POST",
+		HTTPPath:   "/domains/{DomainName}/identity-resolution-jobs/auto-merging-preview",
+	}
+
+	if input == nil {
+		input = &GetAutoMergingPreviewInput{}
+	}
+
+	output = &GetAutoMergingPreviewOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetAutoMergingPreview API operation for Amazon Connect Customer Profiles.
+//
+// Tests the auto-merging settings of your Identity Resolution Job without merging
+// your data. It randomly selects a sample of matching groups from the existing
+// matching results, and applies the automerging settings that you provided.
+// You can then view the number of profiles in the sample, the number of matches,
+// and the number of profiles identified to be merged. This enables you to evaluate
+// the accuracy of the attributes in your matching list.
+//
+// You can't view which profiles are matched and would be merged.
+//
+// We strongly recommend you use this API to do a dry run of the automerging
+// process before running the Identity Resolution Job. Include at least two
+// matching attributes. If your matching list includes too few attributes (such
+// as only FirstName or only LastName), there may be a large number of matches.
+// This increases the chances of erroneous merges.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetAutoMergingPreview for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview
+func (c *CustomerProfiles) GetAutoMergingPreview(input *GetAutoMergingPreviewInput) (*GetAutoMergingPreviewOutput, error) {
+	req, out := c.GetAutoMergingPreviewRequest(input)
+	return out, req.Send()
+}
+
+// GetAutoMergingPreviewWithContext is the same as GetAutoMergingPreview with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetAutoMergingPreview for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetAutoMergingPreviewWithContext(ctx aws.Context, input *GetAutoMergingPreviewInput, opts ...request.Option) (*GetAutoMergingPreviewOutput, error) {
+	req, out := c.GetAutoMergingPreviewRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opGetCalculatedAttributeDefinition = "GetCalculatedAttributeDefinition"
+
+// GetCalculatedAttributeDefinitionRequest generates a "aws/request.Request" representing the
+// client's request for the GetCalculatedAttributeDefinition operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetCalculatedAttributeDefinition for more information on using the GetCalculatedAttributeDefinition
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetCalculatedAttributeDefinitionRequest method.
+//	req, resp := client.GetCalculatedAttributeDefinitionRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition
+func (c *CustomerProfiles) GetCalculatedAttributeDefinitionRequest(input *GetCalculatedAttributeDefinitionInput) (req *request.Request, output *GetCalculatedAttributeDefinitionOutput) {
+	op := &request.Operation{
+		Name:       opGetCalculatedAttributeDefinition,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}",
+	}
+
+	if input == nil {
+		input = &GetCalculatedAttributeDefinitionInput{}
+	}
+
+	output = &GetCalculatedAttributeDefinitionOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetCalculatedAttributeDefinition API operation for Amazon Connect Customer Profiles.
+//
+// Provides more information on a calculated attribute definition for Customer
+// Profiles.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetCalculatedAttributeDefinition for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition
+func (c *CustomerProfiles) GetCalculatedAttributeDefinition(input *GetCalculatedAttributeDefinitionInput) (*GetCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.GetCalculatedAttributeDefinitionRequest(input)
+	return out, req.Send()
+}
+
+// GetCalculatedAttributeDefinitionWithContext is the same as GetCalculatedAttributeDefinition with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetCalculatedAttributeDefinition for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetCalculatedAttributeDefinitionWithContext(ctx aws.Context, input *GetCalculatedAttributeDefinitionInput, opts ...request.Option) (*GetCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.GetCalculatedAttributeDefinitionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opGetCalculatedAttributeForProfile = "GetCalculatedAttributeForProfile"
+
+// GetCalculatedAttributeForProfileRequest generates a "aws/request.Request" representing the
+// client's request for the GetCalculatedAttributeForProfile operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetCalculatedAttributeForProfile for more information on using the GetCalculatedAttributeForProfile
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetCalculatedAttributeForProfileRequest method.
+//	req, resp := client.GetCalculatedAttributeForProfileRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile
+func (c *CustomerProfiles) GetCalculatedAttributeForProfileRequest(input *GetCalculatedAttributeForProfileInput) (req *request.Request, output *GetCalculatedAttributeForProfileOutput) {
+	op := &request.Operation{
+		Name:       opGetCalculatedAttributeForProfile,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/profile/{ProfileId}/calculated-attributes/{CalculatedAttributeName}",
+	}
+
+	if input == nil {
+		input = &GetCalculatedAttributeForProfileInput{}
+	}
+
+	output = &GetCalculatedAttributeForProfileOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetCalculatedAttributeForProfile API operation for Amazon Connect Customer Profiles.
+//
+// Retrieve a calculated attribute for a customer profile.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetCalculatedAttributeForProfile for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile
+func (c *CustomerProfiles) GetCalculatedAttributeForProfile(input *GetCalculatedAttributeForProfileInput) (*GetCalculatedAttributeForProfileOutput, error) {
+	req, out := c.GetCalculatedAttributeForProfileRequest(input)
+	return out, req.Send()
+}
+
+// GetCalculatedAttributeForProfileWithContext is the same as GetCalculatedAttributeForProfile with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetCalculatedAttributeForProfile for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetCalculatedAttributeForProfileWithContext(ctx aws.Context, input *GetCalculatedAttributeForProfileInput, opts ...request.Option) (*GetCalculatedAttributeForProfileOutput, error) {
+	req, out := c.GetCalculatedAttributeForProfileRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opGetDomain = "GetDomain"
 
 // GetDomainRequest generates a "aws/request.Request" representing the
@@ -869,14 +1818,13 @@ const opGetDomain = "GetDomain"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetDomainRequest method.
+//	req, resp := client.GetDomainRequest(params)
 //
-//    // Example sending a request using the GetDomainRequest method.
-//    req, resp := client.GetDomainRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomain
 func (c *CustomerProfiles) GetDomainRequest(input *GetDomainInput) (req *request.Request, output *GetDomainOutput) {
@@ -907,20 +1855,21 @@ func (c *CustomerProfiles) GetDomainRequest(input *GetDomainInput) (req *request
 // API operation GetDomain for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomain
 func (c *CustomerProfiles) GetDomain(input *GetDomainInput) (*GetDomainOutput, error) {
@@ -944,6 +1893,192 @@ func (c *CustomerProfiles) GetDomainWithContext(ctx aws.Context, input *GetDomai
 	return out, req.Send()
 }
 
+const opGetEventStream = "GetEventStream"
+
+// GetEventStreamRequest generates a "aws/request.Request" representing the
+// client's request for the GetEventStream operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetEventStream for more information on using the GetEventStream
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetEventStreamRequest method.
+//	req, resp := client.GetEventStreamRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream
+func (c *CustomerProfiles) GetEventStreamRequest(input *GetEventStreamInput) (req *request.Request, output *GetEventStreamOutput) {
+	op := &request.Operation{
+		Name:       opGetEventStream,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/event-streams/{EventStreamName}",
+	}
+
+	if input == nil {
+		input = &GetEventStreamInput{}
+	}
+
+	output = &GetEventStreamOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetEventStream API operation for Amazon Connect Customer Profiles.
+//
+// Returns information about the specified event stream in a specific domain.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetEventStream for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream
+func (c *CustomerProfiles) GetEventStream(input *GetEventStreamInput) (*GetEventStreamOutput, error) {
+	req, out := c.GetEventStreamRequest(input)
+	return out, req.Send()
+}
+
+// GetEventStreamWithContext is the same as GetEventStream with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetEventStream for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetEventStreamWithContext(ctx aws.Context, input *GetEventStreamInput, opts ...request.Option) (*GetEventStreamOutput, error) {
+	req, out := c.GetEventStreamRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opGetIdentityResolutionJob = "GetIdentityResolutionJob"
+
+// GetIdentityResolutionJobRequest generates a "aws/request.Request" representing the
+// client's request for the GetIdentityResolutionJob operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetIdentityResolutionJob for more information on using the GetIdentityResolutionJob
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetIdentityResolutionJobRequest method.
+//	req, resp := client.GetIdentityResolutionJobRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob
+func (c *CustomerProfiles) GetIdentityResolutionJobRequest(input *GetIdentityResolutionJobInput) (req *request.Request, output *GetIdentityResolutionJobOutput) {
+	op := &request.Operation{
+		Name:       opGetIdentityResolutionJob,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/identity-resolution-jobs/{JobId}",
+	}
+
+	if input == nil {
+		input = &GetIdentityResolutionJobInput{}
+	}
+
+	output = &GetIdentityResolutionJobOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetIdentityResolutionJob API operation for Amazon Connect Customer Profiles.
+//
+// Returns information about an Identity Resolution Job in a specific domain.
+//
+// Identity Resolution Jobs are set up using the Amazon Connect admin console.
+// For more information, see Use Identity Resolution to consolidate similar
+// profiles (https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html).
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetIdentityResolutionJob for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIdentityResolutionJob
+func (c *CustomerProfiles) GetIdentityResolutionJob(input *GetIdentityResolutionJobInput) (*GetIdentityResolutionJobOutput, error) {
+	req, out := c.GetIdentityResolutionJobRequest(input)
+	return out, req.Send()
+}
+
+// GetIdentityResolutionJobWithContext is the same as GetIdentityResolutionJob with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetIdentityResolutionJob for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetIdentityResolutionJobWithContext(ctx aws.Context, input *GetIdentityResolutionJobInput, opts ...request.Option) (*GetIdentityResolutionJobOutput, error) {
+	req, out := c.GetIdentityResolutionJobRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opGetIntegration = "GetIntegration"
 
 // GetIntegrationRequest generates a "aws/request.Request" representing the
@@ -960,14 +2095,13 @@ const opGetIntegration = "GetIntegration"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetIntegrationRequest method.
+//	req, resp := client.GetIntegrationRequest(params)
 //
-//    // Example sending a request using the GetIntegrationRequest method.
-//    req, resp := client.GetIntegrationRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIntegration
 func (c *CustomerProfiles) GetIntegrationRequest(input *GetIntegrationInput) (req *request.Request, output *GetIntegrationOutput) {
@@ -998,20 +2132,21 @@ func (c *CustomerProfiles) GetIntegrationRequest(input *GetIntegrationInput) (re
 // API operation GetIntegration for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetIntegration
 func (c *CustomerProfiles) GetIntegration(input *GetIntegrationInput) (*GetIntegrationOutput, error) {
@@ -1051,14 +2186,13 @@ const opGetMatches = "GetMatches"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetMatchesRequest method.
+//	req, resp := client.GetMatchesRequest(params)
 //
-//    // Example sending a request using the GetMatchesRequest method.
-//    req, resp := client.GetMatchesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches
 func (c *CustomerProfiles) GetMatchesRequest(input *GetMatchesInput) (req *request.Request, output *GetMatchesOutput) {
@@ -1079,8 +2213,6 @@ func (c *CustomerProfiles) GetMatchesRequest(input *GetMatchesInput) (req *reque
 
 // GetMatches API operation for Amazon Connect Customer Profiles.
 //
-// This API is in preview release for Amazon Connect and subject to change.
-//
 // Before calling this API, use CreateDomain (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html)
 // or UpdateDomain (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html)
 // to enable identity resolution: set Matching to true.
@@ -1088,29 +2220,33 @@ func (c *CustomerProfiles) GetMatchesRequest(input *GetMatchesInput) (req *reque
 // GetMatches returns potentially matching profiles, based on the results of
 // the latest run of a machine learning process.
 //
-// Amazon Connect starts a batch process every Saturday at 12AM UTC to identify
-// matching profiles. The results are returned up to seven days after the Saturday
-// run.
+// The process of matching duplicate profiles. If Matching = true, Amazon Connect
+// Customer Profiles starts a weekly batch process called Identity Resolution
+// Job. If you do not specify a date and time for Identity Resolution Job to
+// run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles
+// in your domains.
+//
+// After the Identity Resolution Job completes, use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
+// API to return and review the results. Or, if you have configured ExportingConfig
+// in the MatchingRequest, you can download the results from S3.
 //
 // Amazon Connect uses the following profile attributes to identify matches:
 //
-//    * PhoneNumber
+//   - PhoneNumber
 //
-//    * HomePhoneNumber
+//   - HomePhoneNumber
 //
-//    * BusinessPhoneNumber
+//   - BusinessPhoneNumber
 //
-//    * MobilePhoneNumber
+//   - MobilePhoneNumber
 //
-//    * EmailAddress
+//   - EmailAddress
 //
-//    * PersonalEmailAddress
+//   - PersonalEmailAddress
 //
-//    * BusinessEmailAddress
+//   - BusinessEmailAddress
 //
-//    * FullName
-//
-//    * BusinessName
+//   - FullName
 //
 // For example, two or more profiles—with spelling mistakes such as John Doe
 // and Jhn Doe, or different casing email addresses such as JOHN_DOE@ANYCOMPANY.COM
@@ -1126,20 +2262,21 @@ func (c *CustomerProfiles) GetMatchesRequest(input *GetMatchesInput) (req *reque
 // API operation GetMatches for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches
 func (c *CustomerProfiles) GetMatches(input *GetMatchesInput) (*GetMatchesOutput, error) {
@@ -1179,14 +2316,13 @@ const opGetProfileObjectType = "GetProfileObjectType"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetProfileObjectTypeRequest method.
+//	req, resp := client.GetProfileObjectTypeRequest(params)
 //
-//    // Example sending a request using the GetProfileObjectTypeRequest method.
-//    req, resp := client.GetProfileObjectTypeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectType
 func (c *CustomerProfiles) GetProfileObjectTypeRequest(input *GetProfileObjectTypeInput) (req *request.Request, output *GetProfileObjectTypeOutput) {
@@ -1217,20 +2353,21 @@ func (c *CustomerProfiles) GetProfileObjectTypeRequest(input *GetProfileObjectTy
 // API operation GetProfileObjectType for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectType
 func (c *CustomerProfiles) GetProfileObjectType(input *GetProfileObjectTypeInput) (*GetProfileObjectTypeOutput, error) {
@@ -1270,14 +2407,13 @@ const opGetProfileObjectTypeTemplate = "GetProfileObjectTypeTemplate"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetProfileObjectTypeTemplateRequest method.
+//	req, resp := client.GetProfileObjectTypeTemplateRequest(params)
 //
-//    // Example sending a request using the GetProfileObjectTypeTemplateRequest method.
-//    req, resp := client.GetProfileObjectTypeTemplateRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectTypeTemplate
 func (c *CustomerProfiles) GetProfileObjectTypeTemplateRequest(input *GetProfileObjectTypeTemplateInput) (req *request.Request, output *GetProfileObjectTypeTemplateOutput) {
@@ -1313,20 +2449,21 @@ func (c *CustomerProfiles) GetProfileObjectTypeTemplateRequest(input *GetProfile
 // API operation GetProfileObjectTypeTemplate for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectTypeTemplate
 func (c *CustomerProfiles) GetProfileObjectTypeTemplate(input *GetProfileObjectTypeTemplateInput) (*GetProfileObjectTypeTemplateOutput, error) {
@@ -1350,6 +2487,281 @@ func (c *CustomerProfiles) GetProfileObjectTypeTemplateWithContext(ctx aws.Conte
 	return out, req.Send()
 }
 
+const opGetSimilarProfiles = "GetSimilarProfiles"
+
+// GetSimilarProfilesRequest generates a "aws/request.Request" representing the
+// client's request for the GetSimilarProfiles operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetSimilarProfiles for more information on using the GetSimilarProfiles
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetSimilarProfilesRequest method.
+//	req, resp := client.GetSimilarProfilesRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles
+func (c *CustomerProfiles) GetSimilarProfilesRequest(input *GetSimilarProfilesInput) (req *request.Request, output *GetSimilarProfilesOutput) {
+	op := &request.Operation{
+		Name:       opGetSimilarProfiles,
+		HTTPMethod: "POST",
+		HTTPPath:   "/domains/{DomainName}/matches",
+	}
+
+	if input == nil {
+		input = &GetSimilarProfilesInput{}
+	}
+
+	output = &GetSimilarProfilesOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetSimilarProfiles API operation for Amazon Connect Customer Profiles.
+//
+// Returns a set of profiles that belong to the same matching group using the
+// matchId or profileId. You can also specify the type of matching that you
+// want for finding similar profiles using either RULE_BASED_MATCHING or ML_BASED_MATCHING.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetSimilarProfiles for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles
+func (c *CustomerProfiles) GetSimilarProfiles(input *GetSimilarProfilesInput) (*GetSimilarProfilesOutput, error) {
+	req, out := c.GetSimilarProfilesRequest(input)
+	return out, req.Send()
+}
+
+// GetSimilarProfilesWithContext is the same as GetSimilarProfiles with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetSimilarProfiles for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetSimilarProfilesWithContext(ctx aws.Context, input *GetSimilarProfilesInput, opts ...request.Option) (*GetSimilarProfilesOutput, error) {
+	req, out := c.GetSimilarProfilesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opGetWorkflow = "GetWorkflow"
+
+// GetWorkflowRequest generates a "aws/request.Request" representing the
+// client's request for the GetWorkflow operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetWorkflow for more information on using the GetWorkflow
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetWorkflowRequest method.
+//	req, resp := client.GetWorkflowRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow
+func (c *CustomerProfiles) GetWorkflowRequest(input *GetWorkflowInput) (req *request.Request, output *GetWorkflowOutput) {
+	op := &request.Operation{
+		Name:       opGetWorkflow,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/workflows/{WorkflowId}",
+	}
+
+	if input == nil {
+		input = &GetWorkflowInput{}
+	}
+
+	output = &GetWorkflowOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetWorkflow API operation for Amazon Connect Customer Profiles.
+//
+// Get details of specified workflow.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetWorkflow for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow
+func (c *CustomerProfiles) GetWorkflow(input *GetWorkflowInput) (*GetWorkflowOutput, error) {
+	req, out := c.GetWorkflowRequest(input)
+	return out, req.Send()
+}
+
+// GetWorkflowWithContext is the same as GetWorkflow with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetWorkflow for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetWorkflowWithContext(ctx aws.Context, input *GetWorkflowInput, opts ...request.Option) (*GetWorkflowOutput, error) {
+	req, out := c.GetWorkflowRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opGetWorkflowSteps = "GetWorkflowSteps"
+
+// GetWorkflowStepsRequest generates a "aws/request.Request" representing the
+// client's request for the GetWorkflowSteps operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See GetWorkflowSteps for more information on using the GetWorkflowSteps
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the GetWorkflowStepsRequest method.
+//	req, resp := client.GetWorkflowStepsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflowSteps
+func (c *CustomerProfiles) GetWorkflowStepsRequest(input *GetWorkflowStepsInput) (req *request.Request, output *GetWorkflowStepsOutput) {
+	op := &request.Operation{
+		Name:       opGetWorkflowSteps,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/workflows/{WorkflowId}/steps",
+	}
+
+	if input == nil {
+		input = &GetWorkflowStepsInput{}
+	}
+
+	output = &GetWorkflowStepsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// GetWorkflowSteps API operation for Amazon Connect Customer Profiles.
+//
+// Get granular list of steps in workflow.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation GetWorkflowSteps for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflowSteps
+func (c *CustomerProfiles) GetWorkflowSteps(input *GetWorkflowStepsInput) (*GetWorkflowStepsOutput, error) {
+	req, out := c.GetWorkflowStepsRequest(input)
+	return out, req.Send()
+}
+
+// GetWorkflowStepsWithContext is the same as GetWorkflowSteps with the addition of
+// the ability to pass a context and additional request options.
+//
+// See GetWorkflowSteps for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) GetWorkflowStepsWithContext(ctx aws.Context, input *GetWorkflowStepsInput, opts ...request.Option) (*GetWorkflowStepsOutput, error) {
+	req, out := c.GetWorkflowStepsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opListAccountIntegrations = "ListAccountIntegrations"
 
 // ListAccountIntegrationsRequest generates a "aws/request.Request" representing the
@@ -1366,14 +2778,13 @@ const opListAccountIntegrations = "ListAccountIntegrations"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListAccountIntegrationsRequest method.
+//	req, resp := client.ListAccountIntegrationsRequest(params)
 //
-//    // Example sending a request using the ListAccountIntegrationsRequest method.
-//    req, resp := client.ListAccountIntegrationsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListAccountIntegrations
 func (c *CustomerProfiles) ListAccountIntegrationsRequest(input *ListAccountIntegrationsInput) (req *request.Request, output *ListAccountIntegrationsOutput) {
@@ -1404,20 +2815,21 @@ func (c *CustomerProfiles) ListAccountIntegrationsRequest(input *ListAccountInte
 // API operation ListAccountIntegrations for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListAccountIntegrations
 func (c *CustomerProfiles) ListAccountIntegrations(input *ListAccountIntegrationsInput) (*ListAccountIntegrationsOutput, error) {
@@ -1441,6 +2853,188 @@ func (c *CustomerProfiles) ListAccountIntegrationsWithContext(ctx aws.Context, i
 	return out, req.Send()
 }
 
+const opListCalculatedAttributeDefinitions = "ListCalculatedAttributeDefinitions"
+
+// ListCalculatedAttributeDefinitionsRequest generates a "aws/request.Request" representing the
+// client's request for the ListCalculatedAttributeDefinitions operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListCalculatedAttributeDefinitions for more information on using the ListCalculatedAttributeDefinitions
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListCalculatedAttributeDefinitionsRequest method.
+//	req, resp := client.ListCalculatedAttributeDefinitionsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions
+func (c *CustomerProfiles) ListCalculatedAttributeDefinitionsRequest(input *ListCalculatedAttributeDefinitionsInput) (req *request.Request, output *ListCalculatedAttributeDefinitionsOutput) {
+	op := &request.Operation{
+		Name:       opListCalculatedAttributeDefinitions,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/calculated-attributes",
+	}
+
+	if input == nil {
+		input = &ListCalculatedAttributeDefinitionsInput{}
+	}
+
+	output = &ListCalculatedAttributeDefinitionsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListCalculatedAttributeDefinitions API operation for Amazon Connect Customer Profiles.
+//
+// # Lists calculated attribute definitions for Customer Profiles
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation ListCalculatedAttributeDefinitions for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions
+func (c *CustomerProfiles) ListCalculatedAttributeDefinitions(input *ListCalculatedAttributeDefinitionsInput) (*ListCalculatedAttributeDefinitionsOutput, error) {
+	req, out := c.ListCalculatedAttributeDefinitionsRequest(input)
+	return out, req.Send()
+}
+
+// ListCalculatedAttributeDefinitionsWithContext is the same as ListCalculatedAttributeDefinitions with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListCalculatedAttributeDefinitions for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) ListCalculatedAttributeDefinitionsWithContext(ctx aws.Context, input *ListCalculatedAttributeDefinitionsInput, opts ...request.Option) (*ListCalculatedAttributeDefinitionsOutput, error) {
+	req, out := c.ListCalculatedAttributeDefinitionsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opListCalculatedAttributesForProfile = "ListCalculatedAttributesForProfile"
+
+// ListCalculatedAttributesForProfileRequest generates a "aws/request.Request" representing the
+// client's request for the ListCalculatedAttributesForProfile operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListCalculatedAttributesForProfile for more information on using the ListCalculatedAttributesForProfile
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListCalculatedAttributesForProfileRequest method.
+//	req, resp := client.ListCalculatedAttributesForProfileRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile
+func (c *CustomerProfiles) ListCalculatedAttributesForProfileRequest(input *ListCalculatedAttributesForProfileInput) (req *request.Request, output *ListCalculatedAttributesForProfileOutput) {
+	op := &request.Operation{
+		Name:       opListCalculatedAttributesForProfile,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/profile/{ProfileId}/calculated-attributes",
+	}
+
+	if input == nil {
+		input = &ListCalculatedAttributesForProfileInput{}
+	}
+
+	output = &ListCalculatedAttributesForProfileOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListCalculatedAttributesForProfile API operation for Amazon Connect Customer Profiles.
+//
+// Retrieve a list of calculated attributes for a customer profile.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation ListCalculatedAttributesForProfile for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile
+func (c *CustomerProfiles) ListCalculatedAttributesForProfile(input *ListCalculatedAttributesForProfileInput) (*ListCalculatedAttributesForProfileOutput, error) {
+	req, out := c.ListCalculatedAttributesForProfileRequest(input)
+	return out, req.Send()
+}
+
+// ListCalculatedAttributesForProfileWithContext is the same as ListCalculatedAttributesForProfile with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListCalculatedAttributesForProfile for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) ListCalculatedAttributesForProfileWithContext(ctx aws.Context, input *ListCalculatedAttributesForProfileInput, opts ...request.Option) (*ListCalculatedAttributesForProfileOutput, error) {
+	req, out := c.ListCalculatedAttributesForProfileRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opListDomains = "ListDomains"
 
 // ListDomainsRequest generates a "aws/request.Request" representing the
@@ -1457,14 +3051,13 @@ const opListDomains = "ListDomains"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListDomainsRequest method.
+//	req, resp := client.ListDomainsRequest(params)
 //
-//    // Example sending a request using the ListDomainsRequest method.
-//    req, resp := client.ListDomainsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains
 func (c *CustomerProfiles) ListDomainsRequest(input *ListDomainsInput) (req *request.Request, output *ListDomainsOutput) {
@@ -1495,20 +3088,21 @@ func (c *CustomerProfiles) ListDomainsRequest(input *ListDomainsInput) (req *req
 // API operation ListDomains for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomains
 func (c *CustomerProfiles) ListDomains(input *ListDomainsInput) (*ListDomainsOutput, error) {
@@ -1532,6 +3126,246 @@ func (c *CustomerProfiles) ListDomainsWithContext(ctx aws.Context, input *ListDo
 	return out, req.Send()
 }
 
+const opListEventStreams = "ListEventStreams"
+
+// ListEventStreamsRequest generates a "aws/request.Request" representing the
+// client's request for the ListEventStreams operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListEventStreams for more information on using the ListEventStreams
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListEventStreamsRequest method.
+//	req, resp := client.ListEventStreamsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams
+func (c *CustomerProfiles) ListEventStreamsRequest(input *ListEventStreamsInput) (req *request.Request, output *ListEventStreamsOutput) {
+	op := &request.Operation{
+		Name:       opListEventStreams,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/event-streams",
+		Paginator: &request.Paginator{
+			InputTokens:     []string{"NextToken"},
+			OutputTokens:    []string{"NextToken"},
+			LimitToken:      "MaxResults",
+			TruncationToken: "",
+		},
+	}
+
+	if input == nil {
+		input = &ListEventStreamsInput{}
+	}
+
+	output = &ListEventStreamsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListEventStreams API operation for Amazon Connect Customer Profiles.
+//
+// Returns a list of all the event streams in a specific domain.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation ListEventStreams for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams
+func (c *CustomerProfiles) ListEventStreams(input *ListEventStreamsInput) (*ListEventStreamsOutput, error) {
+	req, out := c.ListEventStreamsRequest(input)
+	return out, req.Send()
+}
+
+// ListEventStreamsWithContext is the same as ListEventStreams with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListEventStreams for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) ListEventStreamsWithContext(ctx aws.Context, input *ListEventStreamsInput, opts ...request.Option) (*ListEventStreamsOutput, error) {
+	req, out := c.ListEventStreamsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+// ListEventStreamsPages iterates over the pages of a ListEventStreams operation,
+// calling the "fn" function with the response data for each page. To stop
+// iterating, return false from the fn function.
+//
+// See ListEventStreams method for more information on how to use this operation.
+//
+// Note: This operation can generate multiple requests to a service.
+//
+//	// Example iterating over at most 3 pages of a ListEventStreams operation.
+//	pageNum := 0
+//	err := client.ListEventStreamsPages(params,
+//	    func(page *customerprofiles.ListEventStreamsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
+func (c *CustomerProfiles) ListEventStreamsPages(input *ListEventStreamsInput, fn func(*ListEventStreamsOutput, bool) bool) error {
+	return c.ListEventStreamsPagesWithContext(aws.BackgroundContext(), input, fn)
+}
+
+// ListEventStreamsPagesWithContext same as ListEventStreamsPages except
+// it takes a Context and allows setting request options on the pages.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) ListEventStreamsPagesWithContext(ctx aws.Context, input *ListEventStreamsInput, fn func(*ListEventStreamsOutput, bool) bool, opts ...request.Option) error {
+	p := request.Pagination{
+		NewRequest: func() (*request.Request, error) {
+			var inCpy *ListEventStreamsInput
+			if input != nil {
+				tmp := *input
+				inCpy = &tmp
+			}
+			req, _ := c.ListEventStreamsRequest(inCpy)
+			req.SetContext(ctx)
+			req.ApplyOptions(opts...)
+			return req, nil
+		},
+	}
+
+	for p.Next() {
+		if !fn(p.Page().(*ListEventStreamsOutput), !p.HasNextPage()) {
+			break
+		}
+	}
+
+	return p.Err()
+}
+
+const opListIdentityResolutionJobs = "ListIdentityResolutionJobs"
+
+// ListIdentityResolutionJobsRequest generates a "aws/request.Request" representing the
+// client's request for the ListIdentityResolutionJobs operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListIdentityResolutionJobs for more information on using the ListIdentityResolutionJobs
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListIdentityResolutionJobsRequest method.
+//	req, resp := client.ListIdentityResolutionJobsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs
+func (c *CustomerProfiles) ListIdentityResolutionJobsRequest(input *ListIdentityResolutionJobsInput) (req *request.Request, output *ListIdentityResolutionJobsOutput) {
+	op := &request.Operation{
+		Name:       opListIdentityResolutionJobs,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/identity-resolution-jobs",
+	}
+
+	if input == nil {
+		input = &ListIdentityResolutionJobsInput{}
+	}
+
+	output = &ListIdentityResolutionJobsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListIdentityResolutionJobs API operation for Amazon Connect Customer Profiles.
+//
+// Lists all of the Identity Resolution Jobs in your domain. The response sorts
+// the list by JobStartTime.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation ListIdentityResolutionJobs for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIdentityResolutionJobs
+func (c *CustomerProfiles) ListIdentityResolutionJobs(input *ListIdentityResolutionJobsInput) (*ListIdentityResolutionJobsOutput, error) {
+	req, out := c.ListIdentityResolutionJobsRequest(input)
+	return out, req.Send()
+}
+
+// ListIdentityResolutionJobsWithContext is the same as ListIdentityResolutionJobs with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListIdentityResolutionJobs for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) ListIdentityResolutionJobsWithContext(ctx aws.Context, input *ListIdentityResolutionJobsInput, opts ...request.Option) (*ListIdentityResolutionJobsOutput, error) {
+	req, out := c.ListIdentityResolutionJobsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opListIntegrations = "ListIntegrations"
 
 // ListIntegrationsRequest generates a "aws/request.Request" representing the
@@ -1548,14 +3382,13 @@ const opListIntegrations = "ListIntegrations"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListIntegrationsRequest method.
+//	req, resp := client.ListIntegrationsRequest(params)
 //
-//    // Example sending a request using the ListIntegrationsRequest method.
-//    req, resp := client.ListIntegrationsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIntegrations
 func (c *CustomerProfiles) ListIntegrationsRequest(input *ListIntegrationsInput) (req *request.Request, output *ListIntegrationsOutput) {
@@ -1586,20 +3419,21 @@ func (c *CustomerProfiles) ListIntegrationsRequest(input *ListIntegrationsInput)
 // API operation ListIntegrations for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListIntegrations
 func (c *CustomerProfiles) ListIntegrations(input *ListIntegrationsInput) (*ListIntegrationsOutput, error) {
@@ -1639,14 +3473,13 @@ const opListProfileObjectTypeTemplates = "ListProfileObjectTypeTemplates"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListProfileObjectTypeTemplatesRequest method.
+//	req, resp := client.ListProfileObjectTypeTemplatesRequest(params)
 //
-//    // Example sending a request using the ListProfileObjectTypeTemplatesRequest method.
-//    req, resp := client.ListProfileObjectTypeTemplatesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplates
 func (c *CustomerProfiles) ListProfileObjectTypeTemplatesRequest(input *ListProfileObjectTypeTemplatesInput) (req *request.Request, output *ListProfileObjectTypeTemplatesOutput) {
@@ -1677,20 +3510,21 @@ func (c *CustomerProfiles) ListProfileObjectTypeTemplatesRequest(input *ListProf
 // API operation ListProfileObjectTypeTemplates for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypeTemplates
 func (c *CustomerProfiles) ListProfileObjectTypeTemplates(input *ListProfileObjectTypeTemplatesInput) (*ListProfileObjectTypeTemplatesOutput, error) {
@@ -1730,14 +3564,13 @@ const opListProfileObjectTypes = "ListProfileObjectTypes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListProfileObjectTypesRequest method.
+//	req, resp := client.ListProfileObjectTypesRequest(params)
 //
-//    // Example sending a request using the ListProfileObjectTypesRequest method.
-//    req, resp := client.ListProfileObjectTypesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypes
 func (c *CustomerProfiles) ListProfileObjectTypesRequest(input *ListProfileObjectTypesInput) (req *request.Request, output *ListProfileObjectTypesOutput) {
@@ -1768,20 +3601,21 @@ func (c *CustomerProfiles) ListProfileObjectTypesRequest(input *ListProfileObjec
 // API operation ListProfileObjectTypes for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectTypes
 func (c *CustomerProfiles) ListProfileObjectTypes(input *ListProfileObjectTypesInput) (*ListProfileObjectTypesOutput, error) {
@@ -1821,14 +3655,13 @@ const opListProfileObjects = "ListProfileObjects"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListProfileObjectsRequest method.
+//	req, resp := client.ListProfileObjectsRequest(params)
 //
-//    // Example sending a request using the ListProfileObjectsRequest method.
-//    req, resp := client.ListProfileObjectsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjects
 func (c *CustomerProfiles) ListProfileObjectsRequest(input *ListProfileObjectsInput) (req *request.Request, output *ListProfileObjectsOutput) {
@@ -1859,20 +3692,21 @@ func (c *CustomerProfiles) ListProfileObjectsRequest(input *ListProfileObjectsIn
 // API operation ListProfileObjects for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjects
 func (c *CustomerProfiles) ListProfileObjects(input *ListProfileObjectsInput) (*ListProfileObjectsOutput, error) {
@@ -1896,6 +3730,97 @@ func (c *CustomerProfiles) ListProfileObjectsWithContext(ctx aws.Context, input 
 	return out, req.Send()
 }
 
+const opListRuleBasedMatches = "ListRuleBasedMatches"
+
+// ListRuleBasedMatchesRequest generates a "aws/request.Request" representing the
+// client's request for the ListRuleBasedMatches operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListRuleBasedMatches for more information on using the ListRuleBasedMatches
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListRuleBasedMatchesRequest method.
+//	req, resp := client.ListRuleBasedMatchesRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches
+func (c *CustomerProfiles) ListRuleBasedMatchesRequest(input *ListRuleBasedMatchesInput) (req *request.Request, output *ListRuleBasedMatchesOutput) {
+	op := &request.Operation{
+		Name:       opListRuleBasedMatches,
+		HTTPMethod: "GET",
+		HTTPPath:   "/domains/{DomainName}/profiles/ruleBasedMatches",
+	}
+
+	if input == nil {
+		input = &ListRuleBasedMatchesInput{}
+	}
+
+	output = &ListRuleBasedMatchesOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListRuleBasedMatches API operation for Amazon Connect Customer Profiles.
+//
+// Returns a set of MatchIds that belong to the given domain.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation ListRuleBasedMatches for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches
+func (c *CustomerProfiles) ListRuleBasedMatches(input *ListRuleBasedMatchesInput) (*ListRuleBasedMatchesOutput, error) {
+	req, out := c.ListRuleBasedMatchesRequest(input)
+	return out, req.Send()
+}
+
+// ListRuleBasedMatchesWithContext is the same as ListRuleBasedMatches with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListRuleBasedMatches for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) ListRuleBasedMatchesWithContext(ctx aws.Context, input *ListRuleBasedMatchesInput, opts ...request.Option) (*ListRuleBasedMatchesOutput, error) {
+	req, out := c.ListRuleBasedMatchesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opListTagsForResource = "ListTagsForResource"
 
 // ListTagsForResourceRequest generates a "aws/request.Request" representing the
@@ -1912,14 +3837,13 @@ const opListTagsForResource = "ListTagsForResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagsForResourceRequest method.
+//	req, resp := client.ListTagsForResourceRequest(params)
 //
-//    // Example sending a request using the ListTagsForResourceRequest method.
-//    req, resp := client.ListTagsForResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListTagsForResource
 func (c *CustomerProfiles) ListTagsForResourceRequest(input *ListTagsForResourceInput) (req *request.Request, output *ListTagsForResourceOutput) {
@@ -1952,14 +3876,15 @@ func (c *CustomerProfiles) ListTagsForResourceRequest(input *ListTagsForResource
 // API operation ListTagsForResource for usage and error information.
 //
 // Returned Error Types:
-//   * InternalServerException
-//   An internal service error occurred.
 //
-//   * BadRequestException
-//   The input you provided is invalid.
+//   - InternalServerException
+//     An internal service error occurred.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListTagsForResource
 func (c *CustomerProfiles) ListTagsForResource(input *ListTagsForResourceInput) (*ListTagsForResourceOutput, error) {
@@ -1983,6 +3908,97 @@ func (c *CustomerProfiles) ListTagsForResourceWithContext(ctx aws.Context, input
 	return out, req.Send()
 }
 
+const opListWorkflows = "ListWorkflows"
+
+// ListWorkflowsRequest generates a "aws/request.Request" representing the
+// client's request for the ListWorkflows operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListWorkflows for more information on using the ListWorkflows
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListWorkflowsRequest method.
+//	req, resp := client.ListWorkflowsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflows
+func (c *CustomerProfiles) ListWorkflowsRequest(input *ListWorkflowsInput) (req *request.Request, output *ListWorkflowsOutput) {
+	op := &request.Operation{
+		Name:       opListWorkflows,
+		HTTPMethod: "POST",
+		HTTPPath:   "/domains/{DomainName}/workflows",
+	}
+
+	if input == nil {
+		input = &ListWorkflowsInput{}
+	}
+
+	output = &ListWorkflowsOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// ListWorkflows API operation for Amazon Connect Customer Profiles.
+//
+// Query to list all workflows.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation ListWorkflows for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflows
+func (c *CustomerProfiles) ListWorkflows(input *ListWorkflowsInput) (*ListWorkflowsOutput, error) {
+	req, out := c.ListWorkflowsRequest(input)
+	return out, req.Send()
+}
+
+// ListWorkflowsWithContext is the same as ListWorkflows with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListWorkflows for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) ListWorkflowsWithContext(ctx aws.Context, input *ListWorkflowsInput, opts ...request.Option) (*ListWorkflowsOutput, error) {
+	req, out := c.ListWorkflowsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opMergeProfiles = "MergeProfiles"
 
 // MergeProfilesRequest generates a "aws/request.Request" representing the
@@ -1999,14 +4015,13 @@ const opMergeProfiles = "MergeProfiles"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the MergeProfilesRequest method.
+//	req, resp := client.MergeProfilesRequest(params)
 //
-//    // Example sending a request using the MergeProfilesRequest method.
-//    req, resp := client.MergeProfilesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles
 func (c *CustomerProfiles) MergeProfilesRequest(input *MergeProfilesInput) (req *request.Request, output *MergeProfilesOutput) {
@@ -2026,8 +4041,6 @@ func (c *CustomerProfiles) MergeProfilesRequest(input *MergeProfilesInput) (req 
 }
 
 // MergeProfiles API operation for Amazon Connect Customer Profiles.
-//
-// This API is in preview release for Amazon Connect and subject to change.
 //
 // Runs an AWS Lambda job that does the following:
 //
@@ -2066,17 +4079,18 @@ func (c *CustomerProfiles) MergeProfilesRequest(input *MergeProfilesInput) (req 
 // API operation MergeProfiles for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles
 func (c *CustomerProfiles) MergeProfiles(input *MergeProfilesInput) (*MergeProfilesOutput, error) {
@@ -2116,14 +4130,13 @@ const opPutIntegration = "PutIntegration"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the PutIntegrationRequest method.
+//	req, resp := client.PutIntegrationRequest(params)
 //
-//    // Example sending a request using the PutIntegrationRequest method.
-//    req, resp := client.PutIntegrationRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutIntegration
 func (c *CustomerProfiles) PutIntegrationRequest(input *PutIntegrationInput) (req *request.Request, output *PutIntegrationOutput) {
@@ -2149,6 +4162,9 @@ func (c *CustomerProfiles) PutIntegrationRequest(input *PutIntegrationInput) (re
 //
 // An integration can belong to only one domain.
 //
+// To add or remove tags on an existing Integration, see TagResource (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html)/
+// UntagResource (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html).
+//
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
@@ -2157,20 +4173,21 @@ func (c *CustomerProfiles) PutIntegrationRequest(input *PutIntegrationInput) (re
 // API operation PutIntegration for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutIntegration
 func (c *CustomerProfiles) PutIntegration(input *PutIntegrationInput) (*PutIntegrationOutput, error) {
@@ -2210,14 +4227,13 @@ const opPutProfileObject = "PutProfileObject"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the PutProfileObjectRequest method.
+//	req, resp := client.PutProfileObjectRequest(params)
 //
-//    // Example sending a request using the PutProfileObjectRequest method.
-//    req, resp := client.PutProfileObjectRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObject
 func (c *CustomerProfiles) PutProfileObjectRequest(input *PutProfileObjectInput) (req *request.Request, output *PutProfileObjectOutput) {
@@ -2240,10 +4256,10 @@ func (c *CustomerProfiles) PutProfileObjectRequest(input *PutProfileObjectInput)
 //
 // Adds additional objects to customer profiles of a given ObjectType.
 //
-// When adding a specific profile object, like a Contact Trace Record (CTR),
-// an inferred profile can get created if it is not mapped to an existing profile.
-// The resulting profile will only have a phone number populated in the standard
-// ProfileObject. Any additional CTRs with the same phone number will be mapped
+// When adding a specific profile object, like a Contact Record, an inferred
+// profile can get created if it is not mapped to an existing profile. The resulting
+// profile will only have a phone number populated in the standard ProfileObject.
+// Any additional Contact Records with the same phone number will be mapped
 // to the same inferred profile.
 //
 // When a ProfileObject is created and if a ProfileObjectType already exists
@@ -2260,20 +4276,21 @@ func (c *CustomerProfiles) PutProfileObjectRequest(input *PutProfileObjectInput)
 // API operation PutProfileObject for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObject
 func (c *CustomerProfiles) PutProfileObject(input *PutProfileObjectInput) (*PutProfileObjectOutput, error) {
@@ -2313,14 +4330,13 @@ const opPutProfileObjectType = "PutProfileObjectType"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the PutProfileObjectTypeRequest method.
+//	req, resp := client.PutProfileObjectTypeRequest(params)
 //
-//    // Example sending a request using the PutProfileObjectTypeRequest method.
-//    req, resp := client.PutProfileObjectTypeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType
 func (c *CustomerProfiles) PutProfileObjectTypeRequest(input *PutProfileObjectTypeInput) (req *request.Request, output *PutProfileObjectTypeOutput) {
@@ -2343,6 +4359,9 @@ func (c *CustomerProfiles) PutProfileObjectTypeRequest(input *PutProfileObjectTy
 //
 // Defines a ProfileObjectType.
 //
+// To add or remove tags on an existing ObjectType, see TagResource (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html)/UntagResource
+// (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html).
+//
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
@@ -2351,20 +4370,21 @@ func (c *CustomerProfiles) PutProfileObjectTypeRequest(input *PutProfileObjectTy
 // API operation PutProfileObjectType for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType
 func (c *CustomerProfiles) PutProfileObjectType(input *PutProfileObjectTypeInput) (*PutProfileObjectTypeOutput, error) {
@@ -2404,14 +4424,13 @@ const opSearchProfiles = "SearchProfiles"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SearchProfilesRequest method.
+//	req, resp := client.SearchProfilesRequest(params)
 //
-//    // Example sending a request using the SearchProfilesRequest method.
-//    req, resp := client.SearchProfilesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchProfiles
 func (c *CustomerProfiles) SearchProfilesRequest(input *SearchProfilesInput) (req *request.Request, output *SearchProfilesOutput) {
@@ -2432,8 +4451,13 @@ func (c *CustomerProfiles) SearchProfilesRequest(input *SearchProfilesInput) (re
 
 // SearchProfiles API operation for Amazon Connect Customer Profiles.
 //
-// Searches for profiles within a specific domain name using name, phone number,
-// email address, account number, or a custom defined index.
+// Searches for profiles within a specific domain using one or more predefined
+// search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined
+// search keys. A search key is a data type pair that consists of a KeyName
+// and Values list.
+//
+// This operation supports searching for profiles with a minimum of 1 key-value(s)
+// pair and up to 5 key-value(s) pairs using either AND or OR logic.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -2443,20 +4467,21 @@ func (c *CustomerProfiles) SearchProfilesRequest(input *SearchProfilesInput) (re
 // API operation SearchProfiles for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchProfiles
 func (c *CustomerProfiles) SearchProfiles(input *SearchProfilesInput) (*SearchProfilesOutput, error) {
@@ -2496,14 +4521,13 @@ const opTagResource = "TagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the TagResourceRequest method.
+//	req, resp := client.TagResourceRequest(params)
 //
-//    // Example sending a request using the TagResourceRequest method.
-//    req, resp := client.TagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TagResource
 func (c *CustomerProfiles) TagResourceRequest(input *TagResourceInput) (req *request.Request, output *TagResourceOutput) {
@@ -2551,14 +4575,15 @@ func (c *CustomerProfiles) TagResourceRequest(input *TagResourceInput) (req *req
 // API operation TagResource for usage and error information.
 //
 // Returned Error Types:
-//   * InternalServerException
-//   An internal service error occurred.
 //
-//   * BadRequestException
-//   The input you provided is invalid.
+//   - InternalServerException
+//     An internal service error occurred.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TagResource
 func (c *CustomerProfiles) TagResource(input *TagResourceInput) (*TagResourceOutput, error) {
@@ -2598,14 +4623,13 @@ const opUntagResource = "UntagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UntagResourceRequest method.
+//	req, resp := client.UntagResourceRequest(params)
 //
-//    // Example sending a request using the UntagResourceRequest method.
-//    req, resp := client.UntagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UntagResource
 func (c *CustomerProfiles) UntagResourceRequest(input *UntagResourceInput) (req *request.Request, output *UntagResourceOutput) {
@@ -2639,14 +4663,15 @@ func (c *CustomerProfiles) UntagResourceRequest(input *UntagResourceInput) (req 
 // API operation UntagResource for usage and error information.
 //
 // Returned Error Types:
-//   * InternalServerException
-//   An internal service error occurred.
 //
-//   * BadRequestException
-//   The input you provided is invalid.
+//   - InternalServerException
+//     An internal service error occurred.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UntagResource
 func (c *CustomerProfiles) UntagResource(input *UntagResourceInput) (*UntagResourceOutput, error) {
@@ -2670,6 +4695,99 @@ func (c *CustomerProfiles) UntagResourceWithContext(ctx aws.Context, input *Unta
 	return out, req.Send()
 }
 
+const opUpdateCalculatedAttributeDefinition = "UpdateCalculatedAttributeDefinition"
+
+// UpdateCalculatedAttributeDefinitionRequest generates a "aws/request.Request" representing the
+// client's request for the UpdateCalculatedAttributeDefinition operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UpdateCalculatedAttributeDefinition for more information on using the UpdateCalculatedAttributeDefinition
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the UpdateCalculatedAttributeDefinitionRequest method.
+//	req, resp := client.UpdateCalculatedAttributeDefinitionRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition
+func (c *CustomerProfiles) UpdateCalculatedAttributeDefinitionRequest(input *UpdateCalculatedAttributeDefinitionInput) (req *request.Request, output *UpdateCalculatedAttributeDefinitionOutput) {
+	op := &request.Operation{
+		Name:       opUpdateCalculatedAttributeDefinition,
+		HTTPMethod: "PUT",
+		HTTPPath:   "/domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}",
+	}
+
+	if input == nil {
+		input = &UpdateCalculatedAttributeDefinitionInput{}
+	}
+
+	output = &UpdateCalculatedAttributeDefinitionOutput{}
+	req = c.newRequest(op, input, output)
+	return
+}
+
+// UpdateCalculatedAttributeDefinition API operation for Amazon Connect Customer Profiles.
+//
+// Updates an existing calculated attribute definition. When updating the Conditions,
+// note that increasing the date range of a calculated attribute will not trigger
+// inclusion of historical data greater than the current date range.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the AWS API reference guide for Amazon Connect Customer Profiles's
+// API operation UpdateCalculatedAttributeDefinition for usage and error information.
+//
+// Returned Error Types:
+//
+//   - BadRequestException
+//     The input you provided is invalid.
+//
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
+//
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
+//
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition
+func (c *CustomerProfiles) UpdateCalculatedAttributeDefinition(input *UpdateCalculatedAttributeDefinitionInput) (*UpdateCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.UpdateCalculatedAttributeDefinitionRequest(input)
+	return out, req.Send()
+}
+
+// UpdateCalculatedAttributeDefinitionWithContext is the same as UpdateCalculatedAttributeDefinition with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UpdateCalculatedAttributeDefinition for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *CustomerProfiles) UpdateCalculatedAttributeDefinitionWithContext(ctx aws.Context, input *UpdateCalculatedAttributeDefinitionInput, opts ...request.Option) (*UpdateCalculatedAttributeDefinitionOutput, error) {
+	req, out := c.UpdateCalculatedAttributeDefinitionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opUpdateDomain = "UpdateDomain"
 
 // UpdateDomainRequest generates a "aws/request.Request" representing the
@@ -2686,14 +4804,13 @@ const opUpdateDomain = "UpdateDomain"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateDomainRequest method.
+//	req, resp := client.UpdateDomainRequest(params)
 //
-//    // Example sending a request using the UpdateDomainRequest method.
-//    req, resp := client.UpdateDomainRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain
 func (c *CustomerProfiles) UpdateDomainRequest(input *UpdateDomainInput) (req *request.Request, output *UpdateDomainOutput) {
@@ -2723,6 +4840,13 @@ func (c *CustomerProfiles) UpdateDomainRequest(input *UpdateDomainInput) (req *r
 // to enable identity resolution (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html):
 // set Matching to true.
 //
+// To prevent cross-service impersonation when you call this API, see Cross-service
+// confused deputy prevention (https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html)
+// for sample policies that you should apply.
+//
+// To add or remove tags on an existing Domain, see TagResource (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html)/UntagResource
+// (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html).
+//
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
@@ -2731,20 +4855,21 @@ func (c *CustomerProfiles) UpdateDomainRequest(input *UpdateDomainInput) (req *r
 // API operation UpdateDomain for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain
 func (c *CustomerProfiles) UpdateDomain(input *UpdateDomainInput) (*UpdateDomainOutput, error) {
@@ -2784,14 +4909,13 @@ const opUpdateProfile = "UpdateProfile"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateProfileRequest method.
+//	req, resp := client.UpdateProfileRequest(params)
 //
-//    // Example sending a request using the UpdateProfileRequest method.
-//    req, resp := client.UpdateProfileRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateProfile
 func (c *CustomerProfiles) UpdateProfileRequest(input *UpdateProfileInput) (req *request.Request, output *UpdateProfileOutput) {
@@ -2827,20 +4951,21 @@ func (c *CustomerProfiles) UpdateProfileRequest(input *UpdateProfileInput) (req 
 // API operation UpdateProfile for usage and error information.
 //
 // Returned Error Types:
-//   * BadRequestException
-//   The input you provided is invalid.
 //
-//   * AccessDeniedException
-//   You do not have sufficient access to perform this action.
+//   - BadRequestException
+//     The input you provided is invalid.
 //
-//   * ResourceNotFoundException
-//   The requested resource does not exist, or access was denied.
+//   - AccessDeniedException
+//     You do not have sufficient access to perform this action.
 //
-//   * ThrottlingException
-//   You exceeded the maximum number of requests.
+//   - ResourceNotFoundException
+//     The requested resource does not exist, or access was denied.
 //
-//   * InternalServerException
-//   An internal service error occurred.
+//   - ThrottlingException
+//     You exceeded the maximum number of requests.
+//
+//   - InternalServerException
+//     An internal service error occurred.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateProfile
 func (c *CustomerProfiles) UpdateProfile(input *UpdateProfileInput) (*UpdateProfileOutput, error) {
@@ -2936,7 +5061,12 @@ type AddProfileKeyInput struct {
 	// DomainName is a required field
 	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
 
-	// A searchable identifier of a customer profile.
+	// A searchable identifier of a customer profile. The predefined keys you can
+	// use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+	// _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId,
+	// _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId,
+	// _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId,
+	// _shopifyOrderId.
 	//
 	// KeyName is a required field
 	KeyName *string `min:"1" type:"string" required:"true"`
@@ -3062,10 +5192,78 @@ func (s *AddProfileKeyOutput) SetValues(v []*string) *AddProfileKeyOutput {
 	return s
 }
 
+// A data type pair that consists of a KeyName and Values list that is used
+// in conjunction with the KeyName (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-KeyName)
+// and Values (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-Values)
+// parameters to search for profiles using the SearchProfiles (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html)
+// API.
+type AdditionalSearchKey struct {
+	_ struct{} `type:"structure"`
+
+	// A searchable identifier of a customer profile.
+	//
+	// KeyName is a required field
+	KeyName *string `min:"1" type:"string" required:"true"`
+
+	// A list of key values.
+	//
+	// Values is a required field
+	Values []*string `type:"list" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AdditionalSearchKey) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AdditionalSearchKey) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AdditionalSearchKey) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AdditionalSearchKey"}
+	if s.KeyName == nil {
+		invalidParams.Add(request.NewErrParamRequired("KeyName"))
+	}
+	if s.KeyName != nil && len(*s.KeyName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("KeyName", 1))
+	}
+	if s.Values == nil {
+		invalidParams.Add(request.NewErrParamRequired("Values"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *AdditionalSearchKey) SetKeyName(v string) *AdditionalSearchKey {
+	s.KeyName = &v
+	return s
+}
+
+// SetValues sets the Values field's value.
+func (s *AdditionalSearchKey) SetValues(v []*string) *AdditionalSearchKey {
+	s.Values = v
+	return s
+}
+
 // A generic address associated with the customer that is not mailing, shipping,
 // or billing.
 type Address struct {
-	_ struct{} `type:"structure"`
+	_ struct{} `type:"structure" sensitive:"true"`
 
 	// The first line of a customer address.
 	Address1 *string `min:"1" type:"string"`
@@ -3216,6 +5414,652 @@ func (s *Address) SetState(v string) *Address {
 	return s
 }
 
+// Details for workflow of type APPFLOW_INTEGRATION.
+type AppflowIntegration struct {
+	_ struct{} `type:"structure"`
+
+	// Batches in workflow of type APPFLOW_INTEGRATION.
+	Batches []*Batch `type:"list"`
+
+	// The configurations that control how Customer Profiles retrieves data from
+	// the source, Amazon AppFlow. Customer Profiles uses this information to create
+	// an AppFlow flow on behalf of customers.
+	//
+	// FlowDefinition is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by AppflowIntegration's
+	// String and GoString methods.
+	//
+	// FlowDefinition is a required field
+	FlowDefinition *FlowDefinition `type:"structure" required:"true" sensitive:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegration) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegration) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AppflowIntegration) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AppflowIntegration"}
+	if s.FlowDefinition == nil {
+		invalidParams.Add(request.NewErrParamRequired("FlowDefinition"))
+	}
+	if s.Batches != nil {
+		for i, v := range s.Batches {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "Batches", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+	if s.FlowDefinition != nil {
+		if err := s.FlowDefinition.Validate(); err != nil {
+			invalidParams.AddNested("FlowDefinition", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetBatches sets the Batches field's value.
+func (s *AppflowIntegration) SetBatches(v []*Batch) *AppflowIntegration {
+	s.Batches = v
+	return s
+}
+
+// SetFlowDefinition sets the FlowDefinition field's value.
+func (s *AppflowIntegration) SetFlowDefinition(v *FlowDefinition) *AppflowIntegration {
+	s.FlowDefinition = v
+	return s
+}
+
+// Structure holding all APPFLOW_INTEGRATION specific workflow attributes.
+type AppflowIntegrationWorkflowAttributes struct {
+	_ struct{} `type:"structure"`
+
+	// The name of the AppFlow connector profile used for ingestion.
+	//
+	// ConnectorProfileName is a required field
+	ConnectorProfileName *string `type:"string" required:"true"`
+
+	// The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes
+	// this role to create resources on your behalf as part of workflow execution.
+	RoleArn *string `min:"1" type:"string"`
+
+	// Specifies the source connector type, such as Salesforce, ServiceNow, and
+	// Marketo. Indicates source of ingestion.
+	//
+	// SourceConnectorType is a required field
+	SourceConnectorType *string `type:"string" required:"true" enum:"SourceConnectorType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegrationWorkflowAttributes) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegrationWorkflowAttributes) GoString() string {
+	return s.String()
+}
+
+// SetConnectorProfileName sets the ConnectorProfileName field's value.
+func (s *AppflowIntegrationWorkflowAttributes) SetConnectorProfileName(v string) *AppflowIntegrationWorkflowAttributes {
+	s.ConnectorProfileName = &v
+	return s
+}
+
+// SetRoleArn sets the RoleArn field's value.
+func (s *AppflowIntegrationWorkflowAttributes) SetRoleArn(v string) *AppflowIntegrationWorkflowAttributes {
+	s.RoleArn = &v
+	return s
+}
+
+// SetSourceConnectorType sets the SourceConnectorType field's value.
+func (s *AppflowIntegrationWorkflowAttributes) SetSourceConnectorType(v string) *AppflowIntegrationWorkflowAttributes {
+	s.SourceConnectorType = &v
+	return s
+}
+
+// Workflow specific execution metrics for APPFLOW_INTEGRATION workflow.
+type AppflowIntegrationWorkflowMetrics struct {
+	_ struct{} `type:"structure"`
+
+	// Number of records processed in APPFLOW_INTEGRATION workflow.
+	//
+	// RecordsProcessed is a required field
+	RecordsProcessed *int64 `type:"long" required:"true"`
+
+	// Total steps completed in APPFLOW_INTEGRATION workflow.
+	//
+	// StepsCompleted is a required field
+	StepsCompleted *int64 `type:"long" required:"true"`
+
+	// Total steps in APPFLOW_INTEGRATION workflow.
+	//
+	// TotalSteps is a required field
+	TotalSteps *int64 `type:"long" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegrationWorkflowMetrics) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegrationWorkflowMetrics) GoString() string {
+	return s.String()
+}
+
+// SetRecordsProcessed sets the RecordsProcessed field's value.
+func (s *AppflowIntegrationWorkflowMetrics) SetRecordsProcessed(v int64) *AppflowIntegrationWorkflowMetrics {
+	s.RecordsProcessed = &v
+	return s
+}
+
+// SetStepsCompleted sets the StepsCompleted field's value.
+func (s *AppflowIntegrationWorkflowMetrics) SetStepsCompleted(v int64) *AppflowIntegrationWorkflowMetrics {
+	s.StepsCompleted = &v
+	return s
+}
+
+// SetTotalSteps sets the TotalSteps field's value.
+func (s *AppflowIntegrationWorkflowMetrics) SetTotalSteps(v int64) *AppflowIntegrationWorkflowMetrics {
+	s.TotalSteps = &v
+	return s
+}
+
+// Workflow step details for APPFLOW_INTEGRATION workflow.
+type AppflowIntegrationWorkflowStep struct {
+	_ struct{} `type:"structure"`
+
+	// End datetime of records pulled in batch during execution of workflow step
+	// for APPFLOW_INTEGRATION workflow.
+	//
+	// BatchRecordsEndTime is a required field
+	BatchRecordsEndTime *string `min:"1" type:"string" required:"true"`
+
+	// Start datetime of records pulled in batch during execution of workflow step
+	// for APPFLOW_INTEGRATION workflow.
+	//
+	// BatchRecordsStartTime is a required field
+	BatchRecordsStartTime *string `min:"1" type:"string" required:"true"`
+
+	// Creation timestamp of workflow step for APPFLOW_INTEGRATION workflow.
+	//
+	// CreatedAt is a required field
+	CreatedAt *time.Time `type:"timestamp" required:"true"`
+
+	// Message indicating execution of workflow step for APPFLOW_INTEGRATION workflow.
+	//
+	// ExecutionMessage is a required field
+	ExecutionMessage *string `min:"1" type:"string" required:"true"`
+
+	// Name of the flow created during execution of workflow step. APPFLOW_INTEGRATION
+	// workflow type creates an appflow flow during workflow step execution on the
+	// customers behalf.
+	//
+	// FlowName is a required field
+	FlowName *string `type:"string" required:"true"`
+
+	// Last updated timestamp for workflow step for APPFLOW_INTEGRATION workflow.
+	//
+	// LastUpdatedAt is a required field
+	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
+
+	// Total number of records processed during execution of workflow step for APPFLOW_INTEGRATION
+	// workflow.
+	//
+	// RecordsProcessed is a required field
+	RecordsProcessed *int64 `type:"long" required:"true"`
+
+	// Workflow step status for APPFLOW_INTEGRATION workflow.
+	//
+	// Status is a required field
+	Status *string `type:"string" required:"true" enum:"Status"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegrationWorkflowStep) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AppflowIntegrationWorkflowStep) GoString() string {
+	return s.String()
+}
+
+// SetBatchRecordsEndTime sets the BatchRecordsEndTime field's value.
+func (s *AppflowIntegrationWorkflowStep) SetBatchRecordsEndTime(v string) *AppflowIntegrationWorkflowStep {
+	s.BatchRecordsEndTime = &v
+	return s
+}
+
+// SetBatchRecordsStartTime sets the BatchRecordsStartTime field's value.
+func (s *AppflowIntegrationWorkflowStep) SetBatchRecordsStartTime(v string) *AppflowIntegrationWorkflowStep {
+	s.BatchRecordsStartTime = &v
+	return s
+}
+
+// SetCreatedAt sets the CreatedAt field's value.
+func (s *AppflowIntegrationWorkflowStep) SetCreatedAt(v time.Time) *AppflowIntegrationWorkflowStep {
+	s.CreatedAt = &v
+	return s
+}
+
+// SetExecutionMessage sets the ExecutionMessage field's value.
+func (s *AppflowIntegrationWorkflowStep) SetExecutionMessage(v string) *AppflowIntegrationWorkflowStep {
+	s.ExecutionMessage = &v
+	return s
+}
+
+// SetFlowName sets the FlowName field's value.
+func (s *AppflowIntegrationWorkflowStep) SetFlowName(v string) *AppflowIntegrationWorkflowStep {
+	s.FlowName = &v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *AppflowIntegrationWorkflowStep) SetLastUpdatedAt(v time.Time) *AppflowIntegrationWorkflowStep {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetRecordsProcessed sets the RecordsProcessed field's value.
+func (s *AppflowIntegrationWorkflowStep) SetRecordsProcessed(v int64) *AppflowIntegrationWorkflowStep {
+	s.RecordsProcessed = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *AppflowIntegrationWorkflowStep) SetStatus(v string) *AppflowIntegrationWorkflowStep {
+	s.Status = &v
+	return s
+}
+
+// Mathematical expression and a list of attribute items specified in that expression.
+type AttributeDetails struct {
+	_ struct{} `type:"structure" sensitive:"true"`
+
+	// A list of attribute items specified in the mathematical expression.
+	//
+	// Attributes is a required field
+	Attributes []*AttributeItem `min:"1" type:"list" required:"true"`
+
+	// Mathematical expression that is performed on attribute items provided in
+	// the attribute list. Each element in the expression should follow the structure
+	// of \"{ObjectTypeName.AttributeName}\".
+	//
+	// Expression is a required field
+	Expression *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AttributeDetails) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AttributeDetails) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AttributeDetails) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AttributeDetails"}
+	if s.Attributes == nil {
+		invalidParams.Add(request.NewErrParamRequired("Attributes"))
+	}
+	if s.Attributes != nil && len(s.Attributes) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Attributes", 1))
+	}
+	if s.Expression == nil {
+		invalidParams.Add(request.NewErrParamRequired("Expression"))
+	}
+	if s.Expression != nil && len(*s.Expression) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Expression", 1))
+	}
+	if s.Attributes != nil {
+		for i, v := range s.Attributes {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "Attributes", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttributes sets the Attributes field's value.
+func (s *AttributeDetails) SetAttributes(v []*AttributeItem) *AttributeDetails {
+	s.Attributes = v
+	return s
+}
+
+// SetExpression sets the Expression field's value.
+func (s *AttributeDetails) SetExpression(v string) *AttributeDetails {
+	s.Expression = &v
+	return s
+}
+
+// The details of a single attribute item specified in the mathematical expression.
+type AttributeItem struct {
+	_ struct{} `type:"structure"`
+
+	// The name of an attribute defined in a profile object type.
+	//
+	// Name is a required field
+	Name *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AttributeItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AttributeItem) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AttributeItem) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AttributeItem"}
+	if s.Name == nil {
+		invalidParams.Add(request.NewErrParamRequired("Name"))
+	}
+	if s.Name != nil && len(*s.Name) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Name", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetName sets the Name field's value.
+func (s *AttributeItem) SetName(v string) *AttributeItem {
+	s.Name = &v
+	return s
+}
+
+// Configuration information about the AttributeTypesSelector where the rule-based
+// identity resolution uses to match profiles. You can choose how profiles are
+// compared across attribute types and which attribute to use for matching from
+// each type. There are three attribute types you can configure:
+//
+//   - Email type You can choose from Email, BusinessEmail, and PersonalEmail
+//
+//   - Phone number type You can choose from Phone, HomePhone, and MobilePhone
+//
+//   - Address type You can choose from Address, BusinessAddress, MaillingAddress,
+//     and ShippingAddress
+//
+// You can either choose ONE_TO_ONE or MANY_TO_MANY as the AttributeMatchingModel.
+// When choosing MANY_TO_MANY, the system can match attribute across the sub-types
+// of an attribute type. For example, if the value of the Email field of Profile
+// A and the value of BusinessEmail field of Profile B matches, the two profiles
+// are matched on the Email type. When choosing ONE_TO_ONE the system can only
+// match if the sub-types are exact matches. For example, only when the value
+// of the Email field of Profile A and the value of the Email field of Profile
+// B matches, the two profiles are matched on the Email type.
+type AttributeTypesSelector struct {
+	_ struct{} `type:"structure"`
+
+	// The Address type. You can choose from Address, BusinessAddress, MaillingAddress,
+	// and ShippingAddress.
+	//
+	// You only can use the Address type in the MatchingRule. For example, if you
+	// want to match profile based on BusinessAddress.City or MaillingAddress.City,
+	// you need to choose the BusinessAddress and the MaillingAddress to represent
+	// the Address type and specify the Address.City on the matching rule.
+	Address []*string `min:"1" type:"list"`
+
+	// Configures the AttributeMatchingModel, you can either choose ONE_TO_ONE or
+	// MANY_TO_MANY.
+	//
+	// AttributeMatchingModel is a required field
+	AttributeMatchingModel *string `type:"string" required:"true" enum:"AttributeMatchingModel"`
+
+	// The Email type. You can choose from EmailAddress, BusinessEmailAddress and
+	// PersonalEmailAddress.
+	//
+	// You only can use the EmailAddress type in the MatchingRule. For example,
+	// if you want to match profile based on PersonalEmailAddress or BusinessEmailAddress,
+	// you need to choose the PersonalEmailAddress and the BusinessEmailAddress
+	// to represent the EmailAddress type and only specify the EmailAddress on the
+	// matching rule.
+	EmailAddress []*string `min:"1" type:"list"`
+
+	// The PhoneNumber type. You can choose from PhoneNumber, HomePhoneNumber, and
+	// MobilePhoneNumber.
+	//
+	// You only can use the PhoneNumber type in the MatchingRule. For example, if
+	// you want to match a profile based on Phone or HomePhone, you need to choose
+	// the Phone and the HomePhone to represent the PhoneNumber type and only specify
+	// the PhoneNumber on the matching rule.
+	PhoneNumber []*string `min:"1" type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AttributeTypesSelector) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AttributeTypesSelector) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AttributeTypesSelector) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AttributeTypesSelector"}
+	if s.Address != nil && len(s.Address) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Address", 1))
+	}
+	if s.AttributeMatchingModel == nil {
+		invalidParams.Add(request.NewErrParamRequired("AttributeMatchingModel"))
+	}
+	if s.EmailAddress != nil && len(s.EmailAddress) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("EmailAddress", 1))
+	}
+	if s.PhoneNumber != nil && len(s.PhoneNumber) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("PhoneNumber", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAddress sets the Address field's value.
+func (s *AttributeTypesSelector) SetAddress(v []*string) *AttributeTypesSelector {
+	s.Address = v
+	return s
+}
+
+// SetAttributeMatchingModel sets the AttributeMatchingModel field's value.
+func (s *AttributeTypesSelector) SetAttributeMatchingModel(v string) *AttributeTypesSelector {
+	s.AttributeMatchingModel = &v
+	return s
+}
+
+// SetEmailAddress sets the EmailAddress field's value.
+func (s *AttributeTypesSelector) SetEmailAddress(v []*string) *AttributeTypesSelector {
+	s.EmailAddress = v
+	return s
+}
+
+// SetPhoneNumber sets the PhoneNumber field's value.
+func (s *AttributeTypesSelector) SetPhoneNumber(v []*string) *AttributeTypesSelector {
+	s.PhoneNumber = v
+	return s
+}
+
+// Configuration settings for how to perform the auto-merging of profiles.
+type AutoMerging struct {
+	_ struct{} `type:"structure"`
+
+	// How the auto-merging process should resolve conflicts between different profiles.
+	// For example, if Profile A and Profile B have the same FirstName and LastName
+	// (and that is the matching criteria), which EmailAddress should be used?
+	ConflictResolution *ConflictResolution `type:"structure"`
+
+	// A list of matching attributes that represent matching criteria. If two profiles
+	// meet at least one of the requirements in the matching attributes list, they
+	// will be merged.
+	Consolidation *Consolidation `type:"structure"`
+
+	// The flag that enables the auto-merging of duplicate profiles.
+	//
+	// Enabled is a required field
+	Enabled *bool `type:"boolean" required:"true"`
+
+	// A number between 0 and 1 that represents the minimum confidence score required
+	// for profiles within a matching group to be merged during the auto-merge process.
+	// A higher score means higher similarity required to merge profiles.
+	MinAllowedConfidenceScoreForMerging *float64 `type:"double"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AutoMerging) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s AutoMerging) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *AutoMerging) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "AutoMerging"}
+	if s.Enabled == nil {
+		invalidParams.Add(request.NewErrParamRequired("Enabled"))
+	}
+	if s.ConflictResolution != nil {
+		if err := s.ConflictResolution.Validate(); err != nil {
+			invalidParams.AddNested("ConflictResolution", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Consolidation != nil {
+		if err := s.Consolidation.Validate(); err != nil {
+			invalidParams.AddNested("Consolidation", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetConflictResolution sets the ConflictResolution field's value.
+func (s *AutoMerging) SetConflictResolution(v *ConflictResolution) *AutoMerging {
+	s.ConflictResolution = v
+	return s
+}
+
+// SetConsolidation sets the Consolidation field's value.
+func (s *AutoMerging) SetConsolidation(v *Consolidation) *AutoMerging {
+	s.Consolidation = v
+	return s
+}
+
+// SetEnabled sets the Enabled field's value.
+func (s *AutoMerging) SetEnabled(v bool) *AutoMerging {
+	s.Enabled = &v
+	return s
+}
+
+// SetMinAllowedConfidenceScoreForMerging sets the MinAllowedConfidenceScoreForMerging field's value.
+func (s *AutoMerging) SetMinAllowedConfidenceScoreForMerging(v float64) *AutoMerging {
+	s.MinAllowedConfidenceScoreForMerging = &v
+	return s
+}
+
 // The input you provided is invalid.
 type BadRequestException struct {
 	_            struct{}                  `type:"structure"`
@@ -3278,6 +6122,209 @@ func (s *BadRequestException) StatusCode() int {
 // RequestID returns the service's response RequestID for request.
 func (s *BadRequestException) RequestID() string {
 	return s.RespMetadata.RequestID
+}
+
+// Batch defines the boundaries for ingestion for each step in APPFLOW_INTEGRATION
+// workflow. APPFLOW_INTEGRATION workflow splits ingestion based on these boundaries.
+type Batch struct {
+	_ struct{} `type:"structure"`
+
+	// End time of batch to split ingestion.
+	//
+	// EndTime is a required field
+	EndTime *time.Time `type:"timestamp" required:"true"`
+
+	// Start time of batch to split ingestion.
+	//
+	// StartTime is a required field
+	StartTime *time.Time `type:"timestamp" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Batch) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Batch) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *Batch) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "Batch"}
+	if s.EndTime == nil {
+		invalidParams.Add(request.NewErrParamRequired("EndTime"))
+	}
+	if s.StartTime == nil {
+		invalidParams.Add(request.NewErrParamRequired("StartTime"))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetEndTime sets the EndTime field's value.
+func (s *Batch) SetEndTime(v time.Time) *Batch {
+	s.EndTime = &v
+	return s
+}
+
+// SetStartTime sets the StartTime field's value.
+func (s *Batch) SetStartTime(v time.Time) *Batch {
+	s.StartTime = &v
+	return s
+}
+
+// The conditions including range, object count, and threshold for the calculated
+// attribute.
+type Conditions struct {
+	_ struct{} `type:"structure" sensitive:"true"`
+
+	// The number of profile objects used for the calculated attribute.
+	ObjectCount *int64 `min:"1" type:"integer"`
+
+	// The relative time period over which data is included in the aggregation.
+	Range *Range `type:"structure"`
+
+	// The threshold for the calculated attribute.
+	Threshold *Threshold `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Conditions) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Conditions) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *Conditions) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "Conditions"}
+	if s.ObjectCount != nil && *s.ObjectCount < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("ObjectCount", 1))
+	}
+	if s.Range != nil {
+		if err := s.Range.Validate(); err != nil {
+			invalidParams.AddNested("Range", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Threshold != nil {
+		if err := s.Threshold.Validate(); err != nil {
+			invalidParams.AddNested("Threshold", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetObjectCount sets the ObjectCount field's value.
+func (s *Conditions) SetObjectCount(v int64) *Conditions {
+	s.ObjectCount = &v
+	return s
+}
+
+// SetRange sets the Range field's value.
+func (s *Conditions) SetRange(v *Range) *Conditions {
+	s.Range = v
+	return s
+}
+
+// SetThreshold sets the Threshold field's value.
+func (s *Conditions) SetThreshold(v *Threshold) *Conditions {
+	s.Threshold = v
+	return s
+}
+
+// How the auto-merging process should resolve conflicts between different profiles.
+type ConflictResolution struct {
+	_ struct{} `type:"structure"`
+
+	// How the auto-merging process should resolve conflicts between different profiles.
+	//
+	//    * RECENCY: Uses the data that was most recently updated.
+	//
+	//    * SOURCE: Uses the data from a specific source. For example, if a company
+	//    has been aquired or two departments have merged, data from the specified
+	//    source is used. If two duplicate profiles are from the same source, then
+	//    RECENCY is used again.
+	//
+	// ConflictResolvingModel is a required field
+	ConflictResolvingModel *string `type:"string" required:"true" enum:"ConflictResolvingModel"`
+
+	// The ObjectType name that is used to resolve profile merging conflicts when
+	// choosing SOURCE as the ConflictResolvingModel.
+	SourceName *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ConflictResolution) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ConflictResolution) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ConflictResolution) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ConflictResolution"}
+	if s.ConflictResolvingModel == nil {
+		invalidParams.Add(request.NewErrParamRequired("ConflictResolvingModel"))
+	}
+	if s.SourceName != nil && len(*s.SourceName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("SourceName", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetConflictResolvingModel sets the ConflictResolvingModel field's value.
+func (s *ConflictResolution) SetConflictResolvingModel(v string) *ConflictResolution {
+	s.ConflictResolvingModel = &v
+	return s
+}
+
+// SetSourceName sets the SourceName field's value.
+func (s *ConflictResolution) SetSourceName(v string) *ConflictResolution {
+	s.SourceName = &v
+	return s
 }
 
 // The operation to be performed on the provided source fields.
@@ -3348,6 +6395,343 @@ func (s *ConnectorOperator) SetZendesk(v string) *ConnectorOperator {
 	return s
 }
 
+// The matching criteria to be used during the auto-merging process.
+type Consolidation struct {
+	_ struct{} `type:"structure"`
+
+	// A list of matching criteria.
+	//
+	// MatchingAttributesList is a required field
+	MatchingAttributesList [][]*string `min:"1" type:"list" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Consolidation) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Consolidation) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *Consolidation) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "Consolidation"}
+	if s.MatchingAttributesList == nil {
+		invalidParams.Add(request.NewErrParamRequired("MatchingAttributesList"))
+	}
+	if s.MatchingAttributesList != nil && len(s.MatchingAttributesList) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("MatchingAttributesList", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetMatchingAttributesList sets the MatchingAttributesList field's value.
+func (s *Consolidation) SetMatchingAttributesList(v [][]*string) *Consolidation {
+	s.MatchingAttributesList = v
+	return s
+}
+
+type CreateCalculatedAttributeDefinitionInput struct {
+	_ struct{} `type:"structure"`
+
+	// Mathematical expression and a list of attribute items specified in that expression.
+	//
+	// AttributeDetails is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionInput's
+	// String and GoString methods.
+	//
+	// AttributeDetails is a required field
+	AttributeDetails *AttributeDetails `type:"structure" required:"true" sensitive:"true"`
+
+	// The unique name of the calculated attribute.
+	//
+	// CalculatedAttributeName is a required field
+	CalculatedAttributeName *string `location:"uri" locationName:"CalculatedAttributeName" min:"1" type:"string" required:"true"`
+
+	// The conditions including range, object count, and threshold for the calculated
+	// attribute.
+	//
+	// Conditions is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionInput's
+	// String and GoString methods.
+	Conditions *Conditions `type:"structure" sensitive:"true"`
+
+	// The description of the calculated attribute.
+	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionInput's
+	// String and GoString methods.
+	Description *string `min:"1" type:"string" sensitive:"true"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The aggregation operation to perform for the calculated attribute.
+	//
+	// Statistic is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionInput's
+	// String and GoString methods.
+	//
+	// Statistic is a required field
+	Statistic *string `type:"string" required:"true" enum:"Statistic" sensitive:"true"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateCalculatedAttributeDefinitionInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateCalculatedAttributeDefinitionInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateCalculatedAttributeDefinitionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateCalculatedAttributeDefinitionInput"}
+	if s.AttributeDetails == nil {
+		invalidParams.Add(request.NewErrParamRequired("AttributeDetails"))
+	}
+	if s.CalculatedAttributeName == nil {
+		invalidParams.Add(request.NewErrParamRequired("CalculatedAttributeName"))
+	}
+	if s.CalculatedAttributeName != nil && len(*s.CalculatedAttributeName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("CalculatedAttributeName", 1))
+	}
+	if s.Description != nil && len(*s.Description) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Description", 1))
+	}
+	if s.DisplayName != nil && len(*s.DisplayName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DisplayName", 1))
+	}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.Statistic == nil {
+		invalidParams.Add(request.NewErrParamRequired("Statistic"))
+	}
+	if s.Tags != nil && len(s.Tags) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Tags", 1))
+	}
+	if s.AttributeDetails != nil {
+		if err := s.AttributeDetails.Validate(); err != nil {
+			invalidParams.AddNested("AttributeDetails", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Conditions != nil {
+		if err := s.Conditions.Validate(); err != nil {
+			invalidParams.AddNested("Conditions", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttributeDetails sets the AttributeDetails field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetAttributeDetails(v *AttributeDetails) *CreateCalculatedAttributeDefinitionInput {
+	s.AttributeDetails = v
+	return s
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetCalculatedAttributeName(v string) *CreateCalculatedAttributeDefinitionInput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetConditions sets the Conditions field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetConditions(v *Conditions) *CreateCalculatedAttributeDefinitionInput {
+	s.Conditions = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetDescription(v string) *CreateCalculatedAttributeDefinitionInput {
+	s.Description = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetDisplayName(v string) *CreateCalculatedAttributeDefinitionInput {
+	s.DisplayName = &v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetDomainName(v string) *CreateCalculatedAttributeDefinitionInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetStatistic sets the Statistic field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetStatistic(v string) *CreateCalculatedAttributeDefinitionInput {
+	s.Statistic = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *CreateCalculatedAttributeDefinitionInput) SetTags(v map[string]*string) *CreateCalculatedAttributeDefinitionInput {
+	s.Tags = v
+	return s
+}
+
+type CreateCalculatedAttributeDefinitionOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Mathematical expression and a list of attribute items specified in that expression.
+	//
+	// AttributeDetails is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	AttributeDetails *AttributeDetails `type:"structure" sensitive:"true"`
+
+	// The unique name of the calculated attribute.
+	CalculatedAttributeName *string `min:"1" type:"string"`
+
+	// The conditions including range, object count, and threshold for the calculated
+	// attribute.
+	//
+	// Conditions is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Conditions *Conditions `type:"structure" sensitive:"true"`
+
+	// The timestamp of when the calculated attribute definition was created.
+	CreatedAt *time.Time `type:"timestamp"`
+
+	// The description of the calculated attribute.
+	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Description *string `min:"1" type:"string" sensitive:"true"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// The timestamp of when the calculated attribute definition was most recently
+	// edited.
+	LastUpdatedAt *time.Time `type:"timestamp"`
+
+	// The aggregation operation to perform for the calculated attribute.
+	//
+	// Statistic is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Statistic *string `type:"string" enum:"Statistic" sensitive:"true"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateCalculatedAttributeDefinitionOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateCalculatedAttributeDefinitionOutput) GoString() string {
+	return s.String()
+}
+
+// SetAttributeDetails sets the AttributeDetails field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetAttributeDetails(v *AttributeDetails) *CreateCalculatedAttributeDefinitionOutput {
+	s.AttributeDetails = v
+	return s
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetCalculatedAttributeName(v string) *CreateCalculatedAttributeDefinitionOutput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetConditions sets the Conditions field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetConditions(v *Conditions) *CreateCalculatedAttributeDefinitionOutput {
+	s.Conditions = v
+	return s
+}
+
+// SetCreatedAt sets the CreatedAt field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetCreatedAt(v time.Time) *CreateCalculatedAttributeDefinitionOutput {
+	s.CreatedAt = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetDescription(v string) *CreateCalculatedAttributeDefinitionOutput {
+	s.Description = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetDisplayName(v string) *CreateCalculatedAttributeDefinitionOutput {
+	s.DisplayName = &v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetLastUpdatedAt(v time.Time) *CreateCalculatedAttributeDefinitionOutput {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetStatistic sets the Statistic field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetStatistic(v string) *CreateCalculatedAttributeDefinitionOutput {
+	s.Statistic = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *CreateCalculatedAttributeDefinitionOutput) SetTags(v map[string]*string) *CreateCalculatedAttributeDefinitionOutput {
+	s.Tags = v
+	return s
+}
+
 type CreateDomainInput struct {
 	_ struct{} `type:"structure"`
 
@@ -3373,11 +6757,23 @@ type CreateDomainInput struct {
 	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
 
 	// The process of matching duplicate profiles. If Matching = true, Amazon Connect
-	// Customer Profiles starts a weekly batch process every Saturday at 12AM UTC
-	// to detect duplicate profiles in your domains. After that batch process completes,
-	// use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
-	// API to return and review the results.
+	// Customer Profiles starts a weekly batch process called Identity Resolution
+	// Job. If you do not specify a date and time for Identity Resolution Job to
+	// run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles
+	// in your domains.
+	//
+	// After the Identity Resolution Job completes, use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
+	// API to return and review the results. Or, if you have configured ExportingConfig
+	// in the MatchingRequest, you can download the results from S3.
 	Matching *MatchingRequest `type:"structure"`
+
+	// The process of matching duplicate profiles using the Rule-Based matching.
+	// If RuleBasedMatching = true, Amazon Connect Customer Profiles will start
+	// to match and merge your profiles according to your configuration in the RuleBasedMatchingRequest.
+	// You can use the ListRuleBasedMatches and GetSimilarProfiles API to return
+	// and review the results. Also, if you have configured ExportingConfig in the
+	// RuleBasedMatchingRequest, you can download the results from S3.
+	RuleBasedMatching *RuleBasedMatchingRequest `type:"structure"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -3424,6 +6820,11 @@ func (s *CreateDomainInput) Validate() error {
 			invalidParams.AddNested("Matching", err.(request.ErrInvalidParams))
 		}
 	}
+	if s.RuleBasedMatching != nil {
+		if err := s.RuleBasedMatching.Validate(); err != nil {
+			invalidParams.AddNested("RuleBasedMatching", err.(request.ErrInvalidParams))
+		}
+	}
 
 	if invalidParams.Len() > 0 {
 		return invalidParams
@@ -3458,6 +6859,12 @@ func (s *CreateDomainInput) SetDomainName(v string) *CreateDomainInput {
 // SetMatching sets the Matching field's value.
 func (s *CreateDomainInput) SetMatching(v *MatchingRequest) *CreateDomainInput {
 	s.Matching = v
+	return s
+}
+
+// SetRuleBasedMatching sets the RuleBasedMatching field's value.
+func (s *CreateDomainInput) SetRuleBasedMatching(v *RuleBasedMatchingRequest) *CreateDomainInput {
+	s.RuleBasedMatching = v
 	return s
 }
 
@@ -3500,11 +6907,23 @@ type CreateDomainOutput struct {
 	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
 
 	// The process of matching duplicate profiles. If Matching = true, Amazon Connect
-	// Customer Profiles starts a weekly batch process every Saturday at 12AM UTC
-	// to detect duplicate profiles in your domains. After that batch process completes,
-	// use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
-	// API to return and review the results.
+	// Customer Profiles starts a weekly batch process called Identity Resolution
+	// Job. If you do not specify a date and time for Identity Resolution Job to
+	// run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles
+	// in your domains.
+	//
+	// After the Identity Resolution Job completes, use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
+	// API to return and review the results. Or, if you have configured ExportingConfig
+	// in the MatchingRequest, you can download the results from S3.
 	Matching *MatchingResponse `type:"structure"`
+
+	// The process of matching duplicate profiles using the Rule-Based matching.
+	// If RuleBasedMatching = true, Amazon Connect Customer Profiles will start
+	// to match and merge your profiles according to your configuration in the RuleBasedMatchingRequest.
+	// You can use the ListRuleBasedMatches and GetSimilarProfiles API to return
+	// and review the results. Also, if you have configured ExportingConfig in the
+	// RuleBasedMatchingRequest, you can download the results from S3.
+	RuleBasedMatching *RuleBasedMatchingResponse `type:"structure"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -3570,9 +6989,323 @@ func (s *CreateDomainOutput) SetMatching(v *MatchingResponse) *CreateDomainOutpu
 	return s
 }
 
+// SetRuleBasedMatching sets the RuleBasedMatching field's value.
+func (s *CreateDomainOutput) SetRuleBasedMatching(v *RuleBasedMatchingResponse) *CreateDomainOutput {
+	s.RuleBasedMatching = v
+	return s
+}
+
 // SetTags sets the Tags field's value.
 func (s *CreateDomainOutput) SetTags(v map[string]*string) *CreateDomainOutput {
 	s.Tags = v
+	return s
+}
+
+type CreateEventStreamInput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The name of the event stream.
+	//
+	// EventStreamName is a required field
+	EventStreamName *string `location:"uri" locationName:"EventStreamName" min:"1" type:"string" required:"true"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+
+	// The StreamARN of the destination to deliver profile events to. For example,
+	// arn:aws:kinesis:region:account-id:stream/stream-name
+	//
+	// Uri is a required field
+	Uri *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateEventStreamInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateEventStreamInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateEventStreamInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateEventStreamInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.EventStreamName == nil {
+		invalidParams.Add(request.NewErrParamRequired("EventStreamName"))
+	}
+	if s.EventStreamName != nil && len(*s.EventStreamName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("EventStreamName", 1))
+	}
+	if s.Tags != nil && len(s.Tags) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Tags", 1))
+	}
+	if s.Uri == nil {
+		invalidParams.Add(request.NewErrParamRequired("Uri"))
+	}
+	if s.Uri != nil && len(*s.Uri) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Uri", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *CreateEventStreamInput) SetDomainName(v string) *CreateEventStreamInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetEventStreamName sets the EventStreamName field's value.
+func (s *CreateEventStreamInput) SetEventStreamName(v string) *CreateEventStreamInput {
+	s.EventStreamName = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *CreateEventStreamInput) SetTags(v map[string]*string) *CreateEventStreamInput {
+	s.Tags = v
+	return s
+}
+
+// SetUri sets the Uri field's value.
+func (s *CreateEventStreamInput) SetUri(v string) *CreateEventStreamInput {
+	s.Uri = &v
+	return s
+}
+
+type CreateEventStreamOutput struct {
+	_ struct{} `type:"structure"`
+
+	// A unique identifier for the event stream.
+	//
+	// EventStreamArn is a required field
+	EventStreamArn *string `min:"1" type:"string" required:"true"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateEventStreamOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateEventStreamOutput) GoString() string {
+	return s.String()
+}
+
+// SetEventStreamArn sets the EventStreamArn field's value.
+func (s *CreateEventStreamOutput) SetEventStreamArn(v string) *CreateEventStreamOutput {
+	s.EventStreamArn = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *CreateEventStreamOutput) SetTags(v map[string]*string) *CreateEventStreamOutput {
+	s.Tags = v
+	return s
+}
+
+type CreateIntegrationWorkflowInput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// Configuration data for integration workflow.
+	//
+	// IntegrationConfig is a required field
+	IntegrationConfig *IntegrationConfig `type:"structure" required:"true"`
+
+	// The name of the profile object type.
+	//
+	// ObjectTypeName is a required field
+	ObjectTypeName *string `min:"1" type:"string" required:"true"`
+
+	// The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes
+	// this role to create resources on your behalf as part of workflow execution.
+	//
+	// RoleArn is a required field
+	RoleArn *string `type:"string" required:"true"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+
+	// The type of workflow. The only supported value is APPFLOW_INTEGRATION.
+	//
+	// WorkflowType is a required field
+	WorkflowType *string `type:"string" required:"true" enum:"WorkflowType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateIntegrationWorkflowInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateIntegrationWorkflowInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *CreateIntegrationWorkflowInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "CreateIntegrationWorkflowInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.IntegrationConfig == nil {
+		invalidParams.Add(request.NewErrParamRequired("IntegrationConfig"))
+	}
+	if s.ObjectTypeName == nil {
+		invalidParams.Add(request.NewErrParamRequired("ObjectTypeName"))
+	}
+	if s.ObjectTypeName != nil && len(*s.ObjectTypeName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ObjectTypeName", 1))
+	}
+	if s.RoleArn == nil {
+		invalidParams.Add(request.NewErrParamRequired("RoleArn"))
+	}
+	if s.Tags != nil && len(s.Tags) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Tags", 1))
+	}
+	if s.WorkflowType == nil {
+		invalidParams.Add(request.NewErrParamRequired("WorkflowType"))
+	}
+	if s.IntegrationConfig != nil {
+		if err := s.IntegrationConfig.Validate(); err != nil {
+			invalidParams.AddNested("IntegrationConfig", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *CreateIntegrationWorkflowInput) SetDomainName(v string) *CreateIntegrationWorkflowInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetIntegrationConfig sets the IntegrationConfig field's value.
+func (s *CreateIntegrationWorkflowInput) SetIntegrationConfig(v *IntegrationConfig) *CreateIntegrationWorkflowInput {
+	s.IntegrationConfig = v
+	return s
+}
+
+// SetObjectTypeName sets the ObjectTypeName field's value.
+func (s *CreateIntegrationWorkflowInput) SetObjectTypeName(v string) *CreateIntegrationWorkflowInput {
+	s.ObjectTypeName = &v
+	return s
+}
+
+// SetRoleArn sets the RoleArn field's value.
+func (s *CreateIntegrationWorkflowInput) SetRoleArn(v string) *CreateIntegrationWorkflowInput {
+	s.RoleArn = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *CreateIntegrationWorkflowInput) SetTags(v map[string]*string) *CreateIntegrationWorkflowInput {
+	s.Tags = v
+	return s
+}
+
+// SetWorkflowType sets the WorkflowType field's value.
+func (s *CreateIntegrationWorkflowInput) SetWorkflowType(v string) *CreateIntegrationWorkflowInput {
+	s.WorkflowType = &v
+	return s
+}
+
+type CreateIntegrationWorkflowOutput struct {
+	_ struct{} `type:"structure"`
+
+	// A message indicating create request was received.
+	//
+	// Message is a required field
+	Message *string `min:"1" type:"string" required:"true"`
+
+	// Unique identifier for the workflow.
+	//
+	// WorkflowId is a required field
+	WorkflowId *string `type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateIntegrationWorkflowOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s CreateIntegrationWorkflowOutput) GoString() string {
+	return s.String()
+}
+
+// SetMessage sets the Message field's value.
+func (s *CreateIntegrationWorkflowOutput) SetMessage(v string) *CreateIntegrationWorkflowOutput {
+	s.Message = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *CreateIntegrationWorkflowOutput) SetWorkflowId(v string) *CreateIntegrationWorkflowOutput {
+	s.WorkflowId = &v
 	return s
 }
 
@@ -3580,32 +7313,68 @@ type CreateProfileInput struct {
 	_ struct{} `type:"structure"`
 
 	// A unique account number that you have given to the customer.
-	AccountNumber *string `min:"1" type:"string"`
+	//
+	// AccountNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	AccountNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// Any additional information relevant to the customer’s profile.
-	AdditionalInformation *string `min:"1" type:"string"`
+	//
+	// AdditionalInformation is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	AdditionalInformation *string `min:"1" type:"string" sensitive:"true"`
 
 	// A generic address associated with the customer that is not mailing, shipping,
 	// or billing.
-	Address *Address `type:"structure"`
+	//
+	// Address is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	Address *Address `type:"structure" sensitive:"true"`
 
 	// A key value pair of attributes of a customer profile.
-	Attributes map[string]*string `type:"map"`
+	//
+	// Attributes is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	Attributes map[string]*string `type:"map" sensitive:"true"`
 
 	// The customer’s billing address.
-	BillingAddress *Address `type:"structure"`
+	//
+	// BillingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	BillingAddress *Address `type:"structure" sensitive:"true"`
 
 	// The customer’s birth date.
-	BirthDate *string `min:"1" type:"string"`
+	//
+	// BirthDate is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	BirthDate *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s business email address.
-	BusinessEmailAddress *string `min:"1" type:"string"`
+	//
+	// BusinessEmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	BusinessEmailAddress *string `min:"1" type:"string" sensitive:"true"`
 
 	// The name of the customer’s business.
-	BusinessName *string `min:"1" type:"string"`
+	//
+	// BusinessName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	BusinessName *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s business phone number.
-	BusinessPhoneNumber *string `min:"1" type:"string"`
+	//
+	// BusinessPhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	BusinessPhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The unique name of the domain.
 	//
@@ -3614,41 +7383,103 @@ type CreateProfileInput struct {
 
 	// The customer’s email address, which has not been specified as a personal
 	// or business address.
-	EmailAddress *string `min:"1" type:"string"`
+	//
+	// EmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	EmailAddress *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s first name.
-	FirstName *string `min:"1" type:"string"`
+	//
+	// FirstName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	FirstName *string `min:"1" type:"string" sensitive:"true"`
 
 	// The gender with which the customer identifies.
-	Gender *string `type:"string" enum:"Gender"`
+	//
+	// Gender is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	Gender *string `deprecated:"true" type:"string" enum:"Gender" sensitive:"true"`
+
+	// An alternative to Gender which accepts any string as input.
+	//
+	// GenderString is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	GenderString *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s home phone number.
-	HomePhoneNumber *string `min:"1" type:"string"`
+	//
+	// HomePhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	HomePhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s last name.
-	LastName *string `min:"1" type:"string"`
+	//
+	// LastName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	LastName *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s mailing address.
-	MailingAddress *Address `type:"structure"`
+	//
+	// MailingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	MailingAddress *Address `type:"structure" sensitive:"true"`
 
 	// The customer’s middle name.
-	MiddleName *string `min:"1" type:"string"`
+	//
+	// MiddleName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	MiddleName *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s mobile phone number.
-	MobilePhoneNumber *string `min:"1" type:"string"`
+	//
+	// MobilePhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	MobilePhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The type of profile used to describe the customer.
-	PartyType *string `type:"string" enum:"PartyType"`
+	//
+	// PartyType is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	PartyType *string `deprecated:"true" type:"string" enum:"PartyType" sensitive:"true"`
+
+	// An alternative to PartyType which accepts any string as input.
+	//
+	// PartyTypeString is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	PartyTypeString *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s personal email address.
-	PersonalEmailAddress *string `min:"1" type:"string"`
+	//
+	// PersonalEmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	PersonalEmailAddress *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s phone number, which has not been specified as a mobile,
 	// home, or business number.
-	PhoneNumber *string `min:"1" type:"string"`
+	//
+	// PhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	PhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s shipping address.
-	ShippingAddress *Address `type:"structure"`
+	//
+	// ShippingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by CreateProfileInput's
+	// String and GoString methods.
+	ShippingAddress *Address `type:"structure" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -3702,6 +7533,9 @@ func (s *CreateProfileInput) Validate() error {
 	if s.FirstName != nil && len(*s.FirstName) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("FirstName", 1))
 	}
+	if s.GenderString != nil && len(*s.GenderString) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("GenderString", 1))
+	}
 	if s.HomePhoneNumber != nil && len(*s.HomePhoneNumber) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("HomePhoneNumber", 1))
 	}
@@ -3713,6 +7547,9 @@ func (s *CreateProfileInput) Validate() error {
 	}
 	if s.MobilePhoneNumber != nil && len(*s.MobilePhoneNumber) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("MobilePhoneNumber", 1))
+	}
+	if s.PartyTypeString != nil && len(*s.PartyTypeString) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("PartyTypeString", 1))
 	}
 	if s.PersonalEmailAddress != nil && len(*s.PersonalEmailAddress) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("PersonalEmailAddress", 1))
@@ -3825,6 +7662,12 @@ func (s *CreateProfileInput) SetGender(v string) *CreateProfileInput {
 	return s
 }
 
+// SetGenderString sets the GenderString field's value.
+func (s *CreateProfileInput) SetGenderString(v string) *CreateProfileInput {
+	s.GenderString = &v
+	return s
+}
+
 // SetHomePhoneNumber sets the HomePhoneNumber field's value.
 func (s *CreateProfileInput) SetHomePhoneNumber(v string) *CreateProfileInput {
 	s.HomePhoneNumber = &v
@@ -3858,6 +7701,12 @@ func (s *CreateProfileInput) SetMobilePhoneNumber(v string) *CreateProfileInput 
 // SetPartyType sets the PartyType field's value.
 func (s *CreateProfileInput) SetPartyType(v string) *CreateProfileInput {
 	s.PartyType = &v
+	return s
+}
+
+// SetPartyTypeString sets the PartyTypeString field's value.
+func (s *CreateProfileInput) SetPartyTypeString(v string) *CreateProfileInput {
+	s.PartyTypeString = &v
 	return s
 }
 
@@ -3910,6 +7759,94 @@ func (s CreateProfileOutput) GoString() string {
 func (s *CreateProfileOutput) SetProfileId(v string) *CreateProfileOutput {
 	s.ProfileId = &v
 	return s
+}
+
+type DeleteCalculatedAttributeDefinitionInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the calculated attribute.
+	//
+	// CalculatedAttributeName is a required field
+	CalculatedAttributeName *string `location:"uri" locationName:"CalculatedAttributeName" min:"1" type:"string" required:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCalculatedAttributeDefinitionInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCalculatedAttributeDefinitionInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteCalculatedAttributeDefinitionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteCalculatedAttributeDefinitionInput"}
+	if s.CalculatedAttributeName == nil {
+		invalidParams.Add(request.NewErrParamRequired("CalculatedAttributeName"))
+	}
+	if s.CalculatedAttributeName != nil && len(*s.CalculatedAttributeName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("CalculatedAttributeName", 1))
+	}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *DeleteCalculatedAttributeDefinitionInput) SetCalculatedAttributeName(v string) *DeleteCalculatedAttributeDefinitionInput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *DeleteCalculatedAttributeDefinitionInput) SetDomainName(v string) *DeleteCalculatedAttributeDefinitionInput {
+	s.DomainName = &v
+	return s
+}
+
+type DeleteCalculatedAttributeDefinitionOutput struct {
+	_ struct{} `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCalculatedAttributeDefinitionOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteCalculatedAttributeDefinitionOutput) GoString() string {
+	return s.String()
 }
 
 type DeleteDomainInput struct {
@@ -3992,6 +7929,94 @@ func (s DeleteDomainOutput) GoString() string {
 func (s *DeleteDomainOutput) SetMessage(v string) *DeleteDomainOutput {
 	s.Message = &v
 	return s
+}
+
+type DeleteEventStreamInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The name of the event stream
+	//
+	// EventStreamName is a required field
+	EventStreamName *string `location:"uri" locationName:"EventStreamName" min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteEventStreamInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteEventStreamInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteEventStreamInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteEventStreamInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.EventStreamName == nil {
+		invalidParams.Add(request.NewErrParamRequired("EventStreamName"))
+	}
+	if s.EventStreamName != nil && len(*s.EventStreamName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("EventStreamName", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *DeleteEventStreamInput) SetDomainName(v string) *DeleteEventStreamInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetEventStreamName sets the EventStreamName field's value.
+func (s *DeleteEventStreamInput) SetEventStreamName(v string) *DeleteEventStreamInput {
+	s.EventStreamName = &v
+	return s
+}
+
+type DeleteEventStreamOutput struct {
+	_ struct{} `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteEventStreamOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteEventStreamOutput) GoString() string {
+	return s.String()
 }
 
 type DeleteIntegrationInput struct {
@@ -4539,6 +8564,309 @@ func (s *DeleteProfileOutput) SetMessage(v string) *DeleteProfileOutput {
 	return s
 }
 
+type DeleteWorkflowInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// Unique identifier for the workflow.
+	//
+	// WorkflowId is a required field
+	WorkflowId *string `location:"uri" locationName:"WorkflowId" min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteWorkflowInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteWorkflowInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DeleteWorkflowInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DeleteWorkflowInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.WorkflowId == nil {
+		invalidParams.Add(request.NewErrParamRequired("WorkflowId"))
+	}
+	if s.WorkflowId != nil && len(*s.WorkflowId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("WorkflowId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *DeleteWorkflowInput) SetDomainName(v string) *DeleteWorkflowInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *DeleteWorkflowInput) SetWorkflowId(v string) *DeleteWorkflowInput {
+	s.WorkflowId = &v
+	return s
+}
+
+type DeleteWorkflowOutput struct {
+	_ struct{} `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteWorkflowOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DeleteWorkflowOutput) GoString() string {
+	return s.String()
+}
+
+// Summary information about the Kinesis data stream
+type DestinationSummary struct {
+	_ struct{} `type:"structure"`
+
+	// The status of enabling the Kinesis stream as a destination for export.
+	//
+	// Status is a required field
+	Status *string `type:"string" required:"true" enum:"EventStreamDestinationStatus"`
+
+	// The timestamp when the status last changed to UNHEALHY.
+	UnhealthySince *time.Time `type:"timestamp"`
+
+	// The StreamARN of the destination to deliver profile events to. For example,
+	// arn:aws:kinesis:region:account-id:stream/stream-name.
+	//
+	// Uri is a required field
+	Uri *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DestinationSummary) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DestinationSummary) GoString() string {
+	return s.String()
+}
+
+// SetStatus sets the Status field's value.
+func (s *DestinationSummary) SetStatus(v string) *DestinationSummary {
+	s.Status = &v
+	return s
+}
+
+// SetUnhealthySince sets the UnhealthySince field's value.
+func (s *DestinationSummary) SetUnhealthySince(v time.Time) *DestinationSummary {
+	s.UnhealthySince = &v
+	return s
+}
+
+// SetUri sets the Uri field's value.
+func (s *DestinationSummary) SetUri(v string) *DestinationSummary {
+	s.Uri = &v
+	return s
+}
+
+type DetectProfileObjectTypeInput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// A string that is serialized from a JSON object.
+	//
+	// Objects is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by DetectProfileObjectTypeInput's
+	// String and GoString methods.
+	//
+	// Objects is a required field
+	Objects []*string `min:"1" type:"list" required:"true" sensitive:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectProfileObjectTypeInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectProfileObjectTypeInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *DetectProfileObjectTypeInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "DetectProfileObjectTypeInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.Objects == nil {
+		invalidParams.Add(request.NewErrParamRequired("Objects"))
+	}
+	if s.Objects != nil && len(s.Objects) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Objects", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *DetectProfileObjectTypeInput) SetDomainName(v string) *DetectProfileObjectTypeInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetObjects sets the Objects field's value.
+func (s *DetectProfileObjectTypeInput) SetObjects(v []*string) *DetectProfileObjectTypeInput {
+	s.Objects = v
+	return s
+}
+
+type DetectProfileObjectTypeOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Detected ProfileObjectType mappings from given objects. A maximum of one
+	// mapping is supported.
+	DetectedProfileObjectTypes []*DetectedProfileObjectType `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectProfileObjectTypeOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectProfileObjectTypeOutput) GoString() string {
+	return s.String()
+}
+
+// SetDetectedProfileObjectTypes sets the DetectedProfileObjectTypes field's value.
+func (s *DetectProfileObjectTypeOutput) SetDetectedProfileObjectTypes(v []*DetectedProfileObjectType) *DetectProfileObjectTypeOutput {
+	s.DetectedProfileObjectTypes = v
+	return s
+}
+
+// Contains ProfileObjectType mapping information from the model.
+type DetectedProfileObjectType struct {
+	_ struct{} `type:"structure"`
+
+	// A map of the name and the ObjectType field.
+	//
+	// Fields is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by DetectedProfileObjectType's
+	// String and GoString methods.
+	Fields map[string]*ObjectTypeField `type:"map" sensitive:"true"`
+
+	// A list of unique keys that can be used to map data to a profile.
+	//
+	// Keys is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by DetectedProfileObjectType's
+	// String and GoString methods.
+	Keys map[string][]*ObjectTypeKey `type:"map" sensitive:"true"`
+
+	// The format of sourceLastUpdatedTimestamp that was detected in fields.
+	SourceLastUpdatedTimestampFormat *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectedProfileObjectType) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s DetectedProfileObjectType) GoString() string {
+	return s.String()
+}
+
+// SetFields sets the Fields field's value.
+func (s *DetectedProfileObjectType) SetFields(v map[string]*ObjectTypeField) *DetectedProfileObjectType {
+	s.Fields = v
+	return s
+}
+
+// SetKeys sets the Keys field's value.
+func (s *DetectedProfileObjectType) SetKeys(v map[string][]*ObjectTypeKey) *DetectedProfileObjectType {
+	s.Keys = v
+	return s
+}
+
+// SetSourceLastUpdatedTimestampFormat sets the SourceLastUpdatedTimestampFormat field's value.
+func (s *DetectedProfileObjectType) SetSourceLastUpdatedTimestampFormat(v string) *DetectedProfileObjectType {
+	s.SourceLastUpdatedTimestampFormat = &v
+	return s
+}
+
 // Usage-specific statistics about the domain.
 type DomainStats struct {
 	_ struct{} `type:"structure"`
@@ -4598,6 +8926,251 @@ func (s *DomainStats) SetProfileCount(v int64) *DomainStats {
 // SetTotalSize sets the TotalSize field's value.
 func (s *DomainStats) SetTotalSize(v int64) *DomainStats {
 	s.TotalSize = &v
+	return s
+}
+
+// Details of the destination being used for the EventStream.
+type EventStreamDestinationDetails struct {
+	_ struct{} `type:"structure"`
+
+	// The human-readable string that corresponds to the error or success while
+	// enabling the streaming destination.
+	Message *string `min:"1" type:"string"`
+
+	// The status of enabling the Kinesis stream as a destination for export.
+	//
+	// Status is a required field
+	Status *string `type:"string" required:"true" enum:"EventStreamDestinationStatus"`
+
+	// The timestamp when the status last changed to UNHEALHY.
+	UnhealthySince *time.Time `type:"timestamp"`
+
+	// The StreamARN of the destination to deliver profile events to. For example,
+	// arn:aws:kinesis:region:account-id:stream/stream-name.
+	//
+	// Uri is a required field
+	Uri *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EventStreamDestinationDetails) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EventStreamDestinationDetails) GoString() string {
+	return s.String()
+}
+
+// SetMessage sets the Message field's value.
+func (s *EventStreamDestinationDetails) SetMessage(v string) *EventStreamDestinationDetails {
+	s.Message = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *EventStreamDestinationDetails) SetStatus(v string) *EventStreamDestinationDetails {
+	s.Status = &v
+	return s
+}
+
+// SetUnhealthySince sets the UnhealthySince field's value.
+func (s *EventStreamDestinationDetails) SetUnhealthySince(v time.Time) *EventStreamDestinationDetails {
+	s.UnhealthySince = &v
+	return s
+}
+
+// SetUri sets the Uri field's value.
+func (s *EventStreamDestinationDetails) SetUri(v string) *EventStreamDestinationDetails {
+	s.Uri = &v
+	return s
+}
+
+// An instance of EventStream in a list of EventStreams.
+type EventStreamSummary struct {
+	_ struct{} `type:"structure"`
+
+	// Summary information about the Kinesis data stream.
+	DestinationSummary *DestinationSummary `type:"structure"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `min:"1" type:"string" required:"true"`
+
+	// A unique identifier for the event stream.
+	//
+	// EventStreamArn is a required field
+	EventStreamArn *string `min:"1" type:"string" required:"true"`
+
+	// The name of the event stream.
+	//
+	// EventStreamName is a required field
+	EventStreamName *string `min:"1" type:"string" required:"true"`
+
+	// The operational state of destination stream for export.
+	//
+	// State is a required field
+	State *string `type:"string" required:"true" enum:"EventStreamState"`
+
+	// The timestamp when the State changed to STOPPED.
+	StoppedSince *time.Time `type:"timestamp"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EventStreamSummary) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s EventStreamSummary) GoString() string {
+	return s.String()
+}
+
+// SetDestinationSummary sets the DestinationSummary field's value.
+func (s *EventStreamSummary) SetDestinationSummary(v *DestinationSummary) *EventStreamSummary {
+	s.DestinationSummary = v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *EventStreamSummary) SetDomainName(v string) *EventStreamSummary {
+	s.DomainName = &v
+	return s
+}
+
+// SetEventStreamArn sets the EventStreamArn field's value.
+func (s *EventStreamSummary) SetEventStreamArn(v string) *EventStreamSummary {
+	s.EventStreamArn = &v
+	return s
+}
+
+// SetEventStreamName sets the EventStreamName field's value.
+func (s *EventStreamSummary) SetEventStreamName(v string) *EventStreamSummary {
+	s.EventStreamName = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *EventStreamSummary) SetState(v string) *EventStreamSummary {
+	s.State = &v
+	return s
+}
+
+// SetStoppedSince sets the StoppedSince field's value.
+func (s *EventStreamSummary) SetStoppedSince(v time.Time) *EventStreamSummary {
+	s.StoppedSince = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *EventStreamSummary) SetTags(v map[string]*string) *EventStreamSummary {
+	s.Tags = v
+	return s
+}
+
+// Configuration information about the S3 bucket where Identity Resolution Jobs
+// writes result files.
+//
+// You need to give Customer Profiles service principal write permission to
+// your S3 bucket. Otherwise, you'll get an exception in the API response. For
+// an example policy, see Amazon Connect Customer Profiles cross-service confused
+// deputy prevention (https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service).
+type ExportingConfig struct {
+	_ struct{} `type:"structure"`
+
+	// The S3 location where Identity Resolution Jobs write result files.
+	S3Exporting *S3ExportingConfig `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ExportingConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ExportingConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ExportingConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ExportingConfig"}
+	if s.S3Exporting != nil {
+		if err := s.S3Exporting.Validate(); err != nil {
+			invalidParams.AddNested("S3Exporting", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetS3Exporting sets the S3Exporting field's value.
+func (s *ExportingConfig) SetS3Exporting(v *S3ExportingConfig) *ExportingConfig {
+	s.S3Exporting = v
+	return s
+}
+
+// The S3 location where Identity Resolution Jobs write result files.
+type ExportingLocation struct {
+	_ struct{} `type:"structure"`
+
+	// Information about the S3 location where Identity Resolution Jobs write result
+	// files.
+	S3Exporting *S3ExportingLocation `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ExportingLocation) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ExportingLocation) GoString() string {
+	return s.String()
+}
+
+// SetS3Exporting sets the S3Exporting field's value.
+func (s *ExportingLocation) SetS3Exporting(v *S3ExportingLocation) *ExportingLocation {
+	s.S3Exporting = v
 	return s
 }
 
@@ -4817,7 +9390,7 @@ func (s *FieldSourceProfileIds) SetShippingAddress(v string) *FieldSourceProfile
 // the source, Amazon AppFlow. Customer Profiles uses this information to create
 // an AppFlow flow on behalf of customers.
 type FlowDefinition struct {
-	_ struct{} `type:"structure"`
+	_ struct{} `type:"structure" sensitive:"true"`
 
 	// A description of the flow you want to create.
 	Description *string `type:"string"`
@@ -4954,6 +9527,537 @@ func (s *FlowDefinition) SetTriggerConfig(v *TriggerConfig) *FlowDefinition {
 	return s
 }
 
+// A data type pair that consists of a KeyName and Values list that were used
+// to find a profile returned in response to a SearchProfiles (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html)
+// request.
+type FoundByKeyValue struct {
+	_ struct{} `type:"structure"`
+
+	// A searchable identifier of a customer profile.
+	KeyName *string `min:"1" type:"string"`
+
+	// A list of key values.
+	Values []*string `type:"list"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FoundByKeyValue) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s FoundByKeyValue) GoString() string {
+	return s.String()
+}
+
+// SetKeyName sets the KeyName field's value.
+func (s *FoundByKeyValue) SetKeyName(v string) *FoundByKeyValue {
+	s.KeyName = &v
+	return s
+}
+
+// SetValues sets the Values field's value.
+func (s *FoundByKeyValue) SetValues(v []*string) *FoundByKeyValue {
+	s.Values = v
+	return s
+}
+
+type GetAutoMergingPreviewInput struct {
+	_ struct{} `type:"structure"`
+
+	// How the auto-merging process should resolve conflicts between different profiles.
+	//
+	// ConflictResolution is a required field
+	ConflictResolution *ConflictResolution `type:"structure" required:"true"`
+
+	// A list of matching attributes that represent matching criteria.
+	//
+	// Consolidation is a required field
+	Consolidation *Consolidation `type:"structure" required:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// Minimum confidence score required for profiles within a matching group to
+	// be merged during the auto-merge process.
+	MinAllowedConfidenceScoreForMerging *float64 `type:"double"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetAutoMergingPreviewInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetAutoMergingPreviewInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetAutoMergingPreviewInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetAutoMergingPreviewInput"}
+	if s.ConflictResolution == nil {
+		invalidParams.Add(request.NewErrParamRequired("ConflictResolution"))
+	}
+	if s.Consolidation == nil {
+		invalidParams.Add(request.NewErrParamRequired("Consolidation"))
+	}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.ConflictResolution != nil {
+		if err := s.ConflictResolution.Validate(); err != nil {
+			invalidParams.AddNested("ConflictResolution", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.Consolidation != nil {
+		if err := s.Consolidation.Validate(); err != nil {
+			invalidParams.AddNested("Consolidation", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetConflictResolution sets the ConflictResolution field's value.
+func (s *GetAutoMergingPreviewInput) SetConflictResolution(v *ConflictResolution) *GetAutoMergingPreviewInput {
+	s.ConflictResolution = v
+	return s
+}
+
+// SetConsolidation sets the Consolidation field's value.
+func (s *GetAutoMergingPreviewInput) SetConsolidation(v *Consolidation) *GetAutoMergingPreviewInput {
+	s.Consolidation = v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetAutoMergingPreviewInput) SetDomainName(v string) *GetAutoMergingPreviewInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMinAllowedConfidenceScoreForMerging sets the MinAllowedConfidenceScoreForMerging field's value.
+func (s *GetAutoMergingPreviewInput) SetMinAllowedConfidenceScoreForMerging(v float64) *GetAutoMergingPreviewInput {
+	s.MinAllowedConfidenceScoreForMerging = &v
+	return s
+}
+
+type GetAutoMergingPreviewOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `min:"1" type:"string" required:"true"`
+
+	// The number of match groups in the domain that have been reviewed in this
+	// preview dry run.
+	NumberOfMatchesInSample *int64 `type:"long"`
+
+	// The number of profiles found in this preview dry run.
+	NumberOfProfilesInSample *int64 `type:"long"`
+
+	// The number of profiles that would be merged if this wasn't a preview dry
+	// run.
+	NumberOfProfilesWillBeMerged *int64 `type:"long"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetAutoMergingPreviewOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetAutoMergingPreviewOutput) GoString() string {
+	return s.String()
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetAutoMergingPreviewOutput) SetDomainName(v string) *GetAutoMergingPreviewOutput {
+	s.DomainName = &v
+	return s
+}
+
+// SetNumberOfMatchesInSample sets the NumberOfMatchesInSample field's value.
+func (s *GetAutoMergingPreviewOutput) SetNumberOfMatchesInSample(v int64) *GetAutoMergingPreviewOutput {
+	s.NumberOfMatchesInSample = &v
+	return s
+}
+
+// SetNumberOfProfilesInSample sets the NumberOfProfilesInSample field's value.
+func (s *GetAutoMergingPreviewOutput) SetNumberOfProfilesInSample(v int64) *GetAutoMergingPreviewOutput {
+	s.NumberOfProfilesInSample = &v
+	return s
+}
+
+// SetNumberOfProfilesWillBeMerged sets the NumberOfProfilesWillBeMerged field's value.
+func (s *GetAutoMergingPreviewOutput) SetNumberOfProfilesWillBeMerged(v int64) *GetAutoMergingPreviewOutput {
+	s.NumberOfProfilesWillBeMerged = &v
+	return s
+}
+
+type GetCalculatedAttributeDefinitionInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the calculated attribute.
+	//
+	// CalculatedAttributeName is a required field
+	CalculatedAttributeName *string `location:"uri" locationName:"CalculatedAttributeName" min:"1" type:"string" required:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeDefinitionInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeDefinitionInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetCalculatedAttributeDefinitionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetCalculatedAttributeDefinitionInput"}
+	if s.CalculatedAttributeName == nil {
+		invalidParams.Add(request.NewErrParamRequired("CalculatedAttributeName"))
+	}
+	if s.CalculatedAttributeName != nil && len(*s.CalculatedAttributeName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("CalculatedAttributeName", 1))
+	}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *GetCalculatedAttributeDefinitionInput) SetCalculatedAttributeName(v string) *GetCalculatedAttributeDefinitionInput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetCalculatedAttributeDefinitionInput) SetDomainName(v string) *GetCalculatedAttributeDefinitionInput {
+	s.DomainName = &v
+	return s
+}
+
+type GetCalculatedAttributeDefinitionOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Mathematical expression and a list of attribute items specified in that expression.
+	//
+	// AttributeDetails is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	AttributeDetails *AttributeDetails `type:"structure" sensitive:"true"`
+
+	// The unique name of the calculated attribute.
+	CalculatedAttributeName *string `min:"1" type:"string"`
+
+	// The conditions including range, object count, and threshold for the calculated
+	// attribute.
+	//
+	// Conditions is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Conditions *Conditions `type:"structure" sensitive:"true"`
+
+	// The timestamp of when the calculated attribute definition was created.
+	CreatedAt *time.Time `type:"timestamp"`
+
+	// The description of the calculated attribute.
+	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Description *string `min:"1" type:"string" sensitive:"true"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// The timestamp of when the calculated attribute definition was most recently
+	// edited.
+	LastUpdatedAt *time.Time `type:"timestamp"`
+
+	// The aggregation operation to perform for the calculated attribute.
+	//
+	// Statistic is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Statistic *string `type:"string" enum:"Statistic" sensitive:"true"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeDefinitionOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeDefinitionOutput) GoString() string {
+	return s.String()
+}
+
+// SetAttributeDetails sets the AttributeDetails field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetAttributeDetails(v *AttributeDetails) *GetCalculatedAttributeDefinitionOutput {
+	s.AttributeDetails = v
+	return s
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetCalculatedAttributeName(v string) *GetCalculatedAttributeDefinitionOutput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetConditions sets the Conditions field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetConditions(v *Conditions) *GetCalculatedAttributeDefinitionOutput {
+	s.Conditions = v
+	return s
+}
+
+// SetCreatedAt sets the CreatedAt field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetCreatedAt(v time.Time) *GetCalculatedAttributeDefinitionOutput {
+	s.CreatedAt = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetDescription(v string) *GetCalculatedAttributeDefinitionOutput {
+	s.Description = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetDisplayName(v string) *GetCalculatedAttributeDefinitionOutput {
+	s.DisplayName = &v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetLastUpdatedAt(v time.Time) *GetCalculatedAttributeDefinitionOutput {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetStatistic sets the Statistic field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetStatistic(v string) *GetCalculatedAttributeDefinitionOutput {
+	s.Statistic = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *GetCalculatedAttributeDefinitionOutput) SetTags(v map[string]*string) *GetCalculatedAttributeDefinitionOutput {
+	s.Tags = v
+	return s
+}
+
+type GetCalculatedAttributeForProfileInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the calculated attribute.
+	//
+	// CalculatedAttributeName is a required field
+	CalculatedAttributeName *string `location:"uri" locationName:"CalculatedAttributeName" min:"1" type:"string" required:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The unique identifier of a customer profile.
+	//
+	// ProfileId is a required field
+	ProfileId *string `location:"uri" locationName:"ProfileId" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeForProfileInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeForProfileInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetCalculatedAttributeForProfileInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetCalculatedAttributeForProfileInput"}
+	if s.CalculatedAttributeName == nil {
+		invalidParams.Add(request.NewErrParamRequired("CalculatedAttributeName"))
+	}
+	if s.CalculatedAttributeName != nil && len(*s.CalculatedAttributeName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("CalculatedAttributeName", 1))
+	}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.ProfileId == nil {
+		invalidParams.Add(request.NewErrParamRequired("ProfileId"))
+	}
+	if s.ProfileId != nil && len(*s.ProfileId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ProfileId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *GetCalculatedAttributeForProfileInput) SetCalculatedAttributeName(v string) *GetCalculatedAttributeForProfileInput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetCalculatedAttributeForProfileInput) SetDomainName(v string) *GetCalculatedAttributeForProfileInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetProfileId sets the ProfileId field's value.
+func (s *GetCalculatedAttributeForProfileInput) SetProfileId(v string) *GetCalculatedAttributeForProfileInput {
+	s.ProfileId = &v
+	return s
+}
+
+type GetCalculatedAttributeForProfileOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the calculated attribute.
+	CalculatedAttributeName *string `min:"1" type:"string"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// Indicates whether the calculated attribute’s value is based on partial
+	// data. If data is partial, it is set to true.
+	IsDataPartial *string `min:"1" type:"string"`
+
+	// The value of the calculated attribute.
+	Value *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeForProfileOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetCalculatedAttributeForProfileOutput) GoString() string {
+	return s.String()
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *GetCalculatedAttributeForProfileOutput) SetCalculatedAttributeName(v string) *GetCalculatedAttributeForProfileOutput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *GetCalculatedAttributeForProfileOutput) SetDisplayName(v string) *GetCalculatedAttributeForProfileOutput {
+	s.DisplayName = &v
+	return s
+}
+
+// SetIsDataPartial sets the IsDataPartial field's value.
+func (s *GetCalculatedAttributeForProfileOutput) SetIsDataPartial(v string) *GetCalculatedAttributeForProfileOutput {
+	s.IsDataPartial = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *GetCalculatedAttributeForProfileOutput) SetValue(v string) *GetCalculatedAttributeForProfileOutput {
+	s.Value = &v
+	return s
+}
+
 type GetDomainInput struct {
 	_ struct{} `type:"structure" nopayload:"true"`
 
@@ -5034,11 +10138,23 @@ type GetDomainOutput struct {
 	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
 
 	// The process of matching duplicate profiles. If Matching = true, Amazon Connect
-	// Customer Profiles starts a weekly batch process every Saturday at 12AM UTC
-	// to detect duplicate profiles in your domains. After that batch process completes,
-	// use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
-	// API to return and review the results.
+	// Customer Profiles starts a weekly batch process called Identity Resolution
+	// Job. If you do not specify a date and time for Identity Resolution Job to
+	// run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles
+	// in your domains.
+	//
+	// After the Identity Resolution Job completes, use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
+	// API to return and review the results. Or, if you have configured ExportingConfig
+	// in the MatchingRequest, you can download the results from S3.
 	Matching *MatchingResponse `type:"structure"`
+
+	// The process of matching duplicate profiles using the Rule-Based matching.
+	// If RuleBasedMatching = true, Amazon Connect Customer Profiles will start
+	// to match and merge your profiles according to your configuration in the RuleBasedMatchingRequest.
+	// You can use the ListRuleBasedMatches and GetSimilarProfiles API to return
+	// and review the results. Also, if you have configured ExportingConfig in the
+	// RuleBasedMatchingRequest, you can download the results from S3.
+	RuleBasedMatching *RuleBasedMatchingResponse `type:"structure"`
 
 	// Usage-specific statistics about the domain.
 	Stats *DomainStats `type:"structure"`
@@ -5107,6 +10223,12 @@ func (s *GetDomainOutput) SetMatching(v *MatchingResponse) *GetDomainOutput {
 	return s
 }
 
+// SetRuleBasedMatching sets the RuleBasedMatching field's value.
+func (s *GetDomainOutput) SetRuleBasedMatching(v *RuleBasedMatchingResponse) *GetDomainOutput {
+	s.RuleBasedMatching = v
+	return s
+}
+
 // SetStats sets the Stats field's value.
 func (s *GetDomainOutput) SetStats(v *DomainStats) *GetDomainOutput {
 	s.Stats = v
@@ -5116,6 +10238,375 @@ func (s *GetDomainOutput) SetStats(v *DomainStats) *GetDomainOutput {
 // SetTags sets the Tags field's value.
 func (s *GetDomainOutput) SetTags(v map[string]*string) *GetDomainOutput {
 	s.Tags = v
+	return s
+}
+
+type GetEventStreamInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The name of the event stream provided during create operations.
+	//
+	// EventStreamName is a required field
+	EventStreamName *string `location:"uri" locationName:"EventStreamName" min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetEventStreamInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetEventStreamInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetEventStreamInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetEventStreamInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.EventStreamName == nil {
+		invalidParams.Add(request.NewErrParamRequired("EventStreamName"))
+	}
+	if s.EventStreamName != nil && len(*s.EventStreamName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("EventStreamName", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetEventStreamInput) SetDomainName(v string) *GetEventStreamInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetEventStreamName sets the EventStreamName field's value.
+func (s *GetEventStreamInput) SetEventStreamName(v string) *GetEventStreamInput {
+	s.EventStreamName = &v
+	return s
+}
+
+type GetEventStreamOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The timestamp of when the export was created.
+	//
+	// CreatedAt is a required field
+	CreatedAt *time.Time `type:"timestamp" required:"true"`
+
+	// Details regarding the Kinesis stream.
+	//
+	// DestinationDetails is a required field
+	DestinationDetails *EventStreamDestinationDetails `type:"structure" required:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `min:"1" type:"string" required:"true"`
+
+	// A unique identifier for the event stream.
+	//
+	// EventStreamArn is a required field
+	EventStreamArn *string `min:"1" type:"string" required:"true"`
+
+	// The operational state of destination stream for export.
+	//
+	// State is a required field
+	State *string `type:"string" required:"true" enum:"EventStreamState"`
+
+	// The timestamp when the State changed to STOPPED.
+	StoppedSince *time.Time `type:"timestamp"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetEventStreamOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetEventStreamOutput) GoString() string {
+	return s.String()
+}
+
+// SetCreatedAt sets the CreatedAt field's value.
+func (s *GetEventStreamOutput) SetCreatedAt(v time.Time) *GetEventStreamOutput {
+	s.CreatedAt = &v
+	return s
+}
+
+// SetDestinationDetails sets the DestinationDetails field's value.
+func (s *GetEventStreamOutput) SetDestinationDetails(v *EventStreamDestinationDetails) *GetEventStreamOutput {
+	s.DestinationDetails = v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetEventStreamOutput) SetDomainName(v string) *GetEventStreamOutput {
+	s.DomainName = &v
+	return s
+}
+
+// SetEventStreamArn sets the EventStreamArn field's value.
+func (s *GetEventStreamOutput) SetEventStreamArn(v string) *GetEventStreamOutput {
+	s.EventStreamArn = &v
+	return s
+}
+
+// SetState sets the State field's value.
+func (s *GetEventStreamOutput) SetState(v string) *GetEventStreamOutput {
+	s.State = &v
+	return s
+}
+
+// SetStoppedSince sets the StoppedSince field's value.
+func (s *GetEventStreamOutput) SetStoppedSince(v time.Time) *GetEventStreamOutput {
+	s.StoppedSince = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *GetEventStreamOutput) SetTags(v map[string]*string) *GetEventStreamOutput {
+	s.Tags = v
+	return s
+}
+
+type GetIdentityResolutionJobInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The unique identifier of the Identity Resolution Job.
+	//
+	// JobId is a required field
+	JobId *string `location:"uri" locationName:"JobId" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetIdentityResolutionJobInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetIdentityResolutionJobInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetIdentityResolutionJobInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetIdentityResolutionJobInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.JobId == nil {
+		invalidParams.Add(request.NewErrParamRequired("JobId"))
+	}
+	if s.JobId != nil && len(*s.JobId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("JobId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetIdentityResolutionJobInput) SetDomainName(v string) *GetIdentityResolutionJobInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetJobId sets the JobId field's value.
+func (s *GetIdentityResolutionJobInput) SetJobId(v string) *GetIdentityResolutionJobInput {
+	s.JobId = &v
+	return s
+}
+
+type GetIdentityResolutionJobOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Configuration settings for how to perform the auto-merging of profiles.
+	AutoMerging *AutoMerging `type:"structure"`
+
+	// The unique name of the domain.
+	DomainName *string `min:"1" type:"string"`
+
+	// The S3 location where the Identity Resolution Job writes result files.
+	ExportingLocation *ExportingLocation `type:"structure"`
+
+	// The timestamp of when the Identity Resolution Job was completed.
+	JobEndTime *time.Time `type:"timestamp"`
+
+	// The timestamp of when the Identity Resolution Job will expire.
+	JobExpirationTime *time.Time `type:"timestamp"`
+
+	// The unique identifier of the Identity Resolution Job.
+	JobId *string `type:"string"`
+
+	// The timestamp of when the Identity Resolution Job was started or will be
+	// started.
+	JobStartTime *time.Time `type:"timestamp"`
+
+	// Statistics about the Identity Resolution Job.
+	JobStats *JobStats `type:"structure"`
+
+	// The timestamp of when the Identity Resolution Job was most recently edited.
+	LastUpdatedAt *time.Time `type:"timestamp"`
+
+	// The error messages that are generated when the Identity Resolution Job runs.
+	Message *string `type:"string"`
+
+	// The status of the Identity Resolution Job.
+	//
+	//    * PENDING: The Identity Resolution Job is scheduled but has not started
+	//    yet. If you turn off the Identity Resolution feature in your domain, jobs
+	//    in the PENDING state are deleted.
+	//
+	//    * PREPROCESSING: The Identity Resolution Job is loading your data.
+	//
+	//    * FIND_MATCHING: The Identity Resolution Job is using the machine learning
+	//    model to identify profiles that belong to the same matching group.
+	//
+	//    * MERGING: The Identity Resolution Job is merging duplicate profiles.
+	//
+	//    * COMPLETED: The Identity Resolution Job completed successfully.
+	//
+	//    * PARTIAL_SUCCESS: There's a system error and not all of the data is merged.
+	//    The Identity Resolution Job writes a message indicating the source of
+	//    the problem.
+	//
+	//    * FAILED: The Identity Resolution Job did not merge any data. It writes
+	//    a message indicating the source of the problem.
+	Status *string `type:"string" enum:"IdentityResolutionJobStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetIdentityResolutionJobOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetIdentityResolutionJobOutput) GoString() string {
+	return s.String()
+}
+
+// SetAutoMerging sets the AutoMerging field's value.
+func (s *GetIdentityResolutionJobOutput) SetAutoMerging(v *AutoMerging) *GetIdentityResolutionJobOutput {
+	s.AutoMerging = v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetIdentityResolutionJobOutput) SetDomainName(v string) *GetIdentityResolutionJobOutput {
+	s.DomainName = &v
+	return s
+}
+
+// SetExportingLocation sets the ExportingLocation field's value.
+func (s *GetIdentityResolutionJobOutput) SetExportingLocation(v *ExportingLocation) *GetIdentityResolutionJobOutput {
+	s.ExportingLocation = v
+	return s
+}
+
+// SetJobEndTime sets the JobEndTime field's value.
+func (s *GetIdentityResolutionJobOutput) SetJobEndTime(v time.Time) *GetIdentityResolutionJobOutput {
+	s.JobEndTime = &v
+	return s
+}
+
+// SetJobExpirationTime sets the JobExpirationTime field's value.
+func (s *GetIdentityResolutionJobOutput) SetJobExpirationTime(v time.Time) *GetIdentityResolutionJobOutput {
+	s.JobExpirationTime = &v
+	return s
+}
+
+// SetJobId sets the JobId field's value.
+func (s *GetIdentityResolutionJobOutput) SetJobId(v string) *GetIdentityResolutionJobOutput {
+	s.JobId = &v
+	return s
+}
+
+// SetJobStartTime sets the JobStartTime field's value.
+func (s *GetIdentityResolutionJobOutput) SetJobStartTime(v time.Time) *GetIdentityResolutionJobOutput {
+	s.JobStartTime = &v
+	return s
+}
+
+// SetJobStats sets the JobStats field's value.
+func (s *GetIdentityResolutionJobOutput) SetJobStats(v *JobStats) *GetIdentityResolutionJobOutput {
+	s.JobStats = v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *GetIdentityResolutionJobOutput) SetLastUpdatedAt(v time.Time) *GetIdentityResolutionJobOutput {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *GetIdentityResolutionJobOutput) SetMessage(v string) *GetIdentityResolutionJobOutput {
+	s.Message = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *GetIdentityResolutionJobOutput) SetStatus(v string) *GetIdentityResolutionJobOutput {
+	s.Status = &v
 	return s
 }
 
@@ -5198,15 +10689,25 @@ type GetIntegrationOutput struct {
 	// DomainName is a required field
 	DomainName *string `min:"1" type:"string" required:"true"`
 
+	// Boolean that shows if the Flow that's associated with the Integration is
+	// created in Amazon Appflow, or with ObjectTypeName equals _unstructured via
+	// API/CLI in flowDefinition.
+	IsUnstructured *bool `type:"boolean"`
+
 	// The timestamp of when the domain was most recently edited.
 	//
 	// LastUpdatedAt is a required field
 	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
 
 	// The name of the profile object type.
-	//
-	// ObjectTypeName is a required field
-	ObjectTypeName *string `min:"1" type:"string" required:"true"`
+	ObjectTypeName *string `min:"1" type:"string"`
+
+	// A map in which each key is an event type from an external application such
+	// as Segment or Shopify, and each value is an ObjectTypeName (template) used
+	// to ingest the event. It supports the following event types: SegmentIdentify,
+	// ShopifyCreateCustomers, ShopifyUpdateCustomers, ShopifyCreateDraftOrders,
+	// ShopifyUpdateDraftOrders, ShopifyCreateOrders, and ShopifyUpdatedOrders.
+	ObjectTypeNames map[string]*string `type:"map"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -5215,6 +10716,9 @@ type GetIntegrationOutput struct {
 	//
 	// Uri is a required field
 	Uri *string `min:"1" type:"string" required:"true"`
+
+	// Unique identifier for the workflow.
+	WorkflowId *string `min:"1" type:"string"`
 }
 
 // String returns the string representation.
@@ -5247,6 +10751,12 @@ func (s *GetIntegrationOutput) SetDomainName(v string) *GetIntegrationOutput {
 	return s
 }
 
+// SetIsUnstructured sets the IsUnstructured field's value.
+func (s *GetIntegrationOutput) SetIsUnstructured(v bool) *GetIntegrationOutput {
+	s.IsUnstructured = &v
+	return s
+}
+
 // SetLastUpdatedAt sets the LastUpdatedAt field's value.
 func (s *GetIntegrationOutput) SetLastUpdatedAt(v time.Time) *GetIntegrationOutput {
 	s.LastUpdatedAt = &v
@@ -5259,6 +10769,12 @@ func (s *GetIntegrationOutput) SetObjectTypeName(v string) *GetIntegrationOutput
 	return s
 }
 
+// SetObjectTypeNames sets the ObjectTypeNames field's value.
+func (s *GetIntegrationOutput) SetObjectTypeNames(v map[string]*string) *GetIntegrationOutput {
+	s.ObjectTypeNames = v
+	return s
+}
+
 // SetTags sets the Tags field's value.
 func (s *GetIntegrationOutput) SetTags(v map[string]*string) *GetIntegrationOutput {
 	s.Tags = v
@@ -5268,6 +10784,12 @@ func (s *GetIntegrationOutput) SetTags(v map[string]*string) *GetIntegrationOutp
 // SetUri sets the Uri field's value.
 func (s *GetIntegrationOutput) SetUri(v string) *GetIntegrationOutput {
 	s.Uri = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *GetIntegrationOutput) SetWorkflowId(v string) *GetIntegrationOutput {
+	s.WorkflowId = &v
 	return s
 }
 
@@ -5485,8 +11007,12 @@ type GetProfileObjectTypeOutput struct {
 
 	// The description of the profile object type.
 	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetProfileObjectTypeOutput's
+	// String and GoString methods.
+	//
 	// Description is a required field
-	Description *string `min:"1" type:"string" required:"true"`
+	Description *string `min:"1" type:"string" required:"true" sensitive:"true"`
 
 	// The customer-provided key to encrypt the profile object that will be created
 	// in this profile object type.
@@ -5496,10 +11022,18 @@ type GetProfileObjectTypeOutput struct {
 	ExpirationDays *int64 `min:"1" type:"integer"`
 
 	// A map of the name and ObjectType field.
-	Fields map[string]*ObjectTypeField `type:"map"`
+	//
+	// Fields is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetProfileObjectTypeOutput's
+	// String and GoString methods.
+	Fields map[string]*ObjectTypeField `type:"map" sensitive:"true"`
 
 	// A list of unique keys that can be used to map data to the profile.
-	Keys map[string][]*ObjectTypeKey `type:"map"`
+	//
+	// Keys is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetProfileObjectTypeOutput's
+	// String and GoString methods.
+	Keys map[string][]*ObjectTypeKey `type:"map" sensitive:"true"`
 
 	// The timestamp of when the domain was most recently edited.
 	LastUpdatedAt *time.Time `type:"timestamp"`
@@ -5508,6 +11042,9 @@ type GetProfileObjectTypeOutput struct {
 	//
 	// ObjectTypeName is a required field
 	ObjectTypeName *string `min:"1" type:"string" required:"true"`
+
+	// The format of your sourceLastUpdatedTimestamp that was previously set up.
+	SourceLastUpdatedTimestampFormat *string `min:"1" type:"string"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -5588,6 +11125,12 @@ func (s *GetProfileObjectTypeOutput) SetObjectTypeName(v string) *GetProfileObje
 	return s
 }
 
+// SetSourceLastUpdatedTimestampFormat sets the SourceLastUpdatedTimestampFormat field's value.
+func (s *GetProfileObjectTypeOutput) SetSourceLastUpdatedTimestampFormat(v string) *GetProfileObjectTypeOutput {
+	s.SourceLastUpdatedTimestampFormat = &v
+	return s
+}
+
 // SetTags sets the Tags field's value.
 func (s *GetProfileObjectTypeOutput) SetTags(v map[string]*string) *GetProfileObjectTypeOutput {
 	s.Tags = v
@@ -5661,10 +11204,21 @@ type GetProfileObjectTypeTemplateOutput struct {
 	AllowProfileCreation *bool `type:"boolean"`
 
 	// A map of the name and ObjectType field.
-	Fields map[string]*ObjectTypeField `type:"map"`
+	//
+	// Fields is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetProfileObjectTypeTemplateOutput's
+	// String and GoString methods.
+	Fields map[string]*ObjectTypeField `type:"map" sensitive:"true"`
 
 	// A list of unique keys that can be used to map data to the profile.
-	Keys map[string][]*ObjectTypeKey `type:"map"`
+	//
+	// Keys is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by GetProfileObjectTypeTemplateOutput's
+	// String and GoString methods.
+	Keys map[string][]*ObjectTypeKey `type:"map" sensitive:"true"`
+
+	// The format of your sourceLastUpdatedTimestamp that was previously set up.
+	SourceLastUpdatedTimestampFormat *string `min:"1" type:"string"`
 
 	// The name of the source of the object template.
 	SourceName *string `min:"1" type:"string"`
@@ -5712,6 +11266,12 @@ func (s *GetProfileObjectTypeTemplateOutput) SetKeys(v map[string][]*ObjectTypeK
 	return s
 }
 
+// SetSourceLastUpdatedTimestampFormat sets the SourceLastUpdatedTimestampFormat field's value.
+func (s *GetProfileObjectTypeTemplateOutput) SetSourceLastUpdatedTimestampFormat(v string) *GetProfileObjectTypeTemplateOutput {
+	s.SourceLastUpdatedTimestampFormat = &v
+	return s
+}
+
 // SetSourceName sets the SourceName field's value.
 func (s *GetProfileObjectTypeTemplateOutput) SetSourceName(v string) *GetProfileObjectTypeTemplateOutput {
 	s.SourceName = &v
@@ -5727,6 +11287,635 @@ func (s *GetProfileObjectTypeTemplateOutput) SetSourceObject(v string) *GetProfi
 // SetTemplateId sets the TemplateId field's value.
 func (s *GetProfileObjectTypeTemplateOutput) SetTemplateId(v string) *GetProfileObjectTypeTemplateOutput {
 	s.TemplateId = &v
+	return s
+}
+
+type GetSimilarProfilesInput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// Specify the type of matching to get similar profiles for.
+	//
+	// MatchType is a required field
+	MatchType *string `type:"string" required:"true" enum:"MatchType"`
+
+	// The maximum number of objects returned per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// The pagination token from the previous GetSimilarProfiles API call.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+
+	// The string indicating the search key to be used.
+	//
+	// SearchKey is a required field
+	SearchKey *string `min:"1" type:"string" required:"true"`
+
+	// The string based on SearchKey to be searched for similar profiles.
+	//
+	// SearchValue is a required field
+	SearchValue *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetSimilarProfilesInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetSimilarProfilesInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetSimilarProfilesInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetSimilarProfilesInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MatchType == nil {
+		invalidParams.Add(request.NewErrParamRequired("MatchType"))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+	if s.SearchKey == nil {
+		invalidParams.Add(request.NewErrParamRequired("SearchKey"))
+	}
+	if s.SearchKey != nil && len(*s.SearchKey) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("SearchKey", 1))
+	}
+	if s.SearchValue == nil {
+		invalidParams.Add(request.NewErrParamRequired("SearchValue"))
+	}
+	if s.SearchValue != nil && len(*s.SearchValue) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("SearchValue", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetSimilarProfilesInput) SetDomainName(v string) *GetSimilarProfilesInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMatchType sets the MatchType field's value.
+func (s *GetSimilarProfilesInput) SetMatchType(v string) *GetSimilarProfilesInput {
+	s.MatchType = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *GetSimilarProfilesInput) SetMaxResults(v int64) *GetSimilarProfilesInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *GetSimilarProfilesInput) SetNextToken(v string) *GetSimilarProfilesInput {
+	s.NextToken = &v
+	return s
+}
+
+// SetSearchKey sets the SearchKey field's value.
+func (s *GetSimilarProfilesInput) SetSearchKey(v string) *GetSimilarProfilesInput {
+	s.SearchKey = &v
+	return s
+}
+
+// SetSearchValue sets the SearchValue field's value.
+func (s *GetSimilarProfilesInput) SetSearchValue(v string) *GetSimilarProfilesInput {
+	s.SearchValue = &v
+	return s
+}
+
+type GetSimilarProfilesOutput struct {
+	_ struct{} `type:"structure"`
+
+	// It only has value when the MatchType is ML_BASED_MATCHING.A number between
+	// 0 and 1, where a higher score means higher similarity. Examining match confidence
+	// scores lets you distinguish between groups of similar records in which the
+	// system is highly confident (which you may decide to merge), groups of similar
+	// records about which the system is uncertain (which you may decide to have
+	// reviewed by a human), and groups of similar records that the system deems
+	// to be unlikely (which you may decide to reject). Given confidence scores
+	// vary as per the data input, it should not be used as an absolute measure
+	// of matching quality.
+	ConfidenceScore *float64 `type:"double"`
+
+	// The string matchId that the similar profiles belong to.
+	MatchId *string `min:"1" type:"string"`
+
+	// Specify the type of matching to get similar profiles for.
+	MatchType *string `type:"string" enum:"MatchType"`
+
+	// The pagination token from the previous GetSimilarProfiles API call.
+	NextToken *string `min:"1" type:"string"`
+
+	// Set of profileIds that belong to the same matching group.
+	ProfileIds []*string `type:"list"`
+
+	// The integer rule level that the profiles matched on.
+	RuleLevel *int64 `min:"1" type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetSimilarProfilesOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetSimilarProfilesOutput) GoString() string {
+	return s.String()
+}
+
+// SetConfidenceScore sets the ConfidenceScore field's value.
+func (s *GetSimilarProfilesOutput) SetConfidenceScore(v float64) *GetSimilarProfilesOutput {
+	s.ConfidenceScore = &v
+	return s
+}
+
+// SetMatchId sets the MatchId field's value.
+func (s *GetSimilarProfilesOutput) SetMatchId(v string) *GetSimilarProfilesOutput {
+	s.MatchId = &v
+	return s
+}
+
+// SetMatchType sets the MatchType field's value.
+func (s *GetSimilarProfilesOutput) SetMatchType(v string) *GetSimilarProfilesOutput {
+	s.MatchType = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *GetSimilarProfilesOutput) SetNextToken(v string) *GetSimilarProfilesOutput {
+	s.NextToken = &v
+	return s
+}
+
+// SetProfileIds sets the ProfileIds field's value.
+func (s *GetSimilarProfilesOutput) SetProfileIds(v []*string) *GetSimilarProfilesOutput {
+	s.ProfileIds = v
+	return s
+}
+
+// SetRuleLevel sets the RuleLevel field's value.
+func (s *GetSimilarProfilesOutput) SetRuleLevel(v int64) *GetSimilarProfilesOutput {
+	s.RuleLevel = &v
+	return s
+}
+
+type GetWorkflowInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// Unique identifier for the workflow.
+	//
+	// WorkflowId is a required field
+	WorkflowId *string `location:"uri" locationName:"WorkflowId" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetWorkflowInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetWorkflowInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.WorkflowId == nil {
+		invalidParams.Add(request.NewErrParamRequired("WorkflowId"))
+	}
+	if s.WorkflowId != nil && len(*s.WorkflowId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("WorkflowId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetWorkflowInput) SetDomainName(v string) *GetWorkflowInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *GetWorkflowInput) SetWorkflowId(v string) *GetWorkflowInput {
+	s.WorkflowId = &v
+	return s
+}
+
+type GetWorkflowOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Attributes provided for workflow execution.
+	Attributes *WorkflowAttributes `type:"structure"`
+
+	// Workflow error messages during execution (if any).
+	ErrorDescription *string `min:"1" type:"string"`
+
+	// The timestamp that represents when workflow execution last updated.
+	LastUpdatedAt *time.Time `type:"timestamp"`
+
+	// Workflow specific execution metrics.
+	Metrics *WorkflowMetrics `type:"structure"`
+
+	// The timestamp that represents when workflow execution started.
+	StartDate *time.Time `type:"timestamp"`
+
+	// Status of workflow execution.
+	Status *string `type:"string" enum:"Status"`
+
+	// Unique identifier for the workflow.
+	WorkflowId *string `type:"string"`
+
+	// The type of workflow. The only supported value is APPFLOW_INTEGRATION.
+	WorkflowType *string `type:"string" enum:"WorkflowType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowOutput) GoString() string {
+	return s.String()
+}
+
+// SetAttributes sets the Attributes field's value.
+func (s *GetWorkflowOutput) SetAttributes(v *WorkflowAttributes) *GetWorkflowOutput {
+	s.Attributes = v
+	return s
+}
+
+// SetErrorDescription sets the ErrorDescription field's value.
+func (s *GetWorkflowOutput) SetErrorDescription(v string) *GetWorkflowOutput {
+	s.ErrorDescription = &v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *GetWorkflowOutput) SetLastUpdatedAt(v time.Time) *GetWorkflowOutput {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetMetrics sets the Metrics field's value.
+func (s *GetWorkflowOutput) SetMetrics(v *WorkflowMetrics) *GetWorkflowOutput {
+	s.Metrics = v
+	return s
+}
+
+// SetStartDate sets the StartDate field's value.
+func (s *GetWorkflowOutput) SetStartDate(v time.Time) *GetWorkflowOutput {
+	s.StartDate = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *GetWorkflowOutput) SetStatus(v string) *GetWorkflowOutput {
+	s.Status = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *GetWorkflowOutput) SetWorkflowId(v string) *GetWorkflowOutput {
+	s.WorkflowId = &v
+	return s
+}
+
+// SetWorkflowType sets the WorkflowType field's value.
+func (s *GetWorkflowOutput) SetWorkflowType(v string) *GetWorkflowOutput {
+	s.WorkflowType = &v
+	return s
+}
+
+type GetWorkflowStepsInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The maximum number of results to return per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// The token for the next set of results. Use the value returned in the previous
+	// response in the next request to retrieve the next set of results.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+
+	// Unique identifier for the workflow.
+	//
+	// WorkflowId is a required field
+	WorkflowId *string `location:"uri" locationName:"WorkflowId" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowStepsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowStepsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *GetWorkflowStepsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "GetWorkflowStepsInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+	if s.WorkflowId == nil {
+		invalidParams.Add(request.NewErrParamRequired("WorkflowId"))
+	}
+	if s.WorkflowId != nil && len(*s.WorkflowId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("WorkflowId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *GetWorkflowStepsInput) SetDomainName(v string) *GetWorkflowStepsInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *GetWorkflowStepsInput) SetMaxResults(v int64) *GetWorkflowStepsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *GetWorkflowStepsInput) SetNextToken(v string) *GetWorkflowStepsInput {
+	s.NextToken = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *GetWorkflowStepsInput) SetWorkflowId(v string) *GetWorkflowStepsInput {
+	s.WorkflowId = &v
+	return s
+}
+
+type GetWorkflowStepsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// List containing workflow step details.
+	Items []*WorkflowStepItem `type:"list"`
+
+	// If there are additional results, this is the token for the next set of results.
+	NextToken *string `min:"1" type:"string"`
+
+	// Unique identifier for the workflow.
+	WorkflowId *string `type:"string"`
+
+	// The type of workflow. The only supported value is APPFLOW_INTEGRATION.
+	WorkflowType *string `type:"string" enum:"WorkflowType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowStepsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s GetWorkflowStepsOutput) GoString() string {
+	return s.String()
+}
+
+// SetItems sets the Items field's value.
+func (s *GetWorkflowStepsOutput) SetItems(v []*WorkflowStepItem) *GetWorkflowStepsOutput {
+	s.Items = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *GetWorkflowStepsOutput) SetNextToken(v string) *GetWorkflowStepsOutput {
+	s.NextToken = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *GetWorkflowStepsOutput) SetWorkflowId(v string) *GetWorkflowStepsOutput {
+	s.WorkflowId = &v
+	return s
+}
+
+// SetWorkflowType sets the WorkflowType field's value.
+func (s *GetWorkflowStepsOutput) SetWorkflowType(v string) *GetWorkflowStepsOutput {
+	s.WorkflowType = &v
+	return s
+}
+
+// Information about the Identity Resolution Job.
+type IdentityResolutionJob struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the domain.
+	DomainName *string `min:"1" type:"string"`
+
+	// The S3 location where the Identity Resolution Job writes result files.
+	ExportingLocation *ExportingLocation `type:"structure"`
+
+	// The timestamp of when the job was completed.
+	JobEndTime *time.Time `type:"timestamp"`
+
+	// The unique identifier of the Identity Resolution Job.
+	JobId *string `type:"string"`
+
+	// The timestamp of when the job was started or will be started.
+	JobStartTime *time.Time `type:"timestamp"`
+
+	// Statistics about an Identity Resolution Job.
+	JobStats *JobStats `type:"structure"`
+
+	// The error messages that are generated when the Identity Resolution Job runs.
+	Message *string `type:"string"`
+
+	// The status of the Identity Resolution Job.
+	//
+	//    * PENDING: The Identity Resolution Job is scheduled but has not started
+	//    yet. If you turn off the Identity Resolution feature in your domain, jobs
+	//    in the PENDING state are deleted.
+	//
+	//    * PREPROCESSING: The Identity Resolution Job is loading your data.
+	//
+	//    * FIND_MATCHING: The Identity Resolution Job is using the machine learning
+	//    model to identify profiles that belong to the same matching group.
+	//
+	//    * MERGING: The Identity Resolution Job is merging duplicate profiles.
+	//
+	//    * COMPLETED: The Identity Resolution Job completed successfully.
+	//
+	//    * PARTIAL_SUCCESS: There's a system error and not all of the data is merged.
+	//    The Identity Resolution Job writes a message indicating the source of
+	//    the problem.
+	//
+	//    * FAILED: The Identity Resolution Job did not merge any data. It writes
+	//    a message indicating the source of the problem.
+	Status *string `type:"string" enum:"IdentityResolutionJobStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s IdentityResolutionJob) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s IdentityResolutionJob) GoString() string {
+	return s.String()
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *IdentityResolutionJob) SetDomainName(v string) *IdentityResolutionJob {
+	s.DomainName = &v
+	return s
+}
+
+// SetExportingLocation sets the ExportingLocation field's value.
+func (s *IdentityResolutionJob) SetExportingLocation(v *ExportingLocation) *IdentityResolutionJob {
+	s.ExportingLocation = v
+	return s
+}
+
+// SetJobEndTime sets the JobEndTime field's value.
+func (s *IdentityResolutionJob) SetJobEndTime(v time.Time) *IdentityResolutionJob {
+	s.JobEndTime = &v
+	return s
+}
+
+// SetJobId sets the JobId field's value.
+func (s *IdentityResolutionJob) SetJobId(v string) *IdentityResolutionJob {
+	s.JobId = &v
+	return s
+}
+
+// SetJobStartTime sets the JobStartTime field's value.
+func (s *IdentityResolutionJob) SetJobStartTime(v time.Time) *IdentityResolutionJob {
+	s.JobStartTime = &v
+	return s
+}
+
+// SetJobStats sets the JobStats field's value.
+func (s *IdentityResolutionJob) SetJobStats(v *JobStats) *IdentityResolutionJob {
+	s.JobStats = v
+	return s
+}
+
+// SetMessage sets the Message field's value.
+func (s *IdentityResolutionJob) SetMessage(v string) *IdentityResolutionJob {
+	s.Message = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *IdentityResolutionJob) SetStatus(v string) *IdentityResolutionJob {
+	s.Status = &v
 	return s
 }
 
@@ -5761,6 +11950,53 @@ func (s IncrementalPullConfig) GoString() string {
 // SetDatetimeTypeFieldName sets the DatetimeTypeFieldName field's value.
 func (s *IncrementalPullConfig) SetDatetimeTypeFieldName(v string) *IncrementalPullConfig {
 	s.DatetimeTypeFieldName = &v
+	return s
+}
+
+// Configuration data for integration workflow.
+type IntegrationConfig struct {
+	_ struct{} `type:"structure"`
+
+	// Configuration data for APPFLOW_INTEGRATION workflow type.
+	AppflowIntegration *AppflowIntegration `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s IntegrationConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s IntegrationConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *IntegrationConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "IntegrationConfig"}
+	if s.AppflowIntegration != nil {
+		if err := s.AppflowIntegration.Validate(); err != nil {
+			invalidParams.AddNested("AppflowIntegration", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAppflowIntegration sets the AppflowIntegration field's value.
+func (s *IntegrationConfig) SetAppflowIntegration(v *AppflowIntegration) *IntegrationConfig {
+	s.AppflowIntegration = v
 	return s
 }
 
@@ -5828,8 +12064,127 @@ func (s *InternalServerException) RequestID() string {
 	return s.RespMetadata.RequestID
 }
 
+// The day and time when do you want to start the Identity Resolution Job every
+// week.
+type JobSchedule struct {
+	_ struct{} `type:"structure"`
+
+	// The day when the Identity Resolution Job should run every week.
+	//
+	// DayOfTheWeek is a required field
+	DayOfTheWeek *string `type:"string" required:"true" enum:"JobScheduleDayOfTheWeek"`
+
+	// The time when the Identity Resolution Job should run every week.
+	//
+	// Time is a required field
+	Time *string `min:"3" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s JobSchedule) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s JobSchedule) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *JobSchedule) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "JobSchedule"}
+	if s.DayOfTheWeek == nil {
+		invalidParams.Add(request.NewErrParamRequired("DayOfTheWeek"))
+	}
+	if s.Time == nil {
+		invalidParams.Add(request.NewErrParamRequired("Time"))
+	}
+	if s.Time != nil && len(*s.Time) < 3 {
+		invalidParams.Add(request.NewErrParamMinLen("Time", 3))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDayOfTheWeek sets the DayOfTheWeek field's value.
+func (s *JobSchedule) SetDayOfTheWeek(v string) *JobSchedule {
+	s.DayOfTheWeek = &v
+	return s
+}
+
+// SetTime sets the Time field's value.
+func (s *JobSchedule) SetTime(v string) *JobSchedule {
+	s.Time = &v
+	return s
+}
+
+// Statistics about the Identity Resolution Job.
+type JobStats struct {
+	_ struct{} `type:"structure"`
+
+	// The number of matches found.
+	NumberOfMatchesFound *int64 `type:"long"`
+
+	// The number of merges completed.
+	NumberOfMergesDone *int64 `type:"long"`
+
+	// The number of profiles reviewed.
+	NumberOfProfilesReviewed *int64 `type:"long"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s JobStats) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s JobStats) GoString() string {
+	return s.String()
+}
+
+// SetNumberOfMatchesFound sets the NumberOfMatchesFound field's value.
+func (s *JobStats) SetNumberOfMatchesFound(v int64) *JobStats {
+	s.NumberOfMatchesFound = &v
+	return s
+}
+
+// SetNumberOfMergesDone sets the NumberOfMergesDone field's value.
+func (s *JobStats) SetNumberOfMergesDone(v int64) *JobStats {
+	s.NumberOfMergesDone = &v
+	return s
+}
+
+// SetNumberOfProfilesReviewed sets the NumberOfProfilesReviewed field's value.
+func (s *JobStats) SetNumberOfProfilesReviewed(v int64) *JobStats {
+	s.NumberOfProfilesReviewed = &v
+	return s
+}
+
 type ListAccountIntegrationsInput struct {
 	_ struct{} `type:"structure"`
+
+	// Boolean to indicate if hidden integration should be returned. Defaults to
+	// False.
+	IncludeHidden *bool `location:"querystring" locationName:"include-hidden" type:"boolean"`
 
 	// The maximum number of objects returned per page.
 	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
@@ -5881,6 +12236,12 @@ func (s *ListAccountIntegrationsInput) Validate() error {
 		return invalidParams
 	}
 	return nil
+}
+
+// SetIncludeHidden sets the IncludeHidden field's value.
+func (s *ListAccountIntegrationsInput) SetIncludeHidden(v bool) *ListAccountIntegrationsInput {
+	s.IncludeHidden = &v
+	return s
 }
 
 // SetMaxResults sets the MaxResults field's value.
@@ -5937,6 +12298,395 @@ func (s *ListAccountIntegrationsOutput) SetItems(v []*ListIntegrationItem) *List
 
 // SetNextToken sets the NextToken field's value.
 func (s *ListAccountIntegrationsOutput) SetNextToken(v string) *ListAccountIntegrationsOutput {
+	s.NextToken = &v
+	return s
+}
+
+// The details of a single calculated attribute definition.
+type ListCalculatedAttributeDefinitionItem struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the calculated attribute.
+	CalculatedAttributeName *string `min:"1" type:"string"`
+
+	// The threshold for the calculated attribute.
+	CreatedAt *time.Time `type:"timestamp"`
+
+	// The threshold for the calculated attribute.
+	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by ListCalculatedAttributeDefinitionItem's
+	// String and GoString methods.
+	Description *string `min:"1" type:"string" sensitive:"true"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// The timestamp of when the calculated attribute definition was most recently
+	// edited.
+	LastUpdatedAt *time.Time `type:"timestamp"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeDefinitionItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeDefinitionItem) GoString() string {
+	return s.String()
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *ListCalculatedAttributeDefinitionItem) SetCalculatedAttributeName(v string) *ListCalculatedAttributeDefinitionItem {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetCreatedAt sets the CreatedAt field's value.
+func (s *ListCalculatedAttributeDefinitionItem) SetCreatedAt(v time.Time) *ListCalculatedAttributeDefinitionItem {
+	s.CreatedAt = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *ListCalculatedAttributeDefinitionItem) SetDescription(v string) *ListCalculatedAttributeDefinitionItem {
+	s.Description = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *ListCalculatedAttributeDefinitionItem) SetDisplayName(v string) *ListCalculatedAttributeDefinitionItem {
+	s.DisplayName = &v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *ListCalculatedAttributeDefinitionItem) SetLastUpdatedAt(v time.Time) *ListCalculatedAttributeDefinitionItem {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *ListCalculatedAttributeDefinitionItem) SetTags(v map[string]*string) *ListCalculatedAttributeDefinitionItem {
+	s.Tags = v
+	return s
+}
+
+type ListCalculatedAttributeDefinitionsInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The maximum number of calculated attribute definitions returned per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// The pagination token from the previous call to ListCalculatedAttributeDefinitions.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeDefinitionsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeDefinitionsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListCalculatedAttributeDefinitionsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListCalculatedAttributeDefinitionsInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *ListCalculatedAttributeDefinitionsInput) SetDomainName(v string) *ListCalculatedAttributeDefinitionsInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListCalculatedAttributeDefinitionsInput) SetMaxResults(v int64) *ListCalculatedAttributeDefinitionsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListCalculatedAttributeDefinitionsInput) SetNextToken(v string) *ListCalculatedAttributeDefinitionsInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListCalculatedAttributeDefinitionsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The list of calculated attribute definitions.
+	//
+	// Items is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by ListCalculatedAttributeDefinitionsOutput's
+	// String and GoString methods.
+	Items []*ListCalculatedAttributeDefinitionItem `type:"list" sensitive:"true"`
+
+	// The pagination token from the previous call to ListCalculatedAttributeDefinitions.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeDefinitionsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeDefinitionsOutput) GoString() string {
+	return s.String()
+}
+
+// SetItems sets the Items field's value.
+func (s *ListCalculatedAttributeDefinitionsOutput) SetItems(v []*ListCalculatedAttributeDefinitionItem) *ListCalculatedAttributeDefinitionsOutput {
+	s.Items = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListCalculatedAttributeDefinitionsOutput) SetNextToken(v string) *ListCalculatedAttributeDefinitionsOutput {
+	s.NextToken = &v
+	return s
+}
+
+// The details of a single calculated attribute for a profile.
+type ListCalculatedAttributeForProfileItem struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the calculated attribute.
+	CalculatedAttributeName *string `min:"1" type:"string"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// Indicates whether the calculated attribute’s value is based on partial
+	// data. If data is partial, it is set to true.
+	IsDataPartial *string `min:"1" type:"string"`
+
+	// The value of the calculated attribute.
+	Value *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeForProfileItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributeForProfileItem) GoString() string {
+	return s.String()
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *ListCalculatedAttributeForProfileItem) SetCalculatedAttributeName(v string) *ListCalculatedAttributeForProfileItem {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *ListCalculatedAttributeForProfileItem) SetDisplayName(v string) *ListCalculatedAttributeForProfileItem {
+	s.DisplayName = &v
+	return s
+}
+
+// SetIsDataPartial sets the IsDataPartial field's value.
+func (s *ListCalculatedAttributeForProfileItem) SetIsDataPartial(v string) *ListCalculatedAttributeForProfileItem {
+	s.IsDataPartial = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *ListCalculatedAttributeForProfileItem) SetValue(v string) *ListCalculatedAttributeForProfileItem {
+	s.Value = &v
+	return s
+}
+
+type ListCalculatedAttributesForProfileInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The maximum number of calculated attributes returned per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// The pagination token from the previous call to ListCalculatedAttributesForProfile.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+
+	// The unique identifier of a customer profile.
+	//
+	// ProfileId is a required field
+	ProfileId *string `location:"uri" locationName:"ProfileId" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributesForProfileInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributesForProfileInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListCalculatedAttributesForProfileInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListCalculatedAttributesForProfileInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+	if s.ProfileId == nil {
+		invalidParams.Add(request.NewErrParamRequired("ProfileId"))
+	}
+	if s.ProfileId != nil && len(*s.ProfileId) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("ProfileId", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *ListCalculatedAttributesForProfileInput) SetDomainName(v string) *ListCalculatedAttributesForProfileInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListCalculatedAttributesForProfileInput) SetMaxResults(v int64) *ListCalculatedAttributesForProfileInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListCalculatedAttributesForProfileInput) SetNextToken(v string) *ListCalculatedAttributesForProfileInput {
+	s.NextToken = &v
+	return s
+}
+
+// SetProfileId sets the ProfileId field's value.
+func (s *ListCalculatedAttributesForProfileInput) SetProfileId(v string) *ListCalculatedAttributesForProfileInput {
+	s.ProfileId = &v
+	return s
+}
+
+type ListCalculatedAttributesForProfileOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The list of calculated attributes.
+	Items []*ListCalculatedAttributeForProfileItem `type:"list"`
+
+	// The pagination token from the previous call to ListCalculatedAttributesForProfile.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributesForProfileOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListCalculatedAttributesForProfileOutput) GoString() string {
+	return s.String()
+}
+
+// SetItems sets the Items field's value.
+func (s *ListCalculatedAttributesForProfileOutput) SetItems(v []*ListCalculatedAttributeForProfileItem) *ListCalculatedAttributesForProfileOutput {
+	s.Items = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListCalculatedAttributesForProfileOutput) SetNextToken(v string) *ListCalculatedAttributesForProfileOutput {
 	s.NextToken = &v
 	return s
 }
@@ -6102,6 +12852,233 @@ func (s *ListDomainsOutput) SetNextToken(v string) *ListDomainsOutput {
 	return s
 }
 
+type ListEventStreamsInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The maximum number of objects returned per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListEventStreamsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListEventStreamsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListEventStreamsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListEventStreamsInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *ListEventStreamsInput) SetDomainName(v string) *ListEventStreamsInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListEventStreamsInput) SetMaxResults(v int64) *ListEventStreamsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListEventStreamsInput) SetNextToken(v string) *ListEventStreamsInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListEventStreamsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// Contains summary information about an EventStream.
+	Items []*EventStreamSummary `type:"list"`
+
+	// Identifies the next page of results to return.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListEventStreamsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListEventStreamsOutput) GoString() string {
+	return s.String()
+}
+
+// SetItems sets the Items field's value.
+func (s *ListEventStreamsOutput) SetItems(v []*EventStreamSummary) *ListEventStreamsOutput {
+	s.Items = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListEventStreamsOutput) SetNextToken(v string) *ListEventStreamsOutput {
+	s.NextToken = &v
+	return s
+}
+
+type ListIdentityResolutionJobsInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The maximum number of results to return per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// The token for the next set of results. Use the value returned in the previous
+	// response in the next request to retrieve the next set of results.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListIdentityResolutionJobsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListIdentityResolutionJobsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListIdentityResolutionJobsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListIdentityResolutionJobsInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *ListIdentityResolutionJobsInput) SetDomainName(v string) *ListIdentityResolutionJobsInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListIdentityResolutionJobsInput) SetMaxResults(v int64) *ListIdentityResolutionJobsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListIdentityResolutionJobsInput) SetNextToken(v string) *ListIdentityResolutionJobsInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListIdentityResolutionJobsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// A list of Identity Resolution Jobs.
+	IdentityResolutionJobsList []*IdentityResolutionJob `type:"list"`
+
+	// If there are additional results, this is the token for the next set of results.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListIdentityResolutionJobsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListIdentityResolutionJobsOutput) GoString() string {
+	return s.String()
+}
+
+// SetIdentityResolutionJobsList sets the IdentityResolutionJobsList field's value.
+func (s *ListIdentityResolutionJobsOutput) SetIdentityResolutionJobsList(v []*IdentityResolutionJob) *ListIdentityResolutionJobsOutput {
+	s.IdentityResolutionJobsList = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListIdentityResolutionJobsOutput) SetNextToken(v string) *ListIdentityResolutionJobsOutput {
+	s.NextToken = &v
+	return s
+}
+
 // An integration in list of integrations.
 type ListIntegrationItem struct {
 	_ struct{} `type:"structure"`
@@ -6116,15 +13093,25 @@ type ListIntegrationItem struct {
 	// DomainName is a required field
 	DomainName *string `min:"1" type:"string" required:"true"`
 
+	// Boolean that shows if the Flow that's associated with the Integration is
+	// created in Amazon Appflow, or with ObjectTypeName equals _unstructured via
+	// API/CLI in flowDefinition.
+	IsUnstructured *bool `type:"boolean"`
+
 	// The timestamp of when the domain was most recently edited.
 	//
 	// LastUpdatedAt is a required field
 	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
 
 	// The name of the profile object type.
-	//
-	// ObjectTypeName is a required field
-	ObjectTypeName *string `min:"1" type:"string" required:"true"`
+	ObjectTypeName *string `min:"1" type:"string"`
+
+	// A map in which each key is an event type from an external application such
+	// as Segment or Shopify, and each value is an ObjectTypeName (template) used
+	// to ingest the event. It supports the following event types: SegmentIdentify,
+	// ShopifyCreateCustomers, ShopifyUpdateCustomers, ShopifyCreateDraftOrders,
+	// ShopifyUpdateDraftOrders, ShopifyCreateOrders, and ShopifyUpdatedOrders.
+	ObjectTypeNames map[string]*string `type:"map"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -6133,6 +13120,9 @@ type ListIntegrationItem struct {
 	//
 	// Uri is a required field
 	Uri *string `min:"1" type:"string" required:"true"`
+
+	// Unique identifier for the workflow.
+	WorkflowId *string `min:"1" type:"string"`
 }
 
 // String returns the string representation.
@@ -6165,6 +13155,12 @@ func (s *ListIntegrationItem) SetDomainName(v string) *ListIntegrationItem {
 	return s
 }
 
+// SetIsUnstructured sets the IsUnstructured field's value.
+func (s *ListIntegrationItem) SetIsUnstructured(v bool) *ListIntegrationItem {
+	s.IsUnstructured = &v
+	return s
+}
+
 // SetLastUpdatedAt sets the LastUpdatedAt field's value.
 func (s *ListIntegrationItem) SetLastUpdatedAt(v time.Time) *ListIntegrationItem {
 	s.LastUpdatedAt = &v
@@ -6174,6 +13170,12 @@ func (s *ListIntegrationItem) SetLastUpdatedAt(v time.Time) *ListIntegrationItem
 // SetObjectTypeName sets the ObjectTypeName field's value.
 func (s *ListIntegrationItem) SetObjectTypeName(v string) *ListIntegrationItem {
 	s.ObjectTypeName = &v
+	return s
+}
+
+// SetObjectTypeNames sets the ObjectTypeNames field's value.
+func (s *ListIntegrationItem) SetObjectTypeNames(v map[string]*string) *ListIntegrationItem {
+	s.ObjectTypeNames = v
 	return s
 }
 
@@ -6189,6 +13191,12 @@ func (s *ListIntegrationItem) SetUri(v string) *ListIntegrationItem {
 	return s
 }
 
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *ListIntegrationItem) SetWorkflowId(v string) *ListIntegrationItem {
+	s.WorkflowId = &v
+	return s
+}
+
 type ListIntegrationsInput struct {
 	_ struct{} `type:"structure" nopayload:"true"`
 
@@ -6196,6 +13204,10 @@ type ListIntegrationsInput struct {
 	//
 	// DomainName is a required field
 	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// Boolean to indicate if hidden integration should be returned. Defaults to
+	// False.
+	IncludeHidden *bool `location:"querystring" locationName:"include-hidden" type:"boolean"`
 
 	// The maximum number of objects returned per page.
 	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
@@ -6247,6 +13259,12 @@ func (s *ListIntegrationsInput) Validate() error {
 // SetDomainName sets the DomainName field's value.
 func (s *ListIntegrationsInput) SetDomainName(v string) *ListIntegrationsInput {
 	s.DomainName = &v
+	return s
+}
+
+// SetIncludeHidden sets the IncludeHidden field's value.
+func (s *ListIntegrationsInput) SetIncludeHidden(v bool) *ListIntegrationsInput {
+	s.IncludeHidden = &v
 	return s
 }
 
@@ -6597,7 +13615,11 @@ type ListProfileObjectTypesOutput struct {
 	_ struct{} `type:"structure"`
 
 	// The list of ListProfileObjectTypes instances.
-	Items []*ListProfileObjectTypeItem `type:"list"`
+	//
+	// Items is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by ListProfileObjectTypesOutput's
+	// String and GoString methods.
+	Items []*ListProfileObjectTypeItem `type:"list" sensitive:"true"`
 
 	// Identifies the next page of results to return.
 	NextToken *string `min:"1" type:"string"`
@@ -6648,8 +13670,7 @@ type ListProfileObjectsInput struct {
 	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
 
 	// Applies a filter to the response to include profile objects with the specified
-	// index values. This filter is only supported for ObjectTypeName _asset and
-	// _case.
+	// index values.
 	ObjectFilter *ObjectFilter `type:"structure"`
 
 	// The name of the profile object type.
@@ -6758,7 +13779,11 @@ type ListProfileObjectsItem struct {
 	_ struct{} `type:"structure"`
 
 	// A JSON representation of a ProfileObject that belongs to a profile.
-	Object *string `min:"1" type:"string"`
+	//
+	// Object is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by ListProfileObjectsItem's
+	// String and GoString methods.
+	Object *string `min:"1" type:"string" sensitive:"true"`
 
 	// Specifies the kind of object being added to a profile, such as "Salesforce-Account."
 	ObjectTypeName *string `min:"1" type:"string"`
@@ -6843,6 +13868,119 @@ func (s *ListProfileObjectsOutput) SetNextToken(v string) *ListProfileObjectsOut
 	return s
 }
 
+type ListRuleBasedMatchesInput struct {
+	_ struct{} `type:"structure" nopayload:"true"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The maximum number of MatchIds returned per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// The pagination token from the previous ListRuleBasedMatches API call.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListRuleBasedMatchesInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListRuleBasedMatchesInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListRuleBasedMatchesInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListRuleBasedMatchesInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *ListRuleBasedMatchesInput) SetDomainName(v string) *ListRuleBasedMatchesInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListRuleBasedMatchesInput) SetMaxResults(v int64) *ListRuleBasedMatchesInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListRuleBasedMatchesInput) SetNextToken(v string) *ListRuleBasedMatchesInput {
+	s.NextToken = &v
+	return s
+}
+
+type ListRuleBasedMatchesOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The list of MatchIds for the given domain.
+	MatchIds []*string `type:"list"`
+
+	// The pagination token from the previous ListRuleBasedMatches API call.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListRuleBasedMatchesOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListRuleBasedMatchesOutput) GoString() string {
+	return s.String()
+}
+
+// SetMatchIds sets the MatchIds field's value.
+func (s *ListRuleBasedMatchesOutput) SetMatchIds(v []*string) *ListRuleBasedMatchesOutput {
+	s.MatchIds = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListRuleBasedMatchesOutput) SetNextToken(v string) *ListRuleBasedMatchesOutput {
+	s.NextToken = &v
+	return s
+}
+
 type ListTagsForResourceInput struct {
 	_ struct{} `type:"structure" nopayload:"true"`
 
@@ -6923,6 +14061,245 @@ func (s *ListTagsForResourceOutput) SetTags(v map[string]*string) *ListTagsForRe
 	return s
 }
 
+type ListWorkflowsInput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+
+	// The maximum number of results to return per page.
+	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
+
+	// The token for the next set of results. Use the value returned in the previous
+	// response in the next request to retrieve the next set of results.
+	NextToken *string `location:"querystring" locationName:"next-token" min:"1" type:"string"`
+
+	// Retrieve workflows ended after timestamp.
+	QueryEndDate *time.Time `type:"timestamp"`
+
+	// Retrieve workflows started after timestamp.
+	QueryStartDate *time.Time `type:"timestamp"`
+
+	// Status of workflow execution.
+	Status *string `type:"string" enum:"Status"`
+
+	// The type of workflow. The only supported value is APPFLOW_INTEGRATION.
+	WorkflowType *string `type:"string" enum:"WorkflowType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListWorkflowsInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListWorkflowsInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *ListWorkflowsInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "ListWorkflowsInput"}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.MaxResults != nil && *s.MaxResults < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxResults", 1))
+	}
+	if s.NextToken != nil && len(*s.NextToken) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("NextToken", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *ListWorkflowsInput) SetDomainName(v string) *ListWorkflowsInput {
+	s.DomainName = &v
+	return s
+}
+
+// SetMaxResults sets the MaxResults field's value.
+func (s *ListWorkflowsInput) SetMaxResults(v int64) *ListWorkflowsInput {
+	s.MaxResults = &v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListWorkflowsInput) SetNextToken(v string) *ListWorkflowsInput {
+	s.NextToken = &v
+	return s
+}
+
+// SetQueryEndDate sets the QueryEndDate field's value.
+func (s *ListWorkflowsInput) SetQueryEndDate(v time.Time) *ListWorkflowsInput {
+	s.QueryEndDate = &v
+	return s
+}
+
+// SetQueryStartDate sets the QueryStartDate field's value.
+func (s *ListWorkflowsInput) SetQueryStartDate(v time.Time) *ListWorkflowsInput {
+	s.QueryStartDate = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *ListWorkflowsInput) SetStatus(v string) *ListWorkflowsInput {
+	s.Status = &v
+	return s
+}
+
+// SetWorkflowType sets the WorkflowType field's value.
+func (s *ListWorkflowsInput) SetWorkflowType(v string) *ListWorkflowsInput {
+	s.WorkflowType = &v
+	return s
+}
+
+// A workflow in list of workflows.
+type ListWorkflowsItem struct {
+	_ struct{} `type:"structure"`
+
+	// Creation timestamp for workflow.
+	//
+	// CreatedAt is a required field
+	CreatedAt *time.Time `type:"timestamp" required:"true"`
+
+	// Last updated timestamp for workflow.
+	//
+	// LastUpdatedAt is a required field
+	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
+
+	// Status of workflow execution.
+	//
+	// Status is a required field
+	Status *string `type:"string" required:"true" enum:"Status"`
+
+	// Description for workflow execution status.
+	//
+	// StatusDescription is a required field
+	StatusDescription *string `min:"1" type:"string" required:"true"`
+
+	// Unique identifier for the workflow.
+	//
+	// WorkflowId is a required field
+	WorkflowId *string `min:"1" type:"string" required:"true"`
+
+	// The type of workflow. The only supported value is APPFLOW_INTEGRATION.
+	//
+	// WorkflowType is a required field
+	WorkflowType *string `type:"string" required:"true" enum:"WorkflowType"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListWorkflowsItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListWorkflowsItem) GoString() string {
+	return s.String()
+}
+
+// SetCreatedAt sets the CreatedAt field's value.
+func (s *ListWorkflowsItem) SetCreatedAt(v time.Time) *ListWorkflowsItem {
+	s.CreatedAt = &v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *ListWorkflowsItem) SetLastUpdatedAt(v time.Time) *ListWorkflowsItem {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *ListWorkflowsItem) SetStatus(v string) *ListWorkflowsItem {
+	s.Status = &v
+	return s
+}
+
+// SetStatusDescription sets the StatusDescription field's value.
+func (s *ListWorkflowsItem) SetStatusDescription(v string) *ListWorkflowsItem {
+	s.StatusDescription = &v
+	return s
+}
+
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *ListWorkflowsItem) SetWorkflowId(v string) *ListWorkflowsItem {
+	s.WorkflowId = &v
+	return s
+}
+
+// SetWorkflowType sets the WorkflowType field's value.
+func (s *ListWorkflowsItem) SetWorkflowType(v string) *ListWorkflowsItem {
+	s.WorkflowType = &v
+	return s
+}
+
+type ListWorkflowsOutput struct {
+	_ struct{} `type:"structure"`
+
+	// List containing workflow details.
+	Items []*ListWorkflowsItem `type:"list"`
+
+	// If there are additional results, this is the token for the next set of results.
+	NextToken *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListWorkflowsOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s ListWorkflowsOutput) GoString() string {
+	return s.String()
+}
+
+// SetItems sets the Items field's value.
+func (s *ListWorkflowsOutput) SetItems(v []*ListWorkflowsItem) *ListWorkflowsOutput {
+	s.Items = v
+	return s
+}
+
+// SetNextToken sets the NextToken field's value.
+func (s *ListWorkflowsOutput) SetNextToken(v string) *ListWorkflowsOutput {
+	s.NextToken = &v
+	return s
+}
+
 // The properties that are applied when Marketo is being used as a source.
 type MarketoSourceProperties struct {
 	_ struct{} `type:"structure"`
@@ -6974,6 +14351,16 @@ func (s *MarketoSourceProperties) SetObject(v string) *MarketoSourceProperties {
 type MatchItem struct {
 	_ struct{} `type:"structure"`
 
+	// A number between 0 and 1, where a higher score means higher similarity. Examining
+	// match confidence scores lets you distinguish between groups of similar records
+	// in which the system is highly confident (which you may decide to merge),
+	// groups of similar records about which the system is uncertain (which you
+	// may decide to have reviewed by a human), and groups of similar records that
+	// the system deems to be unlikely (which you may decide to reject). Given confidence
+	// scores vary as per the data input, it should not be used an absolute measure
+	// of matching quality.
+	ConfidenceScore *float64 `type:"double"`
+
 	// The unique identifiers for this group of profiles that match.
 	MatchId *string `min:"1" type:"string"`
 
@@ -6999,6 +14386,12 @@ func (s MatchItem) GoString() string {
 	return s.String()
 }
 
+// SetConfidenceScore sets the ConfidenceScore field's value.
+func (s *MatchItem) SetConfidenceScore(v float64) *MatchItem {
+	s.ConfidenceScore = &v
+	return s
+}
+
 // SetMatchId sets the MatchId field's value.
 func (s *MatchItem) SetMatchId(v string) *MatchItem {
 	s.MatchId = &v
@@ -7015,10 +14408,21 @@ func (s *MatchItem) SetProfileIds(v []*string) *MatchItem {
 type MatchingRequest struct {
 	_ struct{} `type:"structure"`
 
+	// Configuration information about the auto-merging process.
+	AutoMerging *AutoMerging `type:"structure"`
+
 	// The flag that enables the matching process of duplicate profiles.
 	//
 	// Enabled is a required field
 	Enabled *bool `type:"boolean" required:"true"`
+
+	// Configuration information for exporting Identity Resolution results, for
+	// example, to an S3 bucket.
+	ExportingConfig *ExportingConfig `type:"structure"`
+
+	// The day and time when do you want to start the Identity Resolution Job every
+	// week.
+	JobSchedule *JobSchedule `type:"structure"`
 }
 
 // String returns the string representation.
@@ -7045,11 +14449,32 @@ func (s *MatchingRequest) Validate() error {
 	if s.Enabled == nil {
 		invalidParams.Add(request.NewErrParamRequired("Enabled"))
 	}
+	if s.AutoMerging != nil {
+		if err := s.AutoMerging.Validate(); err != nil {
+			invalidParams.AddNested("AutoMerging", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.ExportingConfig != nil {
+		if err := s.ExportingConfig.Validate(); err != nil {
+			invalidParams.AddNested("ExportingConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.JobSchedule != nil {
+		if err := s.JobSchedule.Validate(); err != nil {
+			invalidParams.AddNested("JobSchedule", err.(request.ErrInvalidParams))
+		}
+	}
 
 	if invalidParams.Len() > 0 {
 		return invalidParams
 	}
 	return nil
+}
+
+// SetAutoMerging sets the AutoMerging field's value.
+func (s *MatchingRequest) SetAutoMerging(v *AutoMerging) *MatchingRequest {
+	s.AutoMerging = v
+	return s
 }
 
 // SetEnabled sets the Enabled field's value.
@@ -7058,12 +14483,35 @@ func (s *MatchingRequest) SetEnabled(v bool) *MatchingRequest {
 	return s
 }
 
+// SetExportingConfig sets the ExportingConfig field's value.
+func (s *MatchingRequest) SetExportingConfig(v *ExportingConfig) *MatchingRequest {
+	s.ExportingConfig = v
+	return s
+}
+
+// SetJobSchedule sets the JobSchedule field's value.
+func (s *MatchingRequest) SetJobSchedule(v *JobSchedule) *MatchingRequest {
+	s.JobSchedule = v
+	return s
+}
+
 // The flag that enables the matching process of duplicate profiles.
 type MatchingResponse struct {
 	_ struct{} `type:"structure"`
 
+	// Configuration information about the auto-merging process.
+	AutoMerging *AutoMerging `type:"structure"`
+
 	// The flag that enables the matching process of duplicate profiles.
 	Enabled *bool `type:"boolean"`
+
+	// Configuration information for exporting Identity Resolution results, for
+	// example, to an S3 bucket.
+	ExportingConfig *ExportingConfig `type:"structure"`
+
+	// The day and time when do you want to start the Identity Resolution Job every
+	// week.
+	JobSchedule *JobSchedule `type:"structure"`
 }
 
 // String returns the string representation.
@@ -7084,9 +14532,113 @@ func (s MatchingResponse) GoString() string {
 	return s.String()
 }
 
+// SetAutoMerging sets the AutoMerging field's value.
+func (s *MatchingResponse) SetAutoMerging(v *AutoMerging) *MatchingResponse {
+	s.AutoMerging = v
+	return s
+}
+
 // SetEnabled sets the Enabled field's value.
 func (s *MatchingResponse) SetEnabled(v bool) *MatchingResponse {
 	s.Enabled = &v
+	return s
+}
+
+// SetExportingConfig sets the ExportingConfig field's value.
+func (s *MatchingResponse) SetExportingConfig(v *ExportingConfig) *MatchingResponse {
+	s.ExportingConfig = v
+	return s
+}
+
+// SetJobSchedule sets the JobSchedule field's value.
+func (s *MatchingResponse) SetJobSchedule(v *JobSchedule) *MatchingResponse {
+	s.JobSchedule = v
+	return s
+}
+
+// Specifies how does the rule-based matching process should match profiles.
+// You can choose from the following attributes to build the matching Rule:
+//
+//   - AccountNumber
+//
+//   - Address.Address
+//
+//   - Address.City
+//
+//   - Address.Country
+//
+//   - Address.County
+//
+//   - Address.PostalCode
+//
+//   - Address.State
+//
+//   - Address.Province
+//
+//   - BirthDate
+//
+//   - BusinessName
+//
+//   - EmailAddress
+//
+//   - FirstName
+//
+//   - Gender
+//
+//   - LastName
+//
+//   - MiddleName
+//
+//   - PhoneNumber
+//
+//   - Any customized profile attributes that start with the Attributes
+type MatchingRule struct {
+	_ struct{} `type:"structure"`
+
+	// A single rule level of the MatchRules. Configures how the rule-based matching
+	// process should match profiles.
+	//
+	// Rule is a required field
+	Rule []*string `min:"1" type:"list" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s MatchingRule) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s MatchingRule) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *MatchingRule) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "MatchingRule"}
+	if s.Rule == nil {
+		invalidParams.Add(request.NewErrParamRequired("Rule"))
+	}
+	if s.Rule != nil && len(s.Rule) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Rule", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetRule sets the Rule field's value.
+func (s *MatchingRule) SetRule(v []*string) *MatchingRule {
+	s.Rule = v
 	return s
 }
 
@@ -7214,14 +14766,14 @@ func (s *MergeProfilesOutput) SetMessage(v string) *MergeProfilesOutput {
 }
 
 // The filter applied to ListProfileObjects response to include profile objects
-// with the specified index values. This filter is only supported for ObjectTypeName
-// _asset and _case.
+// with the specified index values.
 type ObjectFilter struct {
 	_ struct{} `type:"structure"`
 
-	// A searchable identifier of a standard profile object. The predefined keys
-	// you can use to search for _asset include: _assetId, _assetName, _serialNumber.
-	// The predefined keys you can use to search for _case include: _caseId.
+	// A searchable identifier of a profile object. The predefined keys you can
+	// use to search for _asset include: _assetId, _assetName, and _serialNumber.
+	// The predefined keys you can use to search for _case include: _caseId. The
+	// predefined keys you can use to search for _order include: _orderId.
 	//
 	// KeyName is a required field
 	KeyName *string `min:"1" type:"string" required:"true"`
@@ -7359,16 +14911,16 @@ type ObjectTypeKey struct {
 	FieldNames []*string `type:"list"`
 
 	// The types of keys that a ProfileObject can have. Each ProfileObject can have
-	// only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means
-	// that this key can be used to tie an object to a PROFILE, ASSET or CASE respectively.
-	// UNIQUE means that it can be used to uniquely identify an object. If a key
-	// a is marked as SECONDARY, it will be used to search for profiles after all
-	// other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to
-	// match a profile but is not persisted to be used for searching of the profile.
-	// A NEW_ONLY key is only used if the profile does not already exist before
-	// the object is ingested, otherwise it is only used for matching objects to
-	// profiles.
-	StandardIdentifiers []*string `type:"list"`
+	// only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER
+	// means that this key can be used to tie an object to a PROFILE, ASSET, CASE,
+	// or ORDER respectively. UNIQUE means that it can be used to uniquely identify
+	// an object. If a key a is marked as SECONDARY, it will be used to search for
+	// profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key
+	// is only used to match a profile but is not persisted to be used for searching
+	// of the profile. A NEW_ONLY key is only used if the profile does not already
+	// exist before the object is ingested, otherwise it is only used for matching
+	// objects to profiles.
+	StandardIdentifiers []*string `type:"list" enum:"StandardIdentifier"`
 }
 
 // String returns the string representation.
@@ -7406,73 +14958,194 @@ type Profile struct {
 	_ struct{} `type:"structure"`
 
 	// A unique account number that you have given to the customer.
-	AccountNumber *string `min:"1" type:"string"`
+	//
+	// AccountNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	AccountNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// Any additional information relevant to the customer’s profile.
-	AdditionalInformation *string `min:"1" type:"string"`
+	//
+	// AdditionalInformation is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	AdditionalInformation *string `min:"1" type:"string" sensitive:"true"`
 
 	// A generic address associated with the customer that is not mailing, shipping,
 	// or billing.
-	Address *Address `type:"structure"`
+	//
+	// Address is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	Address *Address `type:"structure" sensitive:"true"`
 
 	// A key value pair of attributes of a customer profile.
-	Attributes map[string]*string `type:"map"`
+	//
+	// Attributes is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	Attributes map[string]*string `type:"map" sensitive:"true"`
 
 	// The customer’s billing address.
-	BillingAddress *Address `type:"structure"`
+	//
+	// BillingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	BillingAddress *Address `type:"structure" sensitive:"true"`
 
 	// The customer’s birth date.
-	BirthDate *string `min:"1" type:"string"`
+	//
+	// BirthDate is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	BirthDate *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s business email address.
-	BusinessEmailAddress *string `min:"1" type:"string"`
+	//
+	// BusinessEmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	BusinessEmailAddress *string `min:"1" type:"string" sensitive:"true"`
 
 	// The name of the customer’s business.
-	BusinessName *string `min:"1" type:"string"`
+	//
+	// BusinessName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	BusinessName *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s home phone number.
-	BusinessPhoneNumber *string `min:"1" type:"string"`
+	//
+	// BusinessPhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	BusinessPhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s email address, which has not been specified as a personal
 	// or business address.
-	EmailAddress *string `min:"1" type:"string"`
+	//
+	// EmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	EmailAddress *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s first name.
-	FirstName *string `min:"1" type:"string"`
+	//
+	// FirstName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	FirstName *string `min:"1" type:"string" sensitive:"true"`
+
+	// A list of items used to find a profile returned in a SearchProfiles (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html)
+	// response. An item is a key-value(s) pair that matches an attribute in the
+	// profile.
+	//
+	// If the optional AdditionalSearchKeys parameter was included in the SearchProfiles
+	// (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html)
+	// request, the FoundByItems list should be interpreted based on the LogicalOperator
+	// used in the request:
+	//
+	//    * AND - The profile included in the response matched all of the search
+	//    keys specified in the request. The FoundByItems will include all of the
+	//    key-value(s) pairs that were specified in the request (as this is a requirement
+	//    of AND search logic).
+	//
+	//    * OR - The profile included in the response matched at least one of the
+	//    search keys specified in the request. The FoundByItems will include each
+	//    of the key-value(s) pairs that the profile was found by.
+	//
+	// The OR relationship is the default behavior if the LogicalOperator parameter
+	// is not included in the SearchProfiles (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html)
+	// request.
+	FoundByItems []*FoundByKeyValue `min:"1" type:"list"`
 
 	// The gender with which the customer identifies.
-	Gender *string `type:"string" enum:"Gender"`
+	//
+	// Gender is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	Gender *string `deprecated:"true" type:"string" enum:"Gender" sensitive:"true"`
+
+	// An alternative to Gender which accepts any string as input.
+	//
+	// GenderString is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	GenderString *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s home phone number.
-	HomePhoneNumber *string `min:"1" type:"string"`
+	//
+	// HomePhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	HomePhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s last name.
-	LastName *string `min:"1" type:"string"`
+	//
+	// LastName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	LastName *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s mailing address.
-	MailingAddress *Address `type:"structure"`
+	//
+	// MailingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	MailingAddress *Address `type:"structure" sensitive:"true"`
 
 	// The customer’s middle name.
-	MiddleName *string `min:"1" type:"string"`
+	//
+	// MiddleName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	MiddleName *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s mobile phone number.
-	MobilePhoneNumber *string `min:"1" type:"string"`
+	//
+	// MobilePhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	MobilePhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The type of profile used to describe the customer.
-	PartyType *string `type:"string" enum:"PartyType"`
+	//
+	// PartyType is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	PartyType *string `deprecated:"true" type:"string" enum:"PartyType" sensitive:"true"`
+
+	// An alternative to PartyType which accepts any string as input.
+	//
+	// PartyTypeString is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	PartyTypeString *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer’s personal email address.
-	PersonalEmailAddress *string `min:"1" type:"string"`
+	//
+	// PersonalEmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	PersonalEmailAddress *string `min:"1" type:"string" sensitive:"true"`
 
 	// The customer's phone number, which has not been specified as a mobile, home,
 	// or business number.
-	PhoneNumber *string `min:"1" type:"string"`
+	//
+	// PhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	PhoneNumber *string `min:"1" type:"string" sensitive:"true"`
 
 	// The unique identifier of a customer profile.
 	ProfileId *string `type:"string"`
 
 	// The customer’s shipping address.
-	ShippingAddress *Address `type:"structure"`
+	//
+	// ShippingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by Profile's
+	// String and GoString methods.
+	ShippingAddress *Address `type:"structure" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -7559,9 +15232,21 @@ func (s *Profile) SetFirstName(v string) *Profile {
 	return s
 }
 
+// SetFoundByItems sets the FoundByItems field's value.
+func (s *Profile) SetFoundByItems(v []*FoundByKeyValue) *Profile {
+	s.FoundByItems = v
+	return s
+}
+
 // SetGender sets the Gender field's value.
 func (s *Profile) SetGender(v string) *Profile {
 	s.Gender = &v
+	return s
+}
+
+// SetGenderString sets the GenderString field's value.
+func (s *Profile) SetGenderString(v string) *Profile {
+	s.GenderString = &v
 	return s
 }
 
@@ -7601,6 +15286,12 @@ func (s *Profile) SetPartyType(v string) *Profile {
 	return s
 }
 
+// SetPartyTypeString sets the PartyTypeString field's value.
+func (s *Profile) SetPartyTypeString(v string) *Profile {
+	s.PartyTypeString = &v
+	return s
+}
+
 // SetPersonalEmailAddress sets the PersonalEmailAddress field's value.
 func (s *Profile) SetPersonalEmailAddress(v string) *Profile {
 	s.PersonalEmailAddress = &v
@@ -7635,12 +15326,21 @@ type PutIntegrationInput struct {
 
 	// The configuration that controls how Customer Profiles retrieves data from
 	// the source.
-	FlowDefinition *FlowDefinition `type:"structure"`
+	//
+	// FlowDefinition is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutIntegrationInput's
+	// String and GoString methods.
+	FlowDefinition *FlowDefinition `type:"structure" sensitive:"true"`
 
 	// The name of the profile object type.
-	//
-	// ObjectTypeName is a required field
-	ObjectTypeName *string `min:"1" type:"string" required:"true"`
+	ObjectTypeName *string `min:"1" type:"string"`
+
+	// A map in which each key is an event type from an external application such
+	// as Segment or Shopify, and each value is an ObjectTypeName (template) used
+	// to ingest the event. It supports the following event types: SegmentIdentify,
+	// ShopifyCreateCustomers, ShopifyUpdateCustomers, ShopifyCreateDraftOrders,
+	// ShopifyUpdateDraftOrders, ShopifyCreateOrders, and ShopifyUpdatedOrders.
+	ObjectTypeNames map[string]*string `type:"map"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -7675,9 +15375,6 @@ func (s *PutIntegrationInput) Validate() error {
 	}
 	if s.DomainName != nil && len(*s.DomainName) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
-	}
-	if s.ObjectTypeName == nil {
-		invalidParams.Add(request.NewErrParamRequired("ObjectTypeName"))
 	}
 	if s.ObjectTypeName != nil && len(*s.ObjectTypeName) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("ObjectTypeName", 1))
@@ -7718,6 +15415,12 @@ func (s *PutIntegrationInput) SetObjectTypeName(v string) *PutIntegrationInput {
 	return s
 }
 
+// SetObjectTypeNames sets the ObjectTypeNames field's value.
+func (s *PutIntegrationInput) SetObjectTypeNames(v map[string]*string) *PutIntegrationInput {
+	s.ObjectTypeNames = v
+	return s
+}
+
 // SetTags sets the Tags field's value.
 func (s *PutIntegrationInput) SetTags(v map[string]*string) *PutIntegrationInput {
 	s.Tags = v
@@ -7743,15 +15446,25 @@ type PutIntegrationOutput struct {
 	// DomainName is a required field
 	DomainName *string `min:"1" type:"string" required:"true"`
 
+	// Boolean that shows if the Flow that's associated with the Integration is
+	// created in Amazon Appflow, or with ObjectTypeName equals _unstructured via
+	// API/CLI in flowDefinition.
+	IsUnstructured *bool `type:"boolean"`
+
 	// The timestamp of when the domain was most recently edited.
 	//
 	// LastUpdatedAt is a required field
 	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
 
 	// The name of the profile object type.
-	//
-	// ObjectTypeName is a required field
-	ObjectTypeName *string `min:"1" type:"string" required:"true"`
+	ObjectTypeName *string `min:"1" type:"string"`
+
+	// A map in which each key is an event type from an external application such
+	// as Segment or Shopify, and each value is an ObjectTypeName (template) used
+	// to ingest the event. It supports the following event types: SegmentIdentify,
+	// ShopifyCreateCustomers, ShopifyUpdateCustomers, ShopifyCreateDraftOrders,
+	// ShopifyUpdateDraftOrders, ShopifyCreateOrders, and ShopifyUpdatedOrders.
+	ObjectTypeNames map[string]*string `type:"map"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -7760,6 +15473,9 @@ type PutIntegrationOutput struct {
 	//
 	// Uri is a required field
 	Uri *string `min:"1" type:"string" required:"true"`
+
+	// Unique identifier for the workflow.
+	WorkflowId *string `min:"1" type:"string"`
 }
 
 // String returns the string representation.
@@ -7792,6 +15508,12 @@ func (s *PutIntegrationOutput) SetDomainName(v string) *PutIntegrationOutput {
 	return s
 }
 
+// SetIsUnstructured sets the IsUnstructured field's value.
+func (s *PutIntegrationOutput) SetIsUnstructured(v bool) *PutIntegrationOutput {
+	s.IsUnstructured = &v
+	return s
+}
+
 // SetLastUpdatedAt sets the LastUpdatedAt field's value.
 func (s *PutIntegrationOutput) SetLastUpdatedAt(v time.Time) *PutIntegrationOutput {
 	s.LastUpdatedAt = &v
@@ -7801,6 +15523,12 @@ func (s *PutIntegrationOutput) SetLastUpdatedAt(v time.Time) *PutIntegrationOutp
 // SetObjectTypeName sets the ObjectTypeName field's value.
 func (s *PutIntegrationOutput) SetObjectTypeName(v string) *PutIntegrationOutput {
 	s.ObjectTypeName = &v
+	return s
+}
+
+// SetObjectTypeNames sets the ObjectTypeNames field's value.
+func (s *PutIntegrationOutput) SetObjectTypeNames(v map[string]*string) *PutIntegrationOutput {
+	s.ObjectTypeNames = v
 	return s
 }
 
@@ -7816,6 +15544,12 @@ func (s *PutIntegrationOutput) SetUri(v string) *PutIntegrationOutput {
 	return s
 }
 
+// SetWorkflowId sets the WorkflowId field's value.
+func (s *PutIntegrationOutput) SetWorkflowId(v string) *PutIntegrationOutput {
+	s.WorkflowId = &v
+	return s
+}
+
 type PutProfileObjectInput struct {
 	_ struct{} `type:"structure"`
 
@@ -7826,8 +15560,12 @@ type PutProfileObjectInput struct {
 
 	// A string that is serialized from a JSON object.
 	//
+	// Object is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutProfileObjectInput's
+	// String and GoString methods.
+	//
 	// Object is a required field
-	Object *string `min:"1" type:"string" required:"true"`
+	Object *string `min:"1" type:"string" required:"true" sensitive:"true"`
 
 	// The name of the profile object type.
 	//
@@ -7943,8 +15681,12 @@ type PutProfileObjectTypeInput struct {
 
 	// Description of the profile object type.
 	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutProfileObjectTypeInput's
+	// String and GoString methods.
+	//
 	// Description is a required field
-	Description *string `min:"1" type:"string" required:"true"`
+	Description *string `min:"1" type:"string" required:"true" sensitive:"true"`
 
 	// The unique name of the domain.
 	//
@@ -7959,20 +15701,36 @@ type PutProfileObjectTypeInput struct {
 	ExpirationDays *int64 `min:"1" type:"integer"`
 
 	// A map of the name and ObjectType field.
-	Fields map[string]*ObjectTypeField `type:"map"`
+	//
+	// Fields is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutProfileObjectTypeInput's
+	// String and GoString methods.
+	Fields map[string]*ObjectTypeField `type:"map" sensitive:"true"`
 
 	// A list of unique keys that can be used to map data to the profile.
-	Keys map[string][]*ObjectTypeKey `type:"map"`
+	//
+	// Keys is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutProfileObjectTypeInput's
+	// String and GoString methods.
+	Keys map[string][]*ObjectTypeKey `type:"map" sensitive:"true"`
 
 	// The name of the profile object type.
 	//
 	// ObjectTypeName is a required field
 	ObjectTypeName *string `location:"uri" locationName:"ObjectTypeName" min:"1" type:"string" required:"true"`
 
+	// The format of your sourceLastUpdatedTimestamp that was previously set up.
+	SourceLastUpdatedTimestampFormat *string `min:"1" type:"string"`
+
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
 
-	// A unique identifier for the object template.
+	// A unique identifier for the object template. For some attributes in the request,
+	// the service will use the default value from the object template when TemplateId
+	// is present. If these attributes are present in the request, the service may
+	// return a BadRequestException. These attributes include: AllowProfileCreation,
+	// SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation
+	// is set to true when TemplateId is set, the service may return a BadRequestException.
 	TemplateId *string `min:"1" type:"string"`
 }
 
@@ -8017,6 +15775,9 @@ func (s *PutProfileObjectTypeInput) Validate() error {
 	}
 	if s.ObjectTypeName != nil && len(*s.ObjectTypeName) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("ObjectTypeName", 1))
+	}
+	if s.SourceLastUpdatedTimestampFormat != nil && len(*s.SourceLastUpdatedTimestampFormat) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("SourceLastUpdatedTimestampFormat", 1))
 	}
 	if s.Tags != nil && len(s.Tags) < 1 {
 		invalidParams.Add(request.NewErrParamMinLen("Tags", 1))
@@ -8089,6 +15850,12 @@ func (s *PutProfileObjectTypeInput) SetObjectTypeName(v string) *PutProfileObjec
 	return s
 }
 
+// SetSourceLastUpdatedTimestampFormat sets the SourceLastUpdatedTimestampFormat field's value.
+func (s *PutProfileObjectTypeInput) SetSourceLastUpdatedTimestampFormat(v string) *PutProfileObjectTypeInput {
+	s.SourceLastUpdatedTimestampFormat = &v
+	return s
+}
+
 // SetTags sets the Tags field's value.
 func (s *PutProfileObjectTypeInput) SetTags(v map[string]*string) *PutProfileObjectTypeInput {
 	s.Tags = v
@@ -8117,8 +15884,12 @@ type PutProfileObjectTypeOutput struct {
 
 	// Description of the profile object type.
 	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutProfileObjectTypeOutput's
+	// String and GoString methods.
+	//
 	// Description is a required field
-	Description *string `min:"1" type:"string" required:"true"`
+	Description *string `min:"1" type:"string" required:"true" sensitive:"true"`
 
 	// The customer-provided key to encrypt the profile object that will be created
 	// in this profile object type.
@@ -8128,10 +15899,18 @@ type PutProfileObjectTypeOutput struct {
 	ExpirationDays *int64 `min:"1" type:"integer"`
 
 	// A map of the name and ObjectType field.
-	Fields map[string]*ObjectTypeField `type:"map"`
+	//
+	// Fields is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutProfileObjectTypeOutput's
+	// String and GoString methods.
+	Fields map[string]*ObjectTypeField `type:"map" sensitive:"true"`
 
 	// A list of unique keys that can be used to map data to the profile.
-	Keys map[string][]*ObjectTypeKey `type:"map"`
+	//
+	// Keys is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by PutProfileObjectTypeOutput's
+	// String and GoString methods.
+	Keys map[string][]*ObjectTypeKey `type:"map" sensitive:"true"`
 
 	// The timestamp of when the domain was most recently edited.
 	LastUpdatedAt *time.Time `type:"timestamp"`
@@ -8140,6 +15919,11 @@ type PutProfileObjectTypeOutput struct {
 	//
 	// ObjectTypeName is a required field
 	ObjectTypeName *string `min:"1" type:"string" required:"true"`
+
+	// The format of your sourceLastUpdatedTimestamp that was previously set up
+	// in fields that were parsed using SimpleDateFormat (https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html).
+	// If you have sourceLastUpdatedTimestamp in your field, you must set up sourceLastUpdatedTimestampFormat.
+	SourceLastUpdatedTimestampFormat *string `min:"1" type:"string"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -8220,6 +16004,12 @@ func (s *PutProfileObjectTypeOutput) SetObjectTypeName(v string) *PutProfileObje
 	return s
 }
 
+// SetSourceLastUpdatedTimestampFormat sets the SourceLastUpdatedTimestampFormat field's value.
+func (s *PutProfileObjectTypeOutput) SetSourceLastUpdatedTimestampFormat(v string) *PutProfileObjectTypeOutput {
+	s.SourceLastUpdatedTimestampFormat = &v
+	return s
+}
+
 // SetTags sets the Tags field's value.
 func (s *PutProfileObjectTypeOutput) SetTags(v map[string]*string) *PutProfileObjectTypeOutput {
 	s.Tags = v
@@ -8229,6 +16019,70 @@ func (s *PutProfileObjectTypeOutput) SetTags(v map[string]*string) *PutProfileOb
 // SetTemplateId sets the TemplateId field's value.
 func (s *PutProfileObjectTypeOutput) SetTemplateId(v string) *PutProfileObjectTypeOutput {
 	s.TemplateId = &v
+	return s
+}
+
+// The relative time period over which data is included in the aggregation.
+type Range struct {
+	_ struct{} `type:"structure"`
+
+	// The unit of time.
+	//
+	// Unit is a required field
+	Unit *string `type:"string" required:"true" enum:"Unit"`
+
+	// The amount of time of the specified unit.
+	//
+	// Value is a required field
+	Value *int64 `min:"1" type:"integer" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Range) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Range) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *Range) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "Range"}
+	if s.Unit == nil {
+		invalidParams.Add(request.NewErrParamRequired("Unit"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+	if s.Value != nil && *s.Value < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("Value", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetUnit sets the Unit field's value.
+func (s *Range) SetUnit(v string) *Range {
+	s.Unit = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *Range) SetValue(v int64) *Range {
+	s.Value = &v
 	return s
 }
 
@@ -8294,6 +16148,375 @@ func (s *ResourceNotFoundException) StatusCode() int {
 // RequestID returns the service's response RequestID for request.
 func (s *ResourceNotFoundException) RequestID() string {
 	return s.RespMetadata.RequestID
+}
+
+// The request to enable the rule-based matching.
+type RuleBasedMatchingRequest struct {
+	_ struct{} `type:"structure"`
+
+	// Configures information about the AttributeTypesSelector where the rule-based
+	// identity resolution uses to match profiles.
+	AttributeTypesSelector *AttributeTypesSelector `type:"structure"`
+
+	// How the auto-merging process should resolve conflicts between different profiles.
+	ConflictResolution *ConflictResolution `type:"structure"`
+
+	// The flag that enables the rule-based matching process of duplicate profiles.
+	//
+	// Enabled is a required field
+	Enabled *bool `type:"boolean" required:"true"`
+
+	// Configuration information about the S3 bucket where Identity Resolution Jobs
+	// writes result files.
+	//
+	// You need to give Customer Profiles service principal write permission to
+	// your S3 bucket. Otherwise, you'll get an exception in the API response. For
+	// an example policy, see Amazon Connect Customer Profiles cross-service confused
+	// deputy prevention (https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service).
+	ExportingConfig *ExportingConfig `type:"structure"`
+
+	// Configures how the rule-based matching process should match profiles. You
+	// can have up to 15 MatchingRule in the MatchingRules.
+	MatchingRules []*MatchingRule `min:"1" type:"list"`
+
+	// Indicates the maximum allowed rule level.
+	MaxAllowedRuleLevelForMatching *int64 `min:"1" type:"integer"`
+
+	// MatchingRule (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html)
+	MaxAllowedRuleLevelForMerging *int64 `min:"1" type:"integer"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s RuleBasedMatchingRequest) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s RuleBasedMatchingRequest) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *RuleBasedMatchingRequest) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "RuleBasedMatchingRequest"}
+	if s.Enabled == nil {
+		invalidParams.Add(request.NewErrParamRequired("Enabled"))
+	}
+	if s.MatchingRules != nil && len(s.MatchingRules) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("MatchingRules", 1))
+	}
+	if s.MaxAllowedRuleLevelForMatching != nil && *s.MaxAllowedRuleLevelForMatching < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxAllowedRuleLevelForMatching", 1))
+	}
+	if s.MaxAllowedRuleLevelForMerging != nil && *s.MaxAllowedRuleLevelForMerging < 1 {
+		invalidParams.Add(request.NewErrParamMinValue("MaxAllowedRuleLevelForMerging", 1))
+	}
+	if s.AttributeTypesSelector != nil {
+		if err := s.AttributeTypesSelector.Validate(); err != nil {
+			invalidParams.AddNested("AttributeTypesSelector", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.ConflictResolution != nil {
+		if err := s.ConflictResolution.Validate(); err != nil {
+			invalidParams.AddNested("ConflictResolution", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.ExportingConfig != nil {
+		if err := s.ExportingConfig.Validate(); err != nil {
+			invalidParams.AddNested("ExportingConfig", err.(request.ErrInvalidParams))
+		}
+	}
+	if s.MatchingRules != nil {
+		for i, v := range s.MatchingRules {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "MatchingRules", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetAttributeTypesSelector sets the AttributeTypesSelector field's value.
+func (s *RuleBasedMatchingRequest) SetAttributeTypesSelector(v *AttributeTypesSelector) *RuleBasedMatchingRequest {
+	s.AttributeTypesSelector = v
+	return s
+}
+
+// SetConflictResolution sets the ConflictResolution field's value.
+func (s *RuleBasedMatchingRequest) SetConflictResolution(v *ConflictResolution) *RuleBasedMatchingRequest {
+	s.ConflictResolution = v
+	return s
+}
+
+// SetEnabled sets the Enabled field's value.
+func (s *RuleBasedMatchingRequest) SetEnabled(v bool) *RuleBasedMatchingRequest {
+	s.Enabled = &v
+	return s
+}
+
+// SetExportingConfig sets the ExportingConfig field's value.
+func (s *RuleBasedMatchingRequest) SetExportingConfig(v *ExportingConfig) *RuleBasedMatchingRequest {
+	s.ExportingConfig = v
+	return s
+}
+
+// SetMatchingRules sets the MatchingRules field's value.
+func (s *RuleBasedMatchingRequest) SetMatchingRules(v []*MatchingRule) *RuleBasedMatchingRequest {
+	s.MatchingRules = v
+	return s
+}
+
+// SetMaxAllowedRuleLevelForMatching sets the MaxAllowedRuleLevelForMatching field's value.
+func (s *RuleBasedMatchingRequest) SetMaxAllowedRuleLevelForMatching(v int64) *RuleBasedMatchingRequest {
+	s.MaxAllowedRuleLevelForMatching = &v
+	return s
+}
+
+// SetMaxAllowedRuleLevelForMerging sets the MaxAllowedRuleLevelForMerging field's value.
+func (s *RuleBasedMatchingRequest) SetMaxAllowedRuleLevelForMerging(v int64) *RuleBasedMatchingRequest {
+	s.MaxAllowedRuleLevelForMerging = &v
+	return s
+}
+
+// The response of the Rule-based matching request.
+type RuleBasedMatchingResponse struct {
+	_ struct{} `type:"structure"`
+
+	// Configures information about the AttributeTypesSelector where the rule-based
+	// identity resolution uses to match profiles.
+	AttributeTypesSelector *AttributeTypesSelector `type:"structure"`
+
+	// How the auto-merging process should resolve conflicts between different profiles.
+	ConflictResolution *ConflictResolution `type:"structure"`
+
+	// The flag that enables the rule-based matching process of duplicate profiles.
+	Enabled *bool `type:"boolean"`
+
+	// Configuration information about the S3 bucket where Identity Resolution Jobs
+	// writes result files.
+	//
+	// You need to give Customer Profiles service principal write permission to
+	// your S3 bucket. Otherwise, you'll get an exception in the API response. For
+	// an example policy, see Amazon Connect Customer Profiles cross-service confused
+	// deputy prevention (https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service).
+	ExportingConfig *ExportingConfig `type:"structure"`
+
+	// Configures how the rule-based matching process should match profiles. You
+	// can have up to 15 MatchingRule in the MatchingRules.
+	MatchingRules []*MatchingRule `min:"1" type:"list"`
+
+	// Indicates the maximum allowed rule level.
+	MaxAllowedRuleLevelForMatching *int64 `min:"1" type:"integer"`
+
+	// MatchingRule (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html)
+	MaxAllowedRuleLevelForMerging *int64 `min:"1" type:"integer"`
+
+	// PENDING
+	//
+	//    * The first status after configuration a rule-based matching rule. If
+	//    it is an existing domain, the rule-based Identity Resolution waits one
+	//    hour before creating the matching rule. If it is a new domain, the system
+	//    will skip the PENDING stage.
+	//
+	// IN_PROGRESS
+	//
+	//    * The system is creating the rule-based matching rule. Under this status,
+	//    the system is evaluating the existing data and you can no longer change
+	//    the Rule-based matching configuration.
+	//
+	// ACTIVE
+	//
+	//    * The rule is ready to use. You can change the rule a day after the status
+	//    is in ACTIVE.
+	Status *string `type:"string" enum:"RuleBasedMatchingStatus"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s RuleBasedMatchingResponse) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s RuleBasedMatchingResponse) GoString() string {
+	return s.String()
+}
+
+// SetAttributeTypesSelector sets the AttributeTypesSelector field's value.
+func (s *RuleBasedMatchingResponse) SetAttributeTypesSelector(v *AttributeTypesSelector) *RuleBasedMatchingResponse {
+	s.AttributeTypesSelector = v
+	return s
+}
+
+// SetConflictResolution sets the ConflictResolution field's value.
+func (s *RuleBasedMatchingResponse) SetConflictResolution(v *ConflictResolution) *RuleBasedMatchingResponse {
+	s.ConflictResolution = v
+	return s
+}
+
+// SetEnabled sets the Enabled field's value.
+func (s *RuleBasedMatchingResponse) SetEnabled(v bool) *RuleBasedMatchingResponse {
+	s.Enabled = &v
+	return s
+}
+
+// SetExportingConfig sets the ExportingConfig field's value.
+func (s *RuleBasedMatchingResponse) SetExportingConfig(v *ExportingConfig) *RuleBasedMatchingResponse {
+	s.ExportingConfig = v
+	return s
+}
+
+// SetMatchingRules sets the MatchingRules field's value.
+func (s *RuleBasedMatchingResponse) SetMatchingRules(v []*MatchingRule) *RuleBasedMatchingResponse {
+	s.MatchingRules = v
+	return s
+}
+
+// SetMaxAllowedRuleLevelForMatching sets the MaxAllowedRuleLevelForMatching field's value.
+func (s *RuleBasedMatchingResponse) SetMaxAllowedRuleLevelForMatching(v int64) *RuleBasedMatchingResponse {
+	s.MaxAllowedRuleLevelForMatching = &v
+	return s
+}
+
+// SetMaxAllowedRuleLevelForMerging sets the MaxAllowedRuleLevelForMerging field's value.
+func (s *RuleBasedMatchingResponse) SetMaxAllowedRuleLevelForMerging(v int64) *RuleBasedMatchingResponse {
+	s.MaxAllowedRuleLevelForMerging = &v
+	return s
+}
+
+// SetStatus sets the Status field's value.
+func (s *RuleBasedMatchingResponse) SetStatus(v string) *RuleBasedMatchingResponse {
+	s.Status = &v
+	return s
+}
+
+// Configuration information about the S3 bucket where Identity Resolution Jobs
+// write result files.
+type S3ExportingConfig struct {
+	_ struct{} `type:"structure"`
+
+	// The name of the S3 bucket where Identity Resolution Jobs write result files.
+	//
+	// S3BucketName is a required field
+	S3BucketName *string `min:"3" type:"string" required:"true"`
+
+	// The S3 key name of the location where Identity Resolution Jobs write result
+	// files.
+	S3KeyName *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s S3ExportingConfig) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s S3ExportingConfig) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *S3ExportingConfig) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "S3ExportingConfig"}
+	if s.S3BucketName == nil {
+		invalidParams.Add(request.NewErrParamRequired("S3BucketName"))
+	}
+	if s.S3BucketName != nil && len(*s.S3BucketName) < 3 {
+		invalidParams.Add(request.NewErrParamMinLen("S3BucketName", 3))
+	}
+	if s.S3KeyName != nil && len(*s.S3KeyName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("S3KeyName", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetS3BucketName sets the S3BucketName field's value.
+func (s *S3ExportingConfig) SetS3BucketName(v string) *S3ExportingConfig {
+	s.S3BucketName = &v
+	return s
+}
+
+// SetS3KeyName sets the S3KeyName field's value.
+func (s *S3ExportingConfig) SetS3KeyName(v string) *S3ExportingConfig {
+	s.S3KeyName = &v
+	return s
+}
+
+// The S3 location where Identity Resolution Jobs write result files.
+type S3ExportingLocation struct {
+	_ struct{} `type:"structure"`
+
+	// The name of the S3 bucket name where Identity Resolution Jobs write result
+	// files.
+	S3BucketName *string `min:"3" type:"string"`
+
+	// The S3 key name of the location where Identity Resolution Jobs write result
+	// files.
+	S3KeyName *string `min:"1" type:"string"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s S3ExportingLocation) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s S3ExportingLocation) GoString() string {
+	return s.String()
+}
+
+// SetS3BucketName sets the S3BucketName field's value.
+func (s *S3ExportingLocation) SetS3BucketName(v string) *S3ExportingLocation {
+	s.S3BucketName = &v
+	return s
+}
+
+// SetS3KeyName sets the S3KeyName field's value.
+func (s *S3ExportingLocation) SetS3KeyName(v string) *S3ExportingLocation {
+	s.S3KeyName = &v
+	return s
 }
 
 // The properties that are applied when Amazon S3 is being used as the flow
@@ -8532,20 +16755,49 @@ func (s *ScheduledTriggerProperties) SetTimezone(v string) *ScheduledTriggerProp
 type SearchProfilesInput struct {
 	_ struct{} `type:"structure"`
 
+	// A list of AdditionalSearchKey objects that are each searchable identifiers
+	// of a profile. Each AdditionalSearchKey object contains a KeyName and a list
+	// of Values associated with that specific key (i.e., a key-value(s) pair).
+	// These additional search keys will be used in conjunction with the LogicalOperator
+	// and the required KeyName and Values parameters to search for profiles that
+	// satisfy the search criteria.
+	AdditionalSearchKeys []*AdditionalSearchKey `min:"1" type:"list"`
+
 	// The unique name of the domain.
 	//
 	// DomainName is a required field
 	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
 
 	// A searchable identifier of a customer profile. The predefined keys you can
-	// use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId,
-	// _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId,
-	// _zendeskExternalId, _serviceNowSystemId.
+	// use to search include: _account, _profileId, _assetId, _caseId, _orderId,
+	// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+	// _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+	// _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+	// _shopifyCustomerId, _shopifyOrderId.
 	//
 	// KeyName is a required field
 	KeyName *string `min:"1" type:"string" required:"true"`
 
+	// Relationship between all specified search keys that will be used to search
+	// for profiles. This includes the required KeyName and Values parameters as
+	// well as any key-value(s) pairs specified in the AdditionalSearchKeys list.
+	//
+	// This parameter influences which profiles will be returned in the response
+	// in the following manner:
+	//
+	//    * AND - The response only includes profiles that match all of the search
+	//    keys.
+	//
+	//    * OR - The response includes profiles that match at least one of the search
+	//    keys.
+	//
+	// The OR relationship is the default behavior if this parameter is not included
+	// in the request.
+	LogicalOperator *string `type:"string" enum:"LogicalOperator"`
+
 	// The maximum number of objects returned per page.
+	//
+	// The default is 20 if this parameter is not included in the request.
 	MaxResults *int64 `location:"querystring" locationName:"max-results" min:"1" type:"integer"`
 
 	// The pagination token from the previous SearchProfiles API call.
@@ -8578,6 +16830,9 @@ func (s SearchProfilesInput) GoString() string {
 // Validate inspects the fields of the type to determine if they are valid.
 func (s *SearchProfilesInput) Validate() error {
 	invalidParams := request.ErrInvalidParams{Context: "SearchProfilesInput"}
+	if s.AdditionalSearchKeys != nil && len(s.AdditionalSearchKeys) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("AdditionalSearchKeys", 1))
+	}
 	if s.DomainName == nil {
 		invalidParams.Add(request.NewErrParamRequired("DomainName"))
 	}
@@ -8599,11 +16854,27 @@ func (s *SearchProfilesInput) Validate() error {
 	if s.Values == nil {
 		invalidParams.Add(request.NewErrParamRequired("Values"))
 	}
+	if s.AdditionalSearchKeys != nil {
+		for i, v := range s.AdditionalSearchKeys {
+			if v == nil {
+				continue
+			}
+			if err := v.Validate(); err != nil {
+				invalidParams.AddNested(fmt.Sprintf("%s[%v]", "AdditionalSearchKeys", i), err.(request.ErrInvalidParams))
+			}
+		}
+	}
 
 	if invalidParams.Len() > 0 {
 		return invalidParams
 	}
 	return nil
+}
+
+// SetAdditionalSearchKeys sets the AdditionalSearchKeys field's value.
+func (s *SearchProfilesInput) SetAdditionalSearchKeys(v []*AdditionalSearchKey) *SearchProfilesInput {
+	s.AdditionalSearchKeys = v
+	return s
 }
 
 // SetDomainName sets the DomainName field's value.
@@ -8615,6 +16886,12 @@ func (s *SearchProfilesInput) SetDomainName(v string) *SearchProfilesInput {
 // SetKeyName sets the KeyName field's value.
 func (s *SearchProfilesInput) SetKeyName(v string) *SearchProfilesInput {
 	s.KeyName = &v
+	return s
+}
+
+// SetLogicalOperator sets the LogicalOperator field's value.
+func (s *SearchProfilesInput) SetLogicalOperator(v string) *SearchProfilesInput {
+	s.LogicalOperator = &v
 	return s
 }
 
@@ -8639,7 +16916,7 @@ func (s *SearchProfilesInput) SetValues(v []*string) *SearchProfilesInput {
 type SearchProfilesOutput struct {
 	_ struct{} `type:"structure"`
 
-	// The list of SearchProfiles instances.
+	// The list of Profiles matching the search criteria.
 	Items []*Profile `type:"list"`
 
 	// The pagination token from the previous SearchProfiles API call.
@@ -9096,6 +17373,70 @@ func (s *Task) SetTaskType(v string) *Task {
 	return s
 }
 
+// The threshold for the calculated attribute.
+type Threshold struct {
+	_ struct{} `type:"structure"`
+
+	// The operator of the threshold.
+	//
+	// Operator is a required field
+	Operator *string `type:"string" required:"true" enum:"Operator"`
+
+	// The value of the threshold.
+	//
+	// Value is a required field
+	Value *string `min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Threshold) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s Threshold) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *Threshold) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "Threshold"}
+	if s.Operator == nil {
+		invalidParams.Add(request.NewErrParamRequired("Operator"))
+	}
+	if s.Value == nil {
+		invalidParams.Add(request.NewErrParamRequired("Value"))
+	}
+	if s.Value != nil && len(*s.Value) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Value", 1))
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetOperator sets the Operator field's value.
+func (s *Threshold) SetOperator(v string) *Threshold {
+	s.Operator = &v
+	return s
+}
+
+// SetValue sets the Value field's value.
+func (s *Threshold) SetValue(v string) *Threshold {
+	s.Value = &v
+	return s
+}
+
 // You exceeded the maximum number of requests.
 type ThrottlingException struct {
 	_            struct{}                  `type:"structure"`
@@ -9362,7 +17703,7 @@ func (s UntagResourceOutput) GoString() string {
 
 // Updates associated with the address properties of a customer profile.
 type UpdateAddress struct {
-	_ struct{} `type:"structure"`
+	_ struct{} `type:"structure" sensitive:"true"`
 
 	// The first line of a customer address.
 	Address1 *string `type:"string"`
@@ -9473,6 +17814,241 @@ func (s *UpdateAddress) SetState(v string) *UpdateAddress {
 	return s
 }
 
+type UpdateCalculatedAttributeDefinitionInput struct {
+	_ struct{} `type:"structure"`
+
+	// The unique name of the calculated attribute.
+	//
+	// CalculatedAttributeName is a required field
+	CalculatedAttributeName *string `location:"uri" locationName:"CalculatedAttributeName" min:"1" type:"string" required:"true"`
+
+	// The conditions including range, object count, and threshold for the calculated
+	// attribute.
+	//
+	// Conditions is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateCalculatedAttributeDefinitionInput's
+	// String and GoString methods.
+	Conditions *Conditions `type:"structure" sensitive:"true"`
+
+	// The description of the calculated attribute.
+	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateCalculatedAttributeDefinitionInput's
+	// String and GoString methods.
+	Description *string `min:"1" type:"string" sensitive:"true"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// The unique name of the domain.
+	//
+	// DomainName is a required field
+	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateCalculatedAttributeDefinitionInput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateCalculatedAttributeDefinitionInput) GoString() string {
+	return s.String()
+}
+
+// Validate inspects the fields of the type to determine if they are valid.
+func (s *UpdateCalculatedAttributeDefinitionInput) Validate() error {
+	invalidParams := request.ErrInvalidParams{Context: "UpdateCalculatedAttributeDefinitionInput"}
+	if s.CalculatedAttributeName == nil {
+		invalidParams.Add(request.NewErrParamRequired("CalculatedAttributeName"))
+	}
+	if s.CalculatedAttributeName != nil && len(*s.CalculatedAttributeName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("CalculatedAttributeName", 1))
+	}
+	if s.Description != nil && len(*s.Description) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("Description", 1))
+	}
+	if s.DisplayName != nil && len(*s.DisplayName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DisplayName", 1))
+	}
+	if s.DomainName == nil {
+		invalidParams.Add(request.NewErrParamRequired("DomainName"))
+	}
+	if s.DomainName != nil && len(*s.DomainName) < 1 {
+		invalidParams.Add(request.NewErrParamMinLen("DomainName", 1))
+	}
+	if s.Conditions != nil {
+		if err := s.Conditions.Validate(); err != nil {
+			invalidParams.AddNested("Conditions", err.(request.ErrInvalidParams))
+		}
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *UpdateCalculatedAttributeDefinitionInput) SetCalculatedAttributeName(v string) *UpdateCalculatedAttributeDefinitionInput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetConditions sets the Conditions field's value.
+func (s *UpdateCalculatedAttributeDefinitionInput) SetConditions(v *Conditions) *UpdateCalculatedAttributeDefinitionInput {
+	s.Conditions = v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *UpdateCalculatedAttributeDefinitionInput) SetDescription(v string) *UpdateCalculatedAttributeDefinitionInput {
+	s.Description = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *UpdateCalculatedAttributeDefinitionInput) SetDisplayName(v string) *UpdateCalculatedAttributeDefinitionInput {
+	s.DisplayName = &v
+	return s
+}
+
+// SetDomainName sets the DomainName field's value.
+func (s *UpdateCalculatedAttributeDefinitionInput) SetDomainName(v string) *UpdateCalculatedAttributeDefinitionInput {
+	s.DomainName = &v
+	return s
+}
+
+type UpdateCalculatedAttributeDefinitionOutput struct {
+	_ struct{} `type:"structure"`
+
+	// The mathematical expression and a list of attribute items specified in that
+	// expression.
+	//
+	// AttributeDetails is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	AttributeDetails *AttributeDetails `type:"structure" sensitive:"true"`
+
+	// The unique name of the calculated attribute.
+	CalculatedAttributeName *string `min:"1" type:"string"`
+
+	// The conditions including range, object count, and threshold for the calculated
+	// attribute.
+	//
+	// Conditions is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Conditions *Conditions `type:"structure" sensitive:"true"`
+
+	// The timestamp of when the calculated attribute definition was created.
+	CreatedAt *time.Time `type:"timestamp"`
+
+	// The description of the calculated attribute.
+	//
+	// Description is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Description *string `min:"1" type:"string" sensitive:"true"`
+
+	// The display name of the calculated attribute.
+	DisplayName *string `min:"1" type:"string"`
+
+	// The timestamp of when the calculated attribute definition was most recently
+	// edited.
+	LastUpdatedAt *time.Time `type:"timestamp"`
+
+	// The aggregation operation to perform for the calculated attribute.
+	//
+	// Statistic is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateCalculatedAttributeDefinitionOutput's
+	// String and GoString methods.
+	Statistic *string `type:"string" enum:"Statistic" sensitive:"true"`
+
+	// The tags used to organize, track, or control access for this resource.
+	Tags map[string]*string `min:"1" type:"map"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateCalculatedAttributeDefinitionOutput) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s UpdateCalculatedAttributeDefinitionOutput) GoString() string {
+	return s.String()
+}
+
+// SetAttributeDetails sets the AttributeDetails field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetAttributeDetails(v *AttributeDetails) *UpdateCalculatedAttributeDefinitionOutput {
+	s.AttributeDetails = v
+	return s
+}
+
+// SetCalculatedAttributeName sets the CalculatedAttributeName field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetCalculatedAttributeName(v string) *UpdateCalculatedAttributeDefinitionOutput {
+	s.CalculatedAttributeName = &v
+	return s
+}
+
+// SetConditions sets the Conditions field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetConditions(v *Conditions) *UpdateCalculatedAttributeDefinitionOutput {
+	s.Conditions = v
+	return s
+}
+
+// SetCreatedAt sets the CreatedAt field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetCreatedAt(v time.Time) *UpdateCalculatedAttributeDefinitionOutput {
+	s.CreatedAt = &v
+	return s
+}
+
+// SetDescription sets the Description field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetDescription(v string) *UpdateCalculatedAttributeDefinitionOutput {
+	s.Description = &v
+	return s
+}
+
+// SetDisplayName sets the DisplayName field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetDisplayName(v string) *UpdateCalculatedAttributeDefinitionOutput {
+	s.DisplayName = &v
+	return s
+}
+
+// SetLastUpdatedAt sets the LastUpdatedAt field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetLastUpdatedAt(v time.Time) *UpdateCalculatedAttributeDefinitionOutput {
+	s.LastUpdatedAt = &v
+	return s
+}
+
+// SetStatistic sets the Statistic field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetStatistic(v string) *UpdateCalculatedAttributeDefinitionOutput {
+	s.Statistic = &v
+	return s
+}
+
+// SetTags sets the Tags field's value.
+func (s *UpdateCalculatedAttributeDefinitionOutput) SetTags(v map[string]*string) *UpdateCalculatedAttributeDefinitionOutput {
+	s.Tags = v
+	return s
+}
+
 type UpdateDomainInput struct {
 	_ struct{} `type:"structure"`
 
@@ -9498,11 +18074,23 @@ type UpdateDomainInput struct {
 	DomainName *string `location:"uri" locationName:"DomainName" min:"1" type:"string" required:"true"`
 
 	// The process of matching duplicate profiles. If Matching = true, Amazon Connect
-	// Customer Profiles starts a weekly batch process every Saturday at 12AM UTC
-	// to detect duplicate profiles in your domains. After that batch process completes,
-	// use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
-	// API to return and review the results.
+	// Customer Profiles starts a weekly batch process called Identity Resolution
+	// Job. If you do not specify a date and time for Identity Resolution Job to
+	// run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles
+	// in your domains.
+	//
+	// After the Identity Resolution Job completes, use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
+	// API to return and review the results. Or, if you have configured ExportingConfig
+	// in the MatchingRequest, you can download the results from S3.
 	Matching *MatchingRequest `type:"structure"`
+
+	// The process of matching duplicate profiles using the rule-Based matching.
+	// If RuleBasedMatching = true, Amazon Connect Customer Profiles will start
+	// to match and merge your profiles according to your configuration in the RuleBasedMatchingRequest.
+	// You can use the ListRuleBasedMatches and GetSimilarProfiles API to return
+	// and review the results. Also, if you have configured ExportingConfig in the
+	// RuleBasedMatchingRequest, you can download the results from S3.
+	RuleBasedMatching *RuleBasedMatchingRequest `type:"structure"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -9546,6 +18134,11 @@ func (s *UpdateDomainInput) Validate() error {
 			invalidParams.AddNested("Matching", err.(request.ErrInvalidParams))
 		}
 	}
+	if s.RuleBasedMatching != nil {
+		if err := s.RuleBasedMatching.Validate(); err != nil {
+			invalidParams.AddNested("RuleBasedMatching", err.(request.ErrInvalidParams))
+		}
+	}
 
 	if invalidParams.Len() > 0 {
 		return invalidParams
@@ -9580,6 +18173,12 @@ func (s *UpdateDomainInput) SetDomainName(v string) *UpdateDomainInput {
 // SetMatching sets the Matching field's value.
 func (s *UpdateDomainInput) SetMatching(v *MatchingRequest) *UpdateDomainInput {
 	s.Matching = v
+	return s
+}
+
+// SetRuleBasedMatching sets the RuleBasedMatching field's value.
+func (s *UpdateDomainInput) SetRuleBasedMatching(v *RuleBasedMatchingRequest) *UpdateDomainInput {
+	s.RuleBasedMatching = v
 	return s
 }
 
@@ -9620,11 +18219,23 @@ type UpdateDomainOutput struct {
 	LastUpdatedAt *time.Time `type:"timestamp" required:"true"`
 
 	// The process of matching duplicate profiles. If Matching = true, Amazon Connect
-	// Customer Profiles starts a weekly batch process every Saturday at 12AM UTC
-	// to detect duplicate profiles in your domains. After that batch process completes,
-	// use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
-	// API to return and review the results.
+	// Customer Profiles starts a weekly batch process called Identity Resolution
+	// Job. If you do not specify a date and time for Identity Resolution Job to
+	// run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles
+	// in your domains.
+	//
+	// After the Identity Resolution Job completes, use the GetMatches (https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html)
+	// API to return and review the results. Or, if you have configured ExportingConfig
+	// in the MatchingRequest, you can download the results from S3.
 	Matching *MatchingResponse `type:"structure"`
+
+	// The process of matching duplicate profiles using the rule-Based matching.
+	// If RuleBasedMatching = true, Amazon Connect Customer Profiles will start
+	// to match and merge your profiles according to your configuration in the RuleBasedMatchingRequest.
+	// You can use the ListRuleBasedMatches and GetSimilarProfiles API to return
+	// and review the results. Also, if you have configured ExportingConfig in the
+	// RuleBasedMatchingRequest, you can download the results from S3.
+	RuleBasedMatching *RuleBasedMatchingResponse `type:"structure"`
 
 	// The tags used to organize, track, or control access for this resource.
 	Tags map[string]*string `min:"1" type:"map"`
@@ -9690,6 +18301,12 @@ func (s *UpdateDomainOutput) SetMatching(v *MatchingResponse) *UpdateDomainOutpu
 	return s
 }
 
+// SetRuleBasedMatching sets the RuleBasedMatching field's value.
+func (s *UpdateDomainOutput) SetRuleBasedMatching(v *RuleBasedMatchingResponse) *UpdateDomainOutput {
+	s.RuleBasedMatching = v
+	return s
+}
+
 // SetTags sets the Tags field's value.
 func (s *UpdateDomainOutput) SetTags(v map[string]*string) *UpdateDomainOutput {
 	s.Tags = v
@@ -9700,32 +18317,68 @@ type UpdateProfileInput struct {
 	_ struct{} `type:"structure"`
 
 	// A unique account number that you have given to the customer.
-	AccountNumber *string `type:"string"`
+	//
+	// AccountNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	AccountNumber *string `type:"string" sensitive:"true"`
 
 	// Any additional information relevant to the customer’s profile.
-	AdditionalInformation *string `type:"string"`
+	//
+	// AdditionalInformation is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	AdditionalInformation *string `type:"string" sensitive:"true"`
 
 	// A generic address associated with the customer that is not mailing, shipping,
 	// or billing.
-	Address *UpdateAddress `type:"structure"`
+	//
+	// Address is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	Address *UpdateAddress `type:"structure" sensitive:"true"`
 
 	// A key value pair of attributes of a customer profile.
-	Attributes map[string]*string `type:"map"`
+	//
+	// Attributes is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	Attributes map[string]*string `type:"map" sensitive:"true"`
 
 	// The customer’s billing address.
-	BillingAddress *UpdateAddress `type:"structure"`
+	//
+	// BillingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	BillingAddress *UpdateAddress `type:"structure" sensitive:"true"`
 
 	// The customer’s birth date.
-	BirthDate *string `type:"string"`
+	//
+	// BirthDate is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	BirthDate *string `type:"string" sensitive:"true"`
 
 	// The customer’s business email address.
-	BusinessEmailAddress *string `type:"string"`
+	//
+	// BusinessEmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	BusinessEmailAddress *string `type:"string" sensitive:"true"`
 
 	// The name of the customer’s business.
-	BusinessName *string `type:"string"`
+	//
+	// BusinessName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	BusinessName *string `type:"string" sensitive:"true"`
 
 	// The customer’s business phone number.
-	BusinessPhoneNumber *string `type:"string"`
+	//
+	// BusinessPhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	BusinessPhoneNumber *string `type:"string" sensitive:"true"`
 
 	// The unique name of the domain.
 	//
@@ -9734,38 +18387,96 @@ type UpdateProfileInput struct {
 
 	// The customer’s email address, which has not been specified as a personal
 	// or business address.
-	EmailAddress *string `type:"string"`
+	//
+	// EmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	EmailAddress *string `type:"string" sensitive:"true"`
 
 	// The customer’s first name.
-	FirstName *string `type:"string"`
+	//
+	// FirstName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	FirstName *string `type:"string" sensitive:"true"`
 
 	// The gender with which the customer identifies.
-	Gender *string `type:"string" enum:"Gender"`
+	//
+	// Gender is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	Gender *string `deprecated:"true" type:"string" enum:"Gender" sensitive:"true"`
+
+	// An alternative to Gender which accepts any string as input.
+	//
+	// GenderString is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	GenderString *string `type:"string" sensitive:"true"`
 
 	// The customer’s home phone number.
-	HomePhoneNumber *string `type:"string"`
+	//
+	// HomePhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	HomePhoneNumber *string `type:"string" sensitive:"true"`
 
 	// The customer’s last name.
-	LastName *string `type:"string"`
+	//
+	// LastName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	LastName *string `type:"string" sensitive:"true"`
 
 	// The customer’s mailing address.
-	MailingAddress *UpdateAddress `type:"structure"`
+	//
+	// MailingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	MailingAddress *UpdateAddress `type:"structure" sensitive:"true"`
 
 	// The customer’s middle name.
-	MiddleName *string `type:"string"`
+	//
+	// MiddleName is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	MiddleName *string `type:"string" sensitive:"true"`
 
 	// The customer’s mobile phone number.
-	MobilePhoneNumber *string `type:"string"`
+	//
+	// MobilePhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	MobilePhoneNumber *string `type:"string" sensitive:"true"`
 
 	// The type of profile used to describe the customer.
-	PartyType *string `type:"string" enum:"PartyType"`
+	//
+	// PartyType is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	PartyType *string `deprecated:"true" type:"string" enum:"PartyType" sensitive:"true"`
+
+	// An alternative to PartyType which accepts any string as input.
+	//
+	// PartyTypeString is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	PartyTypeString *string `type:"string" sensitive:"true"`
 
 	// The customer’s personal email address.
-	PersonalEmailAddress *string `type:"string"`
+	//
+	// PersonalEmailAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	PersonalEmailAddress *string `type:"string" sensitive:"true"`
 
 	// The customer’s phone number, which has not been specified as a mobile,
 	// home, or business number.
-	PhoneNumber *string `type:"string"`
+	//
+	// PhoneNumber is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	PhoneNumber *string `type:"string" sensitive:"true"`
 
 	// The unique identifier of a customer profile.
 	//
@@ -9773,7 +18484,11 @@ type UpdateProfileInput struct {
 	ProfileId *string `type:"string" required:"true"`
 
 	// The customer’s shipping address.
-	ShippingAddress *UpdateAddress `type:"structure"`
+	//
+	// ShippingAddress is a sensitive parameter and its value will be
+	// replaced with "sensitive" in string returned by UpdateProfileInput's
+	// String and GoString methods.
+	ShippingAddress *UpdateAddress `type:"structure" sensitive:"true"`
 }
 
 // String returns the string representation.
@@ -9891,6 +18606,12 @@ func (s *UpdateProfileInput) SetGender(v string) *UpdateProfileInput {
 	return s
 }
 
+// SetGenderString sets the GenderString field's value.
+func (s *UpdateProfileInput) SetGenderString(v string) *UpdateProfileInput {
+	s.GenderString = &v
+	return s
+}
+
 // SetHomePhoneNumber sets the HomePhoneNumber field's value.
 func (s *UpdateProfileInput) SetHomePhoneNumber(v string) *UpdateProfileInput {
 	s.HomePhoneNumber = &v
@@ -9924,6 +18645,12 @@ func (s *UpdateProfileInput) SetMobilePhoneNumber(v string) *UpdateProfileInput 
 // SetPartyType sets the PartyType field's value.
 func (s *UpdateProfileInput) SetPartyType(v string) *UpdateProfileInput {
 	s.PartyType = &v
+	return s
+}
+
+// SetPartyTypeString sets the PartyTypeString field's value.
+func (s *UpdateProfileInput) SetPartyTypeString(v string) *UpdateProfileInput {
+	s.PartyTypeString = &v
 	return s
 }
 
@@ -9984,6 +18711,102 @@ func (s *UpdateProfileOutput) SetProfileId(v string) *UpdateProfileOutput {
 	return s
 }
 
+// Structure to hold workflow attributes.
+type WorkflowAttributes struct {
+	_ struct{} `type:"structure"`
+
+	// Workflow attributes specific to APPFLOW_INTEGRATION workflow.
+	AppflowIntegration *AppflowIntegrationWorkflowAttributes `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WorkflowAttributes) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WorkflowAttributes) GoString() string {
+	return s.String()
+}
+
+// SetAppflowIntegration sets the AppflowIntegration field's value.
+func (s *WorkflowAttributes) SetAppflowIntegration(v *AppflowIntegrationWorkflowAttributes) *WorkflowAttributes {
+	s.AppflowIntegration = v
+	return s
+}
+
+// Generic object containing workflow execution metrics.
+type WorkflowMetrics struct {
+	_ struct{} `type:"structure"`
+
+	// Workflow execution metrics for APPFLOW_INTEGRATION workflow.
+	AppflowIntegration *AppflowIntegrationWorkflowMetrics `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WorkflowMetrics) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WorkflowMetrics) GoString() string {
+	return s.String()
+}
+
+// SetAppflowIntegration sets the AppflowIntegration field's value.
+func (s *WorkflowMetrics) SetAppflowIntegration(v *AppflowIntegrationWorkflowMetrics) *WorkflowMetrics {
+	s.AppflowIntegration = v
+	return s
+}
+
+// List containing steps in workflow.
+type WorkflowStepItem struct {
+	_ struct{} `type:"structure"`
+
+	// Workflow step information specific to APPFLOW_INTEGRATION workflow.
+	AppflowIntegration *AppflowIntegrationWorkflowStep `type:"structure"`
+}
+
+// String returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WorkflowStepItem) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation.
+//
+// API parameter values that are decorated as "sensitive" in the API will not
+// be included in the string output. The member name will be present, but the
+// value will be replaced with "sensitive".
+func (s WorkflowStepItem) GoString() string {
+	return s.String()
+}
+
+// SetAppflowIntegration sets the AppflowIntegration field's value.
+func (s *WorkflowStepItem) SetAppflowIntegration(v *AppflowIntegrationWorkflowStep) *WorkflowStepItem {
+	s.AppflowIntegration = v
+	return s
+}
+
 // The properties that are applied when using Zendesk as a flow source.
 type ZendeskSourceProperties struct {
 	_ struct{} `type:"structure"`
@@ -10032,6 +18855,38 @@ func (s *ZendeskSourceProperties) SetObject(v string) *ZendeskSourceProperties {
 }
 
 const (
+	// AttributeMatchingModelOneToOne is a AttributeMatchingModel enum value
+	AttributeMatchingModelOneToOne = "ONE_TO_ONE"
+
+	// AttributeMatchingModelManyToMany is a AttributeMatchingModel enum value
+	AttributeMatchingModelManyToMany = "MANY_TO_MANY"
+)
+
+// AttributeMatchingModel_Values returns all elements of the AttributeMatchingModel enum
+func AttributeMatchingModel_Values() []string {
+	return []string{
+		AttributeMatchingModelOneToOne,
+		AttributeMatchingModelManyToMany,
+	}
+}
+
+const (
+	// ConflictResolvingModelRecency is a ConflictResolvingModel enum value
+	ConflictResolvingModelRecency = "RECENCY"
+
+	// ConflictResolvingModelSource is a ConflictResolvingModel enum value
+	ConflictResolvingModelSource = "SOURCE"
+)
+
+// ConflictResolvingModel_Values returns all elements of the ConflictResolvingModel enum
+func ConflictResolvingModel_Values() []string {
+	return []string{
+		ConflictResolvingModelRecency,
+		ConflictResolvingModelSource,
+	}
+}
+
+const (
 	// DataPullModeIncremental is a DataPullMode enum value
 	DataPullModeIncremental = "Incremental"
 
@@ -10044,6 +18899,38 @@ func DataPullMode_Values() []string {
 	return []string{
 		DataPullModeIncremental,
 		DataPullModeComplete,
+	}
+}
+
+const (
+	// EventStreamDestinationStatusHealthy is a EventStreamDestinationStatus enum value
+	EventStreamDestinationStatusHealthy = "HEALTHY"
+
+	// EventStreamDestinationStatusUnhealthy is a EventStreamDestinationStatus enum value
+	EventStreamDestinationStatusUnhealthy = "UNHEALTHY"
+)
+
+// EventStreamDestinationStatus_Values returns all elements of the EventStreamDestinationStatus enum
+func EventStreamDestinationStatus_Values() []string {
+	return []string{
+		EventStreamDestinationStatusHealthy,
+		EventStreamDestinationStatusUnhealthy,
+	}
+}
+
+const (
+	// EventStreamStateRunning is a EventStreamState enum value
+	EventStreamStateRunning = "RUNNING"
+
+	// EventStreamStateStopped is a EventStreamState enum value
+	EventStreamStateStopped = "STOPPED"
+)
+
+// EventStreamState_Values returns all elements of the EventStreamState enum
+func EventStreamState_Values() []string {
+	return []string{
+		EventStreamStateRunning,
+		EventStreamStateStopped,
 	}
 }
 
@@ -10092,6 +18979,94 @@ func Gender_Values() []string {
 		GenderMale,
 		GenderFemale,
 		GenderUnspecified,
+	}
+}
+
+const (
+	// IdentityResolutionJobStatusPending is a IdentityResolutionJobStatus enum value
+	IdentityResolutionJobStatusPending = "PENDING"
+
+	// IdentityResolutionJobStatusPreprocessing is a IdentityResolutionJobStatus enum value
+	IdentityResolutionJobStatusPreprocessing = "PREPROCESSING"
+
+	// IdentityResolutionJobStatusFindMatching is a IdentityResolutionJobStatus enum value
+	IdentityResolutionJobStatusFindMatching = "FIND_MATCHING"
+
+	// IdentityResolutionJobStatusMerging is a IdentityResolutionJobStatus enum value
+	IdentityResolutionJobStatusMerging = "MERGING"
+
+	// IdentityResolutionJobStatusCompleted is a IdentityResolutionJobStatus enum value
+	IdentityResolutionJobStatusCompleted = "COMPLETED"
+
+	// IdentityResolutionJobStatusPartialSuccess is a IdentityResolutionJobStatus enum value
+	IdentityResolutionJobStatusPartialSuccess = "PARTIAL_SUCCESS"
+
+	// IdentityResolutionJobStatusFailed is a IdentityResolutionJobStatus enum value
+	IdentityResolutionJobStatusFailed = "FAILED"
+)
+
+// IdentityResolutionJobStatus_Values returns all elements of the IdentityResolutionJobStatus enum
+func IdentityResolutionJobStatus_Values() []string {
+	return []string{
+		IdentityResolutionJobStatusPending,
+		IdentityResolutionJobStatusPreprocessing,
+		IdentityResolutionJobStatusFindMatching,
+		IdentityResolutionJobStatusMerging,
+		IdentityResolutionJobStatusCompleted,
+		IdentityResolutionJobStatusPartialSuccess,
+		IdentityResolutionJobStatusFailed,
+	}
+}
+
+const (
+	// JobScheduleDayOfTheWeekSunday is a JobScheduleDayOfTheWeek enum value
+	JobScheduleDayOfTheWeekSunday = "SUNDAY"
+
+	// JobScheduleDayOfTheWeekMonday is a JobScheduleDayOfTheWeek enum value
+	JobScheduleDayOfTheWeekMonday = "MONDAY"
+
+	// JobScheduleDayOfTheWeekTuesday is a JobScheduleDayOfTheWeek enum value
+	JobScheduleDayOfTheWeekTuesday = "TUESDAY"
+
+	// JobScheduleDayOfTheWeekWednesday is a JobScheduleDayOfTheWeek enum value
+	JobScheduleDayOfTheWeekWednesday = "WEDNESDAY"
+
+	// JobScheduleDayOfTheWeekThursday is a JobScheduleDayOfTheWeek enum value
+	JobScheduleDayOfTheWeekThursday = "THURSDAY"
+
+	// JobScheduleDayOfTheWeekFriday is a JobScheduleDayOfTheWeek enum value
+	JobScheduleDayOfTheWeekFriday = "FRIDAY"
+
+	// JobScheduleDayOfTheWeekSaturday is a JobScheduleDayOfTheWeek enum value
+	JobScheduleDayOfTheWeekSaturday = "SATURDAY"
+)
+
+// JobScheduleDayOfTheWeek_Values returns all elements of the JobScheduleDayOfTheWeek enum
+func JobScheduleDayOfTheWeek_Values() []string {
+	return []string{
+		JobScheduleDayOfTheWeekSunday,
+		JobScheduleDayOfTheWeekMonday,
+		JobScheduleDayOfTheWeekTuesday,
+		JobScheduleDayOfTheWeekWednesday,
+		JobScheduleDayOfTheWeekThursday,
+		JobScheduleDayOfTheWeekFriday,
+		JobScheduleDayOfTheWeekSaturday,
+	}
+}
+
+const (
+	// LogicalOperatorAnd is a LogicalOperator enum value
+	LogicalOperatorAnd = "AND"
+
+	// LogicalOperatorOr is a LogicalOperator enum value
+	LogicalOperatorOr = "OR"
+)
+
+// LogicalOperator_Values returns all elements of the LogicalOperator enum
+func LogicalOperator_Values() []string {
+	return []string{
+		LogicalOperatorAnd,
+		LogicalOperatorOr,
 	}
 }
 
@@ -10164,6 +19139,46 @@ func MarketoConnectorOperator_Values() []string {
 		MarketoConnectorOperatorValidateNonNegative,
 		MarketoConnectorOperatorValidateNumeric,
 		MarketoConnectorOperatorNoOp,
+	}
+}
+
+const (
+	// MatchTypeRuleBasedMatching is a MatchType enum value
+	MatchTypeRuleBasedMatching = "RULE_BASED_MATCHING"
+
+	// MatchTypeMlBasedMatching is a MatchType enum value
+	MatchTypeMlBasedMatching = "ML_BASED_MATCHING"
+)
+
+// MatchType_Values returns all elements of the MatchType enum
+func MatchType_Values() []string {
+	return []string{
+		MatchTypeRuleBasedMatching,
+		MatchTypeMlBasedMatching,
+	}
+}
+
+const (
+	// OperatorEqualTo is a Operator enum value
+	OperatorEqualTo = "EQUAL_TO"
+
+	// OperatorGreaterThan is a Operator enum value
+	OperatorGreaterThan = "GREATER_THAN"
+
+	// OperatorLessThan is a Operator enum value
+	OperatorLessThan = "LESS_THAN"
+
+	// OperatorNotEqualTo is a Operator enum value
+	OperatorNotEqualTo = "NOT_EQUAL_TO"
+)
+
+// Operator_Values returns all elements of the Operator enum
+func Operator_Values() []string {
+	return []string{
+		OperatorEqualTo,
+		OperatorGreaterThan,
+		OperatorLessThan,
+		OperatorNotEqualTo,
 	}
 }
 
@@ -10248,6 +19263,26 @@ func PartyType_Values() []string {
 		PartyTypeIndividual,
 		PartyTypeBusiness,
 		PartyTypeOther,
+	}
+}
+
+const (
+	// RuleBasedMatchingStatusPending is a RuleBasedMatchingStatus enum value
+	RuleBasedMatchingStatusPending = "PENDING"
+
+	// RuleBasedMatchingStatusInProgress is a RuleBasedMatchingStatus enum value
+	RuleBasedMatchingStatusInProgress = "IN_PROGRESS"
+
+	// RuleBasedMatchingStatusActive is a RuleBasedMatchingStatus enum value
+	RuleBasedMatchingStatusActive = "ACTIVE"
+)
+
+// RuleBasedMatchingStatus_Values returns all elements of the RuleBasedMatchingStatus enum
+func RuleBasedMatchingStatus_Values() []string {
+	return []string{
+		RuleBasedMatchingStatusPending,
+		RuleBasedMatchingStatusInProgress,
+		RuleBasedMatchingStatusActive,
 	}
 }
 
@@ -10572,6 +19607,9 @@ const (
 
 	// StandardIdentifierNewOnly is a StandardIdentifier enum value
 	StandardIdentifierNewOnly = "NEW_ONLY"
+
+	// StandardIdentifierOrder is a StandardIdentifier enum value
+	StandardIdentifierOrder = "ORDER"
 )
 
 // StandardIdentifier_Values returns all elements of the StandardIdentifier enum
@@ -10584,6 +19622,83 @@ func StandardIdentifier_Values() []string {
 		StandardIdentifierSecondary,
 		StandardIdentifierLookupOnly,
 		StandardIdentifierNewOnly,
+		StandardIdentifierOrder,
+	}
+}
+
+const (
+	// StatisticFirstOccurrence is a Statistic enum value
+	StatisticFirstOccurrence = "FIRST_OCCURRENCE"
+
+	// StatisticLastOccurrence is a Statistic enum value
+	StatisticLastOccurrence = "LAST_OCCURRENCE"
+
+	// StatisticCount is a Statistic enum value
+	StatisticCount = "COUNT"
+
+	// StatisticSum is a Statistic enum value
+	StatisticSum = "SUM"
+
+	// StatisticMinimum is a Statistic enum value
+	StatisticMinimum = "MINIMUM"
+
+	// StatisticMaximum is a Statistic enum value
+	StatisticMaximum = "MAXIMUM"
+
+	// StatisticAverage is a Statistic enum value
+	StatisticAverage = "AVERAGE"
+
+	// StatisticMaxOccurrence is a Statistic enum value
+	StatisticMaxOccurrence = "MAX_OCCURRENCE"
+)
+
+// Statistic_Values returns all elements of the Statistic enum
+func Statistic_Values() []string {
+	return []string{
+		StatisticFirstOccurrence,
+		StatisticLastOccurrence,
+		StatisticCount,
+		StatisticSum,
+		StatisticMinimum,
+		StatisticMaximum,
+		StatisticAverage,
+		StatisticMaxOccurrence,
+	}
+}
+
+const (
+	// StatusNotStarted is a Status enum value
+	StatusNotStarted = "NOT_STARTED"
+
+	// StatusInProgress is a Status enum value
+	StatusInProgress = "IN_PROGRESS"
+
+	// StatusComplete is a Status enum value
+	StatusComplete = "COMPLETE"
+
+	// StatusFailed is a Status enum value
+	StatusFailed = "FAILED"
+
+	// StatusSplit is a Status enum value
+	StatusSplit = "SPLIT"
+
+	// StatusRetry is a Status enum value
+	StatusRetry = "RETRY"
+
+	// StatusCancelled is a Status enum value
+	StatusCancelled = "CANCELLED"
+)
+
+// Status_Values returns all elements of the Status enum
+func Status_Values() []string {
+	return []string{
+		StatusNotStarted,
+		StatusInProgress,
+		StatusComplete,
+		StatusFailed,
+		StatusSplit,
+		StatusRetry,
+		StatusCancelled,
 	}
 }
 
@@ -10640,6 +19755,30 @@ func TriggerType_Values() []string {
 		TriggerTypeScheduled,
 		TriggerTypeEvent,
 		TriggerTypeOnDemand,
+	}
+}
+
+const (
+	// UnitDays is a Unit enum value
+	UnitDays = "DAYS"
+)
+
+// Unit_Values returns all elements of the Unit enum
+func Unit_Values() []string {
+	return []string{
+		UnitDays,
+	}
+}
+
+const (
+	// WorkflowTypeAppflowIntegration is a WorkflowType enum value
+	WorkflowTypeAppflowIntegration = "APPFLOW_INTEGRATION"
+)
+
+// WorkflowType_Values returns all elements of the WorkflowType enum
+func WorkflowType_Values() []string {
+	return []string{
+		WorkflowTypeAppflowIntegration,
 	}
 }
 

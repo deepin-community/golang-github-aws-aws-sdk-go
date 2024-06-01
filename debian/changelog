@@ -1,3 +1,63 @@
+golang-github-aws-aws-sdk-go (1.49.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Add new 0003-Fix-misaligned-struct-member-used-in-atomic-op.patch
+
+ -- Daniel Swarbrick <dswarbrick@debian.org>  Tue, 27 Feb 2024 17:00:54 +0000
+
+golang-github-aws-aws-sdk-go (1.49.0-1) unstable; urgency=medium
+
+  * New upstream version 1.49.0
+
+ -- Anthony Fok <foka@debian.org>  Mon, 26 Feb 2024 10:57:24 -0700
+
+golang-github-aws-aws-sdk-go (1.48.14-1) unstable; urgency=medium
+
+  * New upstream version 1.48.14
+  * Update versioned dependencies as per go.mod.  In particular,
+    golang-github-pkg-errors-dev is no longer needed since 2023-10-31
+
+ -- Anthony Fok <foka@debian.org>  Fri, 08 Dec 2023 14:25:29 -0700
+
+golang-github-aws-aws-sdk-go (1.45.14-1) unstable; urgency=medium
+
+  * New upstream version 1.45.14
+
+ -- Anthony Fok <foka@debian.org>  Wed, 11 Oct 2023 10:18:16 -0600
+
+golang-github-aws-aws-sdk-go (1.44.314-1) unstable; urgency=medium
+
+  * New upstream version 1.44.314
+  * Bump Depends: golang-golang-x-net-dev (>= 1:0.1.0)
+  * Bump Standards-Version to 4.6.2 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Mon, 09 Oct 2023 09:43:35 -0600
+
+golang-github-aws-aws-sdk-go (1.44.133-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+    - Build-Depends: golang-golang-x-net-dev (>= 1:0.1.0)
+  * Standards-Version: 4.6.1
+
+ -- Drew Parsons <dparsons@debian.org>  Wed, 09 Nov 2022 18:23:02 +0100
+
+golang-github-aws-aws-sdk-go (1.43.26-1) unstable; urgency=medium
+
+  * New upstream version 1.43.26 (Closes: #1008431)
+
+ -- Shengjing Zhu <zhsj@debian.org>  Sun, 27 Mar 2022 22:14:37 +0800
+
+golang-github-aws-aws-sdk-go (1.43.5-1) unstable; urgency=medium
+
+  * New upstream version 1.43.5
+  * Reorder fields in debian/control and debian/copyright
+    as would be generated in the next dh-make-golang release after 0.6.0-1
+  * Use dh-sequence-golang instead of dh-golang and --with=golang
+  * Add "--builddirectory=_build" argument to dh
+
+ -- Anthony Fok <foka@debian.org>  Wed, 02 Mar 2022 22:22:51 -0700
+
 golang-github-aws-aws-sdk-go (1.41.14-1) unstable; urgency=medium
 
   * New upstream version 1.41.14
